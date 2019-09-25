@@ -1,0 +1,25 @@
+{
+    "name": "endevor-scl-support",
+    "displayName": "Endevor SCL Support",
+    "description": "Language support for Endevor SCM SCL. You can compose your SCL with syntax hints, check your SCL syntax, and submit your SCL.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.38.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "scl",
+            "aliases": ["Endevor SCL", "scl"],
+            "extensions": [".scl",".SCL"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "scl",
+            "scopeName": "source.scl",
+            "path": "./syntaxes/scl.tmLanguage.json"
+        }]
+    }
+}
