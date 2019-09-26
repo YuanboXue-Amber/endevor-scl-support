@@ -1,0 +1,13 @@
+{
+	"name": "lsp-endevorscl-server",
+	"description": "Implementation of Endevor SCL language server in node.",
+	"version": "0.0.1",
+	"license": "MIT",
+	"engines": {
+		"node": "*"
+	},
+	"dependencies": {
+		"vscode-languageserver": "^5.2.1"
+	},
+	"scripts": {}
+}
