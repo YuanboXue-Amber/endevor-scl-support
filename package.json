@@ -11,18 +11,18 @@
     ],
     "contributes": {
         "languages": [{
-            "id": "scl",
+            "id": "endevorscl",
             "aliases": ["Endevor SCL", "scl"],
             "extensions": [".scl",".SCL"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
-            "language": "scl",
+            "language": "endevorscl",
             "scopeName": "source.scl",
             "path": "./syntaxes/scl.tmLanguage.json"
         }],
         "snippets": [{
-            "language": "scl",
+            "language": "endevorscl",
             "path": "./snippets/scl.snippets.json"
         }]
     }
