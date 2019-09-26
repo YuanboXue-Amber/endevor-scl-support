@@ -1,0 +1,27 @@
+{
+	"Keyword DEFINE": {
+		"scope": "scl",
+		"prefix": ["D", "d"],
+		"body": [
+			"DEFINE "
+		]
+	},
+	"DEFINE with choice": {
+		"scope": "scl",
+		"prefix": ["DEFINE "],
+		"body": [
+			"DEFINE ${1|ENVIRONMENT,TYPE|} $0"
+		]
+	},
+	"ADD ELEMENTS FROM xxx TO xxx OPTIONS xxx": {
+		"scope": "scl",
+		"prefix": ["ADD", "add"],
+		"body": [
+			"ADD ELEMENTS $1 ",
+			"\tFROM $2",
+			"\tTO $3",
+			"\tOPTIONS $4",
+			"\t        $0"
+		]
+	}
+}

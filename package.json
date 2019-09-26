@@ -20,6 +20,10 @@
             "language": "scl",
             "scopeName": "source.scl",
             "path": "./syntaxes/scl.tmLanguage.json"
+        }],
+        "snippets": [{
+            "language": "scl",
+            "path": "./snippets/scl.snippets.json"
         }]
     }
 }

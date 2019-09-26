@@ -16,8 +16,8 @@
         ["{", "}"],
         ["[", "]"],
         ["(", ")"],
-        ["\"", "\""],
-        ["'", "'"]
+        { "open": "\"", "close": "\"", "notIn": ["string"] },
+        { "open": "'", "close": "'", "notIn": ["string"] }
     ],
     // symbols that that can be used to surround a selection
     "surroundingPairs": [
@@ -26,5 +26,11 @@
         ["(", ")"],
         ["\"", "\""],
         ["'", "'"]
-    ]
+    ],
+    "wordPattern": "(-?\\d*\\.\\d\\w*)|([^\\`\\~\\!\\@\\#\\%\\^\\&\\*\\(\\)\\-\\=\\+\\[\\{\\]\\}\\\\\\|\\;\\:\\'\\\"\\,\\.\\<\\>\\/\\?\\s]+)",
+    // todo "indentationRules": {
+    //     "increaseIndentPattern": "^((?!\\/\\/).)*(\\{[^}\"'`]*|\\([^)\"'`]*|\\[[^\\]\"'`]*)$",
+    //     "decreaseIndentPattern": "^((?!.*?\\/\\*).*\\*/)?\\s*[\\}\\]].*$"
+    // }
+    // todo, folding (seems like could be done through lsp)
 }
