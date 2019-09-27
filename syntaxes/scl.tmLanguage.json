@@ -17,13 +17,29 @@
 			}]
 		},
 		"strings": {
-			"name": "string.quoted.double.scl",
-			"begin": "\"",
-			"end": "\"",
 			"patterns": [
 				{
-					"name": "constant.character.escape.scl",
-					"match": "\\\\."
+					"name": "string.quoted.single.scl",
+					"begin": "'",
+					"end": "'",
+					"patterns": [
+						{
+							"name": "constant.character.escape.scl",
+							"match": "\\\\."
+						}
+					]
+				},
+				{
+					"name": "string.quoted.double.scl",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": [
+						{
+							"name": "constant.character.escape.scl",
+							"match": "\\\\."
+						}
+					]
+
 				}
 			]
 		}
