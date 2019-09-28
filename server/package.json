@@ -9,5 +9,13 @@
 	"dependencies": {
 		"vscode-languageserver": "^5.2.1"
 	},
-	"scripts": {}
+	"devDependencies": {
+		"@types/jest": "^24.0.18",
+		"jest": "^24.9.0",
+		"jest-cli": "^24.9.0",
+		"ts-jest": "^24.1.0"
+	},
+	"scripts": {
+		"test": "jest"
+	}
 }

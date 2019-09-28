@@ -23,7 +23,7 @@
 			"outFiles": ["${workspaceRoot}/client/out/**/*.js"],
 			"preLaunchTask": {
 				"type": "npm",
-				"script": "watch"
+				"script": "compile"
 			}
 		},
 		{
@@ -33,6 +33,19 @@
 			"port": 6009,
 			"restart": true,
 			"outFiles": ["${workspaceRoot}/server/out/**/*.js"]
+		},
+		{
+		  "type": "node",
+		  "request": "launch",
+		  "name": "Debug test",
+		  "program": "${workspaceRoot}/server/node_modules/jest-cli/bin/jest.js",
+		  "args": [
+			"--findRelatedTests",
+			"${relativeFile}",
+			"--env",
+			"jest-environment-node-debug"
+		  ],
+		  "cwd": "${workspaceRoot}"
 		},
     ]
 }
