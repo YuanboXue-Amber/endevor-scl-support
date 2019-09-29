@@ -1,5 +1,5 @@
 import { Tokenizer, TokenizedString } from '../../src/parser/tokenizer';
-import { emptySCL, emptySCLwithNewLines, simpleSCL1, complextSCL1_packagenotes, complextSCL2_2scl } from '../__resources__/sampleSCL';
+import { emptySCL, emptySCLwithNewLines, simpleSCL1, complextSCL1_packagenotes, complextSCL2_2scl, invalidSCL_invalidEnding } from '../__resources__/sampleSCL';
 
 // test only readNext()
 const testbody = ((sclInput: string) => {
@@ -85,5 +85,12 @@ describe("Test a complex scl with pkg notes from resources", () => {
 describe("Test a complex scl with 2 statements from resources", () => {
     it("", async () => {
         testbody(complextSCL2_2scl);
+    });
+});
+
+describe("Test an invalid SCL that has invalid statement ending from resources", () => {
+    it("", async () => {
+        testbody(invalidSCL_invalidEnding);
+        testbody2(invalidSCL_invalidEnding);
     });
 });

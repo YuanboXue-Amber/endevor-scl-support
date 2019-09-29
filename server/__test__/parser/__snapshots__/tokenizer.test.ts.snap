@@ -1553,10 +1553,10 @@ Object {
   "is_eoStatement": false,
   "is_eof": false,
   "is_keyword": false,
-  "is_op_char": false,
-  "is_word": true,
-  "startPos": 109,
-  "value": "('this is package note 1',",
+  "is_op_char": true,
+  "is_word": false,
+  "startPos": 110,
+  "value": "(",
 }
 `;
 
@@ -1567,13 +1567,49 @@ Object {
   "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
-  "startPos": 162,
-  "value": "'this is \\"package 
-note 2',",
+  "startPos": 110,
+  "value": "'this is package note 1'",
 }
 `;
 
 exports[`Test a complex scl with pkg notes from resources  9`] = `
+Object {
+  "is_eoStatement": false,
+  "is_eof": false,
+  "is_keyword": false,
+  "is_op_char": true,
+  "is_word": false,
+  "startPos": 134,
+  "value": ",",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  10`] = `
+Object {
+  "is_eoStatement": false,
+  "is_eof": false,
+  "is_keyword": false,
+  "is_op_char": false,
+  "is_word": true,
+  "startPos": 162,
+  "value": "'this is \\"package 
+note 2'",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  11`] = `
+Object {
+  "is_eoStatement": false,
+  "is_eof": false,
+  "is_keyword": false,
+  "is_op_char": true,
+  "is_word": false,
+  "startPos": 188,
+  "value": ",",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  12`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": false,
@@ -1585,7 +1621,7 @@ Object {
 }
 `;
 
-exports[`Test a complex scl with pkg notes from resources  10`] = `
+exports[`Test a complex scl with pkg notes from resources  13`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": false,
@@ -1597,7 +1633,7 @@ Object {
 }
 `;
 
-exports[`Test a complex scl with pkg notes from resources  11`] = `
+exports[`Test a complex scl with pkg notes from resources  14`] = `
 Object {
   "is_eoStatement": true,
   "is_eof": false,
@@ -1609,7 +1645,7 @@ Object {
 }
 `;
 
-exports[`Test a complex scl with pkg notes from resources  12`] = `
+exports[`Test a complex scl with pkg notes from resources  15`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": true,
@@ -1621,7 +1657,7 @@ Object {
 }
 `;
 
-exports[`Test a complex scl with pkg notes from resources  13`] = `
+exports[`Test a complex scl with pkg notes from resources  16`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": false,
@@ -1633,7 +1669,7 @@ Object {
 }
 `;
 
-exports[`Test a complex scl with pkg notes from resources  14`] = `
+exports[`Test a complex scl with pkg notes from resources  17`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": false,
@@ -1645,7 +1681,7 @@ Object {
 }
 `;
 
-exports[`Test a complex scl with pkg notes from resources  15`] = `
+exports[`Test a complex scl with pkg notes from resources  18`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": false,
@@ -1657,7 +1693,7 @@ Object {
 }
 `;
 
-exports[`Test a complex scl with pkg notes from resources  16`] = `
+exports[`Test a complex scl with pkg notes from resources  19`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": false,
@@ -1669,7 +1705,7 @@ Object {
 }
 `;
 
-exports[`Test a complex scl with pkg notes from resources  17`] = `
+exports[`Test a complex scl with pkg notes from resources  20`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": false,
@@ -1681,7 +1717,7 @@ Object {
 }
 `;
 
-exports[`Test a complex scl with pkg notes from resources  18`] = `
+exports[`Test a complex scl with pkg notes from resources  21`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": false,
@@ -1693,19 +1729,43 @@ Object {
 }
 `;
 
-exports[`Test a complex scl with pkg notes from resources  19`] = `
+exports[`Test a complex scl with pkg notes from resources  22`] = `
+Object {
+  "is_eoStatement": false,
+  "is_eof": false,
+  "is_keyword": false,
+  "is_op_char": true,
+  "is_word": false,
+  "startPos": 110,
+  "value": "(",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  23`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": false,
   "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
-  "startPos": 109,
-  "value": "('this is package note 1',",
+  "startPos": 110,
+  "value": "'this is package note 1'",
 }
 `;
 
-exports[`Test a complex scl with pkg notes from resources  20`] = `
+exports[`Test a complex scl with pkg notes from resources  24`] = `
+Object {
+  "is_eoStatement": false,
+  "is_eof": false,
+  "is_keyword": false,
+  "is_op_char": true,
+  "is_word": false,
+  "startPos": 134,
+  "value": ",",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  25`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": false,
@@ -1714,11 +1774,23 @@ Object {
   "is_word": true,
   "startPos": 162,
   "value": "'this is \\"package 
-note 2',",
+note 2'",
 }
 `;
 
-exports[`Test a complex scl with pkg notes from resources  21`] = `
+exports[`Test a complex scl with pkg notes from resources  26`] = `
+Object {
+  "is_eoStatement": false,
+  "is_eof": false,
+  "is_keyword": false,
+  "is_op_char": true,
+  "is_word": false,
+  "startPos": 188,
+  "value": ",",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  27`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": false,
@@ -1730,7 +1802,7 @@ Object {
 }
 `;
 
-exports[`Test a complex scl with pkg notes from resources  22`] = `
+exports[`Test a complex scl with pkg notes from resources  28`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": false,
@@ -1742,7 +1814,7 @@ Object {
 }
 `;
 
-exports[`Test a complex scl with pkg notes from resources  23`] = `
+exports[`Test a complex scl with pkg notes from resources  29`] = `
 Object {
   "is_eoStatement": true,
   "is_eof": false,
@@ -1754,7 +1826,7 @@ Object {
 }
 `;
 
-exports[`Test a complex scl with pkg notes from resources  24`] = `
+exports[`Test a complex scl with pkg notes from resources  30`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": true,
@@ -2050,6 +2122,126 @@ Object {
   "is_op_char": false,
   "is_word": false,
   "startPos": 4,
+  "value": "",
+}
+`;
+
+exports[`Test an invalid SCL that has invalid statement ending from resources  1`] = `
+Object {
+  "is_eoStatement": false,
+  "is_eof": false,
+  "is_keyword": false,
+  "is_op_char": false,
+  "is_word": true,
+  "startPos": 0,
+  "value": "LIST",
+}
+`;
+
+exports[`Test an invalid SCL that has invalid statement ending from resources  2`] = `
+Object {
+  "is_eoStatement": false,
+  "is_eof": false,
+  "is_keyword": false,
+  "is_op_char": false,
+  "is_word": true,
+  "startPos": 5,
+  "value": "ENV",
+}
+`;
+
+exports[`Test an invalid SCL that has invalid statement ending from resources  3`] = `
+Object {
+  "is_eoStatement": false,
+  "is_eof": false,
+  "is_keyword": false,
+  "is_op_char": false,
+  "is_word": true,
+  "startPos": 9,
+  "value": "\\"*\\"",
+}
+`;
+
+exports[`Test an invalid SCL that has invalid statement ending from resources  4`] = `
+Object {
+  "is_eoStatement": true,
+  "is_eof": false,
+  "is_keyword": false,
+  "is_op_char": true,
+  "is_word": false,
+  "startPos": 12,
+  "value": ".",
+}
+`;
+
+exports[`Test an invalid SCL that has invalid statement ending from resources  5`] = `
+Object {
+  "is_eoStatement": false,
+  "is_eof": true,
+  "is_keyword": false,
+  "is_op_char": false,
+  "is_word": false,
+  "startPos": 13,
+  "value": "",
+}
+`;
+
+exports[`Test an invalid SCL that has invalid statement ending from resources  6`] = `
+Object {
+  "is_eoStatement": false,
+  "is_eof": false,
+  "is_keyword": false,
+  "is_op_char": false,
+  "is_word": true,
+  "startPos": 0,
+  "value": "LIST",
+}
+`;
+
+exports[`Test an invalid SCL that has invalid statement ending from resources  7`] = `
+Object {
+  "is_eoStatement": false,
+  "is_eof": false,
+  "is_keyword": false,
+  "is_op_char": false,
+  "is_word": true,
+  "startPos": 5,
+  "value": "ENV",
+}
+`;
+
+exports[`Test an invalid SCL that has invalid statement ending from resources  8`] = `
+Object {
+  "is_eoStatement": false,
+  "is_eof": false,
+  "is_keyword": false,
+  "is_op_char": false,
+  "is_word": true,
+  "startPos": 9,
+  "value": "\\"*\\"",
+}
+`;
+
+exports[`Test an invalid SCL that has invalid statement ending from resources  9`] = `
+Object {
+  "is_eoStatement": true,
+  "is_eof": false,
+  "is_keyword": false,
+  "is_op_char": true,
+  "is_word": false,
+  "startPos": 12,
+  "value": ".",
+}
+`;
+
+exports[`Test an invalid SCL that has invalid statement ending from resources  10`] = `
+Object {
+  "is_eoStatement": false,
+  "is_eof": true,
+  "is_keyword": false,
+  "is_op_char": false,
+  "is_word": false,
+  "startPos": 13,
   "value": "",
 }
 `;

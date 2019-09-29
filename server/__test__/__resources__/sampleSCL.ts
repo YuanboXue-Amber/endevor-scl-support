@@ -54,3 +54,5 @@ export const complextSCL2_2scl: string =
 "            UPDATE\r\n" +
 " .";
 
+export const invalidSCL_invalidEnding: string = "LIST ENV \"*\".";
+
