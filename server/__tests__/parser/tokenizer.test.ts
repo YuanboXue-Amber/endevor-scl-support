@@ -1,5 +1,11 @@
 import { Tokenizer, TokenizedString } from '../../src/parser/tokenizer';
-import { emptySCL, emptySCLwithNewLines, simpleSCL1, complextSCL1_packagenotes, complextSCL2_2scl, invalidSCL_invalidEnding } from '../__resources__/sampleSCL';
+import {
+    emptySCL,
+    emptySCLwithNewLines,
+    simpleSCL1,
+    complextSCL1_packagenotes,
+    complextSCL2_2scl,
+    invalidSCL_invalidEnding } from '../__resources__/sampleSCL';
 
 // test only readNext()
 const testbody = ((sclInput: string) => {
