@@ -3,6 +3,7 @@ import { TokenizedString, Tokenizer } from "./tokenizer";
 import { match } from "./parserTags";
 import { isNullOrUndefined } from "util";
 import { parseSetAction } from "./syntaxTrees/setCommands";
+import { defaultSettings } from "../server";
 
 export class SyntaxDiagnose {
     textDocument: TextDocument;
@@ -119,6 +120,10 @@ export class SyntaxDiagnose {
      * @memberof SyntaxDiagnose
      */
     public pushDiagnostic(severity: DiagnosticSeverity, token: TokenizedString, message: string, relatedMsg?: string) {
+        if (this.diagnostics.length > defaultSettings.maxNumberOfProblems) {
+            return;
+        }
+
         let diagnostic: Diagnostic = {
             severity: severity,
             range: {
