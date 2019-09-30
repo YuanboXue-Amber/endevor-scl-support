@@ -29,11 +29,11 @@ describe("Test 3 simple valid SET ACTION", () => {
     });
 });
 
-describe("Test 3 simple INvalid SET ACTION", () => {
+describe("Test 4 simple INvalid SET ACTION", () => {
     it("Should have no error", async () => {
         let sourceTextDocument: any = {
             getText() {
-                return " SET ACTION INVALID . SET \n  . SET ACTION RES.";
+                return " SET ACTION INVALID . SET \n  . SET ACTION RES. SET ACTION ADD";
             },
             positionAt(offset: number): Position {
                 expect(offset).toMatchSnapshot();

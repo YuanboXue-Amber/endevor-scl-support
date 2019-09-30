@@ -33,6 +33,14 @@ export class SyntaxDiagnose {
         while(!isNullOrUndefined(token) && !token.is_eof) {
             token = this.tokenizingTextContent.readNext();
             if (token.is_eof) {
+                if (thisSCL.length > 0) {
+                    if (match(thisSCL[0].value, "T_SET")) {
+                        this.processSETSCL(thisSCL);
+                        break;
+                    }
+                    // no need to wait for scls that are not a SET xxx
+                    process.nextTick(this.dispatchSCL, thisSCL);
+                }
                 break;
             }
             thisSCL.push(token);
