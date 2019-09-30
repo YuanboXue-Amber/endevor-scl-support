@@ -38,7 +38,7 @@ const testbody2 = ((sclInput: string) => {
     }
 });
 
-describe("Test a simple sting", () => {
+describe("Test a simple string", () => {
     it("", async () => {
         const input = "test";
         testbody(input);
@@ -46,7 +46,7 @@ describe("Test a simple sting", () => {
     });
 });
 
-describe("Test a simple sting with unbalanced quotes", () => {
+describe("Test a simple string with unbalanced quotes", () => {
     it("", async () => {
         const input = "test '\"'\"test";
         testbody(input);
@@ -54,14 +54,14 @@ describe("Test a simple sting with unbalanced quotes", () => {
     });
 });
 
-describe("Test an empty sting", () => {
+describe("Test an empty string", () => {
     it("", async () => {
         testbody(emptySCL);
         testbody2(emptySCL);
     });
 });
 
-describe("Test an empty sting with new lines", () => {
+describe("Test an empty string with new lines", () => {
     it("", async () => {
         testbody(emptySCLwithNewLines);
         testbody2(emptySCLwithNewLines);

@@ -1958,7 +1958,7 @@ Object {
 }
 `;
 
-exports[`Test a simple sting  1`] = `
+exports[`Test a simple string  1`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": false,
@@ -1970,7 +1970,7 @@ Object {
 }
 `;
 
-exports[`Test a simple sting  2`] = `
+exports[`Test a simple string  2`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": true,
@@ -1982,7 +1982,7 @@ Object {
 }
 `;
 
-exports[`Test a simple sting  3`] = `
+exports[`Test a simple string  3`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": false,
@@ -1994,7 +1994,7 @@ Object {
 }
 `;
 
-exports[`Test a simple sting  4`] = `
+exports[`Test a simple string  4`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": true,
@@ -2006,7 +2006,7 @@ Object {
 }
 `;
 
-exports[`Test a simple sting with unbalanced quotes  1`] = `
+exports[`Test a simple string with unbalanced quotes  1`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": false,
@@ -2018,7 +2018,7 @@ Object {
 }
 `;
 
-exports[`Test a simple sting with unbalanced quotes  2`] = `
+exports[`Test a simple string with unbalanced quotes  2`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": false,
@@ -2030,7 +2030,7 @@ Object {
 }
 `;
 
-exports[`Test a simple sting with unbalanced quotes  3`] = `
+exports[`Test a simple string with unbalanced quotes  3`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": true,
@@ -2042,7 +2042,7 @@ Object {
 }
 `;
 
-exports[`Test a simple sting with unbalanced quotes  4`] = `
+exports[`Test a simple string with unbalanced quotes  4`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": false,
@@ -2054,7 +2054,7 @@ Object {
 }
 `;
 
-exports[`Test a simple sting with unbalanced quotes  5`] = `
+exports[`Test a simple string with unbalanced quotes  5`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": false,
@@ -2066,7 +2066,7 @@ Object {
 }
 `;
 
-exports[`Test a simple sting with unbalanced quotes  6`] = `
+exports[`Test a simple string with unbalanced quotes  6`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": true,
@@ -2078,7 +2078,7 @@ Object {
 }
 `;
 
-exports[`Test an empty sting  1`] = `
+exports[`Test an empty string  1`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": true,
@@ -2090,7 +2090,7 @@ Object {
 }
 `;
 
-exports[`Test an empty sting  2`] = `
+exports[`Test an empty string  2`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": true,
@@ -2102,7 +2102,7 @@ Object {
 }
 `;
 
-exports[`Test an empty sting with new lines  1`] = `
+exports[`Test an empty string with new lines  1`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": true,
@@ -2114,7 +2114,7 @@ Object {
 }
 `;
 
-exports[`Test an empty sting with new lines  2`] = `
+exports[`Test an empty string with new lines  2`] = `
 Object {
   "is_eoStatement": false,
   "is_eof": true,
