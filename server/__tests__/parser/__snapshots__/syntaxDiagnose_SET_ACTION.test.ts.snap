@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test 3 simple INvalid SET ACTION Should have no error 1`] = `12`;
+
+exports[`Test 3 simple INvalid SET ACTION Should have no error 2`] = `19`;
+
+exports[`Test 3 simple INvalid SET ACTION Should have no error 3`] = `29`;
+
+exports[`Test 3 simple INvalid SET ACTION Should have no error 4`] = `30`;
+
+exports[`Test 3 simple INvalid SET ACTION Should have no error 5`] = `45`;
+
+exports[`Test 3 simple INvalid SET ACTION Should have no error 6`] = `46`;
+
+exports[`Test 3 simple INvalid SET ACTION Should have no error 7`] = `
+Array [
+  Object {
+    "message": "Invalid action \\"INVALID\\" specified after SET ACTION",
+    "range": Object {
+      "end": Object {
+        "character": 2,
+        "line": 1,
+      },
+      "start": Object {
+        "character": 2,
+        "line": 1,
+      },
+    },
+    "relatedInformation": Array [
+      Object {
+        "location": Object {
+          "range": Object {
+            "end": Object {
+              "character": 2,
+              "line": 1,
+            },
+            "start": Object {
+              "character": 2,
+              "line": 1,
+            },
+          },
+          "uri": "mocked/uri",
+        },
+        "message": "Valid actions are: ADD, ARCHIVE, COPY, DELETE, GENERATE, LIST, MOVE, PRINT, RESTORE, RETRIEVE, SIGNIN, TRANSFER, UPDATE, VALIDATE",
+      },
+    ],
+    "severity": 1,
+    "source": "Endevor SCL extension",
+  },
+  Object {
+    "message": "Invalid keyword \\".\\" specified after SET",
+    "range": Object {
+      "end": Object {
+        "character": 2,
+        "line": 1,
+      },
+      "start": Object {
+        "character": 2,
+        "line": 1,
+      },
+    },
+    "relatedInformation": Array [
+      Object {
+        "location": Object {
+          "range": Object {
+            "end": Object {
+              "character": 2,
+              "line": 1,
+            },
+            "start": Object {
+              "character": 2,
+              "line": 1,
+            },
+          },
+          "uri": "mocked/uri",
+        },
+        "message": "SET should be followed by the following keywords: ACTION, BUILD, FROM, OPTIONS, STOPRC, TO, WHERE",
+      },
+    ],
+    "severity": 1,
+    "source": "Endevor SCL extension",
+  },
+  Object {
+    "message": "Invalid scl. Expecting a space before end of statement operator \\".\\"",
+    "range": Object {
+      "end": Object {
+        "character": 2,
+        "line": 1,
+      },
+      "start": Object {
+        "character": 2,
+        "line": 1,
+      },
+    },
+    "severity": 1,
+    "source": "Endevor SCL extension",
+  },
+]
+`;
