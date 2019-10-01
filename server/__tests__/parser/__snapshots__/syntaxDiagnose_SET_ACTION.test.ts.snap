@@ -1,5 +1,121 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Test 2 simple INvalid SET ACTION, with lowercased keyword Should have no error 1`] = `12`;
+
+exports[`Test 2 simple INvalid SET ACTION, with lowercased keyword Should have no error 2`] = `15`;
+
+exports[`Test 2 simple INvalid SET ACTION, with lowercased keyword Should have no error 3`] = `22`;
+
+exports[`Test 2 simple INvalid SET ACTION, with lowercased keyword Should have no error 4`] = `28`;
+
+exports[`Test 2 simple INvalid SET ACTION, with lowercased keyword Should have no error 5`] = `29`;
+
+exports[`Test 2 simple INvalid SET ACTION, with lowercased keyword Should have no error 6`] = `36`;
+
+exports[`Test 2 simple INvalid SET ACTION, with lowercased keyword Should have no error 7`] = `
+Array [
+  Object {
+    "message": "Keyword should be uppercased",
+    "range": Object {
+      "end": Object {
+        "character": 2,
+        "line": 1,
+      },
+      "start": Object {
+        "character": 2,
+        "line": 1,
+      },
+    },
+    "relatedInformation": Array [
+      Object {
+        "location": Object {
+          "range": Object {
+            "end": Object {
+              "character": 2,
+              "line": 1,
+            },
+            "start": Object {
+              "character": 2,
+              "line": 1,
+            },
+          },
+          "uri": "mocked/uri",
+        },
+        "message": "Lowercased keyword might cause the scl action to fail when submitted",
+      },
+    ],
+    "severity": 2,
+    "source": "Endevor SCL extension",
+  },
+  Object {
+    "message": "Keyword should be uppercased",
+    "range": Object {
+      "end": Object {
+        "character": 2,
+        "line": 1,
+      },
+      "start": Object {
+        "character": 2,
+        "line": 1,
+      },
+    },
+    "relatedInformation": Array [
+      Object {
+        "location": Object {
+          "range": Object {
+            "end": Object {
+              "character": 2,
+              "line": 1,
+            },
+            "start": Object {
+              "character": 2,
+              "line": 1,
+            },
+          },
+          "uri": "mocked/uri",
+        },
+        "message": "Lowercased keyword might cause the scl action to fail when submitted",
+      },
+    ],
+    "severity": 2,
+    "source": "Endevor SCL extension",
+  },
+  Object {
+    "message": "Invalid action \\"invalid\\" specified after SET ACTION",
+    "range": Object {
+      "end": Object {
+        "character": 2,
+        "line": 1,
+      },
+      "start": Object {
+        "character": 2,
+        "line": 1,
+      },
+    },
+    "relatedInformation": Array [
+      Object {
+        "location": Object {
+          "range": Object {
+            "end": Object {
+              "character": 2,
+              "line": 1,
+            },
+            "start": Object {
+              "character": 2,
+              "line": 1,
+            },
+          },
+          "uri": "mocked/uri",
+        },
+        "message": "Valid actions are: ADD, ARCHIVE, COPY, DELETE, GENERATE, LIST, MOVE, PRINT, RESTORE, RETRIEVE, SIGNIN, TRANSFER, UPDATE, VALIDATE",
+      },
+    ],
+    "severity": 1,
+    "source": "Endevor SCL extension",
+  },
+]
+`;
+
 exports[`Test 4 simple INvalid SET ACTION Should have no error 1`] = `12`;
 
 exports[`Test 4 simple INvalid SET ACTION Should have no error 2`] = `19`;

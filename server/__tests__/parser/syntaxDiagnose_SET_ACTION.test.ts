@@ -50,3 +50,25 @@ describe("Test 4 simple INvalid SET ACTION", () => {
         expect(syntaxDiagnose.diagnostics).toMatchSnapshot();
     });
 });
+
+describe("Test 2 simple INvalid SET ACTION, with lowercased keyword", () => {
+    it("Should have no error", async () => {
+        let sourceTextDocument: any = {
+            getText() {
+                return " SET ACTION res . SET ACTiON invalid";
+            },
+            positionAt(offset: number): Position {
+                expect(offset).toMatchSnapshot();
+                const mockPosition: Position = {
+                    line: 1,
+                    character: 2
+                };
+                return mockPosition;
+            },
+            uri: "mocked/uri"
+        };
+
+        const syntaxDiagnose: SyntaxDiagnose = new SyntaxDiagnose(sourceTextDocument, true);
+        expect(syntaxDiagnose.diagnostics).toMatchSnapshot();
+    });
+});

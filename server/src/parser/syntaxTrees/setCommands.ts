@@ -24,46 +24,46 @@ export function parseSetAction(
         // 1st switch case check if action is correct
             // i++ check if there's line ending, then check if line ending is in correct pos
         switch (true) {
-            case match(token.value, "T_ADD"):
+            case match(token, "T_ADD", syntaxDiagnoseObj):
                 parseEOStatement(syntaxDiagnoseObj, currSCL, i);
                 return;
-            case match(token.value, "T_ARCHIVE"):
+            case match(token, "T_ARCHIVE", syntaxDiagnoseObj):
                 parseEOStatement(syntaxDiagnoseObj, currSCL, i);
                 return;
-            case match(token.value, "T_COPY"):
+            case match(token, "T_COPY", syntaxDiagnoseObj):
                 parseEOStatement(syntaxDiagnoseObj, currSCL, i);
                 return;
-            case match(token.value, "T_DELETE"):
+            case match(token, "T_DELETE", syntaxDiagnoseObj):
                 parseEOStatement(syntaxDiagnoseObj, currSCL, i);
                 return;
-            case match(token.value, "T_GENERATE"):
+            case match(token, "T_GENERATE", syntaxDiagnoseObj):
                 parseEOStatement(syntaxDiagnoseObj, currSCL, i);
                 return;
-            case match(token.value, "T_LIST"):
+            case match(token, "T_LIST", syntaxDiagnoseObj):
                 parseEOStatement(syntaxDiagnoseObj, currSCL, i);
                 return;
-            case match(token.value, "T_MOVE"):
+            case match(token, "T_MOVE", syntaxDiagnoseObj):
                 parseEOStatement(syntaxDiagnoseObj, currSCL, i);
                 return;
-            case match(token.value, "T_PRINT"):
+            case match(token, "T_PRINT", syntaxDiagnoseObj):
                 parseEOStatement(syntaxDiagnoseObj, currSCL, i);
                 return;
-            case match(token.value, "T_RESTORE"):
+            case match(token, "T_RESTORE", syntaxDiagnoseObj):
                 parseEOStatement(syntaxDiagnoseObj, currSCL, i);
                 return;
-            case match(token.value, "T_RETRIEVE"):
+            case match(token, "T_RETRIEVE", syntaxDiagnoseObj):
                 parseEOStatement(syntaxDiagnoseObj, currSCL, i);
                 return;
-            case match(token.value, "T_SIGNIN"):
+            case match(token, "T_SIGNIN", syntaxDiagnoseObj):
                 parseEOStatement(syntaxDiagnoseObj, currSCL, i);
                 return;
-            case match(token.value, "T_TRANSFER"):
+            case match(token, "T_TRANSFER", syntaxDiagnoseObj):
                 parseEOStatement(syntaxDiagnoseObj, currSCL, i);
                 return;
-            case match(token.value, "T_UPDATE"):
+            case match(token, "T_UPDATE", syntaxDiagnoseObj):
                 parseEOStatement(syntaxDiagnoseObj, currSCL, i);
                 return;
-            case match(token.value, "T_VALIDATE"):
+            case match(token, "T_VALIDATE", syntaxDiagnoseObj):
                 parseEOStatement(syntaxDiagnoseObj, currSCL, i);
                 return;
             default:

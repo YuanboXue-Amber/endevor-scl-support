@@ -39,7 +39,7 @@ export class SyntaxDiagnose {
             token = this.tokenizingTextContent.readNext();
             if (token.is_eof) {
                 if (thisSCL.length > 0) {
-                    if (match(thisSCL[0].value, "T_SET")) {
+                    if (match(thisSCL[0], "T_SET", this)) {
                         this.processSETSCL(thisSCL);
                         break;
                     }
@@ -53,7 +53,7 @@ export class SyntaxDiagnose {
             if (token.is_eoStatement) {
                 const sclToBeProcess = thisSCL;
                 thisSCL = [];
-                if (match(sclToBeProcess[0].value, "T_SET")) {
+                if (match(sclToBeProcess[0], "T_SET", this)) {
                     this.processSETSCL(sclToBeProcess);
                     continue;
                 }
@@ -75,25 +75,25 @@ export class SyntaxDiagnose {
         let i = 1;
         let token = currSCL[i];
         switch (true) {
-            case match(token.value, "T_ACTION"):
+            case match(token, "T_ACTION", this):
                 parseSetAction(this, currSCL, i);
                 return;
-            case match(token.value, "T_BUILD"):
+            case match(token, "T_BUILD", this):
 
                 break;
-            case match(token.value, "T_FROM"):
+            case match(token, "T_FROM", this):
 
                 break;
-            case match(token.value, "T_OPTIONS"):
+            case match(token, "T_OPTIONS", this):
 
                 break;
-            case match(token.value, "T_STOPRC"):
+            case match(token, "T_STOPRC", this):
 
                 break;
-            case match(token.value, "T_TO"):
+            case match(token, "T_TO", this):
 
                 break;
-            case match(token.value, "T_WHERE"):
+            case match(token, "T_WHERE", this):
 
                 break;
             default:
@@ -151,3 +151,4 @@ export class SyntaxDiagnose {
         this.diagnostics.push(diagnostic);
     }
 }
+

@@ -1,4 +1,7 @@
 import { isNullOrUndefined } from "util";
+import { TokenizedString } from "./tokenizer";
+import { SyntaxDiagnose } from "./syntaxDiagnose";
+import { DiagnosticSeverity } from "vscode-languageserver";
 
 export const ParserTags = {
     /**
@@ -40,14 +43,19 @@ export const ParserTags = {
 };
 
 /**
- * Match an input scl piece to a keyword specified by parserTag
+ * Match an input scl piece to a keyword specified by parserTag.
+ * When matched, perform a syntax diagnose on if the keyword is uppercased or not
  *
  * @export
- * @param {string} inputSCLpart
+ * @param {TokenizedString} inputSCLtoken
  * @param {string} parserTag field name in ParserTag classs, eg. T_ADD
  * @returns {boolean} true only when the field match the keyword represent by parserTag
+ * @returns {boolean}
  */
-export function match(inputSCLpart: string, parserTag: string): boolean {
+export function match(
+    inputSCLtoken: TokenizedString, parserTag: string, syntaxDiagnoseObj: SyntaxDiagnose): boolean {
+
+    const inputSCLpart = inputSCLtoken.value;
     let keyword = ParserTags.getString(parserTag);
     if (isNullOrUndefined(keyword)) {
         return false;
@@ -76,7 +84,25 @@ export function match(inputSCLpart: string, parserTag: string): boolean {
     const regex = new RegExp(composeRegex(mandatoryText, optionalText));
     const textMatchArray = sclkey.match(regex);
     if (!isNullOrUndefined(textMatchArray) && textMatchArray[0] === sclkey) {
+        keywordUppercaseDiagnose(inputSCLtoken, syntaxDiagnoseObj);
         return true;
     }
     return false;
+}
+
+export const QUICKFIXMSG = `Keyword should be uppercased`;
+
+/**
+ * Push a warning to a keyword that is not uppercased
+ *
+ * @export
+ * @param {TokenizedString} keywordInSource
+ * @param {SyntaxDiagnose} syntaxDiagnoseObj
+ */
+export function keywordUppercaseDiagnose(keywordInSource: TokenizedString, syntaxDiagnoseObj: SyntaxDiagnose) {
+    if (keywordInSource.value.toUpperCase() !== keywordInSource.value) {
+        syntaxDiagnoseObj.pushDiagnostic(DiagnosticSeverity.Warning, keywordInSource,
+            QUICKFIXMSG,
+            'Lowercased keyword might cause the scl action to fail when submitted');
+    }
 }
