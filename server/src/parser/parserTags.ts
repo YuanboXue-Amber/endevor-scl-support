@@ -4,20 +4,6 @@ import { SyntaxDiagnose } from "./syntaxDiagnose";
 import { DiagnosticSeverity } from "vscode-languageserver";
 
 export const ParserTags = {
-    /**
-     * Get field value based on field name
-     *
-     * @param {string} tag field name in ParserTag classs, eg. T_ADD
-     * @returns {(string | undefined)}
-     */
-    getString(tag: string): string | undefined {
-        const descriptor = Object.getOwnPropertyDescriptor(ParserTags, tag);
-        if (isNullOrUndefined(descriptor)) {
-            return undefined;
-        }
-        return descriptor.value;
-    },
-
     T_ACTION: "ACTion",
     T_ADD: "ADD",
     T_ARCHIVE: "ARChive",
@@ -43,6 +29,20 @@ export const ParserTags = {
 };
 
 /**
+ * Get field value based on field name
+ *
+ * @param {string} tag field name in ParserTag classs, eg. T_ADD
+ * @returns {(string | undefined)}
+ */
+function getString(tag: string): string | undefined {
+    const descriptor = Object.getOwnPropertyDescriptor(ParserTags, tag);
+    if (isNullOrUndefined(descriptor)) {
+        return undefined;
+    }
+    return descriptor.value;
+}
+
+/**
  * Match an input scl piece to a keyword specified by parserTag.
  * When matched, perform a syntax diagnose on if the keyword is uppercased or not
  *
@@ -56,7 +56,7 @@ export function match(
     inputSCLtoken: TokenizedString, parserTag: string, syntaxDiagnoseObj: SyntaxDiagnose): boolean {
 
     const inputSCLpart = inputSCLtoken.value;
-    let keyword = ParserTags.getString(parserTag);
+    let keyword = getString(parserTag);
     if (isNullOrUndefined(keyword)) {
         return false;
     }
@@ -95,11 +95,10 @@ export const QUICKFIXMSG = `Keyword should be uppercased`;
 /**
  * Push a warning to a keyword that is not uppercased
  *
- * @export
  * @param {TokenizedString} keywordInSource
  * @param {SyntaxDiagnose} syntaxDiagnoseObj
  */
-export function keywordUppercaseDiagnose(keywordInSource: TokenizedString, syntaxDiagnoseObj: SyntaxDiagnose) {
+function keywordUppercaseDiagnose(keywordInSource: TokenizedString, syntaxDiagnoseObj: SyntaxDiagnose) {
     if (keywordInSource.value.toUpperCase() !== keywordInSource.value) {
         syntaxDiagnoseObj.pushDiagnostic(DiagnosticSeverity.Warning, keywordInSource,
             QUICKFIXMSG,

@@ -1,24 +1,20 @@
 import {
     createConnection,
     TextDocuments,
-    Diagnostic,
-    DiagnosticSeverity,
     ProposedFeatures,
     InitializeParams,
-    DidChangeConfigurationNotification,
     CompletionItem,
-    CompletionItemKind,
     TextDocumentPositionParams,
     InitializeResult,
     CodeActionKind,
     CodeActionParams,
     CodeAction,
-    TextDocument,
     TextDocumentChangeEvent
 } from 'vscode-languageserver';
+import { isNullOrUndefined } from 'util';
 import { SyntaxDiagnose } from './parser/syntaxDiagnose';
 import { quickfix } from './codeActionProvider';
-import { isNullOrUndefined } from 'util';
+import { composeCompletionItemsFromKeywords } from './completionProvider';
 
 // Create a connection for the server. The connection uses Node's IPC as a transport.
 // Also include all preview / proposed LSP features.
@@ -28,25 +24,15 @@ let connection = createConnection(ProposedFeatures.all);
 // supports full document sync only
 let documents: TextDocuments = new TextDocuments();
 
-// // Does the client support the configuration abilities?
-// let hasConfigurationCapability: boolean = false;
-// // Does the client support multiple workspace folders?
-// let hasWorkspaceFolderCapability: boolean = false;
 // Does the clients accepts diagnostics with related information?
 let hasDiagnosticRelatedInformationCapability: boolean = false;
 let hasCodeActionLiteralsCapability: boolean = false;
 
+let completionItems: CompletionItem[] = [];
+
 connection.onInitialize((params: InitializeParams) => {
     let capabilities = params.capabilities;
 
-    // // Does the client support the `workspace/configuration` request?
-    // // If not, we will fall back using global settings
-    // hasConfigurationCapability = !!(
-    //     capabilities.workspace && !!capabilities.workspace.configuration
-    // );
-    // hasWorkspaceFolderCapability = !!(
-    //     capabilities.workspace && !!capabilities.workspace.workspaceFolders
-    // );
     hasDiagnosticRelatedInformationCapability = !!(
         capabilities.textDocument &&
         capabilities.textDocument.publishDiagnostics &&
@@ -80,59 +66,11 @@ connection.onInitialize((params: InitializeParams) => {
     return result;
 });
 
-// // After the client received the result of the initialize request
-// // but before the client is sending any other request or notification to the server
-// connection.onInitialized(() => {
-//     if (hasConfigurationCapability) {
-//         // Register for all configuration changes.
-//         connection.client.register(DidChangeConfigurationNotification.type, undefined);
-//     }
-//     if (hasWorkspaceFolderCapability) {
-//         connection.workspace.onDidChangeWorkspaceFolders(_event => {
-//             connection.console.log('Workspace folder change event received.');
-//         });
-//     }
-// });
-
-// The example settings
-// let globalSettings: ExampleSettings = defaultSettings;
-
-// // Cache the settings of all open documents
-// let documentSettings: Map<string, Thenable<ExampleSettings>> = new Map();
-
-// connection.onDidChangeConfiguration(change => {
-//     if (hasConfigurationCapability) {
-//         // Reset all cached document settings
-//         documentSettings.clear();
-//     } else {
-//         globalSettings = <ExampleSettings>(
-//             (change.settings.endevorSclLanguageServer || defaultSettings)
-//         );
-//     }
-
-//     // Revalidate all open text documents
-//     documents.all().forEach(validateTextDocument);
-// });
-
-// function getDocumentSettings(resource: string): Thenable<ExampleSettings> {
-//     if (!hasConfigurationCapability) {
-//         return Promise.resolve(globalSettings);
-//     }
-//     let result = documentSettings.get(resource);
-//     if (!result) {
-//         result = connection.workspace.getConfiguration({
-//             scopeUri: resource,
-//             section: 'endevorSclLanguageServer'
-//         });
-//         documentSettings.set(resource, result);
-//     }
-//     return result;
-// }
-
-// // Only keep settings for open documents
-// documents.onDidClose(e => {
-//     documentSettings.delete(e.document.uri);
-// });
+// After the client received the result of the initialize request
+// but before the client is sending any other request or notification to the server
+connection.onInitialized(() => {
+    completionItems = composeCompletionItemsFromKeywords(); // initialize completion items
+});
 
 // The content of a text document has changed. This event is emitted
 // when the text document first opened or when its content has changed.
@@ -164,58 +102,16 @@ async function provideCodeActions(parms: CodeActionParams): Promise<CodeAction[]
 // This handler provides the initial list of the completion items.
 connection.onCompletion(
     (_textDocumentPosition: TextDocumentPositionParams): CompletionItem[] => {
-        // The pass parameter contains the position of the text document in
-        // which code complete got requested. For the example we ignore this
-        // info and always provide the same completion items.
-        return [
-            {
-                label: 'TypeScript',
-                kind: CompletionItemKind.Text,
-                data: 1
-            },
-            {
-                label: 'JavaScript',
-                kind: CompletionItemKind.Text,
-                data: 2
-            }
-        ];
+        return completionItems;
     }
 );
 
-// This handler resolves additional information for the item selected in
-// the completion list.
+// A void completion resolve function just to handle the completion/resolve request.
 connection.onCompletionResolve(
     (item: CompletionItem): CompletionItem => {
-        if (item.data === 1) {
-            item.detail = 'TypeScript details';
-            item.documentation = 'TypeScript documentation';
-        } else if (item.data === 2) {
-            item.detail = 'JavaScript details';
-            item.documentation = 'JavaScript documentation';
-        }
         return item;
     }
 );
-
-/*
-connection.onDidOpenTextDocument((params) => {
-	// A text document got opened in VSCode.
-	// params.uri uniquely identifies the document. For documents store on disk this is a file URI.
-	// params.text the initial full content of the document.
-	connection.console.log(`${params.textDocument.uri} opened.`);
-});
-connection.onDidChangeTextDocument((params) => {
-	// The content of a text document did change in VSCode.
-	// params.uri uniquely identifies the document.
-	// params.contentChanges describe the content changes to the document.
-	connection.console.log(`${params.textDocument.uri} changed: ${JSON.stringify(params.contentChanges)}`);
-});
-connection.onDidCloseTextDocument((params) => {
-	// A text document got closed in VSCode.
-	// params.uri uniquely identifies the document.
-	connection.console.log(`${params.textDocument.uri} closed.`);
-});
-*/
 
 // Make the text document manager listen on the connection
 // for open, change and close text document events
