@@ -3,7 +3,11 @@ import { TokenizedString, Tokenizer } from "./tokenizer";
 import { match } from "./parserTags";
 import { isNullOrUndefined } from "util";
 import { parseSetAction } from "./syntaxTrees/setCommands";
-import { defaultSettings } from "../server";
+
+interface ExampleSettings {
+    maxNumberOfProblems: number;
+}
+export const defaultSettings: ExampleSettings = { maxNumberOfProblems: 1000 };
 
 export class SyntaxDiagnose {
     textDocument: TextDocument;
