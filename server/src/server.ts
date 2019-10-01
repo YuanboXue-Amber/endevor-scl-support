@@ -1,7 +1,6 @@
 import {
     createConnection,
     TextDocuments,
-    TextDocument,
     Diagnostic,
     DiagnosticSeverity,
     ProposedFeatures,
@@ -9,9 +8,17 @@ import {
     DidChangeConfigurationNotification,
     CompletionItem,
     CompletionItemKind,
-    TextDocumentPositionParams
+    TextDocumentPositionParams,
+    InitializeResult,
+    CodeActionKind,
+    CodeActionParams,
+    CodeAction,
+    TextDocument,
+    TextDocumentChangeEvent
 } from 'vscode-languageserver';
 import { SyntaxDiagnose } from './parser/syntaxDiagnose';
+import { quickfix } from './codeActionProvider';
+import { isNullOrUndefined } from 'util';
 
 // Create a connection for the server. The connection uses Node's IPC as a transport.
 // Also include all preview / proposed LSP features.
@@ -27,6 +34,7 @@ let documents: TextDocuments = new TextDocuments();
 // let hasWorkspaceFolderCapability: boolean = false;
 // Does the clients accepts diagnostics with related information?
 let hasDiagnosticRelatedInformationCapability: boolean = false;
+let hasCodeActionLiteralsCapability: boolean = false;
 
 connection.onInitialize((params: InitializeParams) => {
     let capabilities = params.capabilities;
@@ -45,7 +53,13 @@ connection.onInitialize((params: InitializeParams) => {
         capabilities.textDocument.publishDiagnostics.relatedInformation
     );
 
-    return {
+    hasCodeActionLiteralsCapability = !!(
+      capabilities.textDocument &&
+      capabilities.textDocument.codeAction &&
+      capabilities.textDocument.codeAction.codeActionLiteralSupport
+    );
+
+    const result: InitializeResult = {
         capabilities: {
             textDocumentSync: documents.syncKind,
             // Tell the client that the server supports code completion
@@ -53,9 +67,17 @@ connection.onInitialize((params: InitializeParams) => {
                 resolveProvider: true
             },
             hoverProvider: true, // AmberTODO
-            documentHighlightProvider: true
+            documentHighlightProvider: true,
         }
     };
+
+    if (hasCodeActionLiteralsCapability) {
+        result.capabilities.codeActionProvider = {
+            codeActionKinds: [CodeActionKind.QuickFix]
+        };
+    }
+
+    return result;
 });
 
 // // After the client received the result of the initialize request
@@ -73,12 +95,6 @@ connection.onInitialize((params: InitializeParams) => {
 // });
 
 // The example settings
-interface ExampleSettings {
-    maxNumberOfProblems: number;
-}
-
-// The global settings, used when the `workspace/configuration` request is not supported by the client.
-export const defaultSettings: ExampleSettings = { maxNumberOfProblems: 1000 };
 // let globalSettings: ExampleSettings = defaultSettings;
 
 // // Cache the settings of all open documents
@@ -120,15 +136,30 @@ export const defaultSettings: ExampleSettings = { maxNumberOfProblems: 1000 };
 
 // The content of a text document has changed. This event is emitted
 // when the text document first opened or when its content has changed.
-documents.onDidChangeContent(change => {
-    const syntaxDiagnose: SyntaxDiagnose = new SyntaxDiagnose(change.document, hasDiagnosticRelatedInformationCapability);
-    connection.sendDiagnostics({ uri: change.document.uri, diagnostics: syntaxDiagnose.diagnostics });
-});
+documents.onDidChangeContent(validateTextDocument);
 
-// connection.onDidChangeWatchedFiles(_change => {
-//     // Monitored files have change in VSCode
-//     connection.console.log('We received an file change event');
-// });
+async function validateTextDocument(textDocumentChange: TextDocumentChangeEvent): Promise<void> {
+    const syntaxDiagnose: SyntaxDiagnose = new SyntaxDiagnose(
+        textDocumentChange.document,
+        hasDiagnosticRelatedInformationCapability);
+    connection.sendDiagnostics({
+        uri: textDocumentChange.document.uri,
+        diagnostics: syntaxDiagnose.diagnostics
+    });
+}
+
+connection.onCodeAction(provideCodeActions);
+
+async function provideCodeActions(parms: CodeActionParams): Promise<CodeAction[]> {
+    if (!parms.context.diagnostics.length) {
+        return [];
+    }
+    const textDocument = documents.get(parms.textDocument.uri);
+    if (isNullOrUndefined(textDocument)) {
+        return [];
+    }
+    return quickfix(textDocument, parms);
+}
 
 // This handler provides the initial list of the completion items.
 connection.onCompletion(
