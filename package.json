@@ -71,7 +71,8 @@
 		"compile": "tsc -b",
 		"watch": "tsc -b -w",
 		"postinstall": "cd client && npm install && cd ../server && npm install && cd ..",
-		"test": "jest"
+		"test": "jest",
+		"updatehilight": "tsc -b && node ./server/out/jsonGenerator.js"
 	},
 	"devDependencies": {
 		"@types/jest": "^24.0.18",
