@@ -4,7 +4,6 @@ exports[`Test a complex scl with 2 statements from resources  1`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 2,
@@ -16,7 +15,6 @@ exports[`Test a complex scl with 2 statements from resources  2`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 9,
@@ -28,7 +26,6 @@ exports[`Test a complex scl with 2 statements from resources  3`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 14,
@@ -40,7 +37,6 @@ exports[`Test a complex scl with 2 statements from resources  4`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 29,
@@ -52,7 +48,6 @@ exports[`Test a complex scl with 2 statements from resources  5`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 32,
@@ -64,7 +59,6 @@ exports[`Test a complex scl with 2 statements from resources  6`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 44,
@@ -76,7 +70,6 @@ exports[`Test a complex scl with 2 statements from resources  7`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 55,
@@ -88,7 +81,6 @@ exports[`Test a complex scl with 2 statements from resources  8`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 62,
@@ -100,7 +92,6 @@ exports[`Test a complex scl with 2 statements from resources  9`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 81,
@@ -112,7 +103,6 @@ exports[`Test a complex scl with 2 statements from resources  10`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 87,
@@ -124,7 +114,6 @@ exports[`Test a complex scl with 2 statements from resources  11`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 94,
@@ -136,7 +125,6 @@ exports[`Test a complex scl with 2 statements from resources  12`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 101,
@@ -148,7 +136,6 @@ exports[`Test a complex scl with 2 statements from resources  13`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 113,
@@ -160,7 +147,6 @@ exports[`Test a complex scl with 2 statements from resources  14`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 154,
@@ -172,7 +158,6 @@ exports[`Test a complex scl with 2 statements from resources  15`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 162,
@@ -184,7 +169,6 @@ exports[`Test a complex scl with 2 statements from resources  16`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 171,
@@ -196,7 +180,6 @@ exports[`Test a complex scl with 2 statements from resources  17`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 199,
@@ -208,7 +191,6 @@ exports[`Test a complex scl with 2 statements from resources  18`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 207,
@@ -220,7 +202,6 @@ exports[`Test a complex scl with 2 statements from resources  19`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 216,
@@ -232,7 +213,6 @@ exports[`Test a complex scl with 2 statements from resources  20`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 245,
@@ -244,7 +224,6 @@ exports[`Test a complex scl with 2 statements from resources  21`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 252,
@@ -256,7 +235,6 @@ exports[`Test a complex scl with 2 statements from resources  22`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 259,
@@ -268,7 +246,6 @@ exports[`Test a complex scl with 2 statements from resources  23`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 267,
@@ -280,7 +257,6 @@ exports[`Test a complex scl with 2 statements from resources  24`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 296,
@@ -292,7 +268,6 @@ exports[`Test a complex scl with 2 statements from resources  25`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 299,
@@ -304,7 +279,6 @@ exports[`Test a complex scl with 2 statements from resources  26`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 303,
@@ -316,7 +290,6 @@ exports[`Test a complex scl with 2 statements from resources  27`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 310,
@@ -328,7 +301,6 @@ exports[`Test a complex scl with 2 statements from resources  28`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 324,
@@ -340,7 +312,6 @@ exports[`Test a complex scl with 2 statements from resources  29`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 332,
@@ -352,7 +323,6 @@ exports[`Test a complex scl with 2 statements from resources  30`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 342,
@@ -364,7 +334,6 @@ exports[`Test a complex scl with 2 statements from resources  31`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 348,
@@ -376,7 +345,6 @@ exports[`Test a complex scl with 2 statements from resources  32`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 364,
@@ -388,7 +356,6 @@ exports[`Test a complex scl with 2 statements from resources  33`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 372,
@@ -400,7 +367,6 @@ exports[`Test a complex scl with 2 statements from resources  34`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 378,
@@ -412,7 +378,6 @@ exports[`Test a complex scl with 2 statements from resources  35`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 385,
@@ -424,7 +389,6 @@ exports[`Test a complex scl with 2 statements from resources  36`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 398,
@@ -436,7 +400,6 @@ exports[`Test a complex scl with 2 statements from resources  37`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 401,
@@ -448,7 +411,6 @@ exports[`Test a complex scl with 2 statements from resources  38`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 405,
@@ -460,7 +422,6 @@ exports[`Test a complex scl with 2 statements from resources  39`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 414,
@@ -472,7 +433,6 @@ exports[`Test a complex scl with 2 statements from resources  40`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 424,
@@ -484,7 +444,6 @@ exports[`Test a complex scl with 2 statements from resources  41`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 435,
@@ -496,7 +455,6 @@ exports[`Test a complex scl with 2 statements from resources  42`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 446,
@@ -508,7 +466,6 @@ exports[`Test a complex scl with 2 statements from resources  43`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 455,
@@ -520,7 +477,6 @@ exports[`Test a complex scl with 2 statements from resources  44`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 465,
@@ -532,7 +488,6 @@ exports[`Test a complex scl with 2 statements from resources  45`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 471,
@@ -544,7 +499,6 @@ exports[`Test a complex scl with 2 statements from resources  46`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 478,
@@ -556,7 +510,6 @@ exports[`Test a complex scl with 2 statements from resources  47`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 491,
@@ -568,7 +521,6 @@ exports[`Test a complex scl with 2 statements from resources  48`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 502,
@@ -580,7 +532,6 @@ exports[`Test a complex scl with 2 statements from resources  49`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 511,
@@ -592,7 +543,6 @@ exports[`Test a complex scl with 2 statements from resources  50`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 528,
@@ -604,7 +554,6 @@ exports[`Test a complex scl with 2 statements from resources  51`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 533,
@@ -616,7 +565,6 @@ exports[`Test a complex scl with 2 statements from resources  52`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 543,
@@ -628,7 +576,6 @@ exports[`Test a complex scl with 2 statements from resources  53`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 554,
@@ -640,7 +587,6 @@ exports[`Test a complex scl with 2 statements from resources  54`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 561,
@@ -652,7 +598,6 @@ exports[`Test a complex scl with 2 statements from resources  55`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 569,
@@ -664,7 +609,6 @@ exports[`Test a complex scl with 2 statements from resources  56`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 576,
@@ -676,7 +620,6 @@ exports[`Test a complex scl with 2 statements from resources  57`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 584,
@@ -688,7 +631,6 @@ exports[`Test a complex scl with 2 statements from resources  58`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 592,
@@ -700,7 +642,6 @@ exports[`Test a complex scl with 2 statements from resources  59`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 597,
@@ -712,7 +653,6 @@ exports[`Test a complex scl with 2 statements from resources  60`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 604,
@@ -724,7 +664,6 @@ exports[`Test a complex scl with 2 statements from resources  61`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 606,
@@ -736,7 +675,6 @@ exports[`Test a complex scl with 2 statements from resources  62`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 609,
@@ -748,7 +686,6 @@ exports[`Test a complex scl with 2 statements from resources  63`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 617,
@@ -760,7 +697,6 @@ exports[`Test a complex scl with 2 statements from resources  64`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 629,
@@ -772,7 +708,6 @@ exports[`Test a complex scl with 2 statements from resources  65`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 637,
@@ -784,7 +719,6 @@ exports[`Test a complex scl with 2 statements from resources  66`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 652,
@@ -796,7 +730,6 @@ exports[`Test a complex scl with 2 statements from resources  67`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 664,
@@ -808,7 +741,6 @@ exports[`Test a complex scl with 2 statements from resources  68`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 672,
@@ -820,7 +752,6 @@ exports[`Test a complex scl with 2 statements from resources  69`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 675,
@@ -832,7 +763,6 @@ exports[`Test a complex scl with 2 statements from resources  70`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 680,
@@ -844,7 +774,6 @@ exports[`Test a complex scl with 2 statements from resources  71`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 688,
@@ -856,7 +785,6 @@ exports[`Test a complex scl with 2 statements from resources  72`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 695,
@@ -868,7 +796,6 @@ exports[`Test a complex scl with 2 statements from resources  73`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 698,
@@ -880,7 +807,6 @@ exports[`Test a complex scl with 2 statements from resources  74`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 706,
@@ -892,7 +818,6 @@ exports[`Test a complex scl with 2 statements from resources  75`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 713,
@@ -904,7 +829,6 @@ exports[`Test a complex scl with 2 statements from resources  76`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 716,
@@ -916,7 +840,6 @@ exports[`Test a complex scl with 2 statements from resources  77`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 729,
@@ -928,7 +851,6 @@ exports[`Test a complex scl with 2 statements from resources  78`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 737,
@@ -940,7 +862,6 @@ exports[`Test a complex scl with 2 statements from resources  79`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 746,
@@ -952,7 +873,6 @@ exports[`Test a complex scl with 2 statements from resources  80`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 758,
@@ -964,7 +884,6 @@ exports[`Test a complex scl with 2 statements from resources  81`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 768,
@@ -976,7 +895,6 @@ exports[`Test a complex scl with 2 statements from resources  82`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 778,
@@ -988,7 +906,6 @@ exports[`Test a complex scl with 2 statements from resources  83`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 790,
@@ -1000,7 +917,6 @@ exports[`Test a complex scl with 2 statements from resources  84`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 800,
@@ -1012,7 +928,6 @@ exports[`Test a complex scl with 2 statements from resources  85`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 807,
@@ -1024,7 +939,6 @@ exports[`Test a complex scl with 2 statements from resources  86`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 819,
@@ -1036,7 +950,6 @@ exports[`Test a complex scl with 2 statements from resources  87`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 831,
@@ -1048,7 +961,6 @@ exports[`Test a complex scl with 2 statements from resources  88`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 841,
@@ -1060,7 +972,6 @@ exports[`Test a complex scl with 2 statements from resources  89`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 844,
@@ -1072,7 +983,6 @@ exports[`Test a complex scl with 2 statements from resources  90`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 849,
@@ -1084,7 +994,6 @@ exports[`Test a complex scl with 2 statements from resources  91`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 857,
@@ -1096,7 +1005,6 @@ exports[`Test a complex scl with 2 statements from resources  92`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 864,
@@ -1108,7 +1016,6 @@ exports[`Test a complex scl with 2 statements from resources  93`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 867,
@@ -1120,7 +1027,6 @@ exports[`Test a complex scl with 2 statements from resources  94`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 877,
@@ -1132,7 +1038,6 @@ exports[`Test a complex scl with 2 statements from resources  95`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 884,
@@ -1144,7 +1049,6 @@ exports[`Test a complex scl with 2 statements from resources  96`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 887,
@@ -1156,7 +1060,6 @@ exports[`Test a complex scl with 2 statements from resources  97`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 900,
@@ -1168,7 +1071,6 @@ exports[`Test a complex scl with 2 statements from resources  98`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": true,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": false,
   "starti": 903,
@@ -1180,7 +1082,6 @@ exports[`Test a complex scl with 2 statements from resources  99`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 916,
@@ -1192,7 +1093,6 @@ exports[`Test a complex scl with 2 statements from resources  100`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 920,
@@ -1204,7 +1104,6 @@ exports[`Test a complex scl with 2 statements from resources  101`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 929,
@@ -1216,7 +1115,6 @@ exports[`Test a complex scl with 2 statements from resources  102`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 943,
@@ -1228,7 +1126,6 @@ exports[`Test a complex scl with 2 statements from resources  103`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 948,
@@ -1240,7 +1137,6 @@ exports[`Test a complex scl with 2 statements from resources  104`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 955,
@@ -1252,7 +1148,6 @@ exports[`Test a complex scl with 2 statements from resources  105`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 985,
@@ -1264,7 +1159,6 @@ exports[`Test a complex scl with 2 statements from resources  106`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 992,
@@ -1276,7 +1170,6 @@ exports[`Test a complex scl with 2 statements from resources  107`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 1006,
@@ -1288,7 +1181,6 @@ exports[`Test a complex scl with 2 statements from resources  108`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 1009,
@@ -1300,7 +1192,6 @@ exports[`Test a complex scl with 2 statements from resources  109`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 1021,
@@ -1312,7 +1203,6 @@ exports[`Test a complex scl with 2 statements from resources  110`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 1041,
@@ -1324,7 +1214,6 @@ exports[`Test a complex scl with 2 statements from resources  111`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 1048,
@@ -1336,7 +1225,6 @@ exports[`Test a complex scl with 2 statements from resources  112`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 1069,
@@ -1348,7 +1236,6 @@ exports[`Test a complex scl with 2 statements from resources  113`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 1079,
@@ -1360,7 +1247,6 @@ exports[`Test a complex scl with 2 statements from resources  114`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 1105,
@@ -1372,7 +1258,6 @@ exports[`Test a complex scl with 2 statements from resources  115`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 1110,
@@ -1384,7 +1269,6 @@ exports[`Test a complex scl with 2 statements from resources  116`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 1125,
@@ -1396,7 +1280,6 @@ exports[`Test a complex scl with 2 statements from resources  117`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 1146,
@@ -1408,7 +1291,6 @@ exports[`Test a complex scl with 2 statements from resources  118`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 1151,
@@ -1420,7 +1302,6 @@ exports[`Test a complex scl with 2 statements from resources  119`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 1171,
@@ -1432,7 +1313,6 @@ exports[`Test a complex scl with 2 statements from resources  120`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 1180,
@@ -1444,7 +1324,6 @@ exports[`Test a complex scl with 2 statements from resources  121`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 1228,
@@ -1456,7 +1335,6 @@ exports[`Test a complex scl with 2 statements from resources  122`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": true,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": false,
   "starti": 1237,
@@ -1468,7 +1346,6 @@ exports[`Test a complex scl with 2 statements from resources  123`] = `
 Object {
   "is_eoInput": true,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": false,
   "starti": 1238,
@@ -1480,7 +1357,6 @@ exports[`Test a complex scl with pkg notes from resources  1`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 1,
@@ -1492,7 +1368,6 @@ exports[`Test a complex scl with pkg notes from resources  2`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 9,
@@ -1504,7 +1379,6 @@ exports[`Test a complex scl with pkg notes from resources  3`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 17,
@@ -1516,7 +1390,6 @@ exports[`Test a complex scl with pkg notes from resources  4`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 93,
@@ -1528,7 +1401,6 @@ exports[`Test a complex scl with pkg notes from resources  5`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 101,
@@ -1540,7 +1412,6 @@ exports[`Test a complex scl with pkg notes from resources  6`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": true,
   "is_word": false,
   "starti": 107,
@@ -1552,7 +1423,6 @@ exports[`Test a complex scl with pkg notes from resources  7`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": true,
   "is_word": false,
   "starti": 110,
@@ -1564,7 +1434,6 @@ exports[`Test a complex scl with pkg notes from resources  8`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 110,
@@ -1576,7 +1445,6 @@ exports[`Test a complex scl with pkg notes from resources  9`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": true,
   "is_word": false,
   "starti": 134,
@@ -1588,7 +1456,6 @@ exports[`Test a complex scl with pkg notes from resources  10`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 162,
@@ -1601,7 +1468,6 @@ exports[`Test a complex scl with pkg notes from resources  11`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": true,
   "is_word": false,
   "starti": 188,
@@ -1613,7 +1479,6 @@ exports[`Test a complex scl with pkg notes from resources  12`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 216,
@@ -1625,7 +1490,6 @@ exports[`Test a complex scl with pkg notes from resources  13`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": true,
   "is_word": false,
   "starti": 268,
@@ -1637,7 +1501,6 @@ exports[`Test a complex scl with pkg notes from resources  14`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": true,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": false,
   "starti": 275,
@@ -1649,7 +1512,6 @@ exports[`Test a complex scl with pkg notes from resources  15`] = `
 Object {
   "is_eoInput": true,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": false,
   "starti": 305,
@@ -1661,7 +1523,6 @@ exports[`Test a complex scl with pkg notes from resources  16`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 1,
@@ -1673,7 +1534,6 @@ exports[`Test a complex scl with pkg notes from resources  17`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 9,
@@ -1685,7 +1545,6 @@ exports[`Test a complex scl with pkg notes from resources  18`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 17,
@@ -1697,7 +1556,6 @@ exports[`Test a complex scl with pkg notes from resources  19`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 93,
@@ -1709,7 +1567,6 @@ exports[`Test a complex scl with pkg notes from resources  20`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 101,
@@ -1721,7 +1578,6 @@ exports[`Test a complex scl with pkg notes from resources  21`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": true,
   "is_word": false,
   "starti": 107,
@@ -1733,7 +1589,6 @@ exports[`Test a complex scl with pkg notes from resources  22`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": true,
   "is_word": false,
   "starti": 110,
@@ -1745,7 +1600,6 @@ exports[`Test a complex scl with pkg notes from resources  23`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 110,
@@ -1757,7 +1611,6 @@ exports[`Test a complex scl with pkg notes from resources  24`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": true,
   "is_word": false,
   "starti": 134,
@@ -1769,7 +1622,6 @@ exports[`Test a complex scl with pkg notes from resources  25`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 162,
@@ -1782,7 +1634,6 @@ exports[`Test a complex scl with pkg notes from resources  26`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": true,
   "is_word": false,
   "starti": 188,
@@ -1794,7 +1645,6 @@ exports[`Test a complex scl with pkg notes from resources  27`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 216,
@@ -1806,7 +1656,6 @@ exports[`Test a complex scl with pkg notes from resources  28`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": true,
   "is_word": false,
   "starti": 268,
@@ -1818,7 +1667,6 @@ exports[`Test a complex scl with pkg notes from resources  29`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": true,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": false,
   "starti": 275,
@@ -1830,7 +1678,6 @@ exports[`Test a complex scl with pkg notes from resources  30`] = `
 Object {
   "is_eoInput": true,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": false,
   "starti": 305,
@@ -1842,7 +1689,6 @@ exports[`Test a simple scl from resources  1`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 0,
@@ -1854,7 +1700,6 @@ exports[`Test a simple scl from resources  2`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 5,
@@ -1866,7 +1711,6 @@ exports[`Test a simple scl from resources  3`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 9,
@@ -1878,7 +1722,6 @@ exports[`Test a simple scl from resources  4`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": true,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": false,
   "starti": 13,
@@ -1890,7 +1733,6 @@ exports[`Test a simple scl from resources  5`] = `
 Object {
   "is_eoInput": true,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": false,
   "starti": 14,
@@ -1902,7 +1744,6 @@ exports[`Test a simple scl from resources  6`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 0,
@@ -1914,7 +1755,6 @@ exports[`Test a simple scl from resources  7`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 5,
@@ -1926,7 +1766,6 @@ exports[`Test a simple scl from resources  8`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 9,
@@ -1938,7 +1777,6 @@ exports[`Test a simple scl from resources  9`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": true,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": false,
   "starti": 13,
@@ -1950,7 +1788,6 @@ exports[`Test a simple scl from resources  10`] = `
 Object {
   "is_eoInput": true,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": false,
   "starti": 14,
@@ -1962,7 +1799,6 @@ exports[`Test a simple string  1`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 0,
@@ -1974,7 +1810,6 @@ exports[`Test a simple string  2`] = `
 Object {
   "is_eoInput": true,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": false,
   "starti": 4,
@@ -1986,7 +1821,6 @@ exports[`Test a simple string  3`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 0,
@@ -1998,7 +1832,6 @@ exports[`Test a simple string  4`] = `
 Object {
   "is_eoInput": true,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": false,
   "starti": 4,
@@ -2010,7 +1843,6 @@ exports[`Test a simple string with unbalanced quotes  1`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 0,
@@ -2022,7 +1854,6 @@ exports[`Test a simple string with unbalanced quotes  2`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 5,
@@ -2034,7 +1865,6 @@ exports[`Test a simple string with unbalanced quotes  3`] = `
 Object {
   "is_eoInput": true,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": false,
   "starti": 13,
@@ -2046,7 +1876,6 @@ exports[`Test a simple string with unbalanced quotes  4`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 0,
@@ -2058,7 +1887,6 @@ exports[`Test a simple string with unbalanced quotes  5`] = `
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 5,
@@ -2070,7 +1898,6 @@ exports[`Test a simple string with unbalanced quotes  6`] = `
 Object {
   "is_eoInput": true,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": false,
   "starti": 13,
@@ -2082,7 +1909,6 @@ exports[`Test an empty string  1`] = `
 Object {
   "is_eoInput": true,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": false,
   "starti": 0,
@@ -2094,7 +1920,6 @@ exports[`Test an empty string  2`] = `
 Object {
   "is_eoInput": true,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": false,
   "starti": 0,
@@ -2106,7 +1931,6 @@ exports[`Test an empty string with new lines  1`] = `
 Object {
   "is_eoInput": true,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": false,
   "starti": 4,
@@ -2118,7 +1942,6 @@ exports[`Test an empty string with new lines  2`] = `
 Object {
   "is_eoInput": true,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": false,
   "starti": 4,
@@ -2130,7 +1953,6 @@ exports[`Test an invalid SCL that has invalid statement ending from resources  1
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 0,
@@ -2142,7 +1964,6 @@ exports[`Test an invalid SCL that has invalid statement ending from resources  2
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 5,
@@ -2154,7 +1975,6 @@ exports[`Test an invalid SCL that has invalid statement ending from resources  3
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 9,
@@ -2166,7 +1986,6 @@ exports[`Test an invalid SCL that has invalid statement ending from resources  4
 Object {
   "is_eoInput": false,
   "is_eoStatement": true,
-  "is_keyword": false,
   "is_op_char": true,
   "is_word": false,
   "starti": 12,
@@ -2178,7 +1997,6 @@ exports[`Test an invalid SCL that has invalid statement ending from resources  5
 Object {
   "is_eoInput": true,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": false,
   "starti": 13,
@@ -2190,7 +2008,6 @@ exports[`Test an invalid SCL that has invalid statement ending from resources  6
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 0,
@@ -2202,7 +2019,6 @@ exports[`Test an invalid SCL that has invalid statement ending from resources  7
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 5,
@@ -2214,7 +2030,6 @@ exports[`Test an invalid SCL that has invalid statement ending from resources  8
 Object {
   "is_eoInput": false,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": true,
   "starti": 9,
@@ -2226,7 +2041,6 @@ exports[`Test an invalid SCL that has invalid statement ending from resources  9
 Object {
   "is_eoInput": false,
   "is_eoStatement": true,
-  "is_keyword": false,
   "is_op_char": true,
   "is_word": false,
   "starti": 12,
@@ -2238,7 +2052,6 @@ exports[`Test an invalid SCL that has invalid statement ending from resources  1
 Object {
   "is_eoInput": true,
   "is_eoStatement": false,
-  "is_keyword": false,
   "is_op_char": false,
   "is_word": false,
   "starti": 13,

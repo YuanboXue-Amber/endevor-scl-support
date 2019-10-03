@@ -13,7 +13,6 @@ const testbody = ((sclInput: string) => {
         value: "",
         starti: 0,
         is_word: false,
-        is_keyword: false,
         is_op_char: false,
         is_eoStatement: false,
         is_eoInput: false
@@ -31,7 +30,6 @@ const testbody2 = ((sclInput: string) => {
         value: "",
         starti: 0,
         is_word: false,
-        is_keyword: false,
         is_op_char: false,
         is_eoStatement: false,
         is_eoInput: false

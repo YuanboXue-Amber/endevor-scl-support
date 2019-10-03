@@ -8,8 +8,6 @@ export interface ITokenizedString {
     starti: number;
     // true if value is a word
     is_word: boolean;
-    // true if value is not only a word, but also a keyword (AmberTODO, this is to be identified when parse in a tree)
-    is_keyword: boolean;
     // true if value is a single operator character (excluding ".", eoStatement character)
     is_op_char: boolean;
     // true if value symbolize the end of one scl statement "."
@@ -102,7 +100,6 @@ class TokenizerBase {
                 value: "",
                 starti: currIndex,
                 is_word: false,
-                is_keyword: false,
                 is_op_char: false,
                 is_eoStatement: false,
                 is_eoInput: true
@@ -118,7 +115,6 @@ class TokenizerBase {
                     value: next,
                     starti,
                     is_word: false,
-                    is_keyword: false,
                     is_op_char: false,
                     is_eoStatement: true,
                     is_eoInput: false
@@ -129,7 +125,6 @@ class TokenizerBase {
                     value: next,
                     starti,
                     is_word: false,
-                    is_keyword: false,
                     is_op_char: true,
                     is_eoStatement: false,
                     is_eoInput: false
@@ -142,7 +137,6 @@ class TokenizerBase {
             value: next,
             starti,
             is_word: true,
-            is_keyword: false,
             is_op_char: false,
             is_eoStatement: false,
             is_eoInput: false
@@ -339,7 +333,6 @@ export class Tokenizer extends TokenizerBase {
                 value: opt,
                 starti: this.tmpStorage.starti,
                 is_word: false,
-                is_keyword: false,
                 is_op_char: true,
                 is_eoStatement: this.tmpStorage.value[0] === "." ? true : false,
                 is_eoInput: false
@@ -349,7 +342,6 @@ export class Tokenizer extends TokenizerBase {
                 value: this.tmpStorage.value.substring(0, this.tmpStorage.value.length - 1),
                 starti: this.tmpStorage.starti,
                 is_word: true,
-                is_keyword: false,
                 is_op_char: false,
                 is_eoStatement: false,
                 is_eoInput: false
@@ -359,7 +351,6 @@ export class Tokenizer extends TokenizerBase {
                 value: opt,
                 starti: this.tmpStorage.starti + toBeReturn.value.length,
                 is_word: false,
-                is_keyword: false,
                 is_op_char: true,
                 is_eoStatement: opt === "." ? true : false,
                 is_eoInput: false

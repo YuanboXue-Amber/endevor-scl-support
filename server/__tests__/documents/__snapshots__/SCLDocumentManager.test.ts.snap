@@ -11,7 +11,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 0,
@@ -20,7 +19,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 4,
@@ -29,7 +27,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 11,
@@ -38,7 +35,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": true,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": false,
     "starti": 15,
@@ -99,7 +95,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 19,
@@ -108,7 +103,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 23,
@@ -117,7 +111,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 30,
@@ -126,7 +119,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": true,
-    "is_keyword": false,
     "is_op_char": true,
     "is_word": false,
     "starti": 37,
@@ -168,7 +160,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 41,
@@ -177,7 +168,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 45,
@@ -186,7 +176,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": true,
-    "is_keyword": false,
     "is_op_char": true,
     "is_word": false,
     "starti": 52,
@@ -252,7 +241,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 22,
@@ -261,7 +249,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 26,
@@ -270,7 +257,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 33,
@@ -279,7 +265,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": true,
-    "is_keyword": false,
     "is_op_char": true,
     "is_word": false,
     "starti": 40,
@@ -321,7 +306,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 44,
@@ -330,7 +314,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 48,
@@ -339,7 +322,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 55,
@@ -348,7 +330,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": true,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": false,
     "starti": 64,
@@ -390,7 +371,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": true,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": false,
     "starti": 42,
@@ -410,7 +390,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 0,
@@ -419,7 +398,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 7,
@@ -428,7 +406,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 14,
@@ -437,7 +414,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": true,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": false,
     "starti": 18,
@@ -463,7 +439,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 21,
@@ -472,7 +447,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 27,
@@ -481,7 +455,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 34,
@@ -490,7 +463,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": true,
-    "is_keyword": false,
     "is_op_char": true,
     "is_word": false,
     "starti": 41,
@@ -532,7 +504,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 44,
@@ -541,7 +512,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 48,
@@ -550,7 +520,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 55,
@@ -559,7 +528,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": true,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": false,
     "starti": 63,
@@ -620,7 +588,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 65,
@@ -629,7 +596,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 69,
@@ -638,7 +604,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 76,
@@ -647,7 +612,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": true,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": false,
     "starti": 85,
@@ -689,7 +653,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 0,
@@ -698,7 +661,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 4,
@@ -707,7 +669,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 11,
@@ -716,7 +677,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": true,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": false,
     "starti": 18,
@@ -768,7 +728,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 0,
@@ -777,7 +736,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 4,
@@ -786,7 +744,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 11,
@@ -795,7 +752,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": true,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": false,
     "starti": 15,
@@ -856,7 +812,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 17,
@@ -865,7 +820,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 21,
@@ -874,7 +828,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 28,
@@ -883,7 +836,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": true,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": false,
     "starti": 37,
@@ -905,7 +857,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 0,
@@ -914,7 +865,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 4,
@@ -923,7 +873,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": false,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": true,
     "starti": 11,
@@ -932,7 +881,6 @@ Array [
   Object {
     "is_eoInput": false,
     "is_eoStatement": true,
-    "is_keyword": false,
     "is_op_char": false,
     "is_word": false,
     "starti": 20,
