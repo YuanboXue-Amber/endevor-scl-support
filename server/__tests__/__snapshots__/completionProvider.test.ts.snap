@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test  1`] = `
+exports[`Test keyword completion return a list of completion item from keywords in ParserTags 1`] = `
 Array [
   Object {
     "documentation": "Endevor SCL keyword",

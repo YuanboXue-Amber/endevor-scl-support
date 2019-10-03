@@ -1,4 +1,4 @@
-import { Tokenizer, TokenizedString } from '../../src/parser/tokenizer';
+import { Tokenizer, ITokenizedString } from '../../src/parser/Tokenizer';
 import {
     emptySCL,
     emptySCLwithNewLines,
@@ -9,17 +9,17 @@ import {
 
 // test only readNext()
 const testbody = ((sclInput: string) => {
-    let nextStr: TokenizedString = {
+    let nextStr: ITokenizedString = {
         value: "",
-        startPos: 0,
+        starti: 0,
         is_word: false,
         is_keyword: false,
         is_op_char: false,
         is_eoStatement: false,
-        is_eof: false
+        is_eoInput: false
     };
     const tokenizingTestFile: Tokenizer = new Tokenizer(sclInput);
-    while(!nextStr.is_eof) {
+    while(!nextStr.is_eoInput) {
         nextStr = tokenizingTestFile.readNext();
         expect(nextStr).toMatchSnapshot();
     }
@@ -27,17 +27,17 @@ const testbody = ((sclInput: string) => {
 
 // test also peekNext()
 const testbody2 = ((sclInput: string) => {
-    let nextStr: TokenizedString = {
+    let nextStr: ITokenizedString = {
         value: "",
-        startPos: 0,
+        starti: 0,
         is_word: false,
         is_keyword: false,
         is_op_char: false,
         is_eoStatement: false,
-        is_eof: false
+        is_eoInput: false
     };
     const tokenizingTestFile: Tokenizer = new Tokenizer(sclInput);
-    while(!nextStr.is_eof) {
+    while(!nextStr.is_eoInput) {
         nextStr = tokenizingTestFile.peekNext();
         expect(nextStr).toEqual(tokenizingTestFile.readNext());
         expect(nextStr).toMatchSnapshot();

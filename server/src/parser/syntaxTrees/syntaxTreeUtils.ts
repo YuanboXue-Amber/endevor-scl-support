@@ -1,40 +1,47 @@
-import { TokenizedString } from '../tokenizer';
-import { SyntaxDiagnose } from '../syntaxDiagnose';
+import { ITokenizedString } from '../Tokenizer';
 import { DiagnosticSeverity } from 'vscode-languageserver';
+import { SCLstatement, SCLDocument } from '../../documents/SCLDocument';
+
 
 /**
- *
+ * Parse the end of statement character. End of all syntax tree
  *
  * @export
- * @param {SyntaxDiagnose} syntaxDiagnoseObj
- * @param {TokenizedString[]} currSCL
- * @param {number} iterator stops at the index of last PROCESSED keyword in currSCL,
- * meaning the keyword we are going to process is iterator+1, if there's any.
+ * @param {number} iterator statement.tokens[iterator+1] will be the next token we are parsing
+ * @param {SCLstatement} statement
+ * @param {SCLDocument} document
  * @returns
  */
 export function parseEOStatement(
-    syntaxDiagnoseObj: SyntaxDiagnose,
-    currSCL: TokenizedString[], iterator: number) {
+    iterator: number, statement: SCLstatement, document: SCLDocument) {
+
+    const currSCL: ITokenizedString[] = statement.tokens;
 
     const eosIndex = iterator+1;
     if (eosIndex < currSCL.length) {
         let token = currSCL[eosIndex];
         if (token.is_eoStatement) {
-            if (token.startPos === currSCL[iterator].startPos + currSCL[iterator].value.length) {
+            if (token.starti === currSCL[iterator].starti + currSCL[iterator].value.length) {
                 // no space between keyword/value and eof operator
-                syntaxDiagnoseObj.pushDiagnostic(DiagnosticSeverity.Error, token,
+                document.pushDiagnostic(
+                    token, statement,
+                    DiagnosticSeverity.Error,
                     "Invalid scl. Expecting a space before end of statement operator \".\"");
                 return;
             }
             // valid scl
             return;
         } else {
-            syntaxDiagnoseObj.pushDiagnostic(DiagnosticSeverity.Error, token,
+            document.pushDiagnostic(
+                token, statement,
+                DiagnosticSeverity.Error,
                 "Invalid scl. Expecting end of statement operator \".\"");
             return;
         }
     } else {
-        syntaxDiagnoseObj.pushDiagnostic(DiagnosticSeverity.Error, currSCL[iterator],
+        document.pushDiagnostic(
+            currSCL[iterator], statement,
+            DiagnosticSeverity.Error,
             "No end of statement operator \".\" specified");
         return;
     }

@@ -1,5 +1,6 @@
-import { SyntaxDiagnose } from '../../src/parser/syntaxDiagnose';
 import { Position } from 'vscode-languageserver';
+import { SCLDocument } from '../../src/documents/SCLDocument';
+import { SCLDocumentManager } from '../../src/documents/SCLDocumentManager';
 
 describe("Test a simple valid SET ACTION", () => {
     it("Should have no error", async () => {
@@ -10,8 +11,10 @@ describe("Test a simple valid SET ACTION", () => {
             uri: "mocked/uri"
         };
 
-        const syntaxDiagnose: SyntaxDiagnose = new SyntaxDiagnose(sourceTextDocument, true);
-        expect(syntaxDiagnose.diagnostics.length).toBe(0);
+        const document: SCLDocument = new SCLDocument(sourceTextDocument);
+        for (const statement of document.statements) {
+            expect(statement.diagnostics.length).toBe(0);
+        }
     });
 });
 
@@ -24,13 +27,17 @@ describe("Test 3 simple valid SET ACTION", () => {
             uri: "mocked/uri"
         };
 
-        const syntaxDiagnose: SyntaxDiagnose = new SyntaxDiagnose(sourceTextDocument, true);
-        expect(syntaxDiagnose.diagnostics.length).toBe(0);
+        const document: SCLDocument = new SCLDocument(sourceTextDocument);
+        for (const statement of document.statements) {
+            expect(statement.diagnostics.length).toBe(0);
+        }
     });
 });
 
+SCLDocumentManager.capabilities.hasDiagnosticRelatedInformationCapability = true;
+
 describe("Test 4 simple INvalid SET ACTION", () => {
-    it("Should have no error", async () => {
+    it("Should have error", async () => {
         let sourceTextDocument: any = {
             getText() {
                 return " SET ACTION INVALID . SET \n  . SET ACTION RES. SET ACTION ADD";
@@ -46,13 +53,15 @@ describe("Test 4 simple INvalid SET ACTION", () => {
             uri: "mocked/uri"
         };
 
-        const syntaxDiagnose: SyntaxDiagnose = new SyntaxDiagnose(sourceTextDocument, true);
-        expect(syntaxDiagnose.diagnostics).toMatchSnapshot();
+        const document: SCLDocument = new SCLDocument(sourceTextDocument);
+        for (const statement of document.statements) {
+            expect(statement.diagnostics).toMatchSnapshot();
+        }
     });
 });
 
 describe("Test 2 simple INvalid SET ACTION, with lowercased keyword", () => {
-    it("Should have no error", async () => {
+    it("Should have error", async () => {
         let sourceTextDocument: any = {
             getText() {
                 return " SET ACTION res . SET ACTiON invalid";
@@ -68,7 +77,9 @@ describe("Test 2 simple INvalid SET ACTION, with lowercased keyword", () => {
             uri: "mocked/uri"
         };
 
-        const syntaxDiagnose: SyntaxDiagnose = new SyntaxDiagnose(sourceTextDocument, true);
-        expect(syntaxDiagnose.diagnostics).toMatchSnapshot();
+        const document: SCLDocument = new SCLDocument(sourceTextDocument);
+        for (const statement of document.statements) {
+            expect(statement.diagnostics).toMatchSnapshot();
+        }
     });
 });

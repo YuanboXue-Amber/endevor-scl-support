@@ -1,6 +1,6 @@
 import { CodeAction, CodeActionParams, DiagnosticSeverity, CodeActionKind, TextDocument } from 'vscode-languageserver';
 import { isNullOrUndefined } from "util";
-import { QUICKFIXMSG } from './parser/parserTags';
+import { QUICKFIXMSG } from './parser/ParserTags';
 
 /**
  * Provide quickfix only for:

@@ -1,7 +1,7 @@
 import { isNullOrUndefined } from "util";
-import { TokenizedString } from "./tokenizer";
-import { SyntaxDiagnose } from "./syntaxDiagnose";
+import { ITokenizedString } from "./Tokenizer";
 import { DiagnosticSeverity } from "vscode-languageserver";
+import { SCLDocument, SCLstatement } from "../documents/SCLDocument";
 
 export const ParserTags = {
     T_ACTION: "ACTion",
@@ -47,13 +47,17 @@ function getString(tag: string): string | undefined {
  * When matched, perform a syntax diagnose on if the keyword is uppercased or not
  *
  * @export
- * @param {TokenizedString} inputSCLtoken
+ * @param {ITokenizedString} inputSCLtoken the token to be matched, which is in statement
  * @param {string} parserTag field name in ParserTag classs, eg. T_ADD
+ * @param {SCLstatement} statement the statement where keyword uppercase warning diagnose will be pushed to
+ * @param {SCLDocument} document the document where statement is in
  * @returns {boolean} true only when the field match the keyword represent by parserTag
- * @returns {boolean}
  */
 export function match(
-    inputSCLtoken: TokenizedString, parserTag: string, syntaxDiagnoseObj: SyntaxDiagnose): boolean {
+    inputSCLtoken: ITokenizedString,
+    parserTag: string,
+    statement: SCLstatement,
+    document: SCLDocument ): boolean {
 
     const inputSCLpart = inputSCLtoken.value;
     let keyword = getString(parserTag);
@@ -84,7 +88,7 @@ export function match(
     const regex = new RegExp(composeRegex(mandatoryText, optionalText));
     const textMatchArray = sclkey.match(regex);
     if (!isNullOrUndefined(textMatchArray) && textMatchArray[0] === sclkey) {
-        keywordUppercaseDiagnose(inputSCLtoken, syntaxDiagnoseObj);
+        keywordUppercaseDiagnose(inputSCLtoken, statement, document);
         return true;
     }
     return false;
@@ -92,15 +96,24 @@ export function match(
 
 export const QUICKFIXMSG = `Keyword should be uppercased`;
 
+
 /**
  * Push a warning to a keyword that is not uppercased
  *
- * @param {TokenizedString} keywordInSource
- * @param {SyntaxDiagnose} syntaxDiagnoseObj
+ * @param {ITokenizedString} keywordInSource
+ * @param {SCLstatement} statement
+ * @param {SCLDocument} document
  */
-function keywordUppercaseDiagnose(keywordInSource: TokenizedString, syntaxDiagnoseObj: SyntaxDiagnose) {
+function keywordUppercaseDiagnose(
+    keywordInSource: ITokenizedString,
+    statement: SCLstatement,
+    document: SCLDocument) {
+
     if (keywordInSource.value.toUpperCase() !== keywordInSource.value) {
-        syntaxDiagnoseObj.pushDiagnostic(DiagnosticSeverity.Warning, keywordInSource,
+        document.pushDiagnostic(
+            keywordInSource,
+            statement,
+            DiagnosticSeverity.Warning,
             QUICKFIXMSG,
             'Lowercased keyword might cause the scl action to fail when submitted');
     }

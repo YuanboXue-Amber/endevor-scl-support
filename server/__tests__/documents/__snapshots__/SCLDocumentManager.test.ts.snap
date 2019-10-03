@@ -1,0 +1,899 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test test1: open document 1`] = `
+"SET action add . 
+ SET ACTION RESTORE. 
+ Set INvalid. "
+`;
+
+exports[`Test test1: open document 2`] = `
+Array [
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 0,
+    "value": "SET",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 4,
+    "value": "action",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 11,
+    "value": "add",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": true,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": false,
+    "starti": 15,
+    "value": ".",
+  },
+]
+`;
+
+exports[`Test test1: open document 3`] = `0`;
+
+exports[`Test test1: open document 4`] = `16`;
+
+exports[`Test test1: open document 5`] = `
+Array [
+  Object {
+    "diagnostic": Object {
+      "message": "Keyword should be uppercased",
+      "range": Object {
+        "end": Object {
+          "character": 10,
+          "line": 0,
+        },
+        "start": Object {
+          "character": 4,
+          "line": 0,
+        },
+      },
+      "severity": 2,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 10,
+    "starti": 4,
+  },
+  Object {
+    "diagnostic": Object {
+      "message": "Keyword should be uppercased",
+      "range": Object {
+        "end": Object {
+          "character": 14,
+          "line": 0,
+        },
+        "start": Object {
+          "character": 11,
+          "line": 0,
+        },
+      },
+      "severity": 2,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 14,
+    "starti": 11,
+  },
+]
+`;
+
+exports[`Test test1: open document 6`] = `
+Array [
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 19,
+    "value": "SET",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 23,
+    "value": "ACTION",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 30,
+    "value": "RESTORE",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": true,
+    "is_keyword": false,
+    "is_op_char": true,
+    "is_word": false,
+    "starti": 37,
+    "value": ".",
+  },
+]
+`;
+
+exports[`Test test1: open document 7`] = `19`;
+
+exports[`Test test1: open document 8`] = `38`;
+
+exports[`Test test1: open document 9`] = `
+Array [
+  Object {
+    "diagnostic": Object {
+      "message": "Invalid scl. Expecting a space before end of statement operator \\".\\"",
+      "range": Object {
+        "end": Object {
+          "character": 20,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 19,
+          "line": 1,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 38,
+    "starti": 37,
+  },
+]
+`;
+
+exports[`Test test1: open document 10`] = `
+Array [
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 41,
+    "value": "Set",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 45,
+    "value": "INvalid",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": true,
+    "is_keyword": false,
+    "is_op_char": true,
+    "is_word": false,
+    "starti": 52,
+    "value": ".",
+  },
+]
+`;
+
+exports[`Test test1: open document 11`] = `41`;
+
+exports[`Test test1: open document 12`] = `53`;
+
+exports[`Test test1: open document 13`] = `
+Array [
+  Object {
+    "diagnostic": Object {
+      "message": "Keyword should be uppercased",
+      "range": Object {
+        "end": Object {
+          "character": 4,
+          "line": 2,
+        },
+        "start": Object {
+          "character": 1,
+          "line": 2,
+        },
+      },
+      "severity": 2,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 44,
+    "starti": 41,
+  },
+  Object {
+    "diagnostic": Object {
+      "message": "Invalid keyword \\"INvalid\\" specified after SET",
+      "range": Object {
+        "end": Object {
+          "character": 12,
+          "line": 2,
+        },
+        "start": Object {
+          "character": 5,
+          "line": 2,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 52,
+    "starti": 45,
+  },
+]
+`;
+
+exports[`Test test2: update document 1`] = `
+"SETSET action add . 
+ SET ACTION RESTORE. . Set ACTION TRANSFER . "
+`;
+
+exports[`Test test2: update document 2`] = `
+Array [
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 22,
+    "value": "SET",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 26,
+    "value": "ACTION",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 33,
+    "value": "RESTORE",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": true,
+    "is_keyword": false,
+    "is_op_char": true,
+    "is_word": false,
+    "starti": 40,
+    "value": ".",
+  },
+]
+`;
+
+exports[`Test test2: update document 3`] = `22`;
+
+exports[`Test test2: update document 4`] = `41`;
+
+exports[`Test test2: update document 5`] = `
+Array [
+  Object {
+    "diagnostic": Object {
+      "message": "Invalid scl. Expecting a space before end of statement operator \\".\\"",
+      "range": Object {
+        "end": Object {
+          "character": 20,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 19,
+          "line": 1,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 41,
+    "starti": 40,
+  },
+]
+`;
+
+exports[`Test test2: update document 6`] = `
+Array [
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 44,
+    "value": "Set",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 48,
+    "value": "ACTION",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 55,
+    "value": "TRANSFER",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": true,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": false,
+    "starti": 64,
+    "value": ".",
+  },
+]
+`;
+
+exports[`Test test2: update document 7`] = `44`;
+
+exports[`Test test2: update document 8`] = `65`;
+
+exports[`Test test2: update document 9`] = `
+Array [
+  Object {
+    "diagnostic": Object {
+      "message": "Keyword should be uppercased",
+      "range": Object {
+        "end": Object {
+          "character": 26,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 23,
+          "line": 1,
+        },
+      },
+      "severity": 2,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 47,
+    "starti": 44,
+  },
+]
+`;
+
+exports[`Test test2: update document 10`] = `
+Array [
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": true,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": false,
+    "starti": 42,
+    "value": ".",
+  },
+]
+`;
+
+exports[`Test test2: update document 11`] = `42`;
+
+exports[`Test test2: update document 12`] = `43`;
+
+exports[`Test test2: update document 13`] = `Array []`;
+
+exports[`Test test2: update document 14`] = `
+Array [
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 0,
+    "value": "SETSET",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 7,
+    "value": "action",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 14,
+    "value": "add",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": true,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": false,
+    "starti": 18,
+    "value": ".",
+  },
+]
+`;
+
+exports[`Test test2: update document 15`] = `0`;
+
+exports[`Test test2: update document 16`] = `19`;
+
+exports[`Test test2: update document 17`] = `Array []`;
+
+exports[`Test test3: update document 1`] = `
+"SET action DELETE .  SET 
+ ACTION RESTORE.  Set ACTION invalid
+. SET ACTION transfer . "
+`;
+
+exports[`Test test3: update document 2`] = `
+Array [
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 21,
+    "value": "SET",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 27,
+    "value": "ACTION",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 34,
+    "value": "RESTORE",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": true,
+    "is_keyword": false,
+    "is_op_char": true,
+    "is_word": false,
+    "starti": 41,
+    "value": ".",
+  },
+]
+`;
+
+exports[`Test test3: update document 3`] = `21`;
+
+exports[`Test test3: update document 4`] = `42`;
+
+exports[`Test test3: update document 5`] = `
+Array [
+  Object {
+    "diagnostic": Object {
+      "message": "Invalid scl. Expecting a space before end of statement operator \\".\\"",
+      "range": Object {
+        "end": Object {
+          "character": 16,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 15,
+          "line": 1,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 42,
+    "starti": 41,
+  },
+]
+`;
+
+exports[`Test test3: update document 6`] = `
+Array [
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 44,
+    "value": "Set",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 48,
+    "value": "ACTION",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 55,
+    "value": "invalid",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": true,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": false,
+    "starti": 63,
+    "value": ".",
+  },
+]
+`;
+
+exports[`Test test3: update document 7`] = `44`;
+
+exports[`Test test3: update document 8`] = `64`;
+
+exports[`Test test3: update document 9`] = `
+Array [
+  Object {
+    "diagnostic": Object {
+      "message": "Keyword should be uppercased",
+      "range": Object {
+        "end": Object {
+          "character": 21,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 18,
+          "line": 1,
+        },
+      },
+      "severity": 2,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 47,
+    "starti": 44,
+  },
+  Object {
+    "diagnostic": Object {
+      "message": "Invalid action \\"invalid\\" specified after SET ACTION",
+      "range": Object {
+        "end": Object {
+          "character": 36,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 29,
+          "line": 1,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 62,
+    "starti": 55,
+  },
+]
+`;
+
+exports[`Test test3: update document 10`] = `
+Array [
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 65,
+    "value": "SET",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 69,
+    "value": "ACTION",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 76,
+    "value": "transfer",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": true,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": false,
+    "starti": 85,
+    "value": ".",
+  },
+]
+`;
+
+exports[`Test test3: update document 11`] = `65`;
+
+exports[`Test test3: update document 12`] = `86`;
+
+exports[`Test test3: update document 13`] = `
+Array [
+  Object {
+    "diagnostic": Object {
+      "message": "Keyword should be uppercased",
+      "range": Object {
+        "end": Object {
+          "character": 21,
+          "line": 2,
+        },
+        "start": Object {
+          "character": 13,
+          "line": 2,
+        },
+      },
+      "severity": 2,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 84,
+    "starti": 76,
+  },
+]
+`;
+
+exports[`Test test3: update document 14`] = `
+Array [
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 0,
+    "value": "SET",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 4,
+    "value": "action",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 11,
+    "value": "DELETE",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": true,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": false,
+    "starti": 18,
+    "value": ".",
+  },
+]
+`;
+
+exports[`Test test3: update document 15`] = `0`;
+
+exports[`Test test3: update document 16`] = `19`;
+
+exports[`Test test3: update document 17`] = `
+Array [
+  Object {
+    "diagnostic": Object {
+      "message": "Keyword should be uppercased",
+      "range": Object {
+        "end": Object {
+          "character": 10,
+          "line": 0,
+        },
+        "start": Object {
+          "character": 4,
+          "line": 0,
+        },
+      },
+      "severity": 2,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 10,
+    "starti": 4,
+  },
+]
+`;
+
+exports[`Test test4: close document 1`] = `
+"SET action 
+add . SET. SET 
+ ACTION RESTORE. 
+ Set ACTION invalid
+. "
+`;
+
+exports[`Test test5: update document 1`] = `"SET action add . SET ACTION TRANSFER ."`;
+
+exports[`Test test5: update document 2`] = `
+Array [
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 0,
+    "value": "SET",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 4,
+    "value": "action",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 11,
+    "value": "add",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": true,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": false,
+    "starti": 15,
+    "value": ".",
+  },
+]
+`;
+
+exports[`Test test5: update document 3`] = `0`;
+
+exports[`Test test5: update document 4`] = `16`;
+
+exports[`Test test5: update document 5`] = `
+Array [
+  Object {
+    "diagnostic": Object {
+      "message": "Keyword should be uppercased",
+      "range": Object {
+        "end": Object {
+          "character": 10,
+          "line": 0,
+        },
+        "start": Object {
+          "character": 4,
+          "line": 0,
+        },
+      },
+      "severity": 2,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 10,
+    "starti": 4,
+  },
+  Object {
+    "diagnostic": Object {
+      "message": "Keyword should be uppercased",
+      "range": Object {
+        "end": Object {
+          "character": 14,
+          "line": 0,
+        },
+        "start": Object {
+          "character": 11,
+          "line": 0,
+        },
+      },
+      "severity": 2,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 14,
+    "starti": 11,
+  },
+]
+`;
+
+exports[`Test test5: update document 6`] = `
+Array [
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 17,
+    "value": "SET",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 21,
+    "value": "ACTION",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 28,
+    "value": "TRANSFER",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": true,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": false,
+    "starti": 37,
+    "value": ".",
+  },
+]
+`;
+
+exports[`Test test5: update document 7`] = `17`;
+
+exports[`Test test5: update document 8`] = `38`;
+
+exports[`Test test5: update document 9`] = `Array []`;

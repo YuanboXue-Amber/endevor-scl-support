@@ -1,11 +1,11 @@
 import { isNullOrUndefined } from "util";
 
-export interface TokenizedString {
+export interface ITokenizedString {
     // value of the scl part
     value: string;
     // starting position of this value in the whole docuemnt content
     // can use TextDocument.positionAt to convert it into a Position type
-    startPos: number;
+    starti: number;
     // true if value is a word
     is_word: boolean;
     // true if value is not only a word, but also a keyword (AmberTODO, this is to be identified when parse in a tree)
@@ -14,12 +14,12 @@ export interface TokenizedString {
     is_op_char: boolean;
     // true if value symbolize the end of one scl statement "."
     is_eoStatement: boolean;
-    // true if value symbolize the end of the file
-    is_eof: boolean;
+    // true if value symbolize the end of the input
+    is_eoInput: boolean;
 }
 
 /**
- * Tokenize a string into pieces of type TokenizedString.
+ * Tokenize a string into pieces of type ITokenizedString.
  * Read a string from left to right, return each piece separated by spaces.
  * Unless it is spaces in quotes, in that case, return the whole quoted piece.
  *
@@ -33,9 +33,9 @@ class TokenizerBase {
     contentLen: number;
 
     // next piece of scl. It is the result from peekNext; store to be reused by readNext
-    current: TokenizedString;
+    current: ITokenizedString;
     // the position of the next character to be processed after "current".
-    nextPos: number = 0;
+    nextstarti: number = 0;
 
     // true if a peekNext was called and this.current is filled in
     peeked: boolean = false;
@@ -43,9 +43,9 @@ class TokenizerBase {
     constructor(input: string) {
         this.content = input;
         this.contentLen = input.length;
-        this.nextPos = 0;
+        this.nextstarti = 0;
         this.current  = this.checkNext();
-        this.nextPos = this.current.startPos + this.current.value.length;
+        this.nextstarti = this.current.starti + this.current.value.length;
         this.peeked = true;
     }
 
@@ -60,7 +60,7 @@ class TokenizerBase {
             return this.current;
         } else {
             this.current  = this.checkNext();
-            this.nextPos = this.current.startPos + this.current.value.length;
+            this.nextstarti = this.current.starti + this.current.value.length;
             this.peeked = true;
             return this.current;
         }
@@ -78,61 +78,61 @@ class TokenizerBase {
             return this.current;
         } else {
             this.current  = this.checkNext();
-            this.nextPos = this.current.startPos + this.current.value.length;
+            this.nextstarti = this.current.starti + this.current.value.length;
             return this.current;
         }
     });
 
     /**
      * Read content from currentPos, and get a piece of SCL.
-     * Return information of this piece as TokenizedString.
+     * Return information of this piece as ITokenizedString.
      * Return the currIndex, which points to the next unread char in content.
      *
      * @private
-     * @returns {TokenizedString}
+     * @returns {ITokenizedString}
      * @memberof TokenizerBase
      */
-    private checkNext(): TokenizedString {
-        let currIndex = this.nextPos;
+    private checkNext(): ITokenizedString {
+        let currIndex = this.nextstarti;
         while (this.content.charAt(currIndex).match(/\s/) && currIndex < this.contentLen) {
             currIndex ++;
         }
         if (currIndex >= this.contentLen) {
-            const eof: TokenizedString = {
+            const eof: ITokenizedString = {
                 value: "",
-                startPos: currIndex,
+                starti: currIndex,
                 is_word: false,
                 is_keyword: false,
                 is_op_char: false,
                 is_eoStatement: false,
-                is_eof: true
+                is_eoInput: true
             };
             return eof;
         }
-        const startPos = currIndex;
+        const starti = currIndex;
         const next: string = this.getAPieceOfSCL("", currIndex);
-        let nextStrInfo: TokenizedString;
+        let nextStrInfo: ITokenizedString;
         if (next.length === 1) {
             if (next === ".") {
                 nextStrInfo = {
                     value: next,
-                    startPos,
+                    starti,
                     is_word: false,
                     is_keyword: false,
                     is_op_char: false,
                     is_eoStatement: true,
-                    is_eof: false
+                    is_eoInput: false
                 };
                 return nextStrInfo;
             } else if (next.match(/[,=()]/)) {
                 nextStrInfo = {
                     value: next,
-                    startPos,
+                    starti,
                     is_word: false,
                     is_keyword: false,
                     is_op_char: true,
                     is_eoStatement: false,
-                    is_eof: false
+                    is_eoInput: false
                 };
                 return nextStrInfo;
             }
@@ -140,12 +140,12 @@ class TokenizerBase {
 
         nextStrInfo = {
             value: next,
-            startPos,
+            starti,
             is_word: true,
             is_keyword: false,
             is_op_char: false,
             is_eoStatement: false,
-            is_eof: false
+            is_eoInput: false
         };
         return nextStrInfo;
     }
@@ -261,7 +261,7 @@ class TokenizerBase {
 }
 
 /**
- * Tokenize a string into pieces of type TokenizedString.
+ * Tokenize a string into pieces of type ITokenizedString.
  * Get a string based on TokenizerBase class, then check this string:
  * if it starts or end with operators ",=().",
  * return the beginning and end operator, and the value in the middle separately
@@ -280,9 +280,9 @@ export class Tokenizer extends TokenizerBase {
     }
 
     // When a scl piece has operators at the beginning or the end, use this to temporarily store the part that is unprocessed
-    tmpStorage: TokenizedString | undefined;
+    tmpStorage: ITokenizedString | undefined;
     // store the peeked value, to be reused
-    storePeek: TokenizedString;
+    storePeek: ITokenizedString;
 
     peeked: boolean = false;
 
@@ -334,35 +334,35 @@ export class Tokenizer extends TokenizerBase {
         if (this.tmpStorage.value[0].match(/[,=().]/)) {
             const opt = this.tmpStorage.value[0];
             this.tmpStorage.value = this.tmpStorage.value.substring(1, this.tmpStorage.value.length);
-            this.tmpStorage.startPos = this.tmpStorage.startPos+1;
+            this.tmpStorage.starti = this.tmpStorage.starti+1;
             return {
                 value: opt,
-                startPos: this.tmpStorage.startPos,
+                starti: this.tmpStorage.starti,
                 is_word: false,
                 is_keyword: false,
                 is_op_char: true,
                 is_eoStatement: this.tmpStorage.value[0] === "." ? true : false,
-                is_eof: false
+                is_eoInput: false
             };
         } else if (this.tmpStorage.value[this.tmpStorage.value.length-1].match(/[,=().]/)) {
             const toBeReturn = {
                 value: this.tmpStorage.value.substring(0, this.tmpStorage.value.length - 1),
-                startPos: this.tmpStorage.startPos,
+                starti: this.tmpStorage.starti,
                 is_word: true,
                 is_keyword: false,
                 is_op_char: false,
                 is_eoStatement: false,
-                is_eof: false
+                is_eoInput: false
             };
             const opt = this.tmpStorage.value[this.tmpStorage.value.length-1];
             this.tmpStorage = {
                 value: opt,
-                startPos: this.tmpStorage.startPos + toBeReturn.value.length,
+                starti: this.tmpStorage.starti + toBeReturn.value.length,
                 is_word: false,
                 is_keyword: false,
                 is_op_char: true,
                 is_eoStatement: opt === "." ? true : false,
-                is_eof: false
+                is_eoInput: false
             };
             return toBeReturn;
         } else {

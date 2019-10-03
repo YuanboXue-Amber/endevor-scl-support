@@ -9,20 +9,27 @@ import {
     CodeActionKind,
     CodeActionParams,
     CodeAction,
-    TextDocumentChangeEvent
+    TextDocumentChangeEvent,
+    TextDocumentSyncKind,
+    DidOpenTextDocumentParams,
+    TextDocumentItem,
+    DidCloseTextDocumentParams,
+    DidChangeTextDocumentParams,
+    Diagnostic
 } from 'vscode-languageserver';
 import { isNullOrUndefined } from 'util';
-import { SyntaxDiagnose } from './parser/syntaxDiagnose';
-import { quickfix } from './codeActionProvider';
-import { composeCompletionItemsFromKeywords } from './completionProvider';
+import { quickfix } from './CodeActionProvider';
+import { composeCompletionItemsFromKeywords } from './CompletionProvider';
+import { TextDocument } from 'vscode-languageserver';
+import { SCLDocumentManager } from './documents/SCLDocumentManager';
+import { SCLDocument } from './documents/SCLDocument';
+import { stat } from 'fs';
 
 // Create a connection for the server. The connection uses Node's IPC as a transport.
 // Also include all preview / proposed LSP features.
 let connection = createConnection(ProposedFeatures.all);
 
-// Create a simple text document manager. The text document manager
-// supports full document sync only
-let documents: TextDocuments = new TextDocuments();
+const documentManager = new SCLDocumentManager();
 
 // Does the clients accepts diagnostics with related information?
 let hasDiagnosticRelatedInformationCapability: boolean = false;
@@ -45,9 +52,16 @@ connection.onInitialize((params: InitializeParams) => {
       capabilities.textDocument.codeAction.codeActionLiteralSupport
     );
 
+    SCLDocumentManager.config = {
+        maxNumberOfProblems: 1000
+    };
+    SCLDocumentManager.capabilities = {
+        hasDiagnosticRelatedInformationCapability
+    };
+
     const result: InitializeResult = {
         capabilities: {
-            textDocumentSync: documents.syncKind,
+            textDocumentSync: TextDocumentSyncKind.Incremental,
             // Tell the client that the server supports code completion
             completionProvider: {
                 resolveProvider: true
@@ -70,21 +84,42 @@ connection.onInitialize((params: InitializeParams) => {
 // but before the client is sending any other request or notification to the server
 connection.onInitialized(() => {
     completionItems = composeCompletionItemsFromKeywords(); // initialize completion items
+
 });
 
-// The content of a text document has changed. This event is emitted
-// when the text document first opened or when its content has changed.
-documents.onDidChangeContent(validateTextDocument);
+connection.onDidOpenTextDocument((parm: DidOpenTextDocumentParams) => {
+    const document: SCLDocument = documentManager.openDocument(parm.textDocument);
 
-async function validateTextDocument(textDocumentChange: TextDocumentChangeEvent): Promise<void> {
-    const syntaxDiagnose: SyntaxDiagnose = new SyntaxDiagnose(
-        textDocumentChange.document,
-        hasDiagnosticRelatedInformationCapability);
-    connection.sendDiagnostics({
-        uri: textDocumentChange.document.uri,
-        diagnostics: syntaxDiagnose.diagnostics
+    const diagnostics: Diagnostic[] = [];
+    document.statements.forEach((statement) => {
+        statement.diagnostics.forEach((diag) => {
+            diagnostics.push(diag.diagnostic);
+        });
     });
-}
+    connection.sendDiagnostics({
+        uri: document.textDocument.uri,
+        diagnostics
+    });
+});
+
+connection.onDidChangeTextDocument((parm: DidChangeTextDocumentParams) => {
+    const document: SCLDocument = documentManager.updateDocument(parm.textDocument, parm.contentChanges);
+
+    const diagnostics: Diagnostic[] = [];
+    document.statements.forEach((statement) => {
+        statement.diagnostics.forEach((diag) => {
+            diagnostics.push(diag.diagnostic);
+        });
+    });
+    connection.sendDiagnostics({
+        uri: document.textDocument.uri,
+        diagnostics
+    });
+});
+
+connection.onDidCloseTextDocument((parm: DidCloseTextDocumentParams) => {
+    documentManager.closeDocument(parm.textDocument.uri);
+});
 
 connection.onCodeAction(provideCodeActions);
 
@@ -92,11 +127,11 @@ async function provideCodeActions(parms: CodeActionParams): Promise<CodeAction[]
     if (!parms.context.diagnostics.length) {
         return [];
     }
-    const textDocument = documents.get(parms.textDocument.uri);
-    if (isNullOrUndefined(textDocument)) {
+    const document = documentManager.documents.get(parms.textDocument.uri);
+    if (isNullOrUndefined(document)) {
         return [];
     }
-    return quickfix(textDocument, parms);
+    return quickfix(document.textDocument, parms);
 }
 
 // This handler provides the initial list of the completion items.
@@ -112,10 +147,6 @@ connection.onCompletionResolve(
         return item;
     }
 );
-
-// Make the text document manager listen on the connection
-// for open, change and close text document events
-documents.listen(connection);
 
 // Listen on the connection
 connection.listen();
