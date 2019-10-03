@@ -65,13 +65,12 @@ export function parseSETSCL(statement: SCLstatement, document: SCLDocument) {
 /**
  * Syntax tree for SET ACTION
  *
- * @export
  * @param {number} iterator statement.tokens[iterator+1] will be the next token we are parsing
  * @param {SCLstatement} statement
  * @param {SCLDocument} document
  * @returns
  */
-export function parseSetAction(
+function parseSetAction(
     iterator: number,
     statement: SCLstatement, document: SCLDocument) {
 
