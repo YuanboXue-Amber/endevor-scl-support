@@ -1,6 +1,7 @@
 import { CodeAction, CodeActionParams, DiagnosticSeverity, CodeActionKind, TextDocument } from 'vscode-languageserver';
 import { isNullOrUndefined } from "util";
-import { QUICKFIXMSG } from './parser/ParserTags';
+
+export const QUICKFIX_UPPERCASEMSG = `Keyword should be uppercased`;
 
 /**
  * Provide quickfix only for:
@@ -19,7 +20,7 @@ export function quickfix(textDocument: TextDocument, parms: CodeActionParams): C
 
     const codeActions: CodeAction[] = [];
     diagnostics.forEach((diag) => {
-        if (diag.severity === DiagnosticSeverity.Warning && diag.message === QUICKFIXMSG) {
+        if (diag.severity === DiagnosticSeverity.Warning && diag.message === QUICKFIX_UPPERCASEMSG) {
             codeActions.push({
                 title: "Uppercase the keyword",
                 kind: CodeActionKind.QuickFix,
