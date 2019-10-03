@@ -14,6 +14,9 @@ export interface ITokenizedString {
     is_eoStatement: boolean;
     // true if value symbolize the end of the input
     is_eoInput: boolean;
+
+    // the key used for searching what string will be following this token
+    completionItemsKey?: string;
 }
 
 /**

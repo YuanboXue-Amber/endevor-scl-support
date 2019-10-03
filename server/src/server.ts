@@ -134,6 +134,9 @@ async function provideCodeActions(parms: CodeActionParams): Promise<CodeAction[]
 // This handler provides the initial list of the completion items.
 connection.onCompletion(
     (_textDocumentPosition: TextDocumentPositionParams): CompletionItem[] => {
+        const completionItemsBySyntax = documentManager.getCompletionBySyntax(_textDocumentPosition);
+        if (completionItemsBySyntax.length > 0)
+            return completionItemsBySyntax;
         return completionItems;
     }
 );

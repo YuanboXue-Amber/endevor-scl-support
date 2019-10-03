@@ -9,6 +9,7 @@ exports[`Test test1: open document 1`] = `
 exports[`Test test1: open document 2`] = `
 Array [
   Object {
+    "completionItemsKey": "SET",
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -17,6 +18,7 @@ Array [
     "value": "SET",
   },
   Object {
+    "completionItemsKey": "SET ACTION",
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -93,6 +95,7 @@ Array [
 exports[`Test test1: open document 6`] = `
 Array [
   Object {
+    "completionItemsKey": "SET",
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -101,6 +104,7 @@ Array [
     "value": "SET",
   },
   Object {
+    "completionItemsKey": "SET ACTION",
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -158,6 +162,7 @@ Array [
 exports[`Test test1: open document 10`] = `
 Array [
   Object {
+    "completionItemsKey": "SET",
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -239,6 +244,7 @@ exports[`Test test2: update document 1`] = `
 exports[`Test test2: update document 2`] = `
 Array [
   Object {
+    "completionItemsKey": "SET",
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -247,6 +253,7 @@ Array [
     "value": "SET",
   },
   Object {
+    "completionItemsKey": "SET ACTION",
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -304,6 +311,7 @@ Array [
 exports[`Test test2: update document 6`] = `
 Array [
   Object {
+    "completionItemsKey": "SET",
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -312,6 +320,7 @@ Array [
     "value": "Set",
   },
   Object {
+    "completionItemsKey": "SET ACTION",
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -437,6 +446,7 @@ exports[`Test test3: update document 1`] = `
 exports[`Test test3: update document 2`] = `
 Array [
   Object {
+    "completionItemsKey": "SET",
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -445,6 +455,7 @@ Array [
     "value": "SET",
   },
   Object {
+    "completionItemsKey": "SET ACTION",
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -502,6 +513,7 @@ Array [
 exports[`Test test3: update document 6`] = `
 Array [
   Object {
+    "completionItemsKey": "SET",
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -510,6 +522,7 @@ Array [
     "value": "Set",
   },
   Object {
+    "completionItemsKey": "SET ACTION",
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -586,6 +599,7 @@ Array [
 exports[`Test test3: update document 10`] = `
 Array [
   Object {
+    "completionItemsKey": "SET",
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -594,6 +608,7 @@ Array [
     "value": "SET",
   },
   Object {
+    "completionItemsKey": "SET ACTION",
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -651,6 +666,7 @@ Array [
 exports[`Test test3: update document 14`] = `
 Array [
   Object {
+    "completionItemsKey": "SET",
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -659,6 +675,7 @@ Array [
     "value": "SET",
   },
   Object {
+    "completionItemsKey": "SET ACTION",
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -726,6 +743,7 @@ exports[`Test test5: update document 1`] = `"SET action add . SET ACTION TRANSFE
 exports[`Test test5: update document 2`] = `
 Array [
   Object {
+    "completionItemsKey": "SET",
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -734,6 +752,7 @@ Array [
     "value": "SET",
   },
   Object {
+    "completionItemsKey": "SET ACTION",
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -810,6 +829,7 @@ Array [
 exports[`Test test5: update document 6`] = `
 Array [
   Object {
+    "completionItemsKey": "SET",
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -818,6 +838,7 @@ Array [
     "value": "SET",
   },
   Object {
+    "completionItemsKey": "SET ACTION",
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -855,6 +876,7 @@ exports[`Test test6: update document 1`] = `"SET ACTION TRANSFER ."`;
 exports[`Test test6: update document 2`] = `
 Array [
   Object {
+    "completionItemsKey": "SET",
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -863,6 +885,7 @@ Array [
     "value": "SET",
   },
   Object {
+    "completionItemsKey": "SET ACTION",
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,

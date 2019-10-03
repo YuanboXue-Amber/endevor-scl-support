@@ -1,6 +1,6 @@
 import { ITokenizedString } from "../Tokenizer";
-import { parseEOStatement } from "./SyntaxTreeUtils";
-import { DiagnosticSeverity } from "vscode-languageserver";
+import { parseEOStatement, ALL_COMPLETION_ITEMS } from "./SyntaxTreeUtils";
+import { DiagnosticSeverity } from 'vscode-languageserver';
 import { match } from "../ParserTags";
 import { SCLstatement, SCLDocument } from "../../documents/SCLDocument";
 
@@ -15,13 +15,16 @@ import { SCLstatement, SCLDocument } from "../../documents/SCLDocument";
 export function parseSETSCL(statement: SCLstatement, document: SCLDocument) {
     // currSCL[0] is SET for sure
     const currSCL: ITokenizedString[] = statement.tokens;
+    const completionItems = ["ACTION", "BUILD", "FROM", "OPTIONS", "STOPRC", "TO", "WHERE"];
+    currSCL[0].completionItemsKey = "SET";
+    ALL_COMPLETION_ITEMS.set(currSCL[0].completionItemsKey as string, completionItems);
 
     if (currSCL.length < 2) {
         document.pushDiagnostic(
             currSCL[0],
             statement,
             DiagnosticSeverity.Error,
-            'SET should be followed by the following keywords: ACTION, BUILD, FROM, OPTIONS, STOPRC, TO, WHERE');
+            `SET should be followed by the following keywords: ${completionItems.join(", ")}`);
         return;
     }
 
@@ -54,7 +57,7 @@ export function parseSETSCL(statement: SCLstatement, document: SCLDocument) {
                 token, statement,
                 DiagnosticSeverity.Error,
                 `Invalid keyword \"${token.value}\" specified after SET`,
-                'SET should be followed by the following keywords: ACTION, BUILD, FROM, OPTIONS, STOPRC, TO, WHERE');
+                `SET should be followed by the following keywords: ${completionItems.join(", ")}`);
             return;
     }
 }
@@ -73,6 +76,11 @@ export function parseSetAction(
     statement: SCLstatement, document: SCLDocument) {
 
     const currSCL: ITokenizedString[] = statement.tokens;
+    const completionItems = [
+        "ADD", "ARCHIVE", "COPY", "DELETE", "GENERATE", "LIST", "MOVE", "PRINT", "RESTORE", "RETRIEVE", "SIGNIN", "TRANSFER", "UPDATE", "VALIDATE"];
+    currSCL[iterator].completionItemsKey = "SET ACTION";
+    ALL_COMPLETION_ITEMS.set(currSCL[iterator].completionItemsKey as string, completionItems);
+
     const i = iterator+1;
     if (i < currSCL.length) {
         let token = currSCL[i];
@@ -126,7 +134,7 @@ export function parseSetAction(
                     token, statement,
                     DiagnosticSeverity.Error,
                     `Invalid action \"${token.value}\" specified after SET ACTION`,
-                    'Valid actions are: ADD, ARCHIVE, COPY, DELETE, GENERATE, LIST, MOVE, PRINT, RESTORE, RETRIEVE, SIGNIN, TRANSFER, UPDATE, VALIDATE');
+                    `Valid actions are: ${completionItems.join(", ")}`);
                 return;
         }
 
@@ -135,7 +143,7 @@ export function parseSetAction(
             currSCL[iterator], statement,
             DiagnosticSeverity.Error,
             "No action specified after SET ACTION",
-            'Valid actions are: ADD, ARCHIVE, COPY, DELETE, GENERATE, LIST, MOVE, PRINT, RESTORE, RETRIEVE, SIGNIN, TRANSFER, UPDATE, VALIDATE');
+            `Valid actions are: ${completionItems.join(", ")}`);
         return;
     }
 }

@@ -2,9 +2,13 @@ import {
     TextDocument,
     TextDocumentItem,
     VersionedTextDocumentIdentifier,
-    TextDocumentContentChangeEvent } from "vscode-languageserver";
-import { SCLDocument } from "./SCLDocument";
+    TextDocumentContentChangeEvent,
+    TextDocumentPositionParams,
+    CompletionItem,
+    CompletionItemKind} from "vscode-languageserver";
+import { SCLDocument } from './SCLDocument';
 import { isNull, isNullOrUndefined } from "util";
+import { ALL_COMPLETION_ITEMS } from '../parser/syntaxTrees/SyntaxTreeUtils';
 
 
 interface IDocumentSettings {
@@ -114,5 +118,64 @@ export class SCLDocumentManager {
 
         // no need to refresh the diagnose number, since it is dealt with in SCLDocument.update and SCLDocument.pushDiagnostic
         return document;
+    }
+
+    getCompletionBySyntax(textDocumentPosition: TextDocumentPositionParams): CompletionItem[] {
+        const document = this.documents.get(textDocumentPosition.textDocument.uri);
+        if (!document) {
+            throw new Error(`Cannot provide completion on unopened document: ${textDocumentPosition.textDocument.uri}`);
+        }
+
+        const tobeCompelteIndex = document.textDocument.offsetAt(textDocumentPosition.position);
+        const completionItems: CompletionItem[] = [];
+        for (const statement of document.statements) {
+            if (tobeCompelteIndex >= statement.starti && tobeCompelteIndex <= statement.endi) {
+                let i = -1;
+                while (i < statement.tokens.length) {
+                    i ++;
+                    const starti = statement.tokens[i].starti + statement.tokens[i].value.length;
+                    const endi = (i+1) < statement.tokens.length ? statement.tokens[i+1].starti : statement.endi;
+
+                    if (tobeCompelteIndex >= starti && tobeCompelteIndex <= endi) {
+                        // to complete between tokens[i] and tokens[i+1] in scl
+                        if (isNullOrUndefined(statement.tokens[i].completionItemsKey)) {
+                            return [];
+                        }
+                        const key = statement.tokens[i].completionItemsKey as string;
+                        const values = ALL_COMPLETION_ITEMS.get(key);
+                        if (isNullOrUndefined(values)) {
+                            return [];
+                        }
+                        values.forEach((value) => {
+                            completionItems.push({
+                                label: value.toUpperCase(),
+                                kind: CompletionItemKind.Text,
+                                documentation: "Endevor SCL keyword"
+                            });
+                        });
+                        return completionItems;
+                    }
+                }
+            }
+        }
+
+        // to complete at the end of scl
+        const statement = document.statements[document.statements.length-1];
+        const key = statement.tokens[statement.tokens.length-1].completionItemsKey;
+        if (isNullOrUndefined(key)) {
+            return [];
+        }
+        const values = ALL_COMPLETION_ITEMS.get(key);
+        if (isNullOrUndefined(values)) {
+            return [];
+        }
+        values.forEach((value) => {
+            completionItems.push({
+                label: value.toUpperCase(),
+                kind: CompletionItemKind.Text,
+                documentation: "Endevor SCL keyword"
+            });
+        });
+        return completionItems;
     }
 }

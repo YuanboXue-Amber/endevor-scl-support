@@ -3,6 +3,7 @@ import { DiagnosticSeverity } from 'vscode-languageserver';
 import { SCLstatement, SCLDocument } from '../../documents/SCLDocument';
 import { QUICKFIX_SPACE_BEFORE_EOS_MSG, QUICKFIX_NO_EOS_MSG } from '../../codeActionProvider';
 
+export let ALL_COMPLETION_ITEMS: Map<string, string[]> = new Map();
 
 /**
  * Parse the end of statement character. End of all syntax tree
