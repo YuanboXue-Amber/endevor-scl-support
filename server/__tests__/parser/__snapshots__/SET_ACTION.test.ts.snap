@@ -261,7 +261,7 @@ exports[`Test 4 simple INvalid SET ACTION Should have error 12`] = `
 Array [
   Object {
     "diagnostic": Object {
-      "message": "No end of statement operator \\".\\" specified",
+      "message": "Invalid scl. No end of statement operator \\".\\" specified",
       "range": Object {
         "end": Object {
           "character": 2,

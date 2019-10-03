@@ -2,7 +2,7 @@ import { isNullOrUndefined } from "util";
 import { ITokenizedString } from "./Tokenizer";
 import { DiagnosticSeverity } from "vscode-languageserver";
 import { SCLDocument, SCLstatement } from "../documents/SCLDocument";
-import { QUICKFIX_UPPERCASEMSG } from "../codeActionProvider";
+import { QUICKFIX_UPPERCASE_MSG } from "../codeActionProvider";
 
 export const ParserTags = {
     T_ACTION: "ACTion",
@@ -112,7 +112,7 @@ function keywordUppercaseDiagnose(
             keywordInSource,
             statement,
             DiagnosticSeverity.Warning,
-            QUICKFIX_UPPERCASEMSG,
+            QUICKFIX_UPPERCASE_MSG,
             'Lowercased keyword might cause the scl action to fail when submitted');
     }
 }

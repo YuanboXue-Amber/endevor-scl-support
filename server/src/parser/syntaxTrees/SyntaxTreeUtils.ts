@@ -1,6 +1,7 @@
 import { ITokenizedString } from '../Tokenizer';
 import { DiagnosticSeverity } from 'vscode-languageserver';
 import { SCLstatement, SCLDocument } from '../../documents/SCLDocument';
+import { QUICKFIX_SPACE_BEFORE_EOS_MSG, QUICKFIX_NO_EOS_MSG } from '../../codeActionProvider';
 
 
 /**
@@ -26,7 +27,7 @@ export function parseEOStatement(
                 document.pushDiagnostic(
                     token, statement,
                     DiagnosticSeverity.Error,
-                    "Invalid scl. Expecting a space before end of statement operator \".\"");
+                    QUICKFIX_SPACE_BEFORE_EOS_MSG);
                 return;
             }
             // valid scl
@@ -35,14 +36,14 @@ export function parseEOStatement(
             document.pushDiagnostic(
                 token, statement,
                 DiagnosticSeverity.Error,
-                "Invalid scl. Expecting end of statement operator \".\"");
+                QUICKFIX_NO_EOS_MSG);
             return;
         }
     } else {
         document.pushDiagnostic(
             currSCL[iterator], statement,
             DiagnosticSeverity.Error,
-            "No end of statement operator \".\" specified");
+            QUICKFIX_NO_EOS_MSG);
         return;
     }
 }
