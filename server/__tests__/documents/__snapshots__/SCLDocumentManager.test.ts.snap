@@ -897,3 +897,52 @@ exports[`Test test5: update document 7`] = `17`;
 exports[`Test test5: update document 8`] = `38`;
 
 exports[`Test test5: update document 9`] = `Array []`;
+
+exports[`Test test6: update document 1`] = `"SET ACTION TRANSFER ."`;
+
+exports[`Test test6: update document 2`] = `
+Array [
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 0,
+    "value": "SET",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 4,
+    "value": "ACTION",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": false,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": true,
+    "starti": 11,
+    "value": "TRANSFER",
+  },
+  Object {
+    "is_eoInput": false,
+    "is_eoStatement": true,
+    "is_keyword": false,
+    "is_op_char": false,
+    "is_word": false,
+    "starti": 20,
+    "value": ".",
+  },
+]
+`;
+
+exports[`Test test6: update document 3`] = `0`;
+
+exports[`Test test6: update document 4`] = `21`;
+
+exports[`Test test6: update document 5`] = `Array []`;

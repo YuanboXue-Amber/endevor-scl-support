@@ -243,4 +243,48 @@ describe("Test", () => {
         }
     });
 
+    it("test6: update document", async () => {
+
+        const updatedDocumentId: VersionedTextDocumentIdentifier = {
+            uri: "mocked/uri",
+            version: 1
+        };
+
+        const contentChanges: TextDocumentContentChangeEvent[] = [
+            {
+                // insert at the beginning
+                range: {
+                    start: {
+                        line: 0,
+                        character: 0
+                    },
+                    end: {
+                        line: 0,
+                        character: 0
+                    }
+                },
+                rangeLength: 0,
+                text: "SET "
+            }
+        ];
+
+        const openedDocument: TextDocumentItem = {
+            uri: "mocked/uri",
+            languageId: "mocklanguageId",
+            version: 1,
+            text: "ACTION TRANSFER ."
+        };
+        const manager = new SCLDocumentManager();
+        manager.openDocument(openedDocument);
+        const document: SCLDocument = manager.updateDocument(updatedDocumentId, contentChanges);
+        expect(document.textDocument.getText()).toMatchSnapshot();
+        for (const statement of document.statements) {
+            expect(statement.tokens).toMatchSnapshot();
+            expect(statement.starti).toMatchSnapshot();
+            expect(statement.endi).toMatchSnapshot();
+            expect(statement.diagnostics).toMatchSnapshot();
+        }
+    });
+
+
 });

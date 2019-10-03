@@ -20,10 +20,8 @@ import {
 import { isNullOrUndefined } from 'util';
 import { quickfix } from './CodeActionProvider';
 import { composeCompletionItemsFromKeywords } from './CompletionProvider';
-import { TextDocument } from 'vscode-languageserver';
 import { SCLDocumentManager } from './documents/SCLDocumentManager';
 import { SCLDocument } from './documents/SCLDocument';
-import { stat } from 'fs';
 
 // Create a connection for the server. The connection uses Node's IPC as a transport.
 // Also include all preview / proposed LSP features.
@@ -67,7 +65,6 @@ connection.onInitialize((params: InitializeParams) => {
                 resolveProvider: true
             },
             hoverProvider: true, // AmberTODO
-            documentHighlightProvider: true,
         }
     };
 
