@@ -220,7 +220,7 @@ Lowercased keyword might cause the scl action to fail when submitted",
   Object {
     "diagnostic": Object {
       "message": "Invalid keyword \\"INvalid\\" specified after SET.
-SET should be followed by the following keywords: ACTION, BUILD, FROM, OPTIONS, STOPRC, TO, WHERE",
+Valid keywords: ACTION, BUILD, FROM, OPTIONS, STOPRC, TO, WHERE",
       "range": Object {
         "end": Object {
           "character": 12,
@@ -582,8 +582,8 @@ Lowercased keyword might cause the scl action to fail when submitted",
   },
   Object {
     "diagnostic": Object {
-      "message": "Invalid action \\"invalid\\" specified after SET ACTION.
-Valid actions are: ADD, ARCHIVE, COPY, DELETE, GENERATE, LIST, MOVE, PRINT, RESTORE, RETRIEVE, SIGNIN, TRANSFER, UPDATE, VALIDATE",
+      "message": "Invalid keyword \\"invalid\\" specified after SET ACTION.
+Valid keywords: ADD, ARCHIVE, COPY, DELETE, GENERATE, LIST, MOVE, PRINT, RESTORE, RETRIEVE, SIGNIN, TRANSFER, UPDATE, VALIDATE",
       "range": Object {
         "end": Object {
           "character": 36,

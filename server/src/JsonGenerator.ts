@@ -27,7 +27,25 @@ const level1keywords: string[] = [
     ParserTags.T_OPTIONS,
     ParserTags.T_TO,
     ParserTags.T_WHERE,
-    ParserTags.T_STOPRC
+    ParserTags.T_STOPRC,
+    ParserTags.T_ELEMENT,
+    ParserTags.T_THROUGH,
+];
+
+const level2keywords: string[] = [
+    ParserTags.T_FILE,
+    ParserTags.T_DDNAME,
+    ParserTags.T_DSNAME,
+    ParserTags.T_PATH,
+    ParserTags.T_MEMBER,
+    ParserTags.T_USSFILE,
+
+    ParserTags.T_ENVIRONMENT,
+    ParserTags.T_SYSTEM,
+    ParserTags.T_SUBSYSTEM,
+    ParserTags.T_TYPE,
+    ParserTags.T_STAGE,
+    ParserTags.T_NUMBER,
 ];
 
 // compose a regex from parsetag. Eg. for T_APPROVER it is APP(ROVER|ROVE|ROV|RO|R|\b)
@@ -69,6 +87,16 @@ const jsonGenerator = (() => {
             return;
         textMateObj.repository.keywords.patterns.push({
             name: "support.class.secondarykeyword.scl",
+            match: regex
+        });
+    });
+
+    level2keywords.forEach((kw) => {
+        const regex = composeRegex(kw);
+        if (isNullOrUndefined(regex))
+            return;
+        textMateObj.repository.keywords.patterns.push({
+            name: "support.variable.tertiarykeyword.scl",
             match: regex
         });
     });

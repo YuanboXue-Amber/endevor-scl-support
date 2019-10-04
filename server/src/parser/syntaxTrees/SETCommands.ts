@@ -24,7 +24,7 @@ export function parseSETSCL(statement: SCLstatement, document: SCLDocument) {
             currSCL[0],
             statement,
             DiagnosticSeverity.Error,
-            `SET should be followed by the following keywords: ${completionItems.join(", ")}`);
+            "Incomplete SCL.");
         return;
     }
 
@@ -57,7 +57,7 @@ export function parseSETSCL(statement: SCLstatement, document: SCLDocument) {
                 token, statement,
                 DiagnosticSeverity.Error,
                 `Invalid keyword \"${token.value}\" specified after SET.` +
-                    `\nSET should be followed by the following keywords: ${completionItems.join(", ")}`);
+                    `\nValid keywords: ${completionItems.join(", ")}`);
             return;
     }
 }
@@ -75,6 +75,7 @@ function parseSetAction(
     statement: SCLstatement, document: SCLDocument) {
 
     const currSCL: ITokenizedString[] = statement.tokens;
+    // currSCL[iterator] is ACTION
     const completionItems = [
         "ADD", "ARCHIVE", "COPY", "DELETE", "GENERATE", "LIST", "MOVE", "PRINT", "RESTORE", "RETRIEVE", "SIGNIN", "TRANSFER", "UPDATE", "VALIDATE"];
     currSCL[iterator].completionItemsKey = "SET ACTION";
@@ -132,8 +133,8 @@ function parseSetAction(
                 document.pushDiagnostic(
                     token, statement,
                     DiagnosticSeverity.Error,
-                    `Invalid action \"${token.value}\" specified after SET ACTION.` +
-                        `\nValid actions are: ${completionItems.join(", ")}`);
+                    `Invalid keyword \"${token.value}\" specified after SET ACTION.` +
+                        `\nValid keywords: ${completionItems.join(", ")}`);
                 return;
         }
 
@@ -141,8 +142,7 @@ function parseSetAction(
         document.pushDiagnostic(
             currSCL[iterator], statement,
             DiagnosticSeverity.Error,
-            "No action specified after SET ACTION." +
-                `\nValid actions are: ${completionItems.join(", ")}`);
+            "Incomplete SCL.");
         return;
     }
 }
