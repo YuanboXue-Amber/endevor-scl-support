@@ -22,6 +22,7 @@ import { quickfix } from './CodeActionProvider';
 import { composeCompletionItemsFromKeywords } from './CompletionProvider';
 import { SCLDocumentManager } from './documents/SCLDocumentManager';
 import { SCLDocument } from './documents/SCLDocument';
+import { prepareTrees } from './parser/syntaxTrees/PrepareTrees';
 
 // Create a connection for the server. The connection uses Node's IPC as a transport.
 // Also include all preview / proposed LSP features.
@@ -80,8 +81,8 @@ connection.onInitialize((params: InitializeParams) => {
 // After the client received the result of the initialize request
 // but before the client is sending any other request or notification to the server
 connection.onInitialized(() => {
+    prepareTrees(); // read syntax trees from Json
     completionItems = composeCompletionItemsFromKeywords(); // initialize completion items
-
 });
 
 connection.onDidOpenTextDocument((parm: DidOpenTextDocumentParams) => {

@@ -1,18 +1,381 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 1`] = `12`;
+exports[`Test if the tree is prepared  1`] = `
+Object {
+  "next": Array [
+    Object {
+      "next": Array [
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [],
+              "type": "eos",
+              "value": ".",
+            },
+          ],
+          "type": "keyword",
+          "value": "ADD",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [],
+              "type": "eos",
+              "value": ".",
+            },
+          ],
+          "type": "keyword",
+          "value": "ARCHIVE",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [],
+              "type": "eos",
+              "value": ".",
+            },
+          ],
+          "type": "keyword",
+          "value": "COPY",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [],
+              "type": "eos",
+              "value": ".",
+            },
+          ],
+          "type": "keyword",
+          "value": "DELETE",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [],
+              "type": "eos",
+              "value": ".",
+            },
+          ],
+          "type": "keyword",
+          "value": "GENERATE",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [],
+              "type": "eos",
+              "value": ".",
+            },
+          ],
+          "type": "keyword",
+          "value": "LIST",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [],
+              "type": "eos",
+              "value": ".",
+            },
+          ],
+          "type": "keyword",
+          "value": "MOVE",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [],
+              "type": "eos",
+              "value": ".",
+            },
+          ],
+          "type": "keyword",
+          "value": "PRINT",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [],
+              "type": "eos",
+              "value": ".",
+            },
+          ],
+          "type": "keyword",
+          "value": "RESTORE",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [],
+              "type": "eos",
+              "value": ".",
+            },
+          ],
+          "type": "keyword",
+          "value": "RETRIEVE",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [],
+              "type": "eos",
+              "value": ".",
+            },
+          ],
+          "type": "keyword",
+          "value": "SIGNIN",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [],
+              "type": "eos",
+              "value": ".",
+            },
+          ],
+          "type": "keyword",
+          "value": "TRANSFER",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [],
+              "type": "eos",
+              "value": ".",
+            },
+          ],
+          "type": "keyword",
+          "value": "UPDATE",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [],
+              "type": "eos",
+              "value": ".",
+            },
+          ],
+          "type": "keyword",
+          "value": "VALIDATE",
+        },
+      ],
+      "type": "keyword",
+      "value": "ACTION",
+    },
+    Object {
+      "next": Array [],
+      "type": "keyword",
+      "value": "BUILD",
+    },
+    Object {
+      "next": Array [],
+      "type": "keyword",
+      "value": "FROM",
+    },
+    Object {
+      "next": Array [],
+      "type": "keyword",
+      "value": "OPTIONS",
+    },
+    Object {
+      "next": Array [],
+      "type": "keyword",
+      "value": "STOPRC",
+    },
+    Object {
+      "next": Array [],
+      "type": "keyword",
+      "value": "TO",
+    },
+    Object {
+      "next": Array [],
+      "type": "keyword",
+      "value": "WHERE",
+    },
+  ],
+  "type": "keyword",
+  "value": "SET",
+}
+`;
 
-exports[`Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 2`] = `15`;
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 1`] = `12`;
 
-exports[`Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 3`] = `22`;
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 2`] = `19`;
 
-exports[`Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 4`] = `28`;
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 3`] = `5`;
 
-exports[`Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 5`] = `29`;
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 4`] = `11`;
 
-exports[`Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 6`] = `36`;
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 5`] = `29`;
 
-exports[`Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 7`] = `
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 6`] = `30`;
+
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 7`] = `22`;
+
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 8`] = `25`;
+
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 9`] = `45`;
+
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 10`] = `46`;
+
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 11`] = `58`;
+
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 12`] = `61`;
+
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 13`] = `
+Array [
+  Object {
+    "diagnostic": Object {
+      "message": "Invalid value specified",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "relatedInformation": Array [
+        Object {
+          "location": Object {
+            "range": Object {
+              "end": Object {
+                "character": 2,
+                "line": 1,
+              },
+              "start": Object {
+                "character": 2,
+                "line": 1,
+              },
+            },
+            "uri": "mocked/uri",
+          },
+          "message": "Possible valid values: ADD, ARCHIVE, COPY, DELETE, GENERATE, LIST, MOVE, PRINT, RESTORE, RETRIEVE, SIGNIN, TRANSFER, UPDATE, VALIDATE",
+        },
+      ],
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 19,
+    "starti": 12,
+  },
+]
+`;
+
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 14`] = `
+Array [
+  Object {
+    "diagnostic": Object {
+      "message": "Invalid value specified",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "relatedInformation": Array [
+        Object {
+          "location": Object {
+            "range": Object {
+              "end": Object {
+                "character": 2,
+                "line": 1,
+              },
+              "start": Object {
+                "character": 2,
+                "line": 1,
+              },
+            },
+            "uri": "mocked/uri",
+          },
+          "message": "Possible valid values: ACTION, BUILD, FROM, OPTIONS, STOPRC, TO, WHERE",
+        },
+      ],
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 30,
+    "starti": 29,
+  },
+]
+`;
+
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 15`] = `
+Array [
+  Object {
+    "diagnostic": Object {
+      "message": "Invalid scl. Expecting a space before end of statement operator \\".\\".",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 46,
+    "starti": 45,
+  },
+]
+`;
+
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 16`] = `
+Array [
+  Object {
+    "diagnostic": Object {
+      "message": "Invalid scl. No end of statement operator \\".\\" specified.",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 61,
+    "starti": 58,
+  },
+]
+`;
+
+exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 1`] = `12`;
+
+exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 2`] = `15`;
+
+exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 3`] = `22`;
+
+exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 4`] = `28`;
+
+exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 5`] = `29`;
+
+exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 6`] = `36`;
+
+exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 7`] = `29`;
+
+exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 8`] = `36`;
+
+exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 9`] = `22`;
+
+exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 10`] = `28`;
+
+exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 11`] = `
 Array [
   Object {
     "diagnostic": Object {
@@ -37,7 +400,7 @@ Lowercased keyword might cause the scl action to fail when submitted",
 ]
 `;
 
-exports[`Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 8`] = `
+exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 12`] = `
 Array [
   Object {
     "diagnostic": Object {
@@ -61,8 +424,7 @@ Lowercased keyword might cause the scl action to fail when submitted",
   },
   Object {
     "diagnostic": Object {
-      "message": "Invalid keyword \\"invalid\\" specified after SET ACTION.
-Valid keywords: ADD, ARCHIVE, COPY, DELETE, GENERATE, LIST, MOVE, PRINT, RESTORE, RETRIEVE, SIGNIN, TRANSFER, UPDATE, VALIDATE",
+      "message": "Invalid scl. No end of statement operator \\".\\" specified.",
       "range": Object {
         "end": Object {
           "character": 2,
@@ -79,31 +441,9 @@ Valid keywords: ADD, ARCHIVE, COPY, DELETE, GENERATE, LIST, MOVE, PRINT, RESTORE
     "endi": 36,
     "starti": 29,
   },
-]
-`;
-
-exports[`Test 4 simple INvalid SET ACTION Should have error 1`] = `12`;
-
-exports[`Test 4 simple INvalid SET ACTION Should have error 2`] = `19`;
-
-exports[`Test 4 simple INvalid SET ACTION Should have error 3`] = `29`;
-
-exports[`Test 4 simple INvalid SET ACTION Should have error 4`] = `30`;
-
-exports[`Test 4 simple INvalid SET ACTION Should have error 5`] = `45`;
-
-exports[`Test 4 simple INvalid SET ACTION Should have error 6`] = `46`;
-
-exports[`Test 4 simple INvalid SET ACTION Should have error 7`] = `58`;
-
-exports[`Test 4 simple INvalid SET ACTION Should have error 8`] = `61`;
-
-exports[`Test 4 simple INvalid SET ACTION Should have error 9`] = `
-Array [
   Object {
     "diagnostic": Object {
-      "message": "Invalid keyword \\"INVALID\\" specified after SET ACTION.
-Valid keywords: ADD, ARCHIVE, COPY, DELETE, GENERATE, LIST, MOVE, PRINT, RESTORE, RETRIEVE, SIGNIN, TRANSFER, UPDATE, VALIDATE",
+      "message": "Invalid value specified",
       "range": Object {
         "end": Object {
           "character": 2,
@@ -114,84 +454,29 @@ Valid keywords: ADD, ARCHIVE, COPY, DELETE, GENERATE, LIST, MOVE, PRINT, RESTORE
           "line": 1,
         },
       },
+      "relatedInformation": Array [
+        Object {
+          "location": Object {
+            "range": Object {
+              "end": Object {
+                "character": 2,
+                "line": 1,
+              },
+              "start": Object {
+                "character": 2,
+                "line": 1,
+              },
+            },
+            "uri": "mocked/uri",
+          },
+          "message": "Possible valid values: ADD, ARCHIVE, COPY, DELETE, GENERATE, LIST, MOVE, PRINT, RESTORE, RETRIEVE, SIGNIN, TRANSFER, UPDATE, VALIDATE",
+        },
+      ],
       "severity": 1,
       "source": "Endevor SCL extension",
     },
-    "endi": 19,
-    "starti": 12,
-  },
-]
-`;
-
-exports[`Test 4 simple INvalid SET ACTION Should have error 10`] = `
-Array [
-  Object {
-    "diagnostic": Object {
-      "message": "Invalid keyword \\".\\" specified after SET.
-Valid keywords: ACTION, BUILD, FROM, OPTIONS, STOPRC, TO, WHERE",
-      "range": Object {
-        "end": Object {
-          "character": 2,
-          "line": 1,
-        },
-        "start": Object {
-          "character": 2,
-          "line": 1,
-        },
-      },
-      "severity": 1,
-      "source": "Endevor SCL extension",
-    },
-    "endi": 30,
+    "endi": 36,
     "starti": 29,
-  },
-]
-`;
-
-exports[`Test 4 simple INvalid SET ACTION Should have error 11`] = `
-Array [
-  Object {
-    "diagnostic": Object {
-      "message": "Invalid scl. Expecting a space before end of statement operator \\".\\".",
-      "range": Object {
-        "end": Object {
-          "character": 2,
-          "line": 1,
-        },
-        "start": Object {
-          "character": 2,
-          "line": 1,
-        },
-      },
-      "severity": 1,
-      "source": "Endevor SCL extension",
-    },
-    "endi": 46,
-    "starti": 45,
-  },
-]
-`;
-
-exports[`Test 4 simple INvalid SET ACTION Should have error 12`] = `
-Array [
-  Object {
-    "diagnostic": Object {
-      "message": "Invalid scl. No end of statement operator \\".\\" specified.",
-      "range": Object {
-        "end": Object {
-          "character": 2,
-          "line": 1,
-        },
-        "start": Object {
-          "character": 2,
-          "line": 1,
-        },
-      },
-      "severity": 1,
-      "source": "Endevor SCL extension",
-    },
-    "endi": 61,
-    "starti": 58,
   },
 ]
 `;

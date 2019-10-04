@@ -1,0 +1,487 @@
+{
+    "value": "ADD",
+    "type": "keyword",
+    "next": [
+        {
+            "value": "ELEMENT",
+            "type": "keyword",
+            "next": [
+                {
+                    "value": "element-name",
+                    "type": "value",
+                    "next": [
+                        {
+                            "value": "THROUGH",
+                            "type": "keyword",
+                            "next": [
+                                {
+                                    "value": "element-name",
+                                    "type": "value",
+                                    "next": [
+                                        {
+                                            "value": ".",
+                                            "type": "eos",
+                                            "next": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "value": "THRU",
+                            "type": "keyword",
+                            "next": [
+                                {
+                                    "value": "element-name",
+                                    "type": "value",
+                                    "next": [
+                                        {
+                                            "value": ".",
+                                            "type": "eos",
+                                            "next": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "value": "FROM",
+                            "type": "keyword",
+                            "next": [
+                                {
+                                    "value": "FILE",
+                                    "type": "keyword",
+                                    "next": [
+                                        {
+                                            "value": "dd-name",
+                                            "type": "value",
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "DDNAME",
+                                    "type": "keyword",
+                                    "next": [
+                                        {
+                                            "value": "dd-name",
+                                            "type": "value",
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "DSNAME",
+                                    "type": "keyword",
+                                    "next": [
+                                        {
+                                            "value": "dd-name",
+                                            "type": "value",
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                },
+                                                {
+                                                    "value": "MEMBER",
+                                                    "type": "keyword",
+                                                    "next": [
+                                                        {
+                                                            "value": "memeber-name",
+                                                            "type": "value",
+                                                            "next": [
+                                                                {
+                                                                    "value": ".",
+                                                                    "type": "eos",
+                                                                    "next": []
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "PATH",
+                                    "type": "keyword",
+                                    "next": [
+                                        {
+                                            "value": "usspath",
+                                            "type": "value",
+                                            "next": [
+                                                {
+                                                    "value": "USSFILE",
+                                                    "type": "keyword",
+                                                    "next": [
+                                                        {
+                                                            "value": "ussfile",
+                                                            "type": "value",
+                                                            "next": [
+                                                                {
+                                                                    "value": ".",
+                                                                    "type": "eos",
+                                                                    "next": []
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "value": "TO",
+                            "type": "keyword",
+                            "next": [
+                                {
+                                    "value": "ENVIRONMENT",
+                                    "type": "keyword",
+                                    "next": [
+                                        {
+                                            "value": "env-name",
+                                            "type": "value",
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "SYSTEM",
+                                    "type": "keyword",
+                                    "next": [
+                                        {
+                                            "value": "sys-name",
+                                            "type": "value",
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "SUBSYSTEM",
+                                    "type": "keyword",
+                                    "next": [
+                                        {
+                                            "value": "sub-name",
+                                            "type": "value",
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "TYPE",
+                                    "type": "keyword",
+                                    "next": [
+                                        {
+                                            "value": "typ-name",
+                                            "type": "value",
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "value": "OPTION",
+                            "type": "keyword",
+                            "next": [
+                                {
+                                    "value": "CCID",
+                                    "type": "keyword",
+                                    "next": [
+                                        {
+                                            "value": "ccid",
+                                            "type": "value",
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "COMMENT",
+                                    "type": "keyword",
+                                    "next": [
+                                        {
+                                            "value": "comment",
+                                            "type": "value",
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "NEW",
+                                    "type": "keyword",
+                                    "next": [
+                                        {
+                                            "value": "VERSION",
+                                            "type": "keyword",
+                                            "next": [
+                                                {
+                                                    "value": "version",
+                                                    "type": "value",
+                                                    "next": [
+                                                        {
+                                                            "value": ".",
+                                                            "type": "eos",
+                                                            "next": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "UPDATE",
+                                    "type": "keyword",
+                                    "next": [
+                                        {
+                                            "value": "IF",
+                                            "type": "keyword",
+                                            "next": [
+                                                {
+                                                    "value": "PRESENT",
+                                                    "type": "keyword",
+                                                    "next": [
+                                                        {
+                                                            "value": ".",
+                                                            "type": "eos",
+                                                            "next": []
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "DELETE",
+                                    "type": "keyword",
+                                    "next": [
+                                        {
+                                            "value": "INPUT",
+                                            "type": "keyword",
+                                            "next": [
+                                                {
+                                                    "value": "SOURCE",
+                                                    "type": "keyword",
+                                                    "next": [
+                                                        {
+                                                            "value": ".",
+                                                            "type": "eos",
+                                                            "next": []
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "OVERRIDE",
+                                    "type": "keyword",
+                                    "next": [
+                                        {
+                                            "value": "SIGNOUT",
+                                            "type": "keyword",
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "BYPASS",
+                                    "type": "keyword",
+                                    "next": [
+                                        {
+                                            "value": "GENERATE",
+                                            "type": "keyword",
+                                            "next": [
+                                                {
+                                                    "value": "PROCESSOR",
+                                                    "type": "keyword",
+                                                    "next": [
+                                                        {
+                                                            "value": ".",
+                                                            "type": "eos",
+                                                            "next": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "PROCESSOR",
+                                    "type": "keyword",
+                                    "next": [
+                                        {
+                                            "value": "GROUP",
+                                            "type": "keyword",
+                                            "next": [
+                                                {
+                                                    "value": "EQUAL, =",
+                                                    "type": "keyword",
+                                                    "next": [
+                                                        {
+                                                            "value": "pgroup-name",
+                                                            "type": "value",
+                                                            "next": [
+                                                                {
+                                                                    "value": ".",
+                                                                    "type": "eos",
+                                                                    "next": []
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "AUTOGEN",
+                                    "type": "keyword",
+                                    "next": [
+                                        {
+                                            "value": ".",
+                                            "type": "eos",
+                                            "next": []
+                                        },
+                                        {
+                                            "value": "SPAN",
+                                            "type": "keyword",
+                                            "next": [
+                                                {
+                                                    "value": "NONE",
+                                                    "type": "keyword",
+                                                    "next": [
+                                                        {
+                                                            "value": ".",
+                                                            "type": "eos",
+                                                            "next": []
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "value": "ALL",
+                                                    "type": "keyword",
+                                                    "next": [
+                                                        {
+                                                            "value": ".",
+                                                            "type": "eos",
+                                                            "next": []
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "value": "SYSTEMS",
+                                                    "type": "keyword",
+                                                    "next": [
+                                                        {
+                                                            "value": ".",
+                                                            "type": "eos",
+                                                            "next": []
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "value": "SUBSYSTEMS",
+                                                    "type": "keyword",
+                                                    "next": [
+                                                        {
+                                                            "value": ".",
+                                                            "type": "eos",
+                                                            "next": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "value": ".",
+                            "type": "eos",
+                            "next": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

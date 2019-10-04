@@ -1,6 +1,12 @@
 import { SCLDocumentManager } from '../../src/documents/SCLDocumentManager';
 import { TextDocumentItem, TextDocumentContentChangeEvent, CompletionItem, TextDocumentPositionParams } from 'vscode-languageserver';
 import { SCLDocument } from '../../src/documents/SCLDocument';
+import { prepareSETtree } from '../../src/parser/syntaxTrees/PrepareTrees';
+
+beforeAll(() => {
+    prepareSETtree();
+});
+
 
 describe("Test", () => {
 

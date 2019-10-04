@@ -9,7 +9,15 @@ exports[`Test test1: open document 1`] = `
 exports[`Test test1: open document 2`] = `
 Array [
   Object {
-    "completionItemsKey": "SET",
+    "completionItems": Array [
+      "ACTION",
+      "BUILD",
+      "FROM",
+      "OPTIONS",
+      "STOPRC",
+      "TO",
+      "WHERE",
+    ],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -18,7 +26,22 @@ Array [
     "value": "SET",
   },
   Object {
-    "completionItemsKey": "SET ACTION",
+    "completionItems": Array [
+      "ADD",
+      "ARCHIVE",
+      "COPY",
+      "DELETE",
+      "GENERATE",
+      "LIST",
+      "MOVE",
+      "PRINT",
+      "RESTORE",
+      "RETRIEVE",
+      "SIGNIN",
+      "TRANSFER",
+      "UPDATE",
+      "VALIDATE",
+    ],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -27,6 +50,7 @@ Array [
     "value": "action",
   },
   Object {
+    "completionItems": Array [],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -35,6 +59,7 @@ Array [
     "value": "add",
   },
   Object {
+    "completionItems": Array [],
     "is_eoInput": false,
     "is_eoStatement": true,
     "is_op_char": false,
@@ -97,7 +122,15 @@ Lowercased keyword might cause the scl action to fail when submitted",
 exports[`Test test1: open document 6`] = `
 Array [
   Object {
-    "completionItemsKey": "SET",
+    "completionItems": Array [
+      "ACTION",
+      "BUILD",
+      "FROM",
+      "OPTIONS",
+      "STOPRC",
+      "TO",
+      "WHERE",
+    ],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -106,7 +139,22 @@ Array [
     "value": "SET",
   },
   Object {
-    "completionItemsKey": "SET ACTION",
+    "completionItems": Array [
+      "ADD",
+      "ARCHIVE",
+      "COPY",
+      "DELETE",
+      "GENERATE",
+      "LIST",
+      "MOVE",
+      "PRINT",
+      "RESTORE",
+      "RETRIEVE",
+      "SIGNIN",
+      "TRANSFER",
+      "UPDATE",
+      "VALIDATE",
+    ],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -115,6 +163,7 @@ Array [
     "value": "ACTION",
   },
   Object {
+    "completionItems": Array [],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -123,6 +172,7 @@ Array [
     "value": "RESTORE",
   },
   Object {
+    "completionItems": Array [],
     "is_eoInput": false,
     "is_eoStatement": true,
     "is_op_char": true,
@@ -164,7 +214,15 @@ Array [
 exports[`Test test1: open document 10`] = `
 Array [
   Object {
-    "completionItemsKey": "SET",
+    "completionItems": Array [
+      "ACTION",
+      "BUILD",
+      "FROM",
+      "OPTIONS",
+      "STOPRC",
+      "TO",
+      "WHERE",
+    ],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -219,8 +277,26 @@ Lowercased keyword might cause the scl action to fail when submitted",
   },
   Object {
     "diagnostic": Object {
-      "message": "Invalid keyword \\"INvalid\\" specified after SET.
-Valid keywords: ACTION, BUILD, FROM, OPTIONS, STOPRC, TO, WHERE",
+      "message": "Invalid scl. Expecting a space before end of statement operator \\".\\".",
+      "range": Object {
+        "end": Object {
+          "character": 13,
+          "line": 2,
+        },
+        "start": Object {
+          "character": 12,
+          "line": 2,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 53,
+    "starti": 52,
+  },
+  Object {
+    "diagnostic": Object {
+      "message": "Invalid value specified",
       "range": Object {
         "end": Object {
           "character": 12,
@@ -248,7 +324,15 @@ exports[`Test test2: update document 1`] = `
 exports[`Test test2: update document 2`] = `
 Array [
   Object {
-    "completionItemsKey": "SET",
+    "completionItems": Array [
+      "ACTION",
+      "BUILD",
+      "FROM",
+      "OPTIONS",
+      "STOPRC",
+      "TO",
+      "WHERE",
+    ],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -257,7 +341,22 @@ Array [
     "value": "SET",
   },
   Object {
-    "completionItemsKey": "SET ACTION",
+    "completionItems": Array [
+      "ADD",
+      "ARCHIVE",
+      "COPY",
+      "DELETE",
+      "GENERATE",
+      "LIST",
+      "MOVE",
+      "PRINT",
+      "RESTORE",
+      "RETRIEVE",
+      "SIGNIN",
+      "TRANSFER",
+      "UPDATE",
+      "VALIDATE",
+    ],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -266,6 +365,7 @@ Array [
     "value": "ACTION",
   },
   Object {
+    "completionItems": Array [],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -274,6 +374,7 @@ Array [
     "value": "RESTORE",
   },
   Object {
+    "completionItems": Array [],
     "is_eoInput": false,
     "is_eoStatement": true,
     "is_op_char": true,
@@ -315,7 +416,15 @@ Array [
 exports[`Test test2: update document 6`] = `
 Array [
   Object {
-    "completionItemsKey": "SET",
+    "completionItems": Array [
+      "ACTION",
+      "BUILD",
+      "FROM",
+      "OPTIONS",
+      "STOPRC",
+      "TO",
+      "WHERE",
+    ],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -324,7 +433,22 @@ Array [
     "value": "Set",
   },
   Object {
-    "completionItemsKey": "SET ACTION",
+    "completionItems": Array [
+      "ADD",
+      "ARCHIVE",
+      "COPY",
+      "DELETE",
+      "GENERATE",
+      "LIST",
+      "MOVE",
+      "PRINT",
+      "RESTORE",
+      "RETRIEVE",
+      "SIGNIN",
+      "TRANSFER",
+      "UPDATE",
+      "VALIDATE",
+    ],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -333,6 +457,7 @@ Array [
     "value": "ACTION",
   },
   Object {
+    "completionItems": Array [],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -341,6 +466,7 @@ Array [
     "value": "TRANSFER",
   },
   Object {
+    "completionItems": Array [],
     "is_eoInput": false,
     "is_eoStatement": true,
     "is_op_char": false,
@@ -451,7 +577,15 @@ exports[`Test test3: update document 1`] = `
 exports[`Test test3: update document 2`] = `
 Array [
   Object {
-    "completionItemsKey": "SET",
+    "completionItems": Array [
+      "ACTION",
+      "BUILD",
+      "FROM",
+      "OPTIONS",
+      "STOPRC",
+      "TO",
+      "WHERE",
+    ],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -460,7 +594,22 @@ Array [
     "value": "SET",
   },
   Object {
-    "completionItemsKey": "SET ACTION",
+    "completionItems": Array [
+      "ADD",
+      "ARCHIVE",
+      "COPY",
+      "DELETE",
+      "GENERATE",
+      "LIST",
+      "MOVE",
+      "PRINT",
+      "RESTORE",
+      "RETRIEVE",
+      "SIGNIN",
+      "TRANSFER",
+      "UPDATE",
+      "VALIDATE",
+    ],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -469,6 +618,7 @@ Array [
     "value": "ACTION",
   },
   Object {
+    "completionItems": Array [],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -477,6 +627,7 @@ Array [
     "value": "RESTORE",
   },
   Object {
+    "completionItems": Array [],
     "is_eoInput": false,
     "is_eoStatement": true,
     "is_op_char": true,
@@ -518,7 +669,15 @@ Array [
 exports[`Test test3: update document 6`] = `
 Array [
   Object {
-    "completionItemsKey": "SET",
+    "completionItems": Array [
+      "ACTION",
+      "BUILD",
+      "FROM",
+      "OPTIONS",
+      "STOPRC",
+      "TO",
+      "WHERE",
+    ],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -527,7 +686,22 @@ Array [
     "value": "Set",
   },
   Object {
-    "completionItemsKey": "SET ACTION",
+    "completionItems": Array [
+      "ADD",
+      "ARCHIVE",
+      "COPY",
+      "DELETE",
+      "GENERATE",
+      "LIST",
+      "MOVE",
+      "PRINT",
+      "RESTORE",
+      "RETRIEVE",
+      "SIGNIN",
+      "TRANSFER",
+      "UPDATE",
+      "VALIDATE",
+    ],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -582,8 +756,7 @@ Lowercased keyword might cause the scl action to fail when submitted",
   },
   Object {
     "diagnostic": Object {
-      "message": "Invalid keyword \\"invalid\\" specified after SET ACTION.
-Valid keywords: ADD, ARCHIVE, COPY, DELETE, GENERATE, LIST, MOVE, PRINT, RESTORE, RETRIEVE, SIGNIN, TRANSFER, UPDATE, VALIDATE",
+      "message": "Invalid value specified",
       "range": Object {
         "end": Object {
           "character": 36,
@@ -606,7 +779,15 @@ Valid keywords: ADD, ARCHIVE, COPY, DELETE, GENERATE, LIST, MOVE, PRINT, RESTORE
 exports[`Test test3: update document 10`] = `
 Array [
   Object {
-    "completionItemsKey": "SET",
+    "completionItems": Array [
+      "ACTION",
+      "BUILD",
+      "FROM",
+      "OPTIONS",
+      "STOPRC",
+      "TO",
+      "WHERE",
+    ],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -615,7 +796,22 @@ Array [
     "value": "SET",
   },
   Object {
-    "completionItemsKey": "SET ACTION",
+    "completionItems": Array [
+      "ADD",
+      "ARCHIVE",
+      "COPY",
+      "DELETE",
+      "GENERATE",
+      "LIST",
+      "MOVE",
+      "PRINT",
+      "RESTORE",
+      "RETRIEVE",
+      "SIGNIN",
+      "TRANSFER",
+      "UPDATE",
+      "VALIDATE",
+    ],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -624,6 +820,7 @@ Array [
     "value": "ACTION",
   },
   Object {
+    "completionItems": Array [],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -632,6 +829,7 @@ Array [
     "value": "transfer",
   },
   Object {
+    "completionItems": Array [],
     "is_eoInput": false,
     "is_eoStatement": true,
     "is_op_char": false,
@@ -674,7 +872,15 @@ Lowercased keyword might cause the scl action to fail when submitted",
 exports[`Test test3: update document 14`] = `
 Array [
   Object {
-    "completionItemsKey": "SET",
+    "completionItems": Array [
+      "ACTION",
+      "BUILD",
+      "FROM",
+      "OPTIONS",
+      "STOPRC",
+      "TO",
+      "WHERE",
+    ],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -683,7 +889,22 @@ Array [
     "value": "SET",
   },
   Object {
-    "completionItemsKey": "SET ACTION",
+    "completionItems": Array [
+      "ADD",
+      "ARCHIVE",
+      "COPY",
+      "DELETE",
+      "GENERATE",
+      "LIST",
+      "MOVE",
+      "PRINT",
+      "RESTORE",
+      "RETRIEVE",
+      "SIGNIN",
+      "TRANSFER",
+      "UPDATE",
+      "VALIDATE",
+    ],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -692,6 +913,7 @@ Array [
     "value": "action",
   },
   Object {
+    "completionItems": Array [],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -700,6 +922,7 @@ Array [
     "value": "DELETE",
   },
   Object {
+    "completionItems": Array [],
     "is_eoInput": false,
     "is_eoStatement": true,
     "is_op_char": false,
@@ -752,7 +975,15 @@ exports[`Test test5: update document 1`] = `"SET action add . SET ACTION TRANSFE
 exports[`Test test5: update document 2`] = `
 Array [
   Object {
-    "completionItemsKey": "SET",
+    "completionItems": Array [
+      "ACTION",
+      "BUILD",
+      "FROM",
+      "OPTIONS",
+      "STOPRC",
+      "TO",
+      "WHERE",
+    ],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -761,7 +992,22 @@ Array [
     "value": "SET",
   },
   Object {
-    "completionItemsKey": "SET ACTION",
+    "completionItems": Array [
+      "ADD",
+      "ARCHIVE",
+      "COPY",
+      "DELETE",
+      "GENERATE",
+      "LIST",
+      "MOVE",
+      "PRINT",
+      "RESTORE",
+      "RETRIEVE",
+      "SIGNIN",
+      "TRANSFER",
+      "UPDATE",
+      "VALIDATE",
+    ],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -770,6 +1016,7 @@ Array [
     "value": "action",
   },
   Object {
+    "completionItems": Array [],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -778,6 +1025,7 @@ Array [
     "value": "add",
   },
   Object {
+    "completionItems": Array [],
     "is_eoInput": false,
     "is_eoStatement": true,
     "is_op_char": false,
@@ -840,7 +1088,15 @@ Lowercased keyword might cause the scl action to fail when submitted",
 exports[`Test test5: update document 6`] = `
 Array [
   Object {
-    "completionItemsKey": "SET",
+    "completionItems": Array [
+      "ACTION",
+      "BUILD",
+      "FROM",
+      "OPTIONS",
+      "STOPRC",
+      "TO",
+      "WHERE",
+    ],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -849,7 +1105,22 @@ Array [
     "value": "SET",
   },
   Object {
-    "completionItemsKey": "SET ACTION",
+    "completionItems": Array [
+      "ADD",
+      "ARCHIVE",
+      "COPY",
+      "DELETE",
+      "GENERATE",
+      "LIST",
+      "MOVE",
+      "PRINT",
+      "RESTORE",
+      "RETRIEVE",
+      "SIGNIN",
+      "TRANSFER",
+      "UPDATE",
+      "VALIDATE",
+    ],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -858,6 +1129,7 @@ Array [
     "value": "ACTION",
   },
   Object {
+    "completionItems": Array [],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -866,6 +1138,7 @@ Array [
     "value": "TRANSFER",
   },
   Object {
+    "completionItems": Array [],
     "is_eoInput": false,
     "is_eoStatement": true,
     "is_op_char": false,
@@ -887,7 +1160,15 @@ exports[`Test test6: update document 1`] = `"SET ACTION TRANSFER ."`;
 exports[`Test test6: update document 2`] = `
 Array [
   Object {
-    "completionItemsKey": "SET",
+    "completionItems": Array [
+      "ACTION",
+      "BUILD",
+      "FROM",
+      "OPTIONS",
+      "STOPRC",
+      "TO",
+      "WHERE",
+    ],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -896,7 +1177,22 @@ Array [
     "value": "SET",
   },
   Object {
-    "completionItemsKey": "SET ACTION",
+    "completionItems": Array [
+      "ADD",
+      "ARCHIVE",
+      "COPY",
+      "DELETE",
+      "GENERATE",
+      "LIST",
+      "MOVE",
+      "PRINT",
+      "RESTORE",
+      "RETRIEVE",
+      "SIGNIN",
+      "TRANSFER",
+      "UPDATE",
+      "VALIDATE",
+    ],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -905,6 +1201,7 @@ Array [
     "value": "ACTION",
   },
   Object {
+    "completionItems": Array [],
     "is_eoInput": false,
     "is_eoStatement": false,
     "is_op_char": false,
@@ -913,6 +1210,7 @@ Array [
     "value": "TRANSFER",
   },
   Object {
+    "completionItems": Array [],
     "is_eoInput": false,
     "is_eoStatement": true,
     "is_op_char": false,

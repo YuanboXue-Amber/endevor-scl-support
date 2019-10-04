@@ -3,52 +3,52 @@ import { ParserTags } from './parser/parserTags';
 import * as fs from 'fs';
 
 const level0keywords: string[] = [
-    ParserTags.T_SET,
-    ParserTags.T_ADD,
-    ParserTags.T_ARCHIVE,
-    ParserTags.T_COPY,
-    ParserTags.T_DELETE,
-    ParserTags.T_GENERATE,
-    ParserTags.T_LIST,
-    ParserTags.T_MOVE,
-    ParserTags.T_PRINT,
-    ParserTags.T_RESTORE,
-    ParserTags.T_RETRIEVE,
-    ParserTags.T_SIGNIN,
-    ParserTags.T_TRANSFER,
-    ParserTags.T_UPDATE,
-    ParserTags.T_VALIDATE
+    ParserTags.SET,
+    ParserTags.ADD,
+    ParserTags.ARCHIVE,
+    ParserTags.COPY,
+    ParserTags.DELETE,
+    ParserTags.GENERATE,
+    ParserTags.LIST,
+    ParserTags.MOVE,
+    ParserTags.PRINT,
+    ParserTags.RESTORE,
+    ParserTags.RETRIEVE,
+    ParserTags.SIGNIN,
+    ParserTags.TRANSFER,
+    ParserTags.UPDATE,
+    ParserTags.VALIDATE
 ];
 
 const level1keywords: string[] = [
-    ParserTags.T_ACTION,
-    ParserTags.T_BUILD,
-    ParserTags.T_FROM,
-    ParserTags.T_OPTIONS,
-    ParserTags.T_TO,
-    ParserTags.T_WHERE,
-    ParserTags.T_STOPRC,
-    ParserTags.T_ELEMENT,
-    ParserTags.T_THROUGH,
+    ParserTags.ACTION,
+    ParserTags.BUILD,
+    ParserTags.FROM,
+    ParserTags.OPTIONS,
+    ParserTags.TO,
+    ParserTags.WHERE,
+    ParserTags.STOPRC,
+    ParserTags.ELEMENT,
+    ParserTags.THROUGH,
 ];
 
 const level2keywords: string[] = [
-    ParserTags.T_FILE,
-    ParserTags.T_DDNAME,
-    ParserTags.T_DSNAME,
-    ParserTags.T_PATH,
-    ParserTags.T_MEMBER,
-    ParserTags.T_USSFILE,
+    ParserTags.FILE,
+    ParserTags.DDNAME,
+    ParserTags.DSNAME,
+    ParserTags.PATH,
+    ParserTags.MEMBER,
+    ParserTags.USSFILE,
 
-    ParserTags.T_ENVIRONMENT,
-    ParserTags.T_SYSTEM,
-    ParserTags.T_SUBSYSTEM,
-    ParserTags.T_TYPE,
-    ParserTags.T_STAGE,
-    ParserTags.T_NUMBER,
+    ParserTags.ENVIRONMENT,
+    ParserTags.SYSTEM,
+    ParserTags.SUBSYSTEM,
+    ParserTags.TYPE,
+    ParserTags.STAGE,
+    ParserTags.NUMBER,
 ];
 
-// compose a regex from parsetag. Eg. for T_APPROVER it is APP(ROVER|ROVE|ROV|RO|R|\b)
+// compose a regex from parsetag. Eg. for APPROVER it is APP(ROVER|ROVE|ROV|RO|R|\b)
 const composeRegex = ((tagValue: string): string | undefined => {
 
     const kwMatchArray = tagValue.match(/([A-Z]*)([a-zA-Z]*)/);

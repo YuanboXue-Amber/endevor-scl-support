@@ -1,8 +1,19 @@
 import { Position } from 'vscode-languageserver';
 import { SCLDocument } from '../../src/documents/SCLDocument';
 import { SCLDocumentManager } from '../../src/documents/SCLDocumentManager';
+import { prepareSETtree, SETtree } from '../../src/parser/syntaxTrees/PrepareTrees';
 
-describe("Test a simple valid SET ACTION", () => {
+beforeAll(() => {
+    prepareSETtree();
+});
+
+describe("Test if the tree is prepared", () => {
+    it("", async () => {
+        expect(SETtree).toMatchSnapshot();
+    });
+});
+
+describe("test1: Test 1 simple valid SET ACTION", () => {
     it("Should have no error", async () => {
         let sourceTextDocument: any = {
             getText() {
@@ -18,7 +29,7 @@ describe("Test a simple valid SET ACTION", () => {
     });
 });
 
-describe("Test 3 simple valid SET ACTION", () => {
+describe("test2: Test 3 simple valid SET ACTION", () => {
     it("Should have no error", async () => {
         let sourceTextDocument: any = {
             getText() {
@@ -36,7 +47,7 @@ describe("Test 3 simple valid SET ACTION", () => {
 
 SCLDocumentManager.capabilities.hasDiagnosticRelatedInformationCapability = true;
 
-describe("Test 4 simple INvalid SET ACTION", () => {
+describe("test3: Test 4 simple INvalid SET ACTION", () => {
     it("Should have error", async () => {
         let sourceTextDocument: any = {
             getText() {
@@ -60,7 +71,7 @@ describe("Test 4 simple INvalid SET ACTION", () => {
     });
 });
 
-describe("Test 2 simple INvalid SET ACTION, with lowercased keyword", () => {
+describe("test4: Test 2 simple INvalid SET ACTION, with lowercased keyword", () => {
     it("Should have error", async () => {
         let sourceTextDocument: any = {
             getText() {

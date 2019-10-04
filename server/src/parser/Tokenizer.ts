@@ -16,7 +16,7 @@ export interface ITokenizedString {
     is_eoInput: boolean;
 
     // the key used for searching what string will be following this token
-    completionItemsKey?: string;
+    completionItems?: string[];
 }
 
 /**

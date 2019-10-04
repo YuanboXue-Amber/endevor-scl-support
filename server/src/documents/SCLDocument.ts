@@ -3,7 +3,8 @@ import { ITokenizedString, Tokenizer } from '../parser/Tokenizer';
 import { isNullOrUndefined } from 'util';
 import { SCLDocumentManager } from './SCLDocumentManager';
 import { match } from '../parser/ParserTags';
-import { parseSETSCL } from '../parser/syntaxTrees/SETCommands';
+import { parser, diagnose } from '../parser/syntaxTrees/Parser';
+import { SETtree, ADDtree } from '../parser/syntaxTrees/PrepareTrees';
 
 /**
  * An interface that extends the vscode diagnostic.
@@ -144,12 +145,10 @@ export class SCLDocument {
      * @memberof SCLDocument
      */
     private walkStatement(statement: SCLstatement) {
-        if (match(statement.tokens[0], "T_SET", statement, this)) {
-            parseSETSCL(statement, this);
-        }
-        else {
-            // TODO dispatch SCL
-        }
+        if (match(statement.tokens[0], "SET", statement, this))
+            diagnose(parser(SETtree, 0, statement, this), statement, this);
+        if (match(statement.tokens[0], "ADD", statement, this))
+            diagnose(parser(ADDtree, 0, statement, this), statement, this);
     }
 
     /**

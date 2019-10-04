@@ -8,8 +8,6 @@ import {
     CompletionItemKind} from "vscode-languageserver";
 import { SCLDocument } from './SCLDocument';
 import { isNull, isNullOrUndefined } from "util";
-import { ALL_COMPLETION_ITEMS } from '../parser/syntaxTrees/SyntaxTreeUtils';
-
 
 interface IDocumentSettings {
     maxNumberOfProblems: number;
@@ -138,11 +136,7 @@ export class SCLDocumentManager {
 
                     if (tobeCompelteIndex >= starti && tobeCompelteIndex <= endi) {
                         // to complete between tokens[i] and tokens[i+1] in scl
-                        if (isNullOrUndefined(statement.tokens[i].completionItemsKey)) {
-                            return [];
-                        }
-                        const key = statement.tokens[i].completionItemsKey as string;
-                        const values = ALL_COMPLETION_ITEMS.get(key);
+                        const values = statement.tokens[i].completionItems;
                         if (isNullOrUndefined(values)) {
                             return [];
                         }
@@ -161,11 +155,7 @@ export class SCLDocumentManager {
 
         // to complete at the end of scl
         const statement = document.statements[document.statements.length-1];
-        const key = statement.tokens[statement.tokens.length-1].completionItemsKey;
-        if (isNullOrUndefined(key)) {
-            return [];
-        }
-        const values = ALL_COMPLETION_ITEMS.get(key);
+        const values = statement.tokens[statement.tokens.length-1].completionItems;
         if (isNullOrUndefined(values)) {
             return [];
         }

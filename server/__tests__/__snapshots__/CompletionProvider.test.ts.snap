@@ -95,6 +95,11 @@ Array [
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
+    "label": "OPTION",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
     "label": "PATH",
   },
   Object {
@@ -181,6 +186,81 @@ Array [
     "documentation": "Endevor SCL keyword",
     "kind": 1,
     "label": "WHERE",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "CCID",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "COMMENT",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "NEW",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "VERSION",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "IF",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "PRESENT",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "INPUT",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "SOURCE",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "OVERRIDE",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "SIGNOUT",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "BYPASS",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "PROCESSOR",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "GROUP",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "EQUAL",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "AUTOGEN",
   },
 ]
 `;

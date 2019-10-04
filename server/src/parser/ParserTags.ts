@@ -5,48 +5,48 @@ import { SCLDocument, SCLstatement } from "../documents/SCLDocument";
 import { QUICKFIX_UPPERCASE_MSG } from "../codeActionProvider";
 
 export const ParserTags = {
-    T_ACTION: "ACTion",
-    T_ADD: "ADD",
-    T_ARCHIVE: "ARChive",
-    T_BUILD: "BUIld",
-    T_COPY: "COPy",
-    T_DDNAME: "DDName",
-    T_DELETE: "DELete",
-    T_DSNAME: "DSName",
-    T_ELEMENT: "ELEment",
-    T_ENVIRONMENT: "ENVironment",
-    T_FILE: "FILe",
-    T_FROM: "FROm",
-    T_GENERATE: "GENerate",
-    T_LIST: "LISt",
-    T_MEMBER: "MEMber",
-    T_MOVE: "MOVe",
-    T_NUMBER: "NUMber",
-    T_OPTIONS: "OPTions",
-    T_PATH: "PATH",
-    T_PRINT: "PRInt",
-    T_RESTORE: "REStore",
-    T_RETRIEVE: "RETrieve",
-    T_SET: "SET",
-    T_SIGNIN: "SIGnin",
-    T_STAGE: "STAge",
-    T_STOPRC: "STOprc",
-    T_SUBSYSTEM: "SUBSystem",
-    T_SYSTEM: "SYStem",
-    T_THROUGH: "THRough",
-    T_TRANSFER: "TRAnsfer",
-    T_TO: "TO",
-    T_TYPE: "TYPe",
-    T_UPDATE: "UPDate",
-    T_USSFILE: "USSFILE",
-    T_VALIDATE: "VALidate",
-    T_WHERE: "WHEre",
+    ACTION: "ACTion",
+    ADD: "ADD",
+    ARCHIVE: "ARChive",
+    BUILD: "BUIld",
+    COPY: "COPy",
+    DDNAME: "DDName",
+    DELETE: "DELete",
+    DSNAME: "DSName",
+    ELEMENT: "ELEment",
+    ENVIRONMENT: "ENVironment",
+    FILE: "FILe",
+    FROM: "FROm",
+    GENERATE: "GENerate",
+    LIST: "LISt",
+    MEMBER: "MEMber",
+    MOVE: "MOVe",
+    NUMBER: "NUMber",
+    OPTIONS: "OPTions",
+    PATH: "PATH",
+    PRINT: "PRInt",
+    RESTORE: "REStore",
+    RETRIEVE: "RETrieve",
+    SET: "SET",
+    SIGNIN: "SIGnin",
+    STAGE: "STAge",
+    STOPRC: "STOprc",
+    SUBSYSTEM: "SUBSystem",
+    SYSTEM: "SYStem",
+    THROUGH: "THRough",
+    TRANSFER: "TRAnsfer",
+    TO: "TO",
+    TYPE: "TYPe",
+    UPDATE: "UPDate",
+    USSFILE: "USSFILE",
+    VALIDATE: "VALidate",
+    WHERE: "WHEre",
 };
 
 /**
  * Get field value based on field name
  *
- * @param {string} tag field name in ParserTag classs, eg. T_ADD
+ * @param {string} tag field name in ParserTag classs, eg. ADD
  * @returns {(string | undefined)}
  */
 function getString(tag: string): string | undefined {
@@ -63,9 +63,9 @@ function getString(tag: string): string | undefined {
  *
  * @export
  * @param {ITokenizedString} inputSCLtoken the token to be matched, which is in statement
- * @param {string} parserTag field name in ParserTag classs, eg. T_ADD
- * @param {SCLstatement} statement the statement where keyword uppercase warning diagnose will be pushed to
- * @param {SCLDocument} document the document where statement is in
+ * @param {string} parserTag field name in ParserTag classs, eg. ADD
+ * @param {SCLstatement} statement Only changed when return true: the statement where keyword uppercase warning diagnose will be pushed to
+ * @param {SCLDocument} document Only changed when return true: the document where statement is in
  * @returns {boolean} true only when the field match the keyword represent by parserTag
  */
 export function match(
@@ -91,7 +91,7 @@ export function match(
         return false;
     }
 
-    // compose a regex from parsetag. Eg. for T_APPROVER it is APP(ROVER|ROVE|ROV|RO|R|\b)
+    // compose a regex from parsetag. Eg. for APPROVER it is APP(ROVER|ROVE|ROV|RO|R|\b)
     const composeRegex = ((mandatoryText: string, optionalText: string) => {
         let regexString = mandatoryText + "(";
         for (let i = optionalText.length; i > 0; -- i) {

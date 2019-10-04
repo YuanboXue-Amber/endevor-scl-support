@@ -1,0 +1,196 @@
+{
+    "value": "SET",
+    "type": "keyword",
+    "next": [
+        {
+            "value": "ACTION",
+            "type": "keyword",
+            "next": [
+                {
+                    "value": "ADD",
+                    "type": "keyword",
+                    "next": [
+                        {
+                            "value": ".",
+                            "type": "eos",
+                            "next": []
+                        }
+                    ]
+                },
+                {
+                    "value": "ARCHIVE",
+                    "type": "keyword",
+                    "next": [
+                        {
+                            "value": ".",
+                            "type": "eos",
+                            "next": []
+                        }
+                    ]
+                },
+                {
+                    "value": "COPY",
+                    "type": "keyword",
+                    "next": [
+                        {
+                            "value": ".",
+                            "type": "eos",
+                            "next": []
+                        }
+                    ]
+                },
+                {
+                    "value": "DELETE",
+                    "type": "keyword",
+                    "next": [
+                        {
+                            "value": ".",
+                            "type": "eos",
+                            "next": []
+                        }
+                    ]
+                },
+                {
+                    "value": "GENERATE",
+                    "type": "keyword",
+                    "next": [
+                        {
+                            "value": ".",
+                            "type": "eos",
+                            "next": []
+                        }
+                    ]
+                },
+                {
+                    "value": "LIST",
+                    "type": "keyword",
+                    "next": [
+                        {
+                            "value": ".",
+                            "type": "eos",
+                            "next": []
+                        }
+                    ]
+                },
+                {
+                    "value": "MOVE",
+                    "type": "keyword",
+                    "next": [
+                        {
+                            "value": ".",
+                            "type": "eos",
+                            "next": []
+                        }
+                    ]
+                },
+                {
+                    "value": "PRINT",
+                    "type": "keyword",
+                    "next": [
+                        {
+                            "value": ".",
+                            "type": "eos",
+                            "next": []
+                        }
+                    ]
+                },
+                {
+                    "value": "RESTORE",
+                    "type": "keyword",
+                    "next": [
+                        {
+                            "value": ".",
+                            "type": "eos",
+                            "next": []
+                        }
+                    ]
+                },
+                {
+                    "value": "RETRIEVE",
+                    "type": "keyword",
+                    "next": [
+                        {
+                            "value": ".",
+                            "type": "eos",
+                            "next": []
+                        }
+                    ]
+                },
+                {
+                    "value": "SIGNIN",
+                    "type": "keyword",
+                    "next": [
+                        {
+                            "value": ".",
+                            "type": "eos",
+                            "next": []
+                        }
+                    ]
+                },
+                {
+                    "value": "TRANSFER",
+                    "type": "keyword",
+                    "next": [
+                        {
+                            "value": ".",
+                            "type": "eos",
+                            "next": []
+                        }
+                    ]
+                },
+                {
+                    "value": "UPDATE",
+                    "type": "keyword",
+                    "next": [
+                        {
+                            "value": ".",
+                            "type": "eos",
+                            "next": []
+                        }
+                    ]
+                },
+                {
+                    "value": "VALIDATE",
+                    "type": "keyword",
+                    "next": [
+                        {
+                            "value": ".",
+                            "type": "eos",
+                            "next": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "value": "BUILD",
+            "type": "keyword",
+            "next": []
+        },
+        {
+            "value": "FROM",
+            "type": "keyword",
+            "next": []
+        },
+        {
+            "value": "OPTIONS",
+            "type": "keyword",
+            "next": []
+        },
+        {
+            "value": "STOPRC",
+            "type": "keyword",
+            "next": []
+        },
+        {
+            "value": "TO",
+            "type": "keyword",
+            "next": []
+        },
+        {
+            "value": "WHERE",
+            "type": "keyword",
+            "next": []
+        }
+    ]
+}
