@@ -34,10 +34,12 @@ export function parseEOStatement(
             // valid scl
             return;
         } else {
+            // expecting an eos but find another word
             document.pushDiagnostic(
-                token, statement,
+                currSCL[iterator], statement,
                 DiagnosticSeverity.Error,
-                QUICKFIX_NO_EOS_MSG);
+                QUICKFIX_NO_EOS_MSG,
+                `Expecting the ending of SCL. Instead found \"${token.value}\"`, token);
             return;
         }
     } else {

@@ -16,7 +16,8 @@ exports[`Test 2 simple INvalid SET ACTION, with lowercased keyword Should have e
 Array [
   Object {
     "diagnostic": Object {
-      "message": "Keyword should be uppercased",
+      "message": "Keyword should be uppercased.
+Lowercased keyword might cause the scl action to fail when submitted",
       "range": Object {
         "end": Object {
           "character": 2,
@@ -27,24 +28,6 @@ Array [
           "line": 1,
         },
       },
-      "relatedInformation": Array [
-        Object {
-          "location": Object {
-            "range": Object {
-              "end": Object {
-                "character": 2,
-                "line": 1,
-              },
-              "start": Object {
-                "character": 2,
-                "line": 1,
-              },
-            },
-            "uri": "mocked/uri",
-          },
-          "message": "Lowercased keyword might cause the scl action to fail when submitted",
-        },
-      ],
       "severity": 2,
       "source": "Endevor SCL extension",
     },
@@ -58,7 +41,8 @@ exports[`Test 2 simple INvalid SET ACTION, with lowercased keyword Should have e
 Array [
   Object {
     "diagnostic": Object {
-      "message": "Keyword should be uppercased",
+      "message": "Keyword should be uppercased.
+Lowercased keyword might cause the scl action to fail when submitted",
       "range": Object {
         "end": Object {
           "character": 2,
@@ -69,24 +53,6 @@ Array [
           "line": 1,
         },
       },
-      "relatedInformation": Array [
-        Object {
-          "location": Object {
-            "range": Object {
-              "end": Object {
-                "character": 2,
-                "line": 1,
-              },
-              "start": Object {
-                "character": 2,
-                "line": 1,
-              },
-            },
-            "uri": "mocked/uri",
-          },
-          "message": "Lowercased keyword might cause the scl action to fail when submitted",
-        },
-      ],
       "severity": 2,
       "source": "Endevor SCL extension",
     },
@@ -95,7 +61,8 @@ Array [
   },
   Object {
     "diagnostic": Object {
-      "message": "Invalid action \\"invalid\\" specified after SET ACTION",
+      "message": "Invalid action \\"invalid\\" specified after SET ACTION.
+Valid actions are: ADD, ARCHIVE, COPY, DELETE, GENERATE, LIST, MOVE, PRINT, RESTORE, RETRIEVE, SIGNIN, TRANSFER, UPDATE, VALIDATE",
       "range": Object {
         "end": Object {
           "character": 2,
@@ -106,24 +73,6 @@ Array [
           "line": 1,
         },
       },
-      "relatedInformation": Array [
-        Object {
-          "location": Object {
-            "range": Object {
-              "end": Object {
-                "character": 2,
-                "line": 1,
-              },
-              "start": Object {
-                "character": 2,
-                "line": 1,
-              },
-            },
-            "uri": "mocked/uri",
-          },
-          "message": "Valid actions are: ADD, ARCHIVE, COPY, DELETE, GENERATE, LIST, MOVE, PRINT, RESTORE, RETRIEVE, SIGNIN, TRANSFER, UPDATE, VALIDATE",
-        },
-      ],
       "severity": 1,
       "source": "Endevor SCL extension",
     },
@@ -153,7 +102,8 @@ exports[`Test 4 simple INvalid SET ACTION Should have error 9`] = `
 Array [
   Object {
     "diagnostic": Object {
-      "message": "Invalid action \\"INVALID\\" specified after SET ACTION",
+      "message": "Invalid action \\"INVALID\\" specified after SET ACTION.
+Valid actions are: ADD, ARCHIVE, COPY, DELETE, GENERATE, LIST, MOVE, PRINT, RESTORE, RETRIEVE, SIGNIN, TRANSFER, UPDATE, VALIDATE",
       "range": Object {
         "end": Object {
           "character": 2,
@@ -164,24 +114,6 @@ Array [
           "line": 1,
         },
       },
-      "relatedInformation": Array [
-        Object {
-          "location": Object {
-            "range": Object {
-              "end": Object {
-                "character": 2,
-                "line": 1,
-              },
-              "start": Object {
-                "character": 2,
-                "line": 1,
-              },
-            },
-            "uri": "mocked/uri",
-          },
-          "message": "Valid actions are: ADD, ARCHIVE, COPY, DELETE, GENERATE, LIST, MOVE, PRINT, RESTORE, RETRIEVE, SIGNIN, TRANSFER, UPDATE, VALIDATE",
-        },
-      ],
       "severity": 1,
       "source": "Endevor SCL extension",
     },
@@ -195,7 +127,8 @@ exports[`Test 4 simple INvalid SET ACTION Should have error 10`] = `
 Array [
   Object {
     "diagnostic": Object {
-      "message": "Invalid keyword \\".\\" specified after SET",
+      "message": "Invalid keyword \\".\\" specified after SET.
+SET should be followed by the following keywords: ACTION, BUILD, FROM, OPTIONS, STOPRC, TO, WHERE",
       "range": Object {
         "end": Object {
           "character": 2,
@@ -206,24 +139,6 @@ Array [
           "line": 1,
         },
       },
-      "relatedInformation": Array [
-        Object {
-          "location": Object {
-            "range": Object {
-              "end": Object {
-                "character": 2,
-                "line": 1,
-              },
-              "start": Object {
-                "character": 2,
-                "line": 1,
-              },
-            },
-            "uri": "mocked/uri",
-          },
-          "message": "SET should be followed by the following keywords: ACTION, BUILD, FROM, OPTIONS, STOPRC, TO, WHERE",
-        },
-      ],
       "severity": 1,
       "source": "Endevor SCL extension",
     },
@@ -237,7 +152,7 @@ exports[`Test 4 simple INvalid SET ACTION Should have error 11`] = `
 Array [
   Object {
     "diagnostic": Object {
-      "message": "Invalid scl. Expecting a space before end of statement operator \\".\\"",
+      "message": "Invalid scl. Expecting a space before end of statement operator \\".\\".",
       "range": Object {
         "end": Object {
           "character": 2,
@@ -261,7 +176,7 @@ exports[`Test 4 simple INvalid SET ACTION Should have error 12`] = `
 Array [
   Object {
     "diagnostic": Object {
-      "message": "Invalid scl. No end of statement operator \\".\\" specified",
+      "message": "Invalid scl. No end of statement operator \\".\\" specified.",
       "range": Object {
         "end": Object {
           "character": 2,

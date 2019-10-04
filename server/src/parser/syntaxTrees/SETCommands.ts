@@ -56,8 +56,8 @@ export function parseSETSCL(statement: SCLstatement, document: SCLDocument) {
             document.pushDiagnostic(
                 token, statement,
                 DiagnosticSeverity.Error,
-                `Invalid keyword \"${token.value}\" specified after SET`,
-                `SET should be followed by the following keywords: ${completionItems.join(", ")}`);
+                `Invalid keyword \"${token.value}\" specified after SET.` +
+                    `\nSET should be followed by the following keywords: ${completionItems.join(", ")}`);
             return;
     }
 }
@@ -132,8 +132,8 @@ function parseSetAction(
                 document.pushDiagnostic(
                     token, statement,
                     DiagnosticSeverity.Error,
-                    `Invalid action \"${token.value}\" specified after SET ACTION`,
-                    `Valid actions are: ${completionItems.join(", ")}`);
+                    `Invalid action \"${token.value}\" specified after SET ACTION.` +
+                        `\nValid actions are: ${completionItems.join(", ")}`);
                 return;
         }
 
@@ -141,8 +141,8 @@ function parseSetAction(
         document.pushDiagnostic(
             currSCL[iterator], statement,
             DiagnosticSeverity.Error,
-            "No action specified after SET ACTION",
-            `Valid actions are: ${completionItems.join(", ")}`);
+            "No action specified after SET ACTION." +
+                `\nValid actions are: ${completionItems.join(", ")}`);
         return;
     }
 }

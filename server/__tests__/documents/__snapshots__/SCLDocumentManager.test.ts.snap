@@ -53,7 +53,8 @@ exports[`Test test1: open document 5`] = `
 Array [
   Object {
     "diagnostic": Object {
-      "message": "Keyword should be uppercased",
+      "message": "Keyword should be uppercased.
+Lowercased keyword might cause the scl action to fail when submitted",
       "range": Object {
         "end": Object {
           "character": 10,
@@ -72,7 +73,8 @@ Array [
   },
   Object {
     "diagnostic": Object {
-      "message": "Keyword should be uppercased",
+      "message": "Keyword should be uppercased.
+Lowercased keyword might cause the scl action to fail when submitted",
       "range": Object {
         "end": Object {
           "character": 14,
@@ -139,7 +141,7 @@ exports[`Test test1: open document 9`] = `
 Array [
   Object {
     "diagnostic": Object {
-      "message": "Invalid scl. Expecting a space before end of statement operator \\".\\"",
+      "message": "Invalid scl. Expecting a space before end of statement operator \\".\\".",
       "range": Object {
         "end": Object {
           "character": 20,
@@ -197,7 +199,8 @@ exports[`Test test1: open document 13`] = `
 Array [
   Object {
     "diagnostic": Object {
-      "message": "Keyword should be uppercased",
+      "message": "Keyword should be uppercased.
+Lowercased keyword might cause the scl action to fail when submitted",
       "range": Object {
         "end": Object {
           "character": 4,
@@ -216,7 +219,8 @@ Array [
   },
   Object {
     "diagnostic": Object {
-      "message": "Invalid keyword \\"INvalid\\" specified after SET",
+      "message": "Invalid keyword \\"INvalid\\" specified after SET.
+SET should be followed by the following keywords: ACTION, BUILD, FROM, OPTIONS, STOPRC, TO, WHERE",
       "range": Object {
         "end": Object {
           "character": 12,
@@ -288,7 +292,7 @@ exports[`Test test2: update document 5`] = `
 Array [
   Object {
     "diagnostic": Object {
-      "message": "Invalid scl. Expecting a space before end of statement operator \\".\\"",
+      "message": "Invalid scl. Expecting a space before end of statement operator \\".\\".",
       "range": Object {
         "end": Object {
           "character": 20,
@@ -355,7 +359,8 @@ exports[`Test test2: update document 9`] = `
 Array [
   Object {
     "diagnostic": Object {
-      "message": "Keyword should be uppercased",
+      "message": "Keyword should be uppercased.
+Lowercased keyword might cause the scl action to fail when submitted",
       "range": Object {
         "end": Object {
           "character": 26,
@@ -490,7 +495,7 @@ exports[`Test test3: update document 5`] = `
 Array [
   Object {
     "diagnostic": Object {
-      "message": "Invalid scl. Expecting a space before end of statement operator \\".\\"",
+      "message": "Invalid scl. Expecting a space before end of statement operator \\".\\".",
       "range": Object {
         "end": Object {
           "character": 16,
@@ -557,7 +562,8 @@ exports[`Test test3: update document 9`] = `
 Array [
   Object {
     "diagnostic": Object {
-      "message": "Keyword should be uppercased",
+      "message": "Keyword should be uppercased.
+Lowercased keyword might cause the scl action to fail when submitted",
       "range": Object {
         "end": Object {
           "character": 21,
@@ -576,7 +582,8 @@ Array [
   },
   Object {
     "diagnostic": Object {
-      "message": "Invalid action \\"invalid\\" specified after SET ACTION",
+      "message": "Invalid action \\"invalid\\" specified after SET ACTION.
+Valid actions are: ADD, ARCHIVE, COPY, DELETE, GENERATE, LIST, MOVE, PRINT, RESTORE, RETRIEVE, SIGNIN, TRANSFER, UPDATE, VALIDATE",
       "range": Object {
         "end": Object {
           "character": 36,
@@ -643,7 +650,8 @@ exports[`Test test3: update document 13`] = `
 Array [
   Object {
     "diagnostic": Object {
-      "message": "Keyword should be uppercased",
+      "message": "Keyword should be uppercased.
+Lowercased keyword might cause the scl action to fail when submitted",
       "range": Object {
         "end": Object {
           "character": 21,
@@ -710,7 +718,8 @@ exports[`Test test3: update document 17`] = `
 Array [
   Object {
     "diagnostic": Object {
-      "message": "Keyword should be uppercased",
+      "message": "Keyword should be uppercased.
+Lowercased keyword might cause the scl action to fail when submitted",
       "range": Object {
         "end": Object {
           "character": 10,
@@ -787,7 +796,8 @@ exports[`Test test5: update document 5`] = `
 Array [
   Object {
     "diagnostic": Object {
-      "message": "Keyword should be uppercased",
+      "message": "Keyword should be uppercased.
+Lowercased keyword might cause the scl action to fail when submitted",
       "range": Object {
         "end": Object {
           "character": 10,
@@ -806,7 +816,8 @@ Array [
   },
   Object {
     "diagnostic": Object {
-      "message": "Keyword should be uppercased",
+      "message": "Keyword should be uppercased.
+Lowercased keyword might cause the scl action to fail when submitted",
       "range": Object {
         "end": Object {
           "character": 14,

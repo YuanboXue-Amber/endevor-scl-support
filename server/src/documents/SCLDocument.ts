@@ -233,6 +233,7 @@ export class SCLDocument {
         severity: DiagnosticSeverity,
         message: string,
         relatedMsg?: string,
+        relatedToken?: ITokenizedString
         ) {
 
         if (SCLDocumentManager.numberOfProblems > SCLDocumentManager.config.maxNumberOfProblems) {
@@ -255,12 +256,16 @@ export class SCLDocument {
             message: message,
             source: 'Endevor SCL extension'
         };
-        if (SCLDocumentManager.capabilities.hasDiagnosticRelatedInformationCapability && !isNullOrUndefined(relatedMsg)) {
+        if (SCLDocumentManager.capabilities.hasDiagnosticRelatedInformationCapability &&
+            !isNullOrUndefined(relatedMsg) && !isNullOrUndefined(relatedToken)) {
             diagnostic.relatedInformation = [
                 {
                     location: {
                         uri: this.textDocument.uri,
-                        range: Object.assign({}, diagnostic.range)
+                        range: {
+                            start: this.textDocument.positionAt(relatedToken.starti),
+                            end: this.textDocument.positionAt(relatedToken.starti + relatedToken.value.length),
+                        }
                     },
                     message: relatedMsg,
                 }
