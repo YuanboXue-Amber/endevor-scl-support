@@ -25,6 +25,7 @@ const level1keywords: string[] = [
     ParserTags.BUILD,
     ParserTags.FROM,
     ParserTags.OPTIONS,
+    ParserTags.OPTION,
     ParserTags.TO,
     ParserTags.WHERE,
     ParserTags.STOPRC,
@@ -46,6 +47,27 @@ const level2keywords: string[] = [
     ParserTags.TYPE,
     ParserTags.STAGE,
     ParserTags.NUMBER,
+
+    ParserTags.CCID,
+    ParserTags.COMMENT,
+    ParserTags.NEW,
+    ParserTags.VERSION,
+    ParserTags.IF,
+    ParserTags.PRESENT,
+    ParserTags.INPUT,
+    ParserTags.SOURCE,
+    ParserTags.OVERRIDE,
+    ParserTags.SIGNOUT,
+    ParserTags.BYPASS,
+    ParserTags.PROCESSOR,
+    ParserTags.GROUP,
+    ParserTags.EQUAL,
+    ParserTags.AUTOGEN,
+    ParserTags.SPAN,
+    ParserTags.NONE,
+    ParserTags.ALL,
+    ParserTags.SYSTEMS,
+    ParserTags.SUBSYSTEMS
 ];
 
 // compose a regex from parsetag. Eg. for APPROVER it is APP(ROVER|ROVE|ROV|RO|R|\b)

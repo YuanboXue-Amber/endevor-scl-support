@@ -1,0 +1,553 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test if the tree is prepared  1`] = `
+Object {
+  "next": Array [
+    Object {
+      "next": Array [
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [],
+                      "type": "eos",
+                      "value": ".",
+                    },
+                  ],
+                  "type": "value",
+                  "value": "element-name",
+                },
+              ],
+              "requireNext": true,
+              "type": "keyword",
+              "value": "THROUGH",
+            },
+            Object {
+              "next": Array [
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [],
+                      "type": "eos",
+                      "value": ".",
+                    },
+                  ],
+                  "type": "value",
+                  "value": "element-name",
+                },
+              ],
+              "requireNext": true,
+              "type": "keyword",
+              "value": "THRU",
+            },
+            Object {
+              "next": Array [
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [
+                        Object {
+                          "next": Array [],
+                          "type": "eos",
+                          "value": ".",
+                        },
+                      ],
+                      "type": "value",
+                      "value": "dd-name",
+                    },
+                  ],
+                  "requireNext": true,
+                  "type": "keyword",
+                  "value": "FILE",
+                },
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [
+                        Object {
+                          "next": Array [],
+                          "type": "eos",
+                          "value": ".",
+                        },
+                      ],
+                      "type": "value",
+                      "value": "dd-name",
+                    },
+                  ],
+                  "requireNext": true,
+                  "type": "keyword",
+                  "value": "DDNAME",
+                },
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [
+                        Object {
+                          "next": Array [],
+                          "type": "eos",
+                          "value": ".",
+                        },
+                        Object {
+                          "next": Array [
+                            Object {
+                              "next": Array [
+                                Object {
+                                  "next": Array [],
+                                  "type": "eos",
+                                  "value": ".",
+                                },
+                              ],
+                              "type": "value",
+                              "value": "memeber-name",
+                            },
+                          ],
+                          "type": "keyword",
+                          "value": "MEMBER",
+                        },
+                      ],
+                      "type": "value",
+                      "value": "dd-name",
+                    },
+                  ],
+                  "requireNext": true,
+                  "type": "keyword",
+                  "value": "DSNAME",
+                },
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [
+                        Object {
+                          "next": Array [
+                            Object {
+                              "next": Array [
+                                Object {
+                                  "next": Array [],
+                                  "type": "eos",
+                                  "value": ".",
+                                },
+                              ],
+                              "type": "value",
+                              "value": "ussfile",
+                            },
+                          ],
+                          "requireNext": true,
+                          "type": "keyword",
+                          "value": "USSFILE",
+                        },
+                      ],
+                      "requireNext": true,
+                      "type": "value",
+                      "value": "usspath",
+                    },
+                  ],
+                  "requireNext": true,
+                  "type": "keyword",
+                  "value": "PATH",
+                },
+              ],
+              "requireNext": true,
+              "type": "keyword",
+              "value": "FROM",
+            },
+            Object {
+              "next": Array [
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [
+                        Object {
+                          "next": Array [],
+                          "type": "eos",
+                          "value": ".",
+                        },
+                      ],
+                      "type": "value",
+                      "value": "env-name",
+                    },
+                  ],
+                  "requireNext": true,
+                  "type": "keyword",
+                  "value": "ENVIRONMENT",
+                },
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [
+                        Object {
+                          "next": Array [],
+                          "type": "eos",
+                          "value": ".",
+                        },
+                      ],
+                      "type": "value",
+                      "value": "sys-name",
+                    },
+                  ],
+                  "requireNext": true,
+                  "type": "keyword",
+                  "value": "SYSTEM",
+                },
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [
+                        Object {
+                          "next": Array [],
+                          "type": "eos",
+                          "value": ".",
+                        },
+                      ],
+                      "type": "value",
+                      "value": "sub-name",
+                    },
+                  ],
+                  "requireNext": true,
+                  "type": "keyword",
+                  "value": "SUBSYSTEM",
+                },
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [
+                        Object {
+                          "next": Array [],
+                          "type": "eos",
+                          "value": ".",
+                        },
+                      ],
+                      "type": "value",
+                      "value": "typ-name",
+                    },
+                  ],
+                  "requireNext": true,
+                  "type": "keyword",
+                  "value": "TYPE",
+                },
+              ],
+              "requireNext": true,
+              "type": "keyword",
+              "value": "TO",
+            },
+            Object {
+              "next": Array [
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [
+                        Object {
+                          "next": Array [],
+                          "type": "eos",
+                          "value": ".",
+                        },
+                      ],
+                      "type": "value",
+                      "value": "ccid",
+                    },
+                  ],
+                  "requireNext": true,
+                  "type": "keyword",
+                  "value": "CCID",
+                },
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [
+                        Object {
+                          "next": Array [],
+                          "type": "eos",
+                          "value": ".",
+                        },
+                      ],
+                      "type": "value",
+                      "value": "comment",
+                    },
+                  ],
+                  "requireNext": true,
+                  "type": "keyword",
+                  "value": "COMMENT",
+                },
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [
+                        Object {
+                          "next": Array [
+                            Object {
+                              "next": Array [],
+                              "type": "eos",
+                              "value": ".",
+                            },
+                          ],
+                          "type": "value",
+                          "value": "version",
+                        },
+                      ],
+                      "requireNext": true,
+                      "type": "keyword",
+                      "value": "VERSION",
+                    },
+                  ],
+                  "requireNext": true,
+                  "type": "keyword",
+                  "value": "NEW",
+                },
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [
+                        Object {
+                          "next": Array [
+                            Object {
+                              "next": Array [],
+                              "type": "eos",
+                              "value": ".",
+                            },
+                          ],
+                          "type": "keyword",
+                          "value": "PRESENT",
+                        },
+                        Object {
+                          "next": Array [],
+                          "type": "eos",
+                          "value": ".",
+                        },
+                      ],
+                      "type": "keyword",
+                      "value": "IF",
+                    },
+                    Object {
+                      "next": Array [],
+                      "type": "eos",
+                      "value": ".",
+                    },
+                  ],
+                  "type": "keyword",
+                  "value": "UPDATE",
+                },
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [
+                        Object {
+                          "next": Array [
+                            Object {
+                              "next": Array [],
+                              "type": "eos",
+                              "value": ".",
+                            },
+                          ],
+                          "type": "keyword",
+                          "value": "SOURCE",
+                        },
+                        Object {
+                          "next": Array [],
+                          "type": "eos",
+                          "value": ".",
+                        },
+                      ],
+                      "type": "keyword",
+                      "value": "INPUT",
+                    },
+                    Object {
+                      "next": Array [],
+                      "type": "eos",
+                      "value": ".",
+                    },
+                  ],
+                  "type": "keyword",
+                  "value": "DELETE",
+                },
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [
+                        Object {
+                          "next": Array [],
+                          "type": "eos",
+                          "value": ".",
+                        },
+                      ],
+                      "type": "keyword",
+                      "value": "SIGNOUT",
+                    },
+                  ],
+                  "requireNext": true,
+                  "type": "keyword",
+                  "value": "OVERRIDE",
+                },
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [
+                        Object {
+                          "next": Array [
+                            Object {
+                              "next": Array [],
+                              "type": "eos",
+                              "value": ".",
+                            },
+                          ],
+                          "type": "keyword",
+                          "value": "PROCESSOR",
+                        },
+                      ],
+                      "requireNext": true,
+                      "type": "keyword",
+                      "value": "GENERATE",
+                    },
+                  ],
+                  "requireNext": true,
+                  "type": "keyword",
+                  "value": "BYPASS",
+                },
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [
+                        Object {
+                          "next": Array [
+                            Object {
+                              "next": Array [
+                                Object {
+                                  "next": Array [],
+                                  "type": "eos",
+                                  "value": ".",
+                                },
+                              ],
+                              "type": "value",
+                              "value": "pgroup-name",
+                            },
+                          ],
+                          "requireNext": true,
+                          "type": "keyword",
+                          "value": "EQUAL, =",
+                        },
+                      ],
+                      "requireNext": true,
+                      "type": "keyword",
+                      "value": "GROUP",
+                    },
+                  ],
+                  "requireNext": true,
+                  "type": "keyword",
+                  "value": "PROCESSOR",
+                },
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [],
+                      "type": "eos",
+                      "value": ".",
+                    },
+                    Object {
+                      "next": Array [
+                        Object {
+                          "next": Array [
+                            Object {
+                              "next": Array [],
+                              "type": "eos",
+                              "value": ".",
+                            },
+                          ],
+                          "type": "keyword",
+                          "value": "NONE",
+                        },
+                        Object {
+                          "next": Array [
+                            Object {
+                              "next": Array [],
+                              "type": "eos",
+                              "value": ".",
+                            },
+                          ],
+                          "type": "keyword",
+                          "value": "ALL",
+                        },
+                        Object {
+                          "next": Array [
+                            Object {
+                              "next": Array [],
+                              "type": "eos",
+                              "value": ".",
+                            },
+                          ],
+                          "type": "keyword",
+                          "value": "SYSTEMS",
+                        },
+                        Object {
+                          "next": Array [
+                            Object {
+                              "next": Array [],
+                              "type": "eos",
+                              "value": ".",
+                            },
+                          ],
+                          "type": "keyword",
+                          "value": "SUBSYSTEMS",
+                        },
+                      ],
+                      "requireNext": true,
+                      "type": "keyword",
+                      "value": "SPAN",
+                    },
+                  ],
+                  "type": "keyword",
+                  "value": "AUTOGEN",
+                },
+              ],
+              "requireNext": true,
+              "type": "keyword",
+              "value": "OPTION",
+            },
+            Object {
+              "next": Array [],
+              "type": "eos",
+              "value": ".",
+            },
+          ],
+          "type": "value",
+          "value": "element-name",
+        },
+      ],
+      "requireNext": true,
+      "type": "keyword",
+      "value": "ELEMENT",
+    },
+  ],
+  "requireNext": true,
+  "type": "keyword",
+  "value": "ADD",
+}
+`;
+
+exports[`test2: Test 1 simple INvalid ADD ACTION Should have error 1`] = `51`;
+
+exports[`test2: Test 1 simple INvalid ADD ACTION Should have error 2`] = `52`;
+
+exports[`test2: Test 1 simple INvalid ADD ACTION Should have error 3`] = `
+Array [
+  Object {
+    "diagnostic": Object {
+      "message": "Require a valid value to be specified",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 52,
+    "starti": 51,
+  },
+]
+`;

@@ -277,6 +277,25 @@ Lowercased keyword might cause the scl action to fail when submitted",
   },
   Object {
     "diagnostic": Object {
+      "message": "Require a valid value to be specified",
+      "range": Object {
+        "end": Object {
+          "character": 12,
+          "line": 2,
+        },
+        "start": Object {
+          "character": 5,
+          "line": 2,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 52,
+    "starti": 45,
+  },
+  Object {
+    "diagnostic": Object {
       "message": "Invalid scl. Expecting a space before end of statement operator \\".\\".",
       "range": Object {
         "end": Object {
@@ -753,6 +772,25 @@ Lowercased keyword might cause the scl action to fail when submitted",
     },
     "endi": 47,
     "starti": 44,
+  },
+  Object {
+    "diagnostic": Object {
+      "message": "Require a valid value to be specified",
+      "range": Object {
+        "end": Object {
+          "character": 36,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 29,
+          "line": 1,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 62,
+    "starti": 55,
   },
   Object {
     "diagnostic": Object {

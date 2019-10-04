@@ -1,10 +1,12 @@
 {
     "value": "ADD",
     "type": "keyword",
+    "requireNext": true,
     "next": [
         {
             "value": "ELEMENT",
             "type": "keyword",
+            "requireNext": true,
             "next": [
                 {
                     "value": "element-name",
@@ -13,6 +15,7 @@
                         {
                             "value": "THROUGH",
                             "type": "keyword",
+                            "requireNext": true,
                             "next": [
                                 {
                                     "value": "element-name",
@@ -30,6 +33,7 @@
                         {
                             "value": "THRU",
                             "type": "keyword",
+                            "requireNext": true,
                             "next": [
                                 {
                                     "value": "element-name",
@@ -47,10 +51,12 @@
                         {
                             "value": "FROM",
                             "type": "keyword",
+                            "requireNext": true,
                             "next": [
                                 {
                                     "value": "FILE",
                                     "type": "keyword",
+                                    "requireNext": true,
                                     "next": [
                                         {
                                             "value": "dd-name",
@@ -68,6 +74,7 @@
                                 {
                                     "value": "DDNAME",
                                     "type": "keyword",
+                                    "requireNext": true,
                                     "next": [
                                         {
                                             "value": "dd-name",
@@ -85,6 +92,7 @@
                                 {
                                     "value": "DSNAME",
                                     "type": "keyword",
+                                    "requireNext": true,
                                     "next": [
                                         {
                                             "value": "dd-name",
@@ -119,14 +127,17 @@
                                 {
                                     "value": "PATH",
                                     "type": "keyword",
+                                    "requireNext": true,
                                     "next": [
                                         {
                                             "value": "usspath",
                                             "type": "value",
+                                            "requireNext": true,
                                             "next": [
                                                 {
                                                     "value": "USSFILE",
                                                     "type": "keyword",
+                                                    "requireNext": true,
                                                     "next": [
                                                         {
                                                             "value": "ussfile",
@@ -150,10 +161,12 @@
                         {
                             "value": "TO",
                             "type": "keyword",
+                            "requireNext": true,
                             "next": [
                                 {
                                     "value": "ENVIRONMENT",
                                     "type": "keyword",
+                                    "requireNext": true,
                                     "next": [
                                         {
                                             "value": "env-name",
@@ -171,6 +184,7 @@
                                 {
                                     "value": "SYSTEM",
                                     "type": "keyword",
+                                    "requireNext": true,
                                     "next": [
                                         {
                                             "value": "sys-name",
@@ -188,6 +202,7 @@
                                 {
                                     "value": "SUBSYSTEM",
                                     "type": "keyword",
+                                    "requireNext": true,
                                     "next": [
                                         {
                                             "value": "sub-name",
@@ -205,6 +220,7 @@
                                 {
                                     "value": "TYPE",
                                     "type": "keyword",
+                                    "requireNext": true,
                                     "next": [
                                         {
                                             "value": "typ-name",
@@ -224,10 +240,12 @@
                         {
                             "value": "OPTION",
                             "type": "keyword",
+                            "requireNext": true,
                             "next": [
                                 {
                                     "value": "CCID",
                                     "type": "keyword",
+                                    "requireNext": true,
                                     "next": [
                                         {
                                             "value": "ccid",
@@ -245,6 +263,7 @@
                                 {
                                     "value": "COMMENT",
                                     "type": "keyword",
+                                    "requireNext": true,
                                     "next": [
                                         {
                                             "value": "comment",
@@ -262,10 +281,12 @@
                                 {
                                     "value": "NEW",
                                     "type": "keyword",
+                                    "requireNext": true,
                                     "next": [
                                         {
                                             "value": "VERSION",
                                             "type": "keyword",
+                                            "requireNext": true,
                                             "next": [
                                                 {
                                                     "value": "version",
@@ -309,6 +330,9 @@
                                             ]
                                         },
                                         {
+                                            "value": ".",
+                                            "type": "eos",
+                                            "next": []
                                         }
                                     ]
                                 },
@@ -339,12 +363,16 @@
                                             ]
                                         },
                                         {
+                                            "value": ".",
+                                            "type": "eos",
+                                            "next": []
                                         }
                                     ]
                                 },
                                 {
                                     "value": "OVERRIDE",
                                     "type": "keyword",
+                                    "requireNext": true,
                                     "next": [
                                         {
                                             "value": "SIGNOUT",
@@ -362,10 +390,12 @@
                                 {
                                     "value": "BYPASS",
                                     "type": "keyword",
+                                    "requireNext": true,
                                     "next": [
                                         {
                                             "value": "GENERATE",
                                             "type": "keyword",
+                                            "requireNext": true,
                                             "next": [
                                                 {
                                                     "value": "PROCESSOR",
@@ -385,14 +415,17 @@
                                 {
                                     "value": "PROCESSOR",
                                     "type": "keyword",
+                                    "requireNext": true,
                                     "next": [
                                         {
                                             "value": "GROUP",
                                             "type": "keyword",
+                                            "requireNext": true,
                                             "next": [
                                                 {
                                                     "value": "EQUAL, =",
                                                     "type": "keyword",
+                                                    "requireNext": true,
                                                     "next": [
                                                         {
                                                             "value": "pgroup-name",
@@ -423,6 +456,7 @@
                                         {
                                             "value": "SPAN",
                                             "type": "keyword",
+                                            "requireNext": true,
                                             "next": [
                                                 {
                                                     "value": "NONE",

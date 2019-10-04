@@ -262,5 +262,30 @@ Array [
     "kind": 1,
     "label": "AUTOGEN",
   },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "SPAN",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "NONE",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "ALL",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "SYSTEMS",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "SUBSYSTEMS",
+  },
 ]
 `;

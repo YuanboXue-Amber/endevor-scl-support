@@ -160,16 +160,19 @@ Object {
           "value": "VALIDATE",
         },
       ],
+      "requireNext": true,
       "type": "keyword",
       "value": "ACTION",
     },
     Object {
       "next": Array [],
+      "requireNext": true,
       "type": "keyword",
       "value": "BUILD",
     },
     Object {
       "next": Array [],
+      "requireNext": true,
       "type": "keyword",
       "value": "FROM",
     },
@@ -180,6 +183,7 @@ Object {
     },
     Object {
       "next": Array [],
+      "requireNext": true,
       "type": "keyword",
       "value": "STOPRC",
     },
@@ -190,10 +194,12 @@ Object {
     },
     Object {
       "next": Array [],
+      "requireNext": true,
       "type": "keyword",
       "value": "WHERE",
     },
   ],
+  "requireNext": true,
   "type": "keyword",
   "value": "SET",
 }
@@ -203,28 +209,55 @@ exports[`test3: Test 4 simple INvalid SET ACTION Should have error 1`] = `12`;
 
 exports[`test3: Test 4 simple INvalid SET ACTION Should have error 2`] = `19`;
 
-exports[`test3: Test 4 simple INvalid SET ACTION Should have error 3`] = `5`;
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 3`] = `12`;
 
-exports[`test3: Test 4 simple INvalid SET ACTION Should have error 4`] = `11`;
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 4`] = `19`;
 
-exports[`test3: Test 4 simple INvalid SET ACTION Should have error 5`] = `29`;
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 5`] = `5`;
 
-exports[`test3: Test 4 simple INvalid SET ACTION Should have error 6`] = `30`;
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 6`] = `11`;
 
-exports[`test3: Test 4 simple INvalid SET ACTION Should have error 7`] = `22`;
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 7`] = `29`;
 
-exports[`test3: Test 4 simple INvalid SET ACTION Should have error 8`] = `25`;
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 8`] = `30`;
 
-exports[`test3: Test 4 simple INvalid SET ACTION Should have error 9`] = `45`;
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 9`] = `29`;
 
-exports[`test3: Test 4 simple INvalid SET ACTION Should have error 10`] = `46`;
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 10`] = `30`;
 
-exports[`test3: Test 4 simple INvalid SET ACTION Should have error 11`] = `58`;
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 11`] = `22`;
 
-exports[`test3: Test 4 simple INvalid SET ACTION Should have error 12`] = `61`;
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 12`] = `25`;
 
-exports[`test3: Test 4 simple INvalid SET ACTION Should have error 13`] = `
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 13`] = `45`;
+
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 14`] = `46`;
+
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 15`] = `58`;
+
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 16`] = `61`;
+
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 17`] = `
 Array [
+  Object {
+    "diagnostic": Object {
+      "message": "Require a valid value to be specified",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 19,
+    "starti": 12,
+  },
   Object {
     "diagnostic": Object {
       "message": "Invalid value specified",
@@ -265,8 +298,27 @@ Array [
 ]
 `;
 
-exports[`test3: Test 4 simple INvalid SET ACTION Should have error 14`] = `
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 18`] = `
 Array [
+  Object {
+    "diagnostic": Object {
+      "message": "Require a valid value to be specified",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 30,
+    "starti": 29,
+  },
   Object {
     "diagnostic": Object {
       "message": "Invalid value specified",
@@ -307,7 +359,7 @@ Array [
 ]
 `;
 
-exports[`test3: Test 4 simple INvalid SET ACTION Should have error 15`] = `
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 19`] = `
 Array [
   Object {
     "diagnostic": Object {
@@ -331,7 +383,7 @@ Array [
 ]
 `;
 
-exports[`test3: Test 4 simple INvalid SET ACTION Should have error 16`] = `
+exports[`test3: Test 4 simple INvalid SET ACTION Should have error 20`] = `
 Array [
   Object {
     "diagnostic": Object {
@@ -371,11 +423,15 @@ exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should
 
 exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 8`] = `36`;
 
-exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 9`] = `22`;
+exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 9`] = `29`;
 
-exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 10`] = `28`;
+exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 10`] = `36`;
 
-exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 11`] = `
+exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 11`] = `22`;
+
+exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 12`] = `28`;
+
+exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 13`] = `
 Array [
   Object {
     "diagnostic": Object {
@@ -400,7 +456,7 @@ Lowercased keyword might cause the scl action to fail when submitted",
 ]
 `;
 
-exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 12`] = `
+exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 14`] = `
 Array [
   Object {
     "diagnostic": Object {
@@ -421,6 +477,25 @@ Lowercased keyword might cause the scl action to fail when submitted",
     },
     "endi": 28,
     "starti": 22,
+  },
+  Object {
+    "diagnostic": Object {
+      "message": "Require a valid value to be specified",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 36,
+    "starti": 29,
   },
   Object {
     "diagnostic": Object {

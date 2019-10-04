@@ -28,6 +28,7 @@ export function parser(parentNode: Inode, iterator: number, statement: SCLstatem
         // return iterator-1;
         return VALIDSCL_NUMBER;
     }
+    let foundMatch = false;
     for (const childNode of parentNode.next) {
         if (iterator === VALIDSCL_NUMBER) {
             return VALIDSCL_NUMBER;
@@ -35,20 +36,29 @@ export function parser(parentNode: Inode, iterator: number, statement: SCLstatem
         const childToken = currSCL[iterator];
         switch (true) {
             case childNode.type === "keyword" && match(childToken, childNode.value, statement, document):
+                foundMatch = true;
                 iterator = parser(childNode, iterator, statement, document);
                 break;
 
             case childNode.type ==="value" && !childToken.is_eoStatement:
+                foundMatch = true;
                 iterator = parser(childNode, iterator, statement, document);
                 break;
 
             case childNode.type === "eos" && childToken.is_eoStatement:
+                foundMatch = true;
                 iterator = parser(childNode, iterator, statement, document);
                 break;
 
             default:
                 break;
         }
+    }
+    if (!foundMatch && !isNullOrUndefined(parentNode.requireNext) && parentNode.requireNext) {
+        document.pushDiagnostic(
+            currSCL[iterator], statement,
+            DiagnosticSeverity.Error,
+            `Require a valid value to be specified`);
     }
     return iterator;
 }
