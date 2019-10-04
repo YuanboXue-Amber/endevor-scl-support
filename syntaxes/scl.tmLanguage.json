@@ -3,14 +3,112 @@
     "name": "Endevor SCL",
     "patterns": [
         {
-            "include": "#keywords"
+            "include": "#keywords2"
+        },
+        {
+            "include": "#keywords1"
+        },
+        {
+            "include": "#keywords0"
         },
         {
             "include": "#strings"
         }
     ],
     "repository": {
-        "keywords": {
+        "keywords2": {
+            "patterns": [
+                {
+                    "name": "support.variable.tertiarykeyword.scl",
+                    "match": "\\b(FIL(E|\\b))\\b"
+                },
+                {
+                    "name": "support.variable.tertiarykeyword.scl",
+                    "match": "\\b(DDN(AME|AM|A|\\b))\\b"
+                },
+                {
+                    "name": "support.variable.tertiarykeyword.scl",
+                    "match": "\\b(DSN(AME|AM|A|\\b))\\b"
+                },
+                {
+                    "name": "support.variable.tertiarykeyword.scl",
+                    "match": "\\b(PATH(\\b))\\b"
+                },
+                {
+                    "name": "support.variable.tertiarykeyword.scl",
+                    "match": "\\b(MEM(BER|BE|B|\\b))\\b"
+                },
+                {
+                    "name": "support.variable.tertiarykeyword.scl",
+                    "match": "\\b(USSFILE(\\b))\\b"
+                },
+                {
+                    "name": "support.variable.tertiarykeyword.scl",
+                    "match": "\\b(ENV(IRONMENT|IRONMEN|IRONME|IRONM|IRON|IRO|IR|I|\\b))\\b"
+                },
+                {
+                    "name": "support.variable.tertiarykeyword.scl",
+                    "match": "\\b(SYS(TEM|TE|T|\\b))\\b"
+                },
+                {
+                    "name": "support.variable.tertiarykeyword.scl",
+                    "match": "\\b(SUBS(YSTEM|YSTE|YST|YS|Y|\\b))\\b"
+                },
+                {
+                    "name": "support.variable.tertiarykeyword.scl",
+                    "match": "\\b(TYP(E|\\b))\\b"
+                },
+                {
+                    "name": "support.variable.tertiarykeyword.scl",
+                    "match": "\\b(STA(GE|G|\\b))\\b"
+                },
+                {
+                    "name": "support.variable.tertiarykeyword.scl",
+                    "match": "\\b(NUM(BER|BE|B|\\b))\\b"
+                }
+            ]
+        },
+        "keywords1": {
+            "patterns": [
+                {
+                    "name": "support.class.secondarykeyword.scl",
+                    "match": "\\b(ACT(ION|IO|I|\\b))\\b"
+                },
+                {
+                    "name": "support.class.secondarykeyword.scl",
+                    "match": "\\b(BUI(LD|L|\\b))\\b"
+                },
+                {
+                    "name": "support.class.secondarykeyword.scl",
+                    "match": "\\b(FRO(M|\\b))\\b"
+                },
+                {
+                    "name": "support.class.secondarykeyword.scl",
+                    "match": "\\b(OPT(IONS|ION|IO|I|\\b))\\b"
+                },
+                {
+                    "name": "support.class.secondarykeyword.scl",
+                    "match": "\\b(TO(\\b))\\b"
+                },
+                {
+                    "name": "support.class.secondarykeyword.scl",
+                    "match": "\\b(WHE(RE|R|\\b))\\b"
+                },
+                {
+                    "name": "support.class.secondarykeyword.scl",
+                    "match": "\\b(STO(PRC|PR|P|\\b))\\b"
+                },
+                {
+                    "name": "support.class.secondarykeyword.scl",
+                    "match": "\\b(ELE(MENT|MEN|ME|M|\\b))\\b"
+                },
+                {
+                    "name": "support.class.secondarykeyword.scl",
+                    "match": "\\b(THR(OUGH|OUG|OU|O|\\b))\\b"
+                }
+            ]
+        },
+        "keywords0": {
             "patterns": [
                 {
                     "name": "keyword.control.scl",
@@ -71,90 +169,6 @@
                 {
                     "name": "keyword.control.scl",
                     "match": "\\b(VAL(IDATE|IDAT|IDA|ID|I|\\b))\\b"
-                },
-                {
-                    "name": "support.class.secondarykeyword.scl",
-                    "match": "\\b(ACT(ION|IO|I|\\b))\\b"
-                },
-                {
-                    "name": "support.class.secondarykeyword.scl",
-                    "match": "\\b(BUI(LD|L|\\b))\\b"
-                },
-                {
-                    "name": "support.class.secondarykeyword.scl",
-                    "match": "\\b(FRO(M|\\b))\\b"
-                },
-                {
-                    "name": "support.class.secondarykeyword.scl",
-                    "match": "\\b(OPT(IONS|ION|IO|I|\\b))\\b"
-                },
-                {
-                    "name": "support.class.secondarykeyword.scl",
-                    "match": "\\b(TO(\\b))\\b"
-                },
-                {
-                    "name": "support.class.secondarykeyword.scl",
-                    "match": "\\b(WHE(RE|R|\\b))\\b"
-                },
-                {
-                    "name": "support.class.secondarykeyword.scl",
-                    "match": "\\b(STO(PRC|PR|P|\\b))\\b"
-                },
-                {
-                    "name": "support.class.secondarykeyword.scl",
-                    "match": "\\b(ELE(MENT|MEN|ME|M|\\b))\\b"
-                },
-                {
-                    "name": "support.class.secondarykeyword.scl",
-                    "match": "\\b(THR(OUGH|OUG|OU|O|\\b))\\b"
-                },
-                {
-                    "name": "support.variable.tertiarykeyword.scl",
-                    "match": "\\b(FIL(E|\\b))\\b"
-                },
-                {
-                    "name": "support.variable.tertiarykeyword.scl",
-                    "match": "\\b(DDN(AME|AM|A|\\b))\\b"
-                },
-                {
-                    "name": "support.variable.tertiarykeyword.scl",
-                    "match": "\\b(DSN(AME|AM|A|\\b))\\b"
-                },
-                {
-                    "name": "support.variable.tertiarykeyword.scl",
-                    "match": "\\b(PATH(\\b))\\b"
-                },
-                {
-                    "name": "support.variable.tertiarykeyword.scl",
-                    "match": "\\b(MEM(BER|BE|B|\\b))\\b"
-                },
-                {
-                    "name": "support.variable.tertiarykeyword.scl",
-                    "match": "\\b(USSFILE(\\b))\\b"
-                },
-                {
-                    "name": "support.variable.tertiarykeyword.scl",
-                    "match": "\\b(ENV(IRONMENT|IRONMEN|IRONME|IRONM|IRON|IRO|IR|I|\\b))\\b"
-                },
-                {
-                    "name": "support.variable.tertiarykeyword.scl",
-                    "match": "\\b(SYS(TEM|TE|T|\\b))\\b"
-                },
-                {
-                    "name": "support.variable.tertiarykeyword.scl",
-                    "match": "\\b(SUBS(YSTEM|YSTE|YST|YS|Y|\\b))\\b"
-                },
-                {
-                    "name": "support.variable.tertiarykeyword.scl",
-                    "match": "\\b(TYP(E|\\b))\\b"
-                },
-                {
-                    "name": "support.variable.tertiarykeyword.scl",
-                    "match": "\\b(STA(GE|G|\\b))\\b"
-                },
-                {
-                    "name": "support.variable.tertiarykeyword.scl",
-                    "match": "\\b(NUM(BER|BE|B|\\b))\\b"
                 }
             ]
         },

@@ -25,7 +25,6 @@ const level1keywords: string[] = [
     ParserTags.BUILD,
     ParserTags.FROM,
     ParserTags.OPTIONS,
-    ParserTags.OPTION,
     ParserTags.TO,
     ParserTags.WHERE,
     ParserTags.STOPRC,
@@ -48,32 +47,30 @@ const level2keywords: string[] = [
     ParserTags.STAGE,
     ParserTags.NUMBER,
 
-    ParserTags.CCID,
-    ParserTags.COMMENT,
-    ParserTags.NEW,
-    ParserTags.VERSION,
-    ParserTags.IF,
-    ParserTags.PRESENT,
-    ParserTags.INPUT,
-    ParserTags.SOURCE,
-    ParserTags.OVERRIDE,
-    ParserTags.SIGNOUT,
-    ParserTags.BYPASS,
-    ParserTags.PROCESSOR,
-    ParserTags.GROUP,
-    ParserTags.EQUAL,
-    ParserTags.AUTOGEN,
-    ParserTags.SPAN,
-    ParserTags.NONE,
-    ParserTags.ALL,
-    ParserTags.SYSTEMS,
-    ParserTags.SUBSYSTEMS
+    // ParserTags.UPDATE + " " + ParserTags.IF + " " + ParserTags.PRESENT,
+
+    // ParserTags.CCID,
+    // ParserTags.COMMENT,
+    // ParserTags.NEW,
+    // ParserTags.VERSION,
+    // ParserTags.INPUT,
+    // ParserTags.SOURCE,
+    // ParserTags.OVERRIDE,
+    // ParserTags.SIGNOUT,
+    // ParserTags.BYPASS,
+    // ParserTags.PROCESSOR,
+    // ParserTags.GROUP,
+    // ParserTags.EQUAL,
+    // ParserTags.AUTOGEN,
+    // ParserTags.SPAN,
+    // ParserTags.NONE,
+    // ParserTags.ALL,
 ];
 
 // compose a regex from parsetag. Eg. for APPROVER it is APP(ROVER|ROVE|ROV|RO|R|\b)
 const composeRegex = ((tagValue: string): string | undefined => {
 
-    const kwMatchArray = tagValue.match(/([A-Z]*)([a-zA-Z]*)/);
+    const kwMatchArray = tagValue.match(/([A-Z ]*)([a-zA-Z ]*)/);
     if (isNullOrUndefined(kwMatchArray)) {
         return undefined;
     }
@@ -91,14 +88,16 @@ const composeRegex = ((tagValue: string): string | undefined => {
 const jsonGenerator = (() => {
     const textMateJson: string = fs.readFileSync("./syntaxes/scl.tmLanguage.json", "UTF-8")
     const textMateObj = JSON.parse(textMateJson);
-    textMateObj.repository.keywords.patterns = [];
+    textMateObj.repository.keywords2.patterns = [];
+    textMateObj.repository.keywords1.patterns = [];
+    textMateObj.repository.keywords0.patterns = [];
 
-    level0keywords.forEach((kw) => {
+    level2keywords.forEach((kw) => {
         const regex = composeRegex(kw);
         if (isNullOrUndefined(regex))
             return;
-        textMateObj.repository.keywords.patterns.push({
-            name: "keyword.control.scl",
+        textMateObj.repository.keywords2.patterns.push({
+            name: "support.variable.tertiarykeyword.scl",
             match: regex
         });
     });
@@ -107,18 +106,18 @@ const jsonGenerator = (() => {
         const regex = composeRegex(kw);
         if (isNullOrUndefined(regex))
             return;
-        textMateObj.repository.keywords.patterns.push({
+        textMateObj.repository.keywords1.patterns.push({
             name: "support.class.secondarykeyword.scl",
             match: regex
         });
     });
 
-    level2keywords.forEach((kw) => {
+    level0keywords.forEach((kw) => {
         const regex = composeRegex(kw);
         if (isNullOrUndefined(regex))
             return;
-        textMateObj.repository.keywords.patterns.push({
-            name: "support.variable.tertiarykeyword.scl",
+        textMateObj.repository.keywords0.patterns.push({
+            name: "keyword.control.scl",
             match: regex
         });
     });
