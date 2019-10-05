@@ -260,6 +260,11 @@ Array [
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
+    "label": "=",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
     "label": "AUTOGEN",
   },
   Object {

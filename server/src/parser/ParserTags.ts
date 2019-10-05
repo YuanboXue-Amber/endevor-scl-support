@@ -56,6 +56,7 @@ export const ParserTags = {
     PROCESSOR: "PROcessor",
     GROUP: "GROup",
     EQUAL: "EQual",
+    EQUALSIGN: "=",
     AUTOGEN: "AUTogen",
     SPAN: "SPAN",
     NONE: "NONe",
@@ -100,6 +101,13 @@ export function match(
     if (isNullOrUndefined(keyword)) {
         return false;
     }
+
+    // might be operator
+    if (keyword === inputSCLtoken.value) {
+        keywordUppercaseDiagnose(inputSCLtoken, statement, document);
+        return true;
+    }
+
     const kwMatchArray = keyword.match(/([A-Z]*)([a-zA-Z]*)/);
     if (isNullOrUndefined(kwMatchArray)) {
         return false;

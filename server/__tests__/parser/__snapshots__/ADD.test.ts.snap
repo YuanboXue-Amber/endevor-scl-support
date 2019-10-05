@@ -424,7 +424,25 @@ Object {
                           ],
                           "requireNext": true,
                           "type": "keyword",
-                          "value": "EQUAL, =",
+                          "value": "EQUAL",
+                        },
+                        Object {
+                          "next": Array [
+                            Object {
+                              "next": Array [
+                                Object {
+                                  "next": Array [],
+                                  "type": "eos",
+                                  "value": ".",
+                                },
+                              ],
+                              "type": "value",
+                              "value": "pgroup-name",
+                            },
+                          ],
+                          "requireNext": true,
+                          "type": "keyword",
+                          "value": "EQUALSIGN",
                         },
                       ],
                       "requireNext": true,
@@ -548,6 +566,236 @@ Array [
     },
     "endi": 52,
     "starti": 51,
+  },
+]
+`;
+
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 1`] = `38`;
+
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 2`] = `41`;
+
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 3`] = `101`;
+
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 4`] = `105`;
+
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 5`] = `120`;
+
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 6`] = `129`;
+
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 7`] = `130`;
+
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 8`] = `133`;
+
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 9`] = `
+Array [
+  Object {
+    "diagnostic": Object {
+      "message": "Invalid value specified",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 41,
+    "starti": 38,
+  },
+]
+`;
+
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 10`] = `
+Array [
+  Object {
+    "diagnostic": Object {
+      "message": "Keyword should be uppercased.
+Lowercased keyword might cause the scl action to fail when submitted",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "severity": 2,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 105,
+    "starti": 101,
+  },
+  Object {
+    "diagnostic": Object {
+      "message": "Keyword should be uppercased.
+Lowercased keyword might cause the scl action to fail when submitted",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "severity": 2,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 129,
+    "starti": 120,
+  },
+  Object {
+    "diagnostic": Object {
+      "message": "Keyword should be uppercased.
+Lowercased keyword might cause the scl action to fail when submitted",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "severity": 2,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 133,
+    "starti": 130,
+  },
+]
+`;
+
+exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 1`] = `24`;
+
+exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 2`] = `28`;
+
+exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 3`] = `53`;
+
+exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 4`] = `62`;
+
+exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 5`] = `63`;
+
+exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 6`] = `66`;
+
+exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 7`] = `83`;
+
+exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 8`] = `91`;
+
+exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 9`] = `92`;
+
+exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 10`] = `99`;
+
+exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 11`] = `
+Array [
+  Object {
+    "diagnostic": Object {
+      "message": "Keyword should be uppercased.
+Lowercased keyword might cause the scl action to fail when submitted",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "severity": 2,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 28,
+    "starti": 24,
+  },
+  Object {
+    "diagnostic": Object {
+      "message": "Keyword should be uppercased.
+Lowercased keyword might cause the scl action to fail when submitted",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "severity": 2,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 62,
+    "starti": 53,
+  },
+  Object {
+    "diagnostic": Object {
+      "message": "Keyword should be uppercased.
+Lowercased keyword might cause the scl action to fail when submitted",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "severity": 2,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 66,
+    "starti": 63,
+  },
+  Object {
+    "diagnostic": Object {
+      "message": "Keyword should be uppercased.
+Lowercased keyword might cause the scl action to fail when submitted",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "severity": 2,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 91,
+    "starti": 83,
+  },
+  Object {
+    "diagnostic": Object {
+      "message": "Keyword should be uppercased.
+Lowercased keyword might cause the scl action to fail when submitted",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "severity": 2,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 99,
+    "starti": 92,
   },
 ]
 `;

@@ -29,15 +29,17 @@ export function parser(parentNode: Inode, iterator: number, statement: SCLstatem
         return VALIDSCL_NUMBER;
     }
     let foundMatch = false;
-    for (const childNode of parentNode.next) {
+    for (let i = 0; i < parentNode.next.length; ++ i) {
+        const childNode = parentNode.next[i];
         if (iterator === VALIDSCL_NUMBER) {
-            return VALIDSCL_NUMBER;
+            break;
         }
         const childToken = currSCL[iterator];
         switch (true) {
             case childNode.type === "keyword" && match(childToken, childNode.value, statement, document):
                 foundMatch = true;
                 iterator = parser(childNode, iterator, statement, document);
+                i = -1;
                 break;
 
             case childNode.type ==="value" && !childToken.is_eoStatement:

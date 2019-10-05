@@ -423,7 +423,25 @@
                                             "requireNext": true,
                                             "next": [
                                                 {
-                                                    "value": "EQUAL, =",
+                                                    "value": "EQUAL",
+                                                    "type": "keyword",
+                                                    "requireNext": true,
+                                                    "next": [
+                                                        {
+                                                            "value": "pgroup-name",
+                                                            "type": "value",
+                                                            "next": [
+                                                                {
+                                                                    "value": ".",
+                                                                    "type": "eos",
+                                                                    "next": []
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "value": "EQUALSIGN",
                                                     "type": "keyword",
                                                     "requireNext": true,
                                                     "next": [
