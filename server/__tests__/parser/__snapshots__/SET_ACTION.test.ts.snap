@@ -171,7 +171,184 @@ Object {
       "value": "BUILD",
     },
     Object {
-      "next": Array [],
+      "next": Array [
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [
+                Object {
+                  "next": Array [],
+                  "type": "eos",
+                  "value": ".",
+                },
+              ],
+              "type": "value",
+              "value": "file-dd-name",
+            },
+          ],
+          "requireNext": true,
+          "type": "keyword",
+          "value": "FILE",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [
+                Object {
+                  "next": Array [],
+                  "type": "eos",
+                  "value": ".",
+                },
+              ],
+              "type": "value",
+              "value": "dd-name",
+            },
+          ],
+          "requireNext": true,
+          "type": "keyword",
+          "value": "DDNAME",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [
+                Object {
+                  "next": Array [],
+                  "type": "eos",
+                  "value": ".",
+                },
+              ],
+              "type": "value",
+              "value": "data-set-name",
+            },
+          ],
+          "requireNext": true,
+          "type": "keyword",
+          "value": "DSNAME",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [
+                        Object {
+                          "next": Array [],
+                          "type": "eos",
+                          "value": ".",
+                        },
+                      ],
+                      "type": "value",
+                      "value": "environment-name",
+                    },
+                  ],
+                  "requireNext": true,
+                  "type": "keyword",
+                  "value": "ENVIRONMENT",
+                },
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [
+                        Object {
+                          "next": Array [],
+                          "type": "eos",
+                          "value": ".",
+                        },
+                      ],
+                      "type": "value",
+                      "value": "system-name",
+                    },
+                  ],
+                  "requireNext": true,
+                  "type": "keyword",
+                  "value": "SYSTEM",
+                },
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [
+                        Object {
+                          "next": Array [],
+                          "type": "eos",
+                          "value": ".",
+                        },
+                      ],
+                      "type": "value",
+                      "value": "subsystem-name",
+                    },
+                  ],
+                  "requireNext": true,
+                  "type": "keyword",
+                  "value": "SUBSYSTEM",
+                },
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [
+                        Object {
+                          "next": Array [],
+                          "type": "eos",
+                          "value": ".",
+                        },
+                      ],
+                      "type": "value",
+                      "value": "type-name",
+                    },
+                  ],
+                  "requireNext": true,
+                  "type": "keyword",
+                  "value": "TYPE",
+                },
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [
+                        Object {
+                          "next": Array [],
+                          "type": "eos",
+                          "value": ".",
+                        },
+                      ],
+                      "type": "value",
+                      "value": "stage-id",
+                    },
+                    Object {
+                      "next": Array [
+                        Object {
+                          "next": Array [
+                            Object {
+                              "next": Array [],
+                              "type": "eos",
+                              "value": ".",
+                            },
+                          ],
+                          "type": "value",
+                          "value": "stage-no",
+                        },
+                      ],
+                      "requireNext": true,
+                      "type": "keyword",
+                      "value": "NUMBER",
+                    },
+                  ],
+                  "requireNext": true,
+                  "type": "keyword",
+                  "value": "STAGE",
+                },
+              ],
+              "requireNext": true,
+              "type": "value",
+              "value": "site-id",
+            },
+          ],
+          "requireNext": true,
+          "type": "keyword",
+          "value": "SITE",
+        },
+      ],
       "requireNext": true,
       "type": "keyword",
       "value": "FROM",
@@ -188,7 +365,222 @@ Object {
       "value": "STOPRC",
     },
     Object {
-      "next": Array [],
+      "next": Array [
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [],
+              "type": "eos",
+              "value": ".",
+            },
+          ],
+          "type": "keyword",
+          "value": "SYSOUT",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [],
+              "type": "eos",
+              "value": ".",
+            },
+          ],
+          "type": "keyword",
+          "value": "C1PRINT",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [],
+              "type": "eos",
+              "value": ".",
+            },
+          ],
+          "type": "keyword",
+          "value": "C1PRTVB",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [
+                Object {
+                  "next": Array [],
+                  "type": "eos",
+                  "value": ".",
+                },
+              ],
+              "type": "value",
+              "value": "file-dd-name",
+            },
+          ],
+          "requireNext": true,
+          "type": "keyword",
+          "value": "FILE",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [
+                Object {
+                  "next": Array [],
+                  "type": "eos",
+                  "value": ".",
+                },
+              ],
+              "type": "value",
+              "value": "dd-name",
+            },
+          ],
+          "requireNext": true,
+          "type": "keyword",
+          "value": "DDNAME",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [
+                Object {
+                  "next": Array [],
+                  "type": "eos",
+                  "value": ".",
+                },
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [
+                        Object {
+                          "next": Array [],
+                          "type": "eos",
+                          "value": ".",
+                        },
+                      ],
+                      "type": "value",
+                      "value": "memeber-name",
+                    },
+                  ],
+                  "requireNext": true,
+                  "type": "keyword",
+                  "value": "MEMBER",
+                },
+              ],
+              "type": "value",
+              "value": "data-set-name",
+            },
+          ],
+          "requireNext": true,
+          "type": "keyword",
+          "value": "DSNAME",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [
+                Object {
+                  "next": Array [],
+                  "type": "eos",
+                  "value": ".",
+                },
+              ],
+              "type": "value",
+              "value": "environment-name",
+            },
+          ],
+          "requireNext": true,
+          "type": "keyword",
+          "value": "ENVIRONMENT",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [
+                Object {
+                  "next": Array [],
+                  "type": "eos",
+                  "value": ".",
+                },
+              ],
+              "type": "value",
+              "value": "system-name",
+            },
+          ],
+          "requireNext": true,
+          "type": "keyword",
+          "value": "SYSTEM",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [
+                Object {
+                  "next": Array [],
+                  "type": "eos",
+                  "value": ".",
+                },
+              ],
+              "type": "value",
+              "value": "subsystem-name",
+            },
+          ],
+          "requireNext": true,
+          "type": "keyword",
+          "value": "SUBSYSTEM",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [
+                Object {
+                  "next": Array [],
+                  "type": "eos",
+                  "value": ".",
+                },
+              ],
+              "type": "value",
+              "value": "type-name",
+            },
+          ],
+          "requireNext": true,
+          "type": "keyword",
+          "value": "TYPE",
+        },
+        Object {
+          "next": Array [
+            Object {
+              "next": Array [
+                Object {
+                  "next": Array [],
+                  "type": "eos",
+                  "value": ".",
+                },
+              ],
+              "type": "value",
+              "value": "stage-id",
+            },
+            Object {
+              "next": Array [
+                Object {
+                  "next": Array [
+                    Object {
+                      "next": Array [],
+                      "type": "eos",
+                      "value": ".",
+                    },
+                  ],
+                  "type": "value",
+                  "value": "stage-no",
+                },
+              ],
+              "requireNext": true,
+              "type": "keyword",
+              "value": "NUMBER",
+            },
+          ],
+          "requireNext": true,
+          "type": "keyword",
+          "value": "STAGE",
+        },
+      ],
+      "requireNext": true,
       "type": "keyword",
       "value": "TO",
     },

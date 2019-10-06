@@ -292,5 +292,25 @@ Array [
     "kind": 1,
     "label": "SUBSYSTEMS",
   },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "SITE",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "SYSOUT",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "C1PRINT",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "C1PRTVB",
+  },
 ]
 `;

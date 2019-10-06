@@ -174,7 +174,185 @@
             "value": "FROM",
             "type": "keyword",
             "requireNext": true,
-            "next": []
+            "next": [
+
+                {
+                    "value": "FILE",
+                    "type": "keyword",
+                    "requireNext": true,
+                    "next": [
+                        {
+                            "value": "file-dd-name",
+                            "type": "value",
+                            "next": [
+                                {
+                                    "value": ".",
+                                    "type": "eos",
+                                    "next": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "value": "DDNAME",
+                    "type": "keyword",
+                    "requireNext": true,
+                    "next": [
+                        {
+                            "value": "dd-name",
+                            "type": "value",
+                            "next": [
+                                {
+                                    "value": ".",
+                                    "type": "eos",
+                                    "next": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "value": "DSNAME",
+                    "type": "keyword",
+                    "requireNext": true,
+                    "next": [
+                        {
+                            "value": "data-set-name",
+                            "type": "value",
+                            "next": [
+                                {
+                                    "value": ".",
+                                    "type": "eos",
+                                    "next": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "value": "SITE",
+                    "type": "keyword",
+                    "requireNext": true,
+                    "next": [
+                        {
+                            "value": "site-id",
+                            "type": "value",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "value": "ENVIRONMENT",
+                                    "type": "keyword",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "value": "environment-name",
+                                            "type": "value",
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "SYSTEM",
+                                    "type": "keyword",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "value": "system-name",
+                                            "type": "value",
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "SUBSYSTEM",
+                                    "type": "keyword",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "value": "subsystem-name",
+                                            "type": "value",
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "TYPE",
+                                    "type": "keyword",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "value": "type-name",
+                                            "type": "value",
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "STAGE",
+                                    "type": "keyword",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "value": "stage-id",
+                                            "type": "value",
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "value": "NUMBER",
+                                            "type": "keyword",
+                                            "requireNext": true,
+                                            "next": [
+                                                {
+                                                    "value": "stage-no",
+                                                    "type": "value",
+                                                    "next": [
+                                                        {
+                                                            "value": ".",
+                                                            "type": "eos",
+                                                            "next": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         {
             "value": "OPTIONS",
@@ -190,7 +368,222 @@
         {
             "value": "TO",
             "type": "keyword",
-            "next": []
+            "requireNext": true,
+            "next": [
+                {
+                    "value": "SYSOUT",
+                    "type": "keyword",
+                    "next": [
+                        {
+                            "value": ".",
+                            "type": "eos",
+                            "next": []
+                        }
+                    ]
+                },
+                {
+                    "value": "C1PRINT",
+                    "type": "keyword",
+                    "next": [
+                        {
+                            "value": ".",
+                            "type": "eos",
+                            "next": []
+                        }
+                    ]
+                },
+                {
+                    "value": "C1PRTVB",
+                    "type": "keyword",
+                    "next": [
+                        {
+                            "value": ".",
+                            "type": "eos",
+                            "next": []
+                        }
+                    ]
+                },
+                {
+                    "value": "FILE",
+                    "type": "keyword",
+                    "requireNext": true,
+                    "next": [
+                        {
+                            "value": "file-dd-name",
+                            "type": "value",
+                            "next": [
+                                {
+                                    "value": ".",
+                                    "type": "eos",
+                                    "next": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "value": "DDNAME",
+                    "type": "keyword",
+                    "requireNext": true,
+                    "next": [
+                        {
+                            "value": "dd-name",
+                            "type": "value",
+                            "next": [
+                                {
+                                    "value": ".",
+                                    "type": "eos",
+                                    "next": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "value": "DSNAME",
+                    "type": "keyword",
+                    "requireNext": true,
+                    "next": [
+                        {
+                            "value": "data-set-name",
+                            "type": "value",
+                            "next": [
+                                {
+                                    "value": ".",
+                                    "type": "eos",
+                                    "next": []
+                                },
+                                {
+                                    "value": "MEMBER",
+                                    "type": "keyword",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "value": "memeber-name",
+                                            "type": "value",
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "value": "ENVIRONMENT",
+                    "type": "keyword",
+                    "requireNext": true,
+                    "next": [
+                        {
+                            "value": "environment-name",
+                            "type": "value",
+                            "next": [
+                                {
+                                    "value": ".",
+                                    "type": "eos",
+                                    "next": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "value": "SYSTEM",
+                    "type": "keyword",
+                    "requireNext": true,
+                    "next": [
+                        {
+                            "value": "system-name",
+                            "type": "value",
+                            "next": [
+                                {
+                                    "value": ".",
+                                    "type": "eos",
+                                    "next": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "value": "SUBSYSTEM",
+                    "type": "keyword",
+                    "requireNext": true,
+                    "next": [
+                        {
+                            "value": "subsystem-name",
+                            "type": "value",
+                            "next": [
+                                {
+                                    "value": ".",
+                                    "type": "eos",
+                                    "next": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "value": "TYPE",
+                    "type": "keyword",
+                    "requireNext": true,
+                    "next": [
+                        {
+                            "value": "type-name",
+                            "type": "value",
+                            "next": [
+                                {
+                                    "value": ".",
+                                    "type": "eos",
+                                    "next": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "value": "STAGE",
+                    "type": "keyword",
+                    "requireNext": true,
+                    "next": [
+                        {
+                            "value": "stage-id",
+                            "type": "value",
+                            "next": [
+                                {
+                                    "value": ".",
+                                    "type": "eos",
+                                    "next": []
+                                }
+                            ]
+                        },
+                        {
+                            "value": "NUMBER",
+                            "type": "keyword",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "value": "stage-no",
+                                    "type": "value",
+                                    "next": [
+                                        {
+                                            "value": ".",
+                                            "type": "eos",
+                                            "next": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         {
             "value": "WHERE",

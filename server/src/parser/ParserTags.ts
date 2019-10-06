@@ -63,6 +63,11 @@ export const ParserTags = {
     ALL: "ALL",
     SYSTEMS: "SYStems",
     SUBSYSTEMS: "Subsystems",
+
+    SITE: "SITE",
+    SYSOUT: "SYSOUT",
+    C1PRINT: "C1PRINT",
+    C1PRTVB: "C1PRTVB",
 };
 
 /**
