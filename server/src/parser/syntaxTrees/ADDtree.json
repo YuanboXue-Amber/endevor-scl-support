@@ -59,7 +59,7 @@
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "value": "dd-name",
+                                            "value": "file-dd-name",
                                             "type": "value",
                                             "next": [
                                                 {
@@ -95,7 +95,7 @@
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "value": "dd-name",
+                                            "value": "data-set-name",
                                             "type": "value",
                                             "next": [
                                                 {
@@ -130,7 +130,7 @@
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "value": "usspath",
+                                            "value": "uss-path",
                                             "type": "value",
                                             "requireNext": true,
                                             "next": [
@@ -140,7 +140,7 @@
                                                     "requireNext": true,
                                                     "next": [
                                                         {
-                                                            "value": "ussfile",
+                                                            "value": "uss-filename",
                                                             "type": "value",
                                                             "next": [
                                                                 {
@@ -169,7 +169,7 @@
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "value": "env-name",
+                                            "value": "environment-name",
                                             "type": "value",
                                             "next": [
                                                 {
@@ -187,7 +187,7 @@
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "value": "sys-name",
+                                            "value": "system-name",
                                             "type": "value",
                                             "next": [
                                                 {
@@ -205,7 +205,7 @@
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "value": "sub-name",
+                                            "value": "subsystem-name",
                                             "type": "value",
                                             "next": [
                                                 {
@@ -223,7 +223,7 @@
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "value": "typ-name",
+                                            "value": "type-name",
                                             "type": "value",
                                             "next": [
                                                 {
@@ -248,7 +248,7 @@
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "value": "ccid",
+                                            "value": "ccid-value",
                                             "type": "value",
                                             "next": [
                                                 {
@@ -266,7 +266,7 @@
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "value": "comment",
+                                            "value": "comment-value",
                                             "type": "value",
                                             "next": [
                                                 {
@@ -289,7 +289,7 @@
                                             "requireNext": true,
                                             "next": [
                                                 {
-                                                    "value": "version",
+                                                    "value": "version-number",
                                                     "type": "value",
                                                     "next": [
                                                         {
@@ -428,7 +428,7 @@
                                                     "requireNext": true,
                                                     "next": [
                                                         {
-                                                            "value": "pgroup-name",
+                                                            "value": "processor-group-name",
                                                             "type": "value",
                                                             "next": [
                                                                 {
@@ -446,7 +446,7 @@
                                                     "requireNext": true,
                                                     "next": [
                                                         {
-                                                            "value": "pgroup-name",
+                                                            "value": "processor-group-name",
                                                             "type": "value",
                                                             "next": [
                                                                 {

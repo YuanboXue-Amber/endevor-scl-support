@@ -33,10 +33,10 @@
 			"port": 6009,
 			"restart": true,
 			"outFiles": ["${workspaceRoot}/server/out/**/*.js"],
-			"preLaunchTask": {
-				"type": "npm",
-				"script": "compile"
-			}
+			// "preLaunchTask": {
+			// 	"type": "npm",
+			// 	"script": "compile"
+			// }
 		},
 		{
 		  "type": "node",

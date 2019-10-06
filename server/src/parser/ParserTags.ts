@@ -79,22 +79,19 @@ function getString(tag: string): string | undefined {
     return descriptor.value;
 }
 
+
 /**
+ *
  * Match an input scl piece to a keyword specified by parserTag.
- * When matched, perform a syntax diagnose on if the keyword is uppercased or not
  *
  * @export
- * @param {ITokenizedString} inputSCLtoken the token to be matched, which is in statement
- * @param {string} parserTag field name in ParserTag classs, eg. ADD
- * @param {SCLstatement} statement Only changed when return true: the statement where keyword uppercase warning diagnose will be pushed to
- * @param {SCLDocument} document Only changed when return true: the document where statement is in
- * @returns {boolean} true only when the field match the keyword represent by parserTag
+ * @param {ITokenizedString} inputSCLtoken
+ * @param {string} parserTag
+ * @returns {boolean} true when match false not
  */
-export function match(
+export function matchWithoutDiagnose(
     inputSCLtoken: ITokenizedString,
-    parserTag: string,
-    statement: SCLstatement,
-    document: SCLDocument ): boolean {
+    parserTag: string): boolean {
 
     const inputSCLpart = inputSCLtoken.value;
     let keyword = getString(parserTag);
@@ -104,7 +101,6 @@ export function match(
 
     // might be operator
     if (keyword === inputSCLtoken.value) {
-        keywordUppercaseDiagnose(inputSCLtoken, statement, document);
         return true;
     }
 
@@ -132,10 +128,33 @@ export function match(
     const regex = new RegExp(composeRegex(mandatoryText, optionalText));
     const textMatchArray = sclkey.match(regex);
     if (!isNullOrUndefined(textMatchArray) && textMatchArray[0] === sclkey) {
-        keywordUppercaseDiagnose(inputSCLtoken, statement, document);
         return true;
     }
     return false;
+}
+
+/**
+ * Match an input scl piece to a keyword specified by parserTag.
+ * When matched, perform a syntax diagnose on if the keyword is uppercased or not
+ *
+ * @export
+ * @param {ITokenizedString} inputSCLtoken the token to be matched, which is in statement
+ * @param {string} parserTag field name in ParserTag classs, eg. ADD
+ * @param {SCLstatement} statement Only changed when return true: the statement where keyword uppercase warning diagnose will be pushed to
+ * @param {SCLDocument} document Only changed when return true: the document where statement is in
+ * @returns {boolean} true only when the field match the keyword represent by parserTag
+ */
+export function match(
+    inputSCLtoken: ITokenizedString,
+    parserTag: string,
+    statement: SCLstatement,
+    document: SCLDocument ): boolean {
+
+    const ismatch = matchWithoutDiagnose(inputSCLtoken, parserTag);
+    if (ismatch) {
+        keywordUppercaseDiagnose(inputSCLtoken, statement, document);
+    }
+    return ismatch;
 }
 
 /**

@@ -7,11 +7,10 @@ import { match } from '../ParserTags';
 import { isNullOrUndefined } from 'util';
 import { QUICKFIX_NO_EOS_MSG, QUICKFIX_SPACE_BEFORE_EOS_MSG } from '../../CodeActionProvider';
 
-
 function setCompletionItemsForToken(token: ITokenizedString, matchedNode: Inode) {
     token.completionItems = [];
     for (const child of matchedNode.next) {
-        if (child.type as string === "keyword") {
+        if (child.type as string !== "eos") {
             token.completionItems.push(child.value);
         }
     }
@@ -23,9 +22,6 @@ export function parser(parentNode: Inode, iterator: number, statement: SCLstatem
     setCompletionItemsForToken(currSCL[iterator], parentNode);
     iterator ++;
     if (iterator >= currSCL.length) {
-        // if (currSCL[iterator-1].is_eoStatement)
-        //     return VALIDSCL_NUMBER;
-        // return iterator-1;
         return VALIDSCL_NUMBER;
     }
     let foundMatch = false;
