@@ -138,7 +138,7 @@ connection.onCompletion(
         const completionItemsBySyntax = documentManager.getCompletionBySyntax(_textDocumentPosition);
         if (completionItemsBySyntax.length > 0)
             return completionItemsBySyntax;
-        return completionItems;
+        return []; // completionItems;
     }
 );
 
