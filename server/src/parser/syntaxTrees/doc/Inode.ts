@@ -14,3 +14,26 @@ export interface Inode {
     next: Inode[];
     requireNext?: boolean;
 }
+
+export interface IFromTocheck {
+    from: {
+        FILE: boolean; // include FILE DDNAME DSNAME
+        location: {
+            ENVIRONMENT: boolean;
+            SYSTEM: boolean;
+            SUBSYSTEM: boolean;
+            TYPE: boolean;
+            STAGE: boolean;
+        }
+    };
+    to: {
+        FILE: boolean; // include FILE DDNAME DSNAME, SYSOUT/C1PRINT/C1PRTVB
+        location: {
+            ENVIRONMENT: boolean;
+            SYSTEM: boolean;
+            SUBSYSTEM: boolean;
+            TYPE: boolean;
+            STAGE: boolean;
+        }
+    };
+}

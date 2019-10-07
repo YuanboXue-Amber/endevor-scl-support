@@ -4,7 +4,8 @@ import { isNullOrUndefined } from 'util';
 import { SCLDocumentManager } from './SCLDocumentManager';
 import { match } from '../parser/ParserTags';
 import { SETtree, ADDtree } from '../parser/syntaxTrees/PrepareTrees';
-import { parser, diagnose } from '../parser/syntaxTrees/Parser';
+import { diagnose } from '../parser/syntaxTrees/Parser';
+import { IFromTocheck } from '../parser/syntaxTrees/doc/Inode';
 
 /**
  * An interface that extends the vscode diagnostic.
@@ -33,6 +34,29 @@ export class SCLstatement {
     tokens: ITokenizedString[] = [];
     diagnostics: ISCLDiagnostic[] = [];
 
+    fromtoCheck: IFromTocheck = {
+        from: {
+            FILE: false,
+            location: {
+                ENVIRONMENT: false,
+                SYSTEM: false,
+                SUBSYSTEM: false,
+                TYPE: false,
+                STAGE: false,
+            }
+        },
+        to: {
+            FILE: false,
+            location: {
+                ENVIRONMENT: false,
+                SYSTEM: false,
+                SUBSYSTEM: false,
+                TYPE: false,
+                STAGE: false,
+            }
+        },
+    };
+
     /**
      * Creates an instance of SCLstatement from tokens.
      *
@@ -57,6 +81,28 @@ export class SCLstatement {
         }
         this.tokens = tokens;
         this.diagnostics = [];
+        this.fromtoCheck = {
+            from: {
+                FILE: false,
+                location: {
+                    ENVIRONMENT: false,
+                    SYSTEM: false,
+                    SUBSYSTEM: false,
+                    TYPE: false,
+                    STAGE: false,
+                }
+            },
+            to: {
+                FILE: false,
+                location: {
+                    ENVIRONMENT: false,
+                    SYSTEM: false,
+                    SUBSYSTEM: false,
+                    TYPE: false,
+                    STAGE: false,
+                }
+            },
+        };
     }
 }
 
@@ -70,6 +116,28 @@ export class SCLstatement {
 export class SCLDocument {
     textDocument: TextDocument;
     statements: SCLstatement[] = [];
+    setCheck: IFromTocheck = {
+        from: {
+            FILE: false,
+            location: {
+                ENVIRONMENT: false,
+                SYSTEM: false,
+                SUBSYSTEM: false,
+                TYPE: false,
+                STAGE: false,
+            }
+        },
+        to: {
+            FILE: false,
+            location: {
+                ENVIRONMENT: false,
+                SYSTEM: false,
+                SUBSYSTEM: false,
+                TYPE: false,
+                STAGE: false,
+            }
+        },
+    };
 
     constructor(textDocument: TextDocument) {
         this.textDocument = textDocument;
@@ -157,9 +225,11 @@ export class SCLDocument {
      * @param {string} newText The new text replacing the original text
      * @param {number} start The start index of the original text
      * @param {number} end The end index of the original text
+     * @param {string} origContent The entire original content before change
      * @memberof SCLDocument
      */
     update(newText: string, start: number, end: number, origContent: string) {
+
         const oldLength = end - start;
         const indexPlus = newText.length - oldLength;
 
@@ -208,11 +278,69 @@ export class SCLDocument {
         const newTextTobeParse: string = origContent.substring(affectedRange.start, start)
                                             + newText
                                             + origContent.substring(end, affectedRange.end);
+
+        if (this.setwasTouchedDuringUpdate(newTextTobeParse, affectedRange.start, affectedRange.end, origContent)) {
+            return;
+        }
+
         const newStatements: SCLstatement[] = this.parseTextIntoSCLstatementsTokens(newTextTobeParse, affectedRange.start);
         newStatements.forEach((newscl) => {
             this.walkStatement(newscl);
             this.statements.push(newscl);
         });
+    }
+
+    /**
+     * Called from update. To check if SET FROM/TO is affected by the change.
+     * If so, update the whole document, return true.
+     *
+     * @param {string} newTextTobeParse
+     * @param {number} start
+     * @param {number} end
+     * @param {string} origContent
+     * @returns
+     * @memberof SCLDocument
+     */
+    setwasTouchedDuringUpdate(newTextTobeParse: string, start: number, end: number, origContent: string) {
+        const newTextUp = newTextTobeParse.toUpperCase();
+        const origContentUp = origContent.toUpperCase();
+        if ((newTextUp.match(/\b(SET)\b/) &&
+             (newTextUp.match(/\b(FRO(M|\b))\b/) ||
+              newTextUp.match(/\b(TO)\b/)) ) ||
+            (origContentUp.substring(start, end).match(/(.*)\b(SET)\b(.*)/) &&
+             (origContentUp.substring(start, end).match(/\b(FRO(M|\b))\b/) ||
+              origContentUp.substring(start, end).match(/\b(TO)\b/)) ) ) {
+            // SET changed, update the whole document
+            const newContent = origContent.substring(0, start)
+                                + newTextTobeParse
+                                + origContent.substring(end, origContent.length);
+            this.setCheck = {
+                from: {
+                    FILE: false,
+                    location: {
+                        ENVIRONMENT: false,
+                        SYSTEM: false,
+                        SUBSYSTEM: false,
+                        TYPE: false,
+                        STAGE: false,
+                    }
+                },
+                to: {
+                    FILE: false,
+                    location: {
+                        ENVIRONMENT: false,
+                        SYSTEM: false,
+                        SUBSYSTEM: false,
+                        TYPE: false,
+                        STAGE: false,
+                    }
+                },
+            };
+            this.statements = this.parseTextIntoSCLstatementsTokens(newContent);
+            this.walkStatements();
+            return true;
+        }
+        return false;
     }
 
     /**

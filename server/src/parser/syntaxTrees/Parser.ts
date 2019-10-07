@@ -1,8 +1,8 @@
 
-import { DiagnosticSeverity, CompletionItemKind, CompletionItem } from 'vscode-languageserver';
+import { DiagnosticSeverity, CompletionItemKind, CompletionItem, Diagnostic } from 'vscode-languageserver';
 import { ITokenizedString } from '../Tokenizer';
 import { SCLstatement, SCLDocument } from '../../documents/SCLDocument';
-import { ItreeNode } from './doc/Inode';
+import { ItreeNode, IFromTocheck } from './doc/Inode';
 import { match } from '../ParserTags';
 import { isNullOrUndefined } from 'util';
 import { QUICKFIX_NO_EOS_MSG, QUICKFIX_SPACE_BEFORE_EOS_MSG } from '../../CodeActionProvider';
@@ -127,12 +127,105 @@ function dealWithCompletion(token: ITokenizedString, matchedNode: ItreeNode, isS
     }
 }
 
+function dealWithSETMacro(token: ITokenizedString, matchedNode: ItreeNode,
+    statement: SCLstatement, document: SCLDocument,
+    isSET?: boolean, isfrom?: boolean, isto?: boolean) {
+
+    if (matchedNode.type === "value") {
+        if (!isNullOrUndefined(matchedNode.parent)) {
+            if (matchedNode.parent.value === "FILE" ||
+                matchedNode.parent.value === "DDNAME" ||
+                matchedNode.parent.value === "DSNAME") {
+                if (isSET) {
+                    if (isfrom)
+                        document.setCheck.from.FILE = true;
+                    if (isto)
+                        document.setCheck.to.FILE = true;
+                } else {
+                    if (isfrom)
+                        statement.fromtoCheck.from.FILE = true;
+                    if (isto)
+                        statement.fromtoCheck.to.FILE = true;
+                }
+
+            } else if (matchedNode.parent.value === "ENVIRONMENT") {
+                if (isSET) {
+                    if (isfrom)
+                        document.setCheck.from.location.ENVIRONMENT = true;
+                    if (isto)
+                        document.setCheck.to.location.ENVIRONMENT = true;
+                } else {
+                    if (isfrom)
+                        statement.fromtoCheck.from.location.ENVIRONMENT = true;
+                    if (isto)
+                        statement.fromtoCheck.to.location.ENVIRONMENT = true;
+                }
+
+            } else if (matchedNode.parent.value === "SYSTEM") {
+                if (isSET) {
+                    if (isfrom)
+                        document.setCheck.from.location.SYSTEM = true;
+                    if (isto)
+                        document.setCheck.to.location.SYSTEM = true;
+                } else {
+                    if (isfrom)
+                        statement.fromtoCheck.from.location.SYSTEM = true;
+                    if (isto)
+                        statement.fromtoCheck.to.location.SYSTEM = true;
+                }
+
+            } else if (matchedNode.parent.value === "SUBSYSTEM") {
+                if (isSET) {
+                    if (isfrom)
+                        document.setCheck.from.location.SUBSYSTEM = true;
+                    if (isto)
+                        document.setCheck.to.location.SUBSYSTEM = true;
+                } else {
+                    if (isfrom)
+                        statement.fromtoCheck.from.location.SUBSYSTEM = true;
+                    if (isto)
+                        statement.fromtoCheck.to.location.SUBSYSTEM = true;
+                }
+
+            } else if (matchedNode.parent.value === "TYPE") {
+                if (isSET) {
+                    if (isfrom)
+                        document.setCheck.from.location.TYPE = true;
+                    if (isto)
+                        document.setCheck.to.location.TYPE = true;
+                } else {
+                    if (isfrom)
+                        statement.fromtoCheck.from.location.TYPE = true;
+                    if (isto)
+                        statement.fromtoCheck.to.location.TYPE = true;
+                }
+
+            } else if (matchedNode.parent.value === "STAGE" || matchedNode.parent.value === "NUMBER") {
+                if (isSET) {
+                    if (isfrom)
+                        document.setCheck.from.location.STAGE = true;
+                    if (isto)
+                        document.setCheck.to.location.STAGE = true;
+                } else {
+                    if (isfrom)
+                        statement.fromtoCheck.from.location.STAGE = true;
+                    if (isto)
+                        statement.fromtoCheck.to.location.STAGE = true;
+                }
+
+            }
+        }
+    }
+}
+
 export function parser(rootNode: ItreeNode, statement: SCLstatement, document: SCLDocument) {
     const currSCL: ITokenizedString[] = statement.tokens;
     setCompletionItemsForToken(currSCL[0], rootNode);
     let isSET = false;
     if (currSCL[0].value.toUpperCase() === "SET")
         isSET = true;
+    let isfrom = false;
+    let isto = false;
 
     let tokenIter: number = 1;
     const matchToken = ((parentNode: ItreeNode, onlyMatchKey?: boolean): number => {
@@ -144,12 +237,24 @@ export function parser(rootNode: ItreeNode, statement: SCLstatement, document: S
             switch (true) {
                 case childNode.type === "keyword" && match(token, childNode.value, statement, document):
                     tokenIter ++;
+                    if (childNode.value === 'FROM') {
+                        isfrom = true;
+                    } else if (childNode.value === 'TO') {
+                        isto = true;
+                        isfrom = false;
+                    } else if (childNode.value === 'OPTION') {
+                        isto = false;
+                        isfrom = false;
+                    }
                     dealWithCompletion(token, childNode, isSET);
                     return matchToken(childNode);
 
                 case !onlyMatchKey && (childNode.type ==="value" && !token.is_eoStatement):
                     tokenIter ++;
                     dealWithCompletion(token, childNode, isSET);
+                    dealWithSETMacro(token, childNode,
+                        statement, document,
+                        isSET, isfrom, isto);
                     return matchToken(childNode);
 
                 case !onlyMatchKey && (childNode.type === "eos" && token.is_eoStatement):
@@ -183,6 +288,9 @@ export function diagnose(rootNode: ItreeNode, statement: SCLstatement, document:
     processEOS(statement, document);
 
     const iterator = parser(rootNode, statement, document);
+
+    processSETMacro(statement, document);
+
     if (iterator === VALIDSCL_NUMBER) {
         return;
     }
@@ -231,4 +339,109 @@ function processEOS(statement: SCLstatement, document: SCLDocument) {
         return false;
     }
     return true;
+}
+
+function processSETMacro(statement: SCLstatement, document: SCLDocument) {
+    const currSCL: ITokenizedString[] = statement.tokens;
+    if (currSCL.length < 2) {
+        return;
+    }
+    if (!currSCL[1].value.toUpperCase().startsWith("EL")) {
+        return;
+    }
+    const action = currSCL[0].value.toUpperCase();
+    const documentFT: IFromTocheck = document.setCheck;
+    const statementFT: IFromTocheck = statement.fromtoCheck;
+    let missFrom = false;
+    let missTo = false;
+    switch (true) {
+        case action.startsWith("ADD") || action.startsWith("UPD"):
+            if (!statementFT.from.FILE && !documentFT.from.FILE) {
+                missFrom = true;
+            }
+            if (!(statementFT.to.location.ENVIRONMENT || documentFT.to.location.ENVIRONMENT) ||
+                !(statementFT.to.location.SYSTEM || documentFT.to.location.SYSTEM) ||
+                !(statementFT.to.location.SUBSYSTEM || documentFT.to.location.SUBSYSTEM) ||
+                !(statementFT.to.location.TYPE || documentFT.to.location.TYPE)) {
+                    missTo = true;
+                }
+            break;
+
+        case action.startsWith("DEL") || action.startsWith("GEN") || action.startsWith("MOV"):
+            if (!(statementFT.from.location.ENVIRONMENT || documentFT.from.location.ENVIRONMENT) ||
+                !(statementFT.from.location.STAGE || documentFT.from.location.STAGE) ||
+                !(statementFT.from.location.SYSTEM || documentFT.from.location.SYSTEM) ||
+                !(statementFT.from.location.SUBSYSTEM || documentFT.from.location.SUBSYSTEM) ||
+                !(statementFT.from.location.TYPE || documentFT.from.location.TYPE)) {
+                    missFrom = true;
+                }
+            break;
+
+        case action.startsWith("RET"):
+            if (!(statementFT.from.location.ENVIRONMENT || documentFT.from.location.ENVIRONMENT) ||
+                !(statementFT.from.location.STAGE || documentFT.from.location.STAGE) ||
+                !(statementFT.from.location.SYSTEM || documentFT.from.location.SYSTEM) ||
+                !(statementFT.from.location.SUBSYSTEM || documentFT.from.location.SUBSYSTEM) ||
+                !(statementFT.from.location.TYPE || documentFT.from.location.TYPE)) {
+                    missFrom = true;
+                }
+                if (!statementFT.to.FILE && !documentFT.to.FILE) {
+                    missTo = true;
+                }
+            break;
+
+        case action.startsWith("TRA"):
+            if (!(statementFT.from.location.ENVIRONMENT || documentFT.from.location.ENVIRONMENT) ||
+                !(statementFT.from.location.STAGE || documentFT.from.location.STAGE) ||
+                !(statementFT.from.location.SYSTEM || documentFT.from.location.SYSTEM) ||
+                !(statementFT.from.location.SUBSYSTEM || documentFT.from.location.SUBSYSTEM) ||
+                !(statementFT.from.location.TYPE || documentFT.from.location.TYPE)) {
+                    missFrom = true;
+                }
+            if (!(statementFT.to.location.ENVIRONMENT || documentFT.to.location.ENVIRONMENT) ||
+                !(statementFT.to.location.STAGE || documentFT.to.location.STAGE) ||
+                !(statementFT.to.location.SYSTEM || documentFT.to.location.SYSTEM) ||
+                !(statementFT.to.location.SUBSYSTEM || documentFT.to.location.SUBSYSTEM) ||
+                !(statementFT.to.location.TYPE || documentFT.to.location.TYPE)) {
+                    missTo = true;
+                }
+            break;
+
+        default:
+            break;
+    }
+    if (missFrom) {
+        let diagnostic: Diagnostic = {
+            severity: DiagnosticSeverity.Error,
+            range: {
+                start: document.textDocument.positionAt(statement.starti),
+                end: document.textDocument.positionAt(statement.endi)
+            },
+            message: "FROM clause incomplete in the current SCL",
+            source: 'Endevor SCL extension'
+        };
+
+        statement.diagnostics.push({
+            diagnostic,
+            starti: statement.starti,
+            endi: statement.endi,
+        });
+    }
+    if (missTo) {
+        let diagnostic: Diagnostic = {
+            severity: DiagnosticSeverity.Error,
+            range: {
+                start: document.textDocument.positionAt(statement.starti),
+                end: document.textDocument.positionAt(statement.endi)
+            },
+            message: "TO clause incomplete in the current SCL",
+            source: 'Endevor SCL extension'
+        };
+
+        statement.diagnostics.push({
+            diagnostic,
+            starti: statement.starti,
+            endi: statement.endi,
+        });
+    }
 }

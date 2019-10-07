@@ -65,7 +65,7 @@ connection.onInitialize((params: InitializeParams) => {
             completionProvider: {
                 resolveProvider: true
             },
-            hoverProvider: true, // AmberTODO
+            // hoverProvider: true, // AmberTODO
         }
     };
 

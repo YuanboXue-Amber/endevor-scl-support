@@ -25,7 +25,7 @@ describe("test1: Test 1 simple valid ADD ACTION", () => {
 
         const document: SCLDocument = new SCLDocument(sourceTextDocument);
         for (const statement of document.statements) {
-            expect(statement.diagnostics.length).toBe(0);
+            expect(statement.diagnostics).toMatchSnapshot();
         }
     });
 });

@@ -1,14 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`test1: Test 1 simple valid ADD ACTION Should have no error 1`] = `1`;
+
+exports[`test1: Test 1 simple valid ADD ACTION Should have no error 2`] = `40`;
+
+exports[`test1: Test 1 simple valid ADD ACTION Should have no error 3`] = `
+Array [
+  Object {
+    "diagnostic": Object {
+      "message": "TO clause incomplete in the current SCL",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 40,
+    "starti": 1,
+  },
+]
+`;
+
 exports[`test2: Test 1 simple INvalid ADD ACTION Should have error 1`] = `51`;
 
 exports[`test2: Test 1 simple INvalid ADD ACTION Should have error 2`] = `52`;
 
-exports[`test2: Test 1 simple INvalid ADD ACTION Should have error 3`] = `51`;
+exports[`test2: Test 1 simple INvalid ADD ACTION Should have error 3`] = `1`;
 
 exports[`test2: Test 1 simple INvalid ADD ACTION Should have error 4`] = `52`;
 
-exports[`test2: Test 1 simple INvalid ADD ACTION Should have error 5`] = `
+exports[`test2: Test 1 simple INvalid ADD ACTION Should have error 5`] = `51`;
+
+exports[`test2: Test 1 simple INvalid ADD ACTION Should have error 6`] = `52`;
+
+exports[`test2: Test 1 simple INvalid ADD ACTION Should have error 7`] = `
 Array [
   Object {
     "diagnostic": Object {
@@ -31,6 +63,25 @@ Array [
   },
   Object {
     "diagnostic": Object {
+      "message": "TO clause incomplete in the current SCL",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 52,
+    "starti": 1,
+  },
+  Object {
+    "diagnostic": Object {
       "message": "Invalid value specified",
       "range": Object {
         "end": Object {
@@ -51,24 +102,78 @@ Array [
 ]
 `;
 
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 1`] = `38`;
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 1`] = `1`;
 
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 2`] = `41`;
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 2`] = `66`;
 
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 3`] = `101`;
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 3`] = `1`;
 
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 4`] = `105`;
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 4`] = `66`;
 
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 5`] = `120`;
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 5`] = `38`;
 
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 6`] = `129`;
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 6`] = `41`;
 
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 7`] = `130`;
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 7`] = `101`;
 
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 8`] = `133`;
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 8`] = `105`;
 
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 9`] = `
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 9`] = `120`;
+
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 10`] = `129`;
+
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 11`] = `130`;
+
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 12`] = `133`;
+
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 13`] = `68`;
+
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 14`] = `151`;
+
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 15`] = `68`;
+
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 16`] = `151`;
+
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 17`] = `
 Array [
+  Object {
+    "diagnostic": Object {
+      "message": "FROM clause incomplete in the current SCL",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 66,
+    "starti": 1,
+  },
+  Object {
+    "diagnostic": Object {
+      "message": "TO clause incomplete in the current SCL",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 66,
+    "starti": 1,
+  },
   Object {
     "diagnostic": Object {
       "message": "Invalid value specified",
@@ -91,7 +196,7 @@ Array [
 ]
 `;
 
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 10`] = `
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 18`] = `
 Array [
   Object {
     "diagnostic": Object {
@@ -153,6 +258,44 @@ Lowercased keyword might cause the scl action to fail when submitted",
     "endi": 133,
     "starti": 130,
   },
+  Object {
+    "diagnostic": Object {
+      "message": "FROM clause incomplete in the current SCL",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 151,
+    "starti": 68,
+  },
+  Object {
+    "diagnostic": Object {
+      "message": "TO clause incomplete in the current SCL",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 151,
+    "starti": 68,
+  },
 ]
 `;
 
@@ -176,7 +319,15 @@ exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 
 
 exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 10`] = `99`;
 
-exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 11`] = `
+exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 11`] = `0`;
+
+exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 12`] = `111`;
+
+exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 13`] = `0`;
+
+exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 14`] = `111`;
+
+exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 15`] = `
 Array [
   Object {
     "diagnostic": Object {
@@ -277,6 +428,44 @@ Lowercased keyword might cause the scl action to fail when submitted",
     },
     "endi": 99,
     "starti": 92,
+  },
+  Object {
+    "diagnostic": Object {
+      "message": "FROM clause incomplete in the current SCL",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 111,
+    "starti": 0,
+  },
+  Object {
+    "diagnostic": Object {
+      "message": "TO clause incomplete in the current SCL",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 111,
+    "starti": 0,
   },
 ]
 `;
