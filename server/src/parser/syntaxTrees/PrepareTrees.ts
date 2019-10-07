@@ -7,12 +7,14 @@ export let SETtree: ItreeNode;
 export let ADDtree: ItreeNode;
 export let UPDATEtree: ItreeNode;
 export let DELETEtree: ItreeNode;
+export let GENERATEtree: ItreeNode;
 
 export function prepareTrees() {
     SETtree = composeTreeFromJSON(prepareJSON("SETtree.json"));
     ADDtree = composeTreeFromJSON(prepareJSON("ADDtree.json"));
     UPDATEtree = composeTreeFromJSON(prepareJSON("UPDATEtree.json"));
     DELETEtree = composeTreeFromJSON(prepareJSON("DELETEtree.json"));
+    GENERATEtree = composeTreeFromJSON(prepareJSON("GENERATEtree.json"));
 }
 
 export function composeTreeFromJSON(jsonRootNode: Inode):ItreeNode {

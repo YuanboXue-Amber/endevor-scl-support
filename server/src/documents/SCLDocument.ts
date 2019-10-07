@@ -3,7 +3,7 @@ import { ITokenizedString, Tokenizer } from '../parser/Tokenizer';
 import { isNullOrUndefined } from 'util';
 import { SCLDocumentManager } from './SCLDocumentManager';
 import { match } from '../parser/ParserTags';
-import { SETtree, ADDtree, UPDATEtree, DELETEtree } from '../parser/syntaxTrees/PrepareTrees';
+import { SETtree, ADDtree, UPDATEtree, DELETEtree, GENERATEtree } from '../parser/syntaxTrees/PrepareTrees';
 import { diagnose } from '../parser/syntaxTrees/Parser';
 import { IFromTocheck } from '../parser/syntaxTrees/doc/Inode';
 
@@ -221,6 +221,8 @@ export class SCLDocument {
             diagnose(UPDATEtree, statement, this);
         if (match(statement.tokens[0], "DELETE", statement, this))
             diagnose(DELETEtree, statement, this);
+        if (match(statement.tokens[0], "GENERATE", statement, this))
+            diagnose(GENERATEtree, statement, this);
     }
 
     /**
