@@ -74,6 +74,17 @@ export const ParserTags = {
     CURRENT: "CURrent",
     ONLY: "ONLy",
     COMPONENT: "COMPonent",
+
+    COPYBACK: "COPyback",
+    SEARCH: "SEArch",
+    NOSEARCH: "NOSearch",
+    NOSOURCE: "NOSOurce",
+
+    SYNCHRONIZE: "SYNchronize",
+    WITH: "WITh",
+    HISTORY: "HIStory",
+    RETAIN: "RETAin",
+    JUMP: "JUMp"
 };
 
 /**
