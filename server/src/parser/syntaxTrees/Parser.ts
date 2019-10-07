@@ -148,7 +148,10 @@ function dealWithSETMacro(token: ITokenizedString, matchedNode: ItreeNode,
                         statement.fromtoCheck.to.FILE = true;
                 }
 
-            } else if (matchedNode.parent.value === "ENVIRONMENT") {
+            } else if (matchedNode.parent.value === "PATH" && !isSET) {
+                statement.fromtoCheck.from.FILE = true;
+            }
+            else if (matchedNode.parent.value === "ENVIRONMENT") {
                 if (isSET) {
                     if (isfrom)
                         document.setCheck.from.location.ENVIRONMENT = true;
