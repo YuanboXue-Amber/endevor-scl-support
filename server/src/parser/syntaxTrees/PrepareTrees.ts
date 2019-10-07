@@ -5,10 +5,14 @@ import { isNullOrUndefined } from "util";
 
 export let SETtree: ItreeNode;
 export let ADDtree: ItreeNode;
+export let UPDATEtree: ItreeNode;
+export let DELETEtree: ItreeNode;
 
 export function prepareTrees() {
     SETtree = composeTreeFromJSON(prepareJSON("SETtree.json"));
     ADDtree = composeTreeFromJSON(prepareJSON("ADDtree.json"));
+    UPDATEtree = composeTreeFromJSON(prepareJSON("UPDATEtree.json"));
+    DELETEtree = composeTreeFromJSON(prepareJSON("DELETEtree.json"));
 }
 
 export function composeTreeFromJSON(jsonRootNode: Inode):ItreeNode {

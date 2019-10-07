@@ -69,6 +69,11 @@ export const ParserTags = {
     SYSOUT: "SYSOUT",
     C1PRINT: "C1PRINT",
     C1PRTVB: "C1PRTVB",
+
+    OF: "OF",
+    CURRENT: "CURrent",
+    ONLY: "ONLy",
+    COMPONENT: "COMPonent",
 };
 
 /**

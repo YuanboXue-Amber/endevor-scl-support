@@ -97,18 +97,26 @@ function searchCompletionItemsForToken(token: ITokenizedString, matchedNode: Itr
                 return;
             }
             if ((matchedNode.parent.value === "FROM" || matchedNode.parent.value === "TO" ||
-                 matchedNode.parent.value === "THROUGH" || matchedNode.parent.value === "THRU")
+                 matchedNode.parent.value === "THROUGH" || matchedNode.parent.value === "THRU" ||
+                 matchedNode.parent.value === "WHERE" )
                 && !isNullOrUndefined(matchedNode.parent.parent)) {
                 targetNode = matchedNode.parent.parent;
                 for (const child of targetNode.children) {
-                    if (child.type as string === "keyword"
-                        && child.value !== matchedNode.parent.value
-                        && child.value !== "THROUGH" && child.value !== "THRU") {
-                        token.completionItems.push({
-                            label: child.value.toUpperCase() + " ",
-                            kind: CompletionItemKind.Text,
-                            documentation: "Endevor SCL keyword"
-                        });
+                    if (child.type as string === "keyword") {
+                        if (child.value !== matchedNode.parent.value
+                            && child.value !== "THROUGH" && child.value !== "THRU") {
+                            token.completionItems.push({
+                                label: child.value.toUpperCase() + " ",
+                                kind: CompletionItemKind.Text,
+                                documentation: "Endevor SCL keyword"
+                            });
+                        } else if (child.value === "WHERE") {
+                            token.completionItems.push({
+                                label: child.value.toUpperCase() + " ",
+                                kind: CompletionItemKind.Text,
+                                documentation: "Endevor SCL keyword"
+                            });
+                        }
                     }
                 }
                 return;
@@ -235,7 +243,7 @@ export function parser(rootNode: ItreeNode, statement: SCLstatement, document: S
         if (tokenIter >= currSCL.length) {
             return VALIDSCL_NUMBER;
         }
-        const token = currSCL[tokenIter];
+        let token = currSCL[tokenIter];
         for (const childNode of parentNode.children) {
             switch (true) {
                 case childNode.type === "keyword" && match(token, childNode.value, statement, document):
@@ -253,6 +261,40 @@ export function parser(rootNode: ItreeNode, statement: SCLstatement, document: S
                     return matchToken(childNode);
 
                 case !onlyMatchKey && (childNode.type ==="value" && !token.is_eoStatement):
+                    if (childNode.value === "'where ccid'" || childNode.value === "'WHERECOB'") {
+                        if (token.value.startsWith("(")) { // multiple ccids/procgrps
+                            const startIter = tokenIter;
+                            while (!token.value.endsWith(")")) {
+                                token.completionItems = [];
+                                if (!token.value.endsWith(",")) {
+                                    (token.completionItems as CompletionItem[]).push({
+                                        label: ", ",
+                                        kind: CompletionItemKind.Text,
+                                        documentation: "Endevor SCL operator"
+                                    });
+                                    (token.completionItems as CompletionItem[]).push({
+                                        label: ") ",
+                                        kind: CompletionItemKind.Text,
+                                        documentation: "Endevor SCL operator"
+                                    });
+                                } else {
+                                    (token.completionItems as CompletionItem[]).push({
+                                        label: childNode.value,
+                                        kind: CompletionItemKind.Text,
+                                        documentation: "Endevor SCL value"
+                                    });
+                                }
+                                tokenIter ++;
+                                if (token.is_eoStatement) { // err
+                                    return tokenIter;
+                                }
+                                if (tokenIter >= currSCL.length) { // err
+                                    return startIter;
+                                }
+                                token = currSCL[tokenIter];
+                            }
+                        }
+                    }
                     tokenIter ++;
                     dealWithCompletion(token, childNode, isSET);
                     dealWithSETMacro(token, childNode,
