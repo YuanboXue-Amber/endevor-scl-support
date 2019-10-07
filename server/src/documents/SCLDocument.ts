@@ -3,8 +3,8 @@ import { ITokenizedString, Tokenizer } from '../parser/Tokenizer';
 import { isNullOrUndefined } from 'util';
 import { SCLDocumentManager } from './SCLDocumentManager';
 import { match } from '../parser/ParserTags';
-import { parser, diagnose } from '../parser/syntaxTrees/Parser';
 import { SETtree, ADDtree } from '../parser/syntaxTrees/PrepareTrees';
+import { parser, diagnose } from '../parser/syntaxTrees/Parser';
 
 /**
  * An interface that extends the vscode diagnostic.
@@ -146,9 +146,9 @@ export class SCLDocument {
      */
     private walkStatement(statement: SCLstatement) {
         if (match(statement.tokens[0], "SET", statement, this))
-            diagnose(parser(SETtree, 0, statement, this), statement, this);
+            diagnose(SETtree, statement, this);
         if (match(statement.tokens[0], "ADD", statement, this))
-            diagnose(parser(ADDtree, 0, statement, this), statement, this);
+            diagnose(ADDtree, statement, this);
     }
 
     /**

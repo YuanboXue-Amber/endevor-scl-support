@@ -182,7 +182,7 @@
                     "requireNext": true,
                     "next": [
                         {
-                            "value": "file-dd-name",
+                            "value": "'DDNAME'",
                             "type": "value",
                             "next": [
                                 {
@@ -200,7 +200,7 @@
                     "requireNext": true,
                     "next": [
                         {
-                            "value": "dd-name",
+                            "value": "'DDNAME'",
                             "type": "value",
                             "next": [
                                 {
@@ -218,7 +218,7 @@
                     "requireNext": true,
                     "next": [
                         {
-                            "value": "data-set-name",
+                            "value": "'SAMPLE.DATASET.NAME'",
                             "type": "value",
                             "next": [
                                 {
@@ -236,7 +236,7 @@
                     "requireNext": true,
                     "next": [
                         {
-                            "value": "site-id",
+                            "value": "'1'",
                             "type": "value",
                             "requireNext": true,
                             "next": [
@@ -246,7 +246,7 @@
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "value": "environment-name",
+                                            "value": "'ENVNAME'",
                                             "type": "value",
                                             "next": [
                                                 {
@@ -264,7 +264,7 @@
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "value": "system-name",
+                                            "value": "'SYSNAME'",
                                             "type": "value",
                                             "next": [
                                                 {
@@ -282,7 +282,7 @@
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "value": "subsystem-name",
+                                            "value": "'SUBNAME'",
                                             "type": "value",
                                             "next": [
                                                 {
@@ -300,7 +300,7 @@
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "value": "type-name",
+                                            "value": "'COBOL'",
                                             "type": "value",
                                             "next": [
                                                 {
@@ -318,23 +318,12 @@
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "value": "stage-id",
-                                            "type": "value",
-                                            "next": [
-                                                {
-                                                    "value": ".",
-                                                    "type": "eos",
-                                                    "next": []
-                                                }
-                                            ]
-                                        },
-                                        {
                                             "value": "NUMBER",
                                             "type": "keyword",
                                             "requireNext": true,
                                             "next": [
                                                 {
-                                                    "value": "stage-no",
+                                                    "value": "'1'",
                                                     "type": "value",
                                                     "next": [
                                                         {
@@ -343,6 +332,17 @@
                                                             "next": []
                                                         }
                                                     ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "value": "'1'",
+                                            "type": "value",
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
                                                 }
                                             ]
                                         }
@@ -409,7 +409,7 @@
                     "requireNext": true,
                     "next": [
                         {
-                            "value": "file-dd-name",
+                            "value": "'DDNAME'",
                             "type": "value",
                             "next": [
                                 {
@@ -427,7 +427,7 @@
                     "requireNext": true,
                     "next": [
                         {
-                            "value": "dd-name",
+                            "value": "'DDNAME'",
                             "type": "value",
                             "next": [
                                 {
@@ -445,7 +445,7 @@
                     "requireNext": true,
                     "next": [
                         {
-                            "value": "data-set-name",
+                            "value": "'SAMPLE.DATASET.NAME'",
                             "type": "value",
                             "next": [
                                 {
@@ -459,7 +459,7 @@
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "value": "memeber-name",
+                                            "value": "'MEMBER'",
                                             "type": "value",
                                             "next": [
                                                 {
@@ -481,7 +481,7 @@
                     "requireNext": true,
                     "next": [
                         {
-                            "value": "environment-name",
+                            "value": "'ENVNAME'",
                             "type": "value",
                             "next": [
                                 {
@@ -499,7 +499,7 @@
                     "requireNext": true,
                     "next": [
                         {
-                            "value": "system-name",
+                            "value": "'SYSNAME'",
                             "type": "value",
                             "next": [
                                 {
@@ -517,7 +517,7 @@
                     "requireNext": true,
                     "next": [
                         {
-                            "value": "subsystem-name",
+                            "value": "'SUBNAME'",
                             "type": "value",
                             "next": [
                                 {
@@ -535,7 +535,7 @@
                     "requireNext": true,
                     "next": [
                         {
-                            "value": "type-name",
+                            "value": "'COBOL'",
                             "type": "value",
                             "next": [
                                 {
@@ -553,23 +553,12 @@
                     "requireNext": true,
                     "next": [
                         {
-                            "value": "stage-id",
-                            "type": "value",
-                            "next": [
-                                {
-                                    "value": ".",
-                                    "type": "eos",
-                                    "next": []
-                                }
-                            ]
-                        },
-                        {
                             "value": "NUMBER",
                             "type": "keyword",
                             "requireNext": true,
                             "next": [
                                 {
-                                    "value": "stage-no",
+                                    "value": "'1'",
                                     "type": "value",
                                     "next": [
                                         {
@@ -578,6 +567,17 @@
                                             "next": []
                                         }
                                     ]
+                                }
+                            ]
+                        },
+                        {
+                            "value": "'1'",
+                            "type": "value",
+                            "next": [
+                                {
+                                    "value": ".",
+                                    "type": "eos",
+                                    "next": []
                                 }
                             ]
                         }

@@ -5,37 +5,37 @@ Array [
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "ACTION",
+    "label": "ACTION ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "BUILD",
+    "label": "BUILD ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "FROM",
+    "label": "FROM ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "OPTIONS",
+    "label": "OPTIONS ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "STOPRC",
+    "label": "STOPRC ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "TO",
+    "label": "TO ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "WHERE",
+    "label": "WHERE ",
   },
 ]
 `;
@@ -45,37 +45,37 @@ Array [
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "ACTION",
+    "label": "ACTION ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "BUILD",
+    "label": "BUILD ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "FROM",
+    "label": "FROM ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "OPTIONS",
+    "label": "OPTIONS ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "STOPRC",
+    "label": "STOPRC ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "TO",
+    "label": "TO ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "WHERE",
+    "label": "WHERE ",
   },
 ]
 `;
@@ -85,72 +85,72 @@ Array [
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "ADD",
+    "label": "ADD ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "ARCHIVE",
+    "label": "ARCHIVE ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "COPY",
+    "label": "COPY ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "DELETE",
+    "label": "DELETE ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "GENERATE",
+    "label": "GENERATE ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "LIST",
+    "label": "LIST ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "MOVE",
+    "label": "MOVE ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "PRINT",
+    "label": "PRINT ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "RESTORE",
+    "label": "RESTORE ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "RETRIEVE",
+    "label": "RETRIEVE ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "SIGNIN",
+    "label": "SIGNIN ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "TRANSFER",
+    "label": "TRANSFER ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "UPDATE",
+    "label": "UPDATE ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "VALIDATE",
+    "label": "VALIDATE ",
   },
 ]
 `;

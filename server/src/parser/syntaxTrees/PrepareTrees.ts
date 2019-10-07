@@ -1,37 +1,55 @@
-import { Inode } from './doc/Inode';
+import { Inode, ItreeNode } from './doc/Inode';
 import path = require('path');
 import fs = require('fs');
 import { isNullOrUndefined } from "util";
 
-export let SETtree: Inode;
-export let ADDtree: Inode;
+export let SETtree: ItreeNode;
+export let ADDtree: ItreeNode;
 
 export function prepareTrees() {
-    if (!prepareSETtree()) {
-        throw new Error("Server cannot prepare syntax tree for SET");
-    }
-    if (!prepareADDtree()) {
-        throw new Error("Server cannot prepare syntax tree for ADD");
-    }
+    SETtree = composeTreeFromJSON(prepareJSON("SETtree.json"));
+    ADDtree = composeTreeFromJSON(prepareJSON("ADDtree.json"));
 }
 
-export function prepareSETtree(): boolean {
-    const treeJSONPath = path.resolve(__dirname, "../syntaxTrees/SETtree.json");
-    const treeJSON = fs.readFileSync(treeJSONPath, "UTF-8");
-    SETtree = JSON.parse(treeJSON);
-    if (isNullOrUndefined(SETtree) || isNullOrUndefined(SETtree.value)) {
-        return false;
-    }
-    return true;
+export function composeTreeFromJSON(jsonRootNode: Inode):ItreeNode {
+    const rootNode: ItreeNode = {
+        value: jsonRootNode.value,
+        type: jsonRootNode.type,
+        requireNext: jsonRootNode.requireNext,
+        children: []
+    };
+
+    const createChildTree = (jsonParentNode: Inode, jsonParentTreeNode: ItreeNode) => {
+        let leftTreeNode: ItreeNode;
+        jsonParentNode.next.forEach((childNode) => {
+            let node: ItreeNode = {
+                value: childNode.value,
+                type: childNode.type,
+                requireNext: childNode.requireNext,
+                children: [],
+                parent: jsonParentTreeNode
+            };
+            if (isNullOrUndefined(leftTreeNode)) {
+                jsonParentTreeNode.children.push(node);
+                createChildTree(childNode, node);
+            } else {
+                node.leftSibling = leftTreeNode;
+                jsonParentTreeNode.children.push(node);
+                createChildTree(childNode, node);
+                leftTreeNode.rightSibling = node;
+            }
+            leftTreeNode = node;
+        });
+    };
+
+    createChildTree(jsonRootNode, rootNode);
+    return rootNode;
 }
 
-export function prepareADDtree(): boolean {
-    const treeJSONPath = path.resolve(__dirname, "../syntaxTrees/ADDtree.json");
-    const treeJSON = fs.readFileSync(treeJSONPath, "UTF-8");
-    ADDtree = JSON.parse(treeJSON);
-    if (isNullOrUndefined(ADDtree) || isNullOrUndefined(ADDtree.value)) {
-        return false;
-    }
-    return true;
+export function prepareJSON(jsonFileName: string): Inode {
+    const jsonPath = path.resolve(__dirname, "../syntaxTrees/"+ jsonFileName);
+    const jsonStr = fs.readFileSync(jsonPath, "UTF-8");
+    return JSON.parse(jsonStr);
 }
+
 

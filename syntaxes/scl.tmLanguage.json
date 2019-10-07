@@ -105,6 +105,10 @@
                 {
                     "name": "support.class.secondarykeyword.scl",
                     "match": "\\b(THR(OUGH|OUG|OU|O|\\b))\\b"
+                },
+                {
+                    "name": "support.class.secondarykeyword.scl",
+                    "match": "\\b(THR(U|\\b))\\b"
                 }
             ]
         },

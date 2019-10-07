@@ -9,7 +9,7 @@
             "requireNext": true,
             "next": [
                 {
-                    "value": "element-name",
+                    "value": "'element'",
                     "type": "value",
                     "next": [
                         {
@@ -18,7 +18,7 @@
                             "requireNext": true,
                             "next": [
                                 {
-                                    "value": "element-name",
+                                    "value": "'element'",
                                     "type": "value",
                                     "next": [
                                         {
@@ -36,7 +36,7 @@
                             "requireNext": true,
                             "next": [
                                 {
-                                    "value": "element-name",
+                                    "value": "'element'",
                                     "type": "value",
                                     "next": [
                                         {
@@ -59,7 +59,7 @@
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "value": "file-dd-name",
+                                            "value": "'DDNAME'",
                                             "type": "value",
                                             "next": [
                                                 {
@@ -77,7 +77,7 @@
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "value": "dd-name",
+                                            "value": "'DDNAME'",
                                             "type": "value",
                                             "next": [
                                                 {
@@ -95,7 +95,7 @@
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "value": "data-set-name",
+                                            "value": "'SAMPLE.DATASET.NAME'",
                                             "type": "value",
                                             "next": [
                                                 {
@@ -109,7 +109,7 @@
                                                     "requireNext": true,
                                                     "next": [
                                                         {
-                                                            "value": "memeber-name",
+                                                            "value": "'MEMBER'",
                                                             "type": "value",
                                                             "next": [
                                                                 {
@@ -131,7 +131,7 @@
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "value": "uss-path",
+                                            "value": "'/u/usspath'",
                                             "type": "value",
                                             "requireNext": true,
                                             "next": [
@@ -141,7 +141,7 @@
                                                     "requireNext": true,
                                                     "next": [
                                                         {
-                                                            "value": "uss-filename",
+                                                            "value": "'uss-filename'",
                                                             "type": "value",
                                                             "next": [
                                                                 {
@@ -170,7 +170,7 @@
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "value": "environment-name",
+                                            "value": "'ENVNAME'",
                                             "type": "value",
                                             "next": [
                                                 {
@@ -188,7 +188,7 @@
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "value": "system-name",
+                                            "value": "'SYSNAME'",
                                             "type": "value",
                                             "next": [
                                                 {
@@ -206,7 +206,7 @@
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "value": "subsystem-name",
+                                            "value": "'SUBNAME'",
                                             "type": "value",
                                             "next": [
                                                 {
@@ -224,7 +224,7 @@
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "value": "type-name",
+                                            "value": "'COBOL'",
                                             "type": "value",
                                             "next": [
                                                 {
@@ -249,7 +249,7 @@
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "value": "ccid-value",
+                                            "value": "'sample ccid'",
                                             "type": "value",
                                             "next": [
                                                 {
@@ -267,7 +267,7 @@
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "value": "comment-value",
+                                            "value": "'sample comment'",
                                             "type": "value",
                                             "next": [
                                                 {
@@ -290,7 +290,7 @@
                                             "requireNext": true,
                                             "next": [
                                                 {
-                                                    "value": "version-number",
+                                                    "value": "'1'",
                                                     "type": "value",
                                                     "next": [
                                                         {
@@ -429,7 +429,7 @@
                                                     "requireNext": true,
                                                     "next": [
                                                         {
-                                                            "value": "processor-group-name",
+                                                            "value": "'*NOPROC*'",
                                                             "type": "value",
                                                             "next": [
                                                                 {
@@ -447,7 +447,7 @@
                                                     "requireNext": true,
                                                     "next": [
                                                         {
-                                                            "value": "processor-group-name",
+                                                            "value": "'*NOPROC*'",
                                                             "type": "value",
                                                             "next": [
                                                                 {

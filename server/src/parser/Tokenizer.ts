@@ -1,4 +1,5 @@
 import { isNullOrUndefined } from "util";
+import { CompletionItem } from "vscode-languageserver";
 
 export interface ITokenizedString {
     // value of the scl part
@@ -15,8 +16,7 @@ export interface ITokenizedString {
     // true if value symbolize the end of the input
     is_eoInput: boolean;
 
-    // the key used for searching what string will be following this token
-    completionItems?: string[];
+    completionItems?: CompletionItem[];
 }
 
 /**

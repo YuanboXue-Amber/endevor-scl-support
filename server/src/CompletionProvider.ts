@@ -12,7 +12,7 @@ export function composeCompletionItemsFromKeywords(): CompletionItem[] {
             return;
         }
         completionItems.push({
-            label: value.toUpperCase(),
+            label: value.toUpperCase() + " ",
             kind: CompletionItemKind.Text,
             documentation: "Endevor SCL keyword"
         });

@@ -30,6 +30,7 @@ const level1keywords: string[] = [
     ParserTags.STOPRC,
     ParserTags.ELEMENT,
     ParserTags.THROUGH,
+    ParserTags.THRU,
 ];
 
 const level2keywords: string[] = [

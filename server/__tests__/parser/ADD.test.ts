@@ -1,16 +1,9 @@
 import { Position } from 'vscode-languageserver';
 import { SCLDocument } from '../../src/documents/SCLDocument';
-import { SCLDocumentManager } from '../../src/documents/SCLDocumentManager';
-import { prepareADDtree, ADDtree } from '../../src/parser/syntaxTrees/PrepareTrees';
+import { prepareTrees } from '../../src/parser/syntaxTrees/PrepareTrees';
 
 beforeAll(() => {
-    prepareADDtree();
-});
-
-describe("Test if the tree is prepared", () => {
-    it("", async () => {
-        expect(ADDtree).toMatchSnapshot();
-    });
+    prepareTrees();
 });
 
 describe("test1: Test 1 simple valid ADD ACTION", () => {

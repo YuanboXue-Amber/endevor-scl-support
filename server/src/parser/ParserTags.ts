@@ -35,6 +35,7 @@ export const ParserTags = {
     SUBSYSTEM: "SUBSystem",
     SYSTEM: "SYStem",
     THROUGH: "THRough",
+    THRU: "THRu",
     TRANSFER: "TRAnsfer",
     TO: "TO",
     TYPE: "TYPe",

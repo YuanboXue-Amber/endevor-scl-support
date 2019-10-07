@@ -4,11 +4,9 @@ import {
     VersionedTextDocumentIdentifier,
     TextDocumentContentChangeEvent,
     TextDocumentPositionParams,
-    CompletionItem,
-    CompletionItemKind} from "vscode-languageserver";
-import { SCLDocument, SCLstatement } from './SCLDocument';
+    CompletionItem} from "vscode-languageserver";
+import { SCLDocument } from './SCLDocument';
 import { isNull, isNullOrUndefined } from "util";
-import { matchWithoutDiagnose } from '../parser/ParserTags';
 
 interface IDocumentSettings {
     maxNumberOfProblems: number;
@@ -126,49 +124,7 @@ export class SCLDocumentManager {
         }
 
         const tobeCompelteIndex = document.textDocument.offsetAt(textDocumentPosition.position);
-        const completionItems: CompletionItem[] = [];
-
-        // When the completion item is positioned after token[i], and token[i] doesn't have any valid completion item
-        // calculated from parser, call this function to search tokens before token[i] for completion info.
-        // This is because our parser couldn't handle completions such as, completion request after "OPTIONS CCID ccid".
-        //
-        // This function find tokens before token[i], if OPTION, return OPTION's completion, if FROM/TO, return element-name's completion
-        const searchMore = ((i: number, statement: SCLstatement) => {
-            let findFromTo = false;
-            let values;
-            for (let j = i-1; j >= 0; j --) {
-                const token = statement.tokens[j];
-                if (matchWithoutDiagnose(token, "OPTION")) {
-                    values = token.completionItems;
-                    if (!isNullOrUndefined(values)) {
-                        values.forEach((value) => {
-                            completionItems.push({
-                                label: value.toUpperCase(),
-                                kind: CompletionItemKind.Text,
-                                documentation: "Endevor SCL keyword"
-                            });
-                        });
-                    }
-                    return completionItems;
-                } else if (matchWithoutDiagnose(token, "FROM") || matchWithoutDiagnose(token, "TO")) {
-                    findFromTo = true;
-                    continue;
-                } else if (matchWithoutDiagnose(token, "ELEMENT") && findFromTo) {
-                    values = statement.tokens[j+1].completionItems; // token is element name
-                    if (!isNullOrUndefined(values)) {
-                        values.forEach((value) => {
-                            completionItems.push({
-                                label: value.toUpperCase(),
-                                kind: CompletionItemKind.Text,
-                                documentation: "Endevor SCL keyword"
-                            });
-                        });
-                    }
-                    return completionItems;
-                }
-            }
-            return [];
-        });
+        let completionItems: CompletionItem[] = [];
 
         for (const statement of document.statements) {
             if (tobeCompelteIndex >= statement.starti && tobeCompelteIndex <= statement.endi) {
@@ -181,16 +137,9 @@ export class SCLDocumentManager {
                     if (tobeCompelteIndex >= starti && tobeCompelteIndex <= endi) {
                         // to complete between tokens[i] and tokens[i+1] in scl
                         const values = statement.tokens[i].completionItems;
-                        if (isNullOrUndefined(values) || values.length === 0) {
-                            return searchMore(i, statement);
+                        if (!isNullOrUndefined(values)) {
+                            completionItems = completionItems.concat(values);
                         }
-                        values.forEach((value) => {
-                            completionItems.push({
-                                label: value.toUpperCase(),
-                                kind: CompletionItemKind.Text,
-                                documentation: "Endevor SCL keyword"
-                            });
-                        });
                         return completionItems;
                     }
                 }
@@ -200,16 +149,9 @@ export class SCLDocumentManager {
         // to complete at the end of scl
         const statement = document.statements[document.statements.length-1];
         const values = statement.tokens[statement.tokens.length-1].completionItems;
-        if (isNullOrUndefined(values) || values.length === 0) {
-            return searchMore(statement.tokens.length-1, statement);
+        if (!isNullOrUndefined(values)) {
+            completionItems = completionItems.concat(values);
         }
-        values.forEach((value) => {
-            completionItems.push({
-                label: value.toUpperCase(),
-                kind: CompletionItemKind.Text,
-                documentation: "Endevor SCL keyword"
-            });
-        });
         return completionItems;
     }
 }

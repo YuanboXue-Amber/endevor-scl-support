@@ -1,16 +1,10 @@
 import { Position } from 'vscode-languageserver';
 import { SCLDocument } from '../../src/documents/SCLDocument';
 import { SCLDocumentManager } from '../../src/documents/SCLDocumentManager';
-import { prepareSETtree, SETtree } from '../../src/parser/syntaxTrees/PrepareTrees';
+import { prepareTrees } from '../../src/parser/syntaxTrees/PrepareTrees';
 
 beforeAll(() => {
-    prepareSETtree();
-});
-
-describe("Test if the tree is prepared", () => {
-    it("", async () => {
-        expect(SETtree).toMatchSnapshot();
-    });
+    prepareTrees();
 });
 
 describe("test1: Test 1 simple valid SET ACTION", () => {

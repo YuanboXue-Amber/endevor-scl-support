@@ -1,602 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test if the tree is prepared  1`] = `
-Object {
-  "next": Array [
-    Object {
-      "next": Array [
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [],
-              "type": "eos",
-              "value": ".",
-            },
-          ],
-          "type": "keyword",
-          "value": "ADD",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [],
-              "type": "eos",
-              "value": ".",
-            },
-          ],
-          "type": "keyword",
-          "value": "ARCHIVE",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [],
-              "type": "eos",
-              "value": ".",
-            },
-          ],
-          "type": "keyword",
-          "value": "COPY",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [],
-              "type": "eos",
-              "value": ".",
-            },
-          ],
-          "type": "keyword",
-          "value": "DELETE",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [],
-              "type": "eos",
-              "value": ".",
-            },
-          ],
-          "type": "keyword",
-          "value": "GENERATE",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [],
-              "type": "eos",
-              "value": ".",
-            },
-          ],
-          "type": "keyword",
-          "value": "LIST",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [],
-              "type": "eos",
-              "value": ".",
-            },
-          ],
-          "type": "keyword",
-          "value": "MOVE",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [],
-              "type": "eos",
-              "value": ".",
-            },
-          ],
-          "type": "keyword",
-          "value": "PRINT",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [],
-              "type": "eos",
-              "value": ".",
-            },
-          ],
-          "type": "keyword",
-          "value": "RESTORE",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [],
-              "type": "eos",
-              "value": ".",
-            },
-          ],
-          "type": "keyword",
-          "value": "RETRIEVE",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [],
-              "type": "eos",
-              "value": ".",
-            },
-          ],
-          "type": "keyword",
-          "value": "SIGNIN",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [],
-              "type": "eos",
-              "value": ".",
-            },
-          ],
-          "type": "keyword",
-          "value": "TRANSFER",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [],
-              "type": "eos",
-              "value": ".",
-            },
-          ],
-          "type": "keyword",
-          "value": "UPDATE",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [],
-              "type": "eos",
-              "value": ".",
-            },
-          ],
-          "type": "keyword",
-          "value": "VALIDATE",
-        },
-      ],
-      "requireNext": true,
-      "type": "keyword",
-      "value": "ACTION",
-    },
-    Object {
-      "next": Array [],
-      "requireNext": true,
-      "type": "keyword",
-      "value": "BUILD",
-    },
-    Object {
-      "next": Array [
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [
-                Object {
-                  "next": Array [],
-                  "type": "eos",
-                  "value": ".",
-                },
-              ],
-              "type": "value",
-              "value": "file-dd-name",
-            },
-          ],
-          "requireNext": true,
-          "type": "keyword",
-          "value": "FILE",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [
-                Object {
-                  "next": Array [],
-                  "type": "eos",
-                  "value": ".",
-                },
-              ],
-              "type": "value",
-              "value": "dd-name",
-            },
-          ],
-          "requireNext": true,
-          "type": "keyword",
-          "value": "DDNAME",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [
-                Object {
-                  "next": Array [],
-                  "type": "eos",
-                  "value": ".",
-                },
-              ],
-              "type": "value",
-              "value": "data-set-name",
-            },
-          ],
-          "requireNext": true,
-          "type": "keyword",
-          "value": "DSNAME",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [
-                Object {
-                  "next": Array [
-                    Object {
-                      "next": Array [
-                        Object {
-                          "next": Array [],
-                          "type": "eos",
-                          "value": ".",
-                        },
-                      ],
-                      "type": "value",
-                      "value": "environment-name",
-                    },
-                  ],
-                  "requireNext": true,
-                  "type": "keyword",
-                  "value": "ENVIRONMENT",
-                },
-                Object {
-                  "next": Array [
-                    Object {
-                      "next": Array [
-                        Object {
-                          "next": Array [],
-                          "type": "eos",
-                          "value": ".",
-                        },
-                      ],
-                      "type": "value",
-                      "value": "system-name",
-                    },
-                  ],
-                  "requireNext": true,
-                  "type": "keyword",
-                  "value": "SYSTEM",
-                },
-                Object {
-                  "next": Array [
-                    Object {
-                      "next": Array [
-                        Object {
-                          "next": Array [],
-                          "type": "eos",
-                          "value": ".",
-                        },
-                      ],
-                      "type": "value",
-                      "value": "subsystem-name",
-                    },
-                  ],
-                  "requireNext": true,
-                  "type": "keyword",
-                  "value": "SUBSYSTEM",
-                },
-                Object {
-                  "next": Array [
-                    Object {
-                      "next": Array [
-                        Object {
-                          "next": Array [],
-                          "type": "eos",
-                          "value": ".",
-                        },
-                      ],
-                      "type": "value",
-                      "value": "type-name",
-                    },
-                  ],
-                  "requireNext": true,
-                  "type": "keyword",
-                  "value": "TYPE",
-                },
-                Object {
-                  "next": Array [
-                    Object {
-                      "next": Array [
-                        Object {
-                          "next": Array [],
-                          "type": "eos",
-                          "value": ".",
-                        },
-                      ],
-                      "type": "value",
-                      "value": "stage-id",
-                    },
-                    Object {
-                      "next": Array [
-                        Object {
-                          "next": Array [
-                            Object {
-                              "next": Array [],
-                              "type": "eos",
-                              "value": ".",
-                            },
-                          ],
-                          "type": "value",
-                          "value": "stage-no",
-                        },
-                      ],
-                      "requireNext": true,
-                      "type": "keyword",
-                      "value": "NUMBER",
-                    },
-                  ],
-                  "requireNext": true,
-                  "type": "keyword",
-                  "value": "STAGE",
-                },
-              ],
-              "requireNext": true,
-              "type": "value",
-              "value": "site-id",
-            },
-          ],
-          "requireNext": true,
-          "type": "keyword",
-          "value": "SITE",
-        },
-      ],
-      "requireNext": true,
-      "type": "keyword",
-      "value": "FROM",
-    },
-    Object {
-      "next": Array [],
-      "type": "keyword",
-      "value": "OPTIONS",
-    },
-    Object {
-      "next": Array [],
-      "requireNext": true,
-      "type": "keyword",
-      "value": "STOPRC",
-    },
-    Object {
-      "next": Array [
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [],
-              "type": "eos",
-              "value": ".",
-            },
-          ],
-          "type": "keyword",
-          "value": "SYSOUT",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [],
-              "type": "eos",
-              "value": ".",
-            },
-          ],
-          "type": "keyword",
-          "value": "C1PRINT",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [],
-              "type": "eos",
-              "value": ".",
-            },
-          ],
-          "type": "keyword",
-          "value": "C1PRTVB",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [
-                Object {
-                  "next": Array [],
-                  "type": "eos",
-                  "value": ".",
-                },
-              ],
-              "type": "value",
-              "value": "file-dd-name",
-            },
-          ],
-          "requireNext": true,
-          "type": "keyword",
-          "value": "FILE",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [
-                Object {
-                  "next": Array [],
-                  "type": "eos",
-                  "value": ".",
-                },
-              ],
-              "type": "value",
-              "value": "dd-name",
-            },
-          ],
-          "requireNext": true,
-          "type": "keyword",
-          "value": "DDNAME",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [
-                Object {
-                  "next": Array [],
-                  "type": "eos",
-                  "value": ".",
-                },
-                Object {
-                  "next": Array [
-                    Object {
-                      "next": Array [
-                        Object {
-                          "next": Array [],
-                          "type": "eos",
-                          "value": ".",
-                        },
-                      ],
-                      "type": "value",
-                      "value": "memeber-name",
-                    },
-                  ],
-                  "requireNext": true,
-                  "type": "keyword",
-                  "value": "MEMBER",
-                },
-              ],
-              "type": "value",
-              "value": "data-set-name",
-            },
-          ],
-          "requireNext": true,
-          "type": "keyword",
-          "value": "DSNAME",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [
-                Object {
-                  "next": Array [],
-                  "type": "eos",
-                  "value": ".",
-                },
-              ],
-              "type": "value",
-              "value": "environment-name",
-            },
-          ],
-          "requireNext": true,
-          "type": "keyword",
-          "value": "ENVIRONMENT",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [
-                Object {
-                  "next": Array [],
-                  "type": "eos",
-                  "value": ".",
-                },
-              ],
-              "type": "value",
-              "value": "system-name",
-            },
-          ],
-          "requireNext": true,
-          "type": "keyword",
-          "value": "SYSTEM",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [
-                Object {
-                  "next": Array [],
-                  "type": "eos",
-                  "value": ".",
-                },
-              ],
-              "type": "value",
-              "value": "subsystem-name",
-            },
-          ],
-          "requireNext": true,
-          "type": "keyword",
-          "value": "SUBSYSTEM",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [
-                Object {
-                  "next": Array [],
-                  "type": "eos",
-                  "value": ".",
-                },
-              ],
-              "type": "value",
-              "value": "type-name",
-            },
-          ],
-          "requireNext": true,
-          "type": "keyword",
-          "value": "TYPE",
-        },
-        Object {
-          "next": Array [
-            Object {
-              "next": Array [
-                Object {
-                  "next": Array [],
-                  "type": "eos",
-                  "value": ".",
-                },
-              ],
-              "type": "value",
-              "value": "stage-id",
-            },
-            Object {
-              "next": Array [
-                Object {
-                  "next": Array [
-                    Object {
-                      "next": Array [],
-                      "type": "eos",
-                      "value": ".",
-                    },
-                  ],
-                  "type": "value",
-                  "value": "stage-no",
-                },
-              ],
-              "requireNext": true,
-              "type": "keyword",
-              "value": "NUMBER",
-            },
-          ],
-          "requireNext": true,
-          "type": "keyword",
-          "value": "STAGE",
-        },
-      ],
-      "requireNext": true,
-      "type": "keyword",
-      "value": "TO",
-    },
-    Object {
-      "next": Array [],
-      "requireNext": true,
-      "type": "keyword",
-      "value": "WHERE",
-    },
-  ],
-  "requireNext": true,
-  "type": "keyword",
-  "value": "SET",
-}
-`;
-
 exports[`test3: Test 4 simple INvalid SET ACTION Should have error 1`] = `12`;
 
 exports[`test3: Test 4 simple INvalid SET ACTION Should have error 2`] = `19`;
@@ -678,7 +81,7 @@ Array [
             },
             "uri": "mocked/uri",
           },
-          "message": "Possible valid values: ADD, ARCHIVE, COPY, DELETE, GENERATE, LIST, MOVE, PRINT, RESTORE, RETRIEVE, SIGNIN, TRANSFER, UPDATE, VALIDATE",
+          "message": "Possible valid values: ADD , ARCHIVE , COPY , DELETE , GENERATE , LIST , MOVE , PRINT , RESTORE , RETRIEVE , SIGNIN , TRANSFER , UPDATE , VALIDATE ",
         },
       ],
       "severity": 1,
@@ -739,7 +142,7 @@ Array [
             },
             "uri": "mocked/uri",
           },
-          "message": "Possible valid values: ACTION, BUILD, FROM, OPTIONS, STOPRC, TO, WHERE",
+          "message": "Possible valid values: ACTION , BUILD , FROM , OPTIONS , STOPRC , TO , WHERE ",
         },
       ],
       "severity": 1,
@@ -803,13 +206,13 @@ exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should
 
 exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 2`] = `15`;
 
-exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 3`] = `22`;
+exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 3`] = `29`;
 
-exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 4`] = `28`;
+exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 4`] = `36`;
 
-exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 5`] = `29`;
+exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 5`] = `22`;
 
-exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 6`] = `36`;
+exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 6`] = `28`;
 
 exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should have error 7`] = `29`;
 
@@ -852,6 +255,25 @@ exports[`test4: Test 2 simple INvalid SET ACTION, with lowercased keyword Should
 Array [
   Object {
     "diagnostic": Object {
+      "message": "Invalid scl. No end of statement operator \\".\\" specified.",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 36,
+    "starti": 29,
+  },
+  Object {
+    "diagnostic": Object {
       "message": "Keyword should be uppercased.
 Lowercased keyword might cause the scl action to fail when submitted",
       "range": Object {
@@ -873,25 +295,6 @@ Lowercased keyword might cause the scl action to fail when submitted",
   Object {
     "diagnostic": Object {
       "message": "Require a valid value to be specified",
-      "range": Object {
-        "end": Object {
-          "character": 2,
-          "line": 1,
-        },
-        "start": Object {
-          "character": 2,
-          "line": 1,
-        },
-      },
-      "severity": 1,
-      "source": "Endevor SCL extension",
-    },
-    "endi": 36,
-    "starti": 29,
-  },
-  Object {
-    "diagnostic": Object {
-      "message": "Invalid scl. No end of statement operator \\".\\" specified.",
       "range": Object {
         "end": Object {
           "character": 2,
@@ -936,7 +339,7 @@ Lowercased keyword might cause the scl action to fail when submitted",
             },
             "uri": "mocked/uri",
           },
-          "message": "Possible valid values: ADD, ARCHIVE, COPY, DELETE, GENERATE, LIST, MOVE, PRINT, RESTORE, RETRIEVE, SIGNIN, TRANSFER, UPDATE, VALIDATE",
+          "message": "Possible valid values: ADD , ARCHIVE , COPY , DELETE , GENERATE , LIST , MOVE , PRINT , RESTORE , RETRIEVE , SIGNIN , TRANSFER , UPDATE , VALIDATE ",
         },
       ],
       "severity": 1,
