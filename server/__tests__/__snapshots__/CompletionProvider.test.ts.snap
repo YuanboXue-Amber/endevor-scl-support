@@ -367,5 +367,55 @@ Array [
     "kind": 1,
     "label": "JUMP ",
   },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "LEVEL ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "REPLACE ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "NO ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "EXPAND ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "INCLUDE ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "IGNORE ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "FAILED ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "DUPLICATE ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "OUTPUT ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "CHECK ",
+  },
 ]
 `;

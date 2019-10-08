@@ -87,6 +87,12 @@ export const ParserTags = {
     NO: "NO",
     EXPAND: "EXPand",
     INCLUDE: "include",
+
+    IGNORE: "IGNore",
+    FAILED: "failed",
+    DUPLICATE: "DUPLICATE",
+    OUTPUT: "output",
+    CHECK: "check"
 };
 
 /**
