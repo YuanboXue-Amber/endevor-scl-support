@@ -97,14 +97,14 @@ function searchCompletionItemsForToken(token: ITokenizedString, matchedNode: Itr
                 return;
             }
             if ((matchedNode.parent.value === "FROM" || matchedNode.parent.value === "TO" ||
-                 matchedNode.parent.value === "THROUGH" || matchedNode.parent.value === "THRU" ||
+                 matchedNode.parent.value === "THROUGH" ||
                  matchedNode.parent.value === "WHERE" )
                 && !isNullOrUndefined(matchedNode.parent.parent)) {
                 targetNode = matchedNode.parent.parent;
                 for (const child of targetNode.children) {
                     if (child.type as string === "keyword") {
                         if (child.value !== matchedNode.parent.value
-                            && child.value !== "THROUGH" && child.value !== "THRU") {
+                            && child.value !== "THROUGH") {
                             token.completionItems.push({
                                 label: child.value.toUpperCase() + " ",
                                 kind: CompletionItemKind.Text,

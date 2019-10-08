@@ -31,24 +31,6 @@
                             ]
                         },
                         {
-                            "value": "THRU",
-                            "type": "keyword",
-                            "requireNext": true,
-                            "next": [
-                                {
-                                    "value": "'element'",
-                                    "type": "value",
-                                    "next": [
-                                        {
-                                            "value": ".",
-                                            "type": "eos",
-                                            "next": []
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
                             "value": "FROM",
                             "type": "keyword",
                             "requireNext": true,

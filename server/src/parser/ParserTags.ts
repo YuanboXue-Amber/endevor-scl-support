@@ -33,8 +33,7 @@ export const ParserTags = {
     STOPRC: "STOprc",
     SUBSYSTEM: "SUBsystems",
     SYSTEM: "SYStems",
-    THROUGH: "THRough",
-    THRU: "THRu",
+    THROUGH: "THRough, THRu",
     TRANSFER: "TRAnsfer",
     TO: "TO",
     TYPE: "TYPe",
@@ -101,22 +100,18 @@ function getString(tag: string): string | undefined {
 
 /**
  *
- * Match an input scl piece to a keyword specified by parserTag.
+ * Match an input scl piece to a keyword
  *
  * @export
  * @param {ITokenizedString} inputSCLtoken
- * @param {string} parserTag
+ * @param {string} keyword
  * @returns {boolean} true when match false not
  */
 export function matchWithoutDiagnose(
     inputSCLtoken: ITokenizedString,
-    parserTag: string): boolean {
+    keyword: string): boolean {
 
     const inputSCLpart = inputSCLtoken.value;
-    let keyword = getString(parserTag);
-    if (isNullOrUndefined(keyword)) {
-        return false;
-    }
 
     // might be operator
     if (keyword === inputSCLtoken.value) {
@@ -169,11 +164,19 @@ export function match(
     statement: SCLstatement,
     document: SCLDocument ): boolean {
 
-    const ismatch = matchWithoutDiagnose(inputSCLtoken, parserTag);
-    if (ismatch) {
-        keywordUppercaseDiagnose(inputSCLtoken, statement, document);
+    let keywords = getString(parserTag);
+    if (isNullOrUndefined(keywords)) {
+        return false;
     }
-    return ismatch;
+    let keywordsArray: string[] = keywords.split(", ");
+    for (const keyword of keywordsArray) {
+        const ismatch = matchWithoutDiagnose(inputSCLtoken, keyword);
+        if (ismatch) {
+            keywordUppercaseDiagnose(inputSCLtoken, statement, document);
+            return ismatch;
+        }
+    }
+    return false;
 }
 
 /**

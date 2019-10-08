@@ -29,8 +29,7 @@ const level1keywords: string[] = [
     ParserTags.WHERE,
     ParserTags.STOPRC,
     ParserTags.ELEMENT,
-    ParserTags.THROUGH,
-    ParserTags.THRU,
+    "THRough", "THRu"
 ];
 
 const level2keywords: string[] = [

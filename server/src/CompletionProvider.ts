@@ -11,6 +11,17 @@ export function composeCompletionItemsFromKeywords(): CompletionItem[] {
         if (isNullOrUndefined(value)) {
             return;
         }
+        if (value.indexOf(",") > 0) {
+            const values = value.split(", ");
+            for (const v of values) {
+                completionItems.push({
+                    label: v.toUpperCase() + " ",
+                    kind: CompletionItemKind.Text,
+                    documentation: "Endevor SCL keyword"
+                });
+            }
+            return;
+        }
         completionItems.push({
             label: value.toUpperCase() + " ",
             kind: CompletionItemKind.Text,
