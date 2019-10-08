@@ -621,6 +621,20 @@ function processSETMacro(statement: SCLstatement, document: SCLDocument, already
             if (!statementFT.to.FILE && !documentFT.to.FILE) {
                 missTo = true;
             }
+            if (actionObj.startsWith("STA") && !(statementFT.from.location.ENVIRONMENT || documentFT.from.location.ENVIRONMENT)){
+                missFrom = true;
+            }
+            if (( actionObj.startsWith("SUB") || actionObj.startsWith("TYP") ) &&
+                ( !(statementFT.from.location.ENVIRONMENT || documentFT.from.location.ENVIRONMENT) ||
+                  !(statementFT.from.location.STAGE || documentFT.from.location.STAGE) ||
+                  !(statementFT.from.location.SYSTEM || documentFT.from.location.SYSTEM) ) ) {
+                missFrom = true;
+            }
+            if (actionObj.startsWith("SYS") &&
+                ( !(statementFT.from.location.ENVIRONMENT || documentFT.from.location.ENVIRONMENT) ||
+                  !(statementFT.from.location.STAGE || documentFT.from.location.STAGE) ) ) {
+                missFrom = true;
+            }
             break;
 
         default:
