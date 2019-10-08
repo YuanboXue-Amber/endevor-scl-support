@@ -17,7 +17,8 @@ const level0keywords: string[] = [
     ParserTags.SIGNIN,
     ParserTags.TRANSFER,
     ParserTags.UPDATE,
-    ParserTags.VALIDATE
+    ParserTags.VALIDATE,
+    ParserTags.APPROVE
 ];
 
 const level1keywords: string[] = [
@@ -32,6 +33,7 @@ const level1keywords: string[] = [
     "THRough", "THRu",
     ParserTags.VERSION,
     ParserTags.LEVEL,
+    ParserTags.PACKAGE,
 ];
 
 const level2keywords: string[] = [
@@ -48,6 +50,8 @@ const level2keywords: string[] = [
     ParserTags.TYPE,
     ParserTags.STAGE,
     ParserTags.NUMBER,
+
+    ParserTags.NOTES,
 
     // ParserTags.UPDATE + " " + ParserTags.IF + " " + ParserTags.PRESENT,
 

@@ -3,7 +3,8 @@ import { ITokenizedString, Tokenizer } from '../parser/Tokenizer';
 import { isNullOrUndefined } from 'util';
 import { SCLDocumentManager } from './SCLDocumentManager';
 import { match } from '../parser/ParserTags';
-import { SETtree, ADDtree, UPDATEtree, DELETEtree, GENERATEtree, MOVEtree, RETRIEVEtree, SIGNINtree, TRANSFERtree } from '../parser/syntaxTrees/PrepareTrees';
+import { SETtree, ADDtree, UPDATEtree, DELETEtree, GENERATEtree, MOVEtree, RETRIEVEtree, SIGNINtree, TRANSFERtree,
+    APPROVEtree } from '../parser/syntaxTrees/PrepareTrees';
 import { diagnose } from '../parser/syntaxTrees/Parser';
 import { IFromTocheck } from '../parser/syntaxTrees/doc/Inode';
 
@@ -231,6 +232,9 @@ export class SCLDocument {
             diagnose(SIGNINtree, statement, this);
         if (match(statement.tokens[0], "TRANSFER", statement, this))
             diagnose(TRANSFERtree, statement, this);
+
+        if (match(statement.tokens[0], "APPROVE", statement, this))
+            diagnose(APPROVEtree, statement, this);
 
     }
 

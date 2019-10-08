@@ -19,6 +19,24 @@ function setCompletionItemsForToken(token: ITokenizedString, matchedNode: ItreeN
                     kind: CompletionItemKind.Text,
                     documentation: "Endevor SCL keyword"
                 });
+            else if (child.value.toUpperCase() === "LEFTP")
+                token.completionItems.push({
+                    label: "( ",
+                    kind: CompletionItemKind.Text,
+                    documentation: "Endevor SCL keyword"
+                });
+            else if (child.value.toUpperCase() === "RIGHTP")
+                token.completionItems.push({
+                    label: ") ",
+                    kind: CompletionItemKind.Text,
+                    documentation: "Endevor SCL keyword"
+                });
+            else if (child.value.toUpperCase() === "COMMA")
+                token.completionItems.push({
+                    label: ", ",
+                    kind: CompletionItemKind.Text,
+                    documentation: "Endevor SCL keyword"
+                });
             else
                 token.completionItems.push({
                     label: child.value.toUpperCase() + " ",

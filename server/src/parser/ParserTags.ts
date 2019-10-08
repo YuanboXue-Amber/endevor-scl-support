@@ -92,7 +92,14 @@ export const ParserTags = {
     FAILED: "failed",
     DUPLICATE: "DUPLICATE",
     OUTPUT: "output",
-    CHECK: "check"
+    CHECK: "check",
+
+    APPROVE: "APPRove",
+    PACKAGE: "PACkage",
+    NOTES: "NOTEs",
+    LEFTP: "(",
+    RIGHTP: ")",
+    COMMA: ","
 };
 
 /**
@@ -180,6 +187,13 @@ export function match(
     if (isNullOrUndefined(keywords)) {
         return false;
     }
+
+    // might be operator
+    if (keywords === inputSCLtoken.value) {
+        keywordUppercaseDiagnose(inputSCLtoken, statement, document);
+        return true;
+    }
+
     let keywordsArray: string[] = keywords.split(", ");
     for (const keyword of keywordsArray) {
         const ismatch = matchWithoutDiagnose(inputSCLtoken, keyword);
