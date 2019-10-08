@@ -7,7 +7,8 @@ import { SETtree, ADDtree, UPDATEtree, DELETEtree, GENERATEtree, MOVEtree, RETRI
     APPROVEtree,
     DENYtree,
     BACKINtree,
-    BACKOUTtree} from '../parser/syntaxTrees/PrepareTrees';
+    BACKOUTtree,
+    CASTtree} from '../parser/syntaxTrees/PrepareTrees';
 import { diagnose } from '../parser/syntaxTrees/Parser';
 import { IFromTocheck } from '../parser/syntaxTrees/doc/Inode';
 
@@ -244,6 +245,8 @@ export class SCLDocument {
             diagnose(BACKINtree, statement, this);
         if (match(statement.tokens[0], "BACKOUT", statement, this))
             diagnose(BACKOUTtree, statement, this);
+        if (match(statement.tokens[0], "CAST", statement, this))
+            diagnose(CASTtree, statement, this);
     }
 
     /**

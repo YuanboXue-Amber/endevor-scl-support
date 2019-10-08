@@ -119,6 +119,10 @@ function searchCompletionItemsForToken(token: ITokenizedString, matchedNode: Itr
                  matchedNode.parent.value === "WHERE" )
                 && !isNullOrUndefined(matchedNode.parent.parent)) {
                 targetNode = matchedNode.parent.parent;
+                if (targetNode.value === "'DDMMMYY HH:MM'" || targetNode.value === "WINDOW") {
+                    matchedNode = targetNode;
+                    continue; // this is a EXECUTION WINDOW FROM/TO in pkg actions
+                }
                 for (const child of targetNode.children) {
                     if (child.type as string === "keyword") {
                         if (child.value !== matchedNode.parent.value

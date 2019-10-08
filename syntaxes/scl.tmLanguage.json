@@ -209,6 +209,10 @@
                 {
                     "name": "keyword.control.scl",
                     "match": "\\b(BACKO(UT|U|\\b))\\b"
+                },
+                {
+                    "name": "keyword.control.scl",
+                    "match": "\\b(CAS(T|\\b))\\b"
                 }
             ]
         },

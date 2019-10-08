@@ -104,6 +104,15 @@ export const ParserTags = {
     BACKIN: "BACKIn",
     BACKOUT: "BACKOut",
     STATEMENT: "STATEment",
+
+    CAST: "CASt",
+    IS: "IS",
+    NOT: "NOT",
+    ENABLED: "ENAbled",
+    WARNING: "WARning",
+    DO: "DO",
+    EXECUTION: "EXECUTion",
+    WINDOW: "WINdow"
 };
 
 /**

@@ -21,7 +21,8 @@ const level0keywords: string[] = [
     ParserTags.APPROVE,
     ParserTags.DENY,
     ParserTags.BACKIN,
-    ParserTags.BACKOUT
+    ParserTags.BACKOUT,
+    ParserTags.CAST
 ];
 
 const level1keywords: string[] = [
