@@ -356,6 +356,46 @@ function dealWithValue(matchedNode: ItreeNode, tokenIter: number, statement: SCL
         }
     }
 
+    if (matchedNode.value === "'/u/usspath'" || matchedNode.value === "'uss-filename'" || matchedNode.value === "'element'") {
+        let matchGroup = token.value.match(/(['"])(.*)(['",])/);
+        if (!isNullOrUndefined(matchGroup) && (token.value.endsWith(",") || currSCL[tokenIter+1].value === ",")) {
+            const completionItem = token.completionItems;
+            let finalvalue = matchGroup[2];
+            const starti = token.starti;
+            tokenIter ++;
+            token = currSCL[tokenIter];
+            matchGroup = token.value.match(/(['"])(.*)(['",])/);
+            while (!isNullOrUndefined(matchGroup) || token.value === ",") {
+                if (!isNullOrUndefined(matchGroup))
+                    finalvalue += matchGroup[2];
+                tokenIter ++;
+                token = currSCL[tokenIter];
+                token.completionItems = completionItem;
+                matchGroup = token.value.match(/(['"])(.*)(['",])/);
+            }
+            tokenIter --;
+            token.completionItems = [];
+            const endi = currSCL[tokenIter].starti + currSCL[tokenIter].value.length;
+            if (!isNullOrUndefined(matchedNode.maxLen) && finalvalue.length > matchedNode.maxLen) {
+                let diagnostic: Diagnostic = {
+                    severity: DiagnosticSeverity.Error,
+                    range: {
+                        start: document.textDocument.positionAt(starti),
+                        end: document.textDocument.positionAt(endi)
+                    },
+                    message: `Length of the value should be within ${matchedNode.maxLen}`,
+                    source: 'Endevor SCL extension'
+                };
+                statement.diagnostics.push({
+                    diagnostic,
+                    starti,
+                    endi
+                });
+            }
+            return [tokenIter, true]; // token that is the last piece of value
+        }
+    }
+
     // a normal single value, check its length
     if (!isNullOrUndefined(matchedNode.maxLen)) {
         let tokenLen = token.value.length;
