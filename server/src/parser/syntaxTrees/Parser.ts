@@ -146,7 +146,8 @@ function searchCompletionItemsForToken(token: ITokenizedString, matchedNode: Itr
             }
             if ((matchedNode.parent.value === "FROM" || matchedNode.parent.value === "TO" ||
                  matchedNode.parent.value === "THROUGH" ||
-                 matchedNode.parent.value === "WHERE" )
+                 matchedNode.parent.value === "WHERE" ||
+                 matchedNode.parent.value === "DATA" )
                 && !isNullOrUndefined(matchedNode.parent.parent)) {
                 targetNode = matchedNode.parent.parent;
                 for (const child of targetNode.children) {
@@ -358,7 +359,8 @@ function dealWithValue(matchedNode: ItreeNode, tokenIter: number, statement: SCL
 
     if (matchedNode.value === "'/u/usspath'" || matchedNode.value === "'uss-filename'" || matchedNode.value === "'element'") {
         let matchGroup = token.value.match(/(['"])(.*)(['",])/);
-        if (!isNullOrUndefined(matchGroup) && (token.value.endsWith(",") || currSCL[tokenIter+1].value === ",")) {
+        if (!isNullOrUndefined(matchGroup) &&
+            (token.value.endsWith(",") || (currSCL.length > tokenIter+1 && currSCL[tokenIter+1].value === ",") )) {
             const completionItem = token.completionItems;
             let finalvalue = matchGroup[2];
             const starti = token.starti;

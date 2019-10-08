@@ -42,6 +42,7 @@ const level1keywords: string[] = [
     ParserTags.VERSION,
     ParserTags.LEVEL,
     ParserTags.PACKAGE,
+    ParserTags.DATA,
 ];
 
 const level2keywords: string[] = [

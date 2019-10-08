@@ -153,6 +153,15 @@ export const ParserTags = {
     LOGICAL: "LOGical",
     RETURN: "RETurn",
     FIRST: "FIRst",
+
+    DATA: "DATa",
+    BASIC: "BASic",
+    CHANGE: "CHAnge",
+    SUMMARY: "SUMmary",
+    LAST: "LASt",
+    THRU: "THRu",
+    DATE: "DATE",
+    TIME: "TIMe"
 };
 
 /**

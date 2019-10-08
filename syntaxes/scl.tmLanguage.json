@@ -133,6 +133,10 @@
                 {
                     "name": "support.class.secondarykeyword.scl",
                     "match": "\\b(PAC(KAGE|KAG|KA|K|\\b))\\b"
+                },
+                {
+                    "name": "support.class.secondarykeyword.scl",
+                    "match": "\\b(DAT(A|\\b))\\b"
                 }
             ]
         },
