@@ -467,7 +467,7 @@
             ]
         },
         {
-            "value": "OPTIONS",
+            "value": "OPTION",
             "type": "keyword",
             "next": []
         },

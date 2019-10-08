@@ -442,7 +442,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "value": "SYSTEMS",
+                                                    "value": "SYSTEM",
                                                     "type": "keyword",
                                                     "next": [
                                                         {
@@ -453,7 +453,7 @@
                                                     ]
                                                 },
                                                 {
-                                                    "value": "SUBSYSTEMS",
+                                                    "value": "SUBSYSTEM",
                                                     "type": "keyword",
                                                     "next": [
                                                         {

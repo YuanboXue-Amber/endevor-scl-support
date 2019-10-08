@@ -20,7 +20,7 @@ Array [
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "OPTIONS ",
+    "label": "OPTION ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
@@ -60,7 +60,7 @@ Array [
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "OPTIONS ",
+    "label": "OPTION ",
   },
   Object {
     "documentation": "Endevor SCL keyword",

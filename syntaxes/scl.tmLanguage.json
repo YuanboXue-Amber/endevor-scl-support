@@ -48,11 +48,11 @@
                 },
                 {
                     "name": "support.variable.tertiarykeyword.scl",
-                    "match": "\\b(SYS(TEM|TE|T|\\b))\\b"
+                    "match": "\\b(SYS(TEMS|TEM|TE|T|\\b))\\b"
                 },
                 {
                     "name": "support.variable.tertiarykeyword.scl",
-                    "match": "\\b(SUBS(YSTEM|YSTE|YST|YS|Y|\\b))\\b"
+                    "match": "\\b(SUB(SYSTEMS|SYSTEM|SYSTE|SYST|SYS|SY|S|\\b))\\b"
                 },
                 {
                     "name": "support.variable.tertiarykeyword.scl",
@@ -100,7 +100,7 @@
                 },
                 {
                     "name": "support.class.secondarykeyword.scl",
-                    "match": "\\b(ELE(MENT|MEN|ME|M|\\b))\\b"
+                    "match": "\\b(ELE(MENTS|MENT|MEN|ME|M|\\b))\\b"
                 },
                 {
                     "name": "support.class.secondarykeyword.scl",

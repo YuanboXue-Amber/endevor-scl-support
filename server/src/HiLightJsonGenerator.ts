@@ -24,7 +24,7 @@ const level1keywords: string[] = [
     ParserTags.ACTION,
     ParserTags.BUILD,
     ParserTags.FROM,
-    ParserTags.OPTIONS,
+    ParserTags.OPTION,
     ParserTags.TO,
     ParserTags.WHERE,
     ParserTags.STOPRC,

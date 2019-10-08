@@ -45,7 +45,7 @@ Array [
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "ELEMENT ",
+    "label": "ELEMENTS ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
@@ -95,11 +95,6 @@ Array [
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "OPTION ",
-  },
-  Object {
-    "documentation": "Endevor SCL keyword",
-    "kind": 1,
     "label": "PATH ",
   },
   Object {
@@ -140,12 +135,12 @@ Array [
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "SUBSYSTEM ",
+    "label": "SUBSYSTEMS ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "SYSTEM ",
+    "label": "SYSTEMS ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
@@ -200,7 +195,7 @@ Array [
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "COMMENT ",
+    "label": "COMMENTS ",
   },
   Object {
     "documentation": "Endevor SCL keyword",
@@ -290,16 +285,6 @@ Array [
   Object {
     "documentation": "Endevor SCL keyword",
     "kind": 1,
-    "label": "SYSTEMS ",
-  },
-  Object {
-    "documentation": "Endevor SCL keyword",
-    "kind": 1,
-    "label": "SUBSYSTEMS ",
-  },
-  Object {
-    "documentation": "Endevor SCL keyword",
-    "kind": 1,
     "label": "SITE ",
   },
   Object {
@@ -316,6 +301,71 @@ Array [
     "documentation": "Endevor SCL keyword",
     "kind": 1,
     "label": "C1PRTVB ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "OF ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "CURRENT ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "ONLY ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "COMPONENT ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "COPYBACK ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "SEARCH ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "NOSEARCH ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "NOSOURCE ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "SYNCHRONIZE ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "WITH ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "HISTORY ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "RETAIN ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 1,
+    "label": "JUMP ",
   },
 ]
 `;

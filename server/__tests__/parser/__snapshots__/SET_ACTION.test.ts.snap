@@ -142,7 +142,7 @@ Array [
             },
             "uri": "mocked/uri",
           },
-          "message": "Possible valid values: ACTION , BUILD , FROM , OPTIONS , STOPRC , TO , WHERE ",
+          "message": "Possible valid values: ACTION , BUILD , FROM , OPTION , STOPRC , TO , WHERE ",
         },
       ],
       "severity": 1,
