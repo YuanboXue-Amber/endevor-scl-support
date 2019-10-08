@@ -32,15 +32,11 @@ exports[`test2: Test 1 simple INvalid ADD ACTION Should have error 1`] = `51`;
 
 exports[`test2: Test 1 simple INvalid ADD ACTION Should have error 2`] = `52`;
 
-exports[`test2: Test 1 simple INvalid ADD ACTION Should have error 3`] = `1`;
+exports[`test2: Test 1 simple INvalid ADD ACTION Should have error 3`] = `51`;
 
 exports[`test2: Test 1 simple INvalid ADD ACTION Should have error 4`] = `52`;
 
-exports[`test2: Test 1 simple INvalid ADD ACTION Should have error 5`] = `51`;
-
-exports[`test2: Test 1 simple INvalid ADD ACTION Should have error 6`] = `52`;
-
-exports[`test2: Test 1 simple INvalid ADD ACTION Should have error 7`] = `
+exports[`test2: Test 1 simple INvalid ADD ACTION Should have error 5`] = `
 Array [
   Object {
     "diagnostic": Object {
@@ -63,25 +59,6 @@ Array [
   },
   Object {
     "diagnostic": Object {
-      "message": "TO clause incomplete in the current SCL",
-      "range": Object {
-        "end": Object {
-          "character": 2,
-          "line": 1,
-        },
-        "start": Object {
-          "character": 2,
-          "line": 1,
-        },
-      },
-      "severity": 1,
-      "source": "Endevor SCL extension",
-    },
-    "endi": 52,
-    "starti": 1,
-  },
-  Object {
-    "diagnostic": Object {
       "message": "Invalid value specified",
       "range": Object {
         "end": Object {
@@ -102,78 +79,28 @@ Array [
 ]
 `;
 
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 1`] = `1`;
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 1`] = `38`;
 
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 2`] = `66`;
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 2`] = `41`;
 
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 3`] = `1`;
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 3`] = `101`;
 
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 4`] = `66`;
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 4`] = `105`;
 
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 5`] = `38`;
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 5`] = `120`;
 
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 6`] = `41`;
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 6`] = `129`;
 
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 7`] = `101`;
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 7`] = `130`;
 
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 8`] = `105`;
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 8`] = `133`;
 
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 9`] = `120`;
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 9`] = `136`;
 
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 10`] = `129`;
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 10`] = `148`;
 
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 11`] = `130`;
-
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 12`] = `133`;
-
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 13`] = `68`;
-
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 14`] = `151`;
-
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 15`] = `68`;
-
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 16`] = `151`;
-
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 17`] = `
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 11`] = `
 Array [
-  Object {
-    "diagnostic": Object {
-      "message": "FROM clause incomplete in the current SCL",
-      "range": Object {
-        "end": Object {
-          "character": 2,
-          "line": 1,
-        },
-        "start": Object {
-          "character": 2,
-          "line": 1,
-        },
-      },
-      "severity": 1,
-      "source": "Endevor SCL extension",
-    },
-    "endi": 66,
-    "starti": 1,
-  },
-  Object {
-    "diagnostic": Object {
-      "message": "TO clause incomplete in the current SCL",
-      "range": Object {
-        "end": Object {
-          "character": 2,
-          "line": 1,
-        },
-        "start": Object {
-          "character": 2,
-          "line": 1,
-        },
-      },
-      "severity": 1,
-      "source": "Endevor SCL extension",
-    },
-    "endi": 66,
-    "starti": 1,
-  },
   Object {
     "diagnostic": Object {
       "message": "Invalid value specified",
@@ -196,7 +123,7 @@ Array [
 ]
 `;
 
-exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 18`] = `
+exports[`test3: Test 2 simple INvalid ADD ACTION Should have error 12`] = `
 Array [
   Object {
     "diagnostic": Object {
@@ -260,7 +187,7 @@ Lowercased keyword might cause the scl action to fail when submitted",
   },
   Object {
     "diagnostic": Object {
-      "message": "FROM clause incomplete in the current SCL",
+      "message": "Length of the value should be within 8",
       "range": Object {
         "end": Object {
           "character": 2,
@@ -274,27 +201,8 @@ Lowercased keyword might cause the scl action to fail when submitted",
       "severity": 1,
       "source": "Endevor SCL extension",
     },
-    "endi": 151,
-    "starti": 68,
-  },
-  Object {
-    "diagnostic": Object {
-      "message": "TO clause incomplete in the current SCL",
-      "range": Object {
-        "end": Object {
-          "character": 2,
-          "line": 1,
-        },
-        "start": Object {
-          "character": 2,
-          "line": 1,
-        },
-      },
-      "severity": 1,
-      "source": "Endevor SCL extension",
-    },
-    "endi": 151,
-    "starti": 68,
+    "endi": 148,
+    "starti": 136,
   },
 ]
 `;
@@ -311,23 +219,19 @@ exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 
 
 exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 6`] = `66`;
 
-exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 7`] = `83`;
+exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 7`] = `69`;
 
-exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 8`] = `91`;
+exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 8`] = `81`;
 
-exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 9`] = `92`;
+exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 9`] = `83`;
 
-exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 10`] = `99`;
+exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 10`] = `91`;
 
-exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 11`] = `0`;
+exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 11`] = `92`;
 
-exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 12`] = `111`;
+exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 12`] = `99`;
 
-exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 13`] = `0`;
-
-exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 14`] = `111`;
-
-exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 15`] = `
+exports[`test4: Test 1 valid ADD ACTION with multiple options Should have error 13`] = `
 Array [
   Object {
     "diagnostic": Object {
@@ -391,6 +295,25 @@ Lowercased keyword might cause the scl action to fail when submitted",
   },
   Object {
     "diagnostic": Object {
+      "message": "Length of the value should be within 8",
+      "range": Object {
+        "end": Object {
+          "character": 2,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 2,
+          "line": 1,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 81,
+    "starti": 69,
+  },
+  Object {
+    "diagnostic": Object {
       "message": "Keyword should be uppercased.
 Lowercased keyword might cause the scl action to fail when submitted",
       "range": Object {
@@ -428,44 +351,6 @@ Lowercased keyword might cause the scl action to fail when submitted",
     },
     "endi": 99,
     "starti": 92,
-  },
-  Object {
-    "diagnostic": Object {
-      "message": "FROM clause incomplete in the current SCL",
-      "range": Object {
-        "end": Object {
-          "character": 2,
-          "line": 1,
-        },
-        "start": Object {
-          "character": 2,
-          "line": 1,
-        },
-      },
-      "severity": 1,
-      "source": "Endevor SCL extension",
-    },
-    "endi": 111,
-    "starti": 0,
-  },
-  Object {
-    "diagnostic": Object {
-      "message": "TO clause incomplete in the current SCL",
-      "range": Object {
-        "end": Object {
-          "character": 2,
-          "line": 1,
-        },
-        "start": Object {
-          "character": 2,
-          "line": 1,
-        },
-      },
-      "severity": 1,
-      "source": "Endevor SCL extension",
-    },
-    "endi": 111,
-    "starti": 0,
   },
 ]
 `;

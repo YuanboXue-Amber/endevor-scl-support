@@ -11,6 +11,7 @@
                 {
                     "value": "'element'",
                     "type": "value",
+                    "maxLen": 255,
                     "next": [
                         {
                             "value": "THROUGH",
@@ -20,6 +21,7 @@
                                 {
                                     "value": "'element'",
                                     "type": "value",
+                                    "maxLen": 255,
                                     "next": [
                                         {
                                             "value": ".",
@@ -43,6 +45,7 @@
                                         {
                                             "value": "'ENVNAME'",
                                             "type": "value",
+                                            "maxLen": 8,
                                             "next": [
                                                 {
                                                     "value": ".",
@@ -61,6 +64,7 @@
                                         {
                                             "value": "'SYSNAME'",
                                             "type": "value",
+                                            "maxLen": 8,
                                             "next": [
                                                 {
                                                     "value": ".",
@@ -79,6 +83,7 @@
                                         {
                                             "value": "'SUBNAME'",
                                             "type": "value",
+                                            "maxLen": 8,
                                             "next": [
                                                 {
                                                     "value": ".",
@@ -97,6 +102,7 @@
                                         {
                                             "value": "'COBOL'",
                                             "type": "value",
+                                            "maxLen": 8,
                                             "next": [
                                                 {
                                                     "value": ".",
@@ -120,6 +126,7 @@
                                                 {
                                                     "value": "'1'",
                                                     "type": "value",
+                                                    "maxLen": 1,
                                                     "next": [
                                                         {
                                                             "value": ".",
@@ -133,6 +140,7 @@
                                         {
                                             "value": "'1'",
                                             "type": "value",
+                                            "maxLen": 1,
                                             "next": [
                                                 {
                                                     "value": ".",
@@ -173,6 +181,7 @@
                                                                 {
                                                                     "value": "'where ccid'",
                                                                     "type": "value",
+                                                                    "maxLen": 12,
                                                                     "next": [
                                                                         {
                                                                             "value": ".",
@@ -191,6 +200,7 @@
                                                                 {
                                                                     "value": "'where ccid'",
                                                                     "type": "value",
+                                                                    "maxLen": 12,
                                                                     "next": [
                                                                         {
                                                                             "value": ".",
@@ -204,6 +214,7 @@
                                                         {
                                                             "value": "'where ccid'",
                                                             "type": "value",
+                                                            "maxLen": 12,
                                                             "next": [
                                                                 {
                                                                     "value": ".",
@@ -227,6 +238,7 @@
                                                                 {
                                                                     "value": "'where ccid'",
                                                                     "type": "value",
+                                                                    "maxLen": 12,
                                                                     "next": [
                                                                         {
                                                                             "value": ".",
@@ -245,6 +257,7 @@
                                                                 {
                                                                     "value": "'where ccid'",
                                                                     "type": "value",
+                                                                    "maxLen": 12,
                                                                     "next": [
                                                                         {
                                                                             "value": ".",
@@ -258,6 +271,7 @@
                                                         {
                                                             "value": "'where ccid'",
                                                             "type": "value",
+                                                            "maxLen": 12,
                                                             "next": [
                                                                 {
                                                                     "value": ".",
@@ -281,6 +295,7 @@
                                                                 {
                                                                     "value": "'where ccid'",
                                                                     "type": "value",
+                                                                    "maxLen": 12,
                                                                     "next": [
                                                                         {
                                                                             "value": ".",
@@ -299,6 +314,7 @@
                                                                 {
                                                                     "value": "'where ccid'",
                                                                     "type": "value",
+                                                                    "maxLen": 12,
                                                                     "next": [
                                                                         {
                                                                             "value": ".",
@@ -312,6 +328,7 @@
                                                         {
                                                             "value": "'where ccid'",
                                                             "type": "value",
+                                                            "maxLen": 12,
                                                             "next": [
                                                                 {
                                                                     "value": ".",
@@ -327,6 +344,7 @@
                                         {
                                             "value": "'where ccid'",
                                             "type": "value",
+                                            "maxLen": 12,
                                             "next": [
                                                 {
                                                     "value": ".",
@@ -355,6 +373,7 @@
                                                         {
                                                             "value": "'WHERECOB'",
                                                             "type": "value",
+                                                            "maxLen": 8,
                                                             "next": [
                                                                 {
                                                                     "value": ".",
@@ -373,6 +392,7 @@
                                                         {
                                                             "value": "'WHERECOB'",
                                                             "type": "value",
+                                                            "maxLen": 8,
                                                             "next": [
                                                                 {
                                                                     "value": ".",
@@ -402,6 +422,7 @@
                                         {
                                             "value": "'sample ccid'",
                                             "type": "value",
+                                            "maxLen": 12,
                                             "next": [
                                                 {
                                                     "value": ".",
@@ -420,6 +441,7 @@
                                         {
                                             "value": "'sample comment'",
                                             "type": "value",
+                                            "maxLen": 40,
                                             "next": [
                                                 {
                                                     "value": ".",
@@ -526,6 +548,7 @@
                                                 {
                                                     "value": "'USERID'",
                                                     "type": "value",
+                                                    "maxLen": 8,
                                                     "next": [
                                                         {
                                                             "value": ".",

@@ -135,7 +135,7 @@ function dealWithCompletion(token: ITokenizedString, matchedNode: ItreeNode, isS
     }
 }
 
-function dealWithSETMacro(token: ITokenizedString, matchedNode: ItreeNode,
+function dealWithSETMacro(matchedNode: ItreeNode,
     statement: SCLstatement, document: SCLDocument,
     isSET?: boolean, isfrom?: boolean, isto?: boolean) {
 
@@ -229,6 +229,82 @@ function dealWithSETMacro(token: ITokenizedString, matchedNode: ItreeNode,
     }
 }
 
+function dealWithValue(matchedNode: ItreeNode, tokenIter: number, statement: SCLstatement, document: SCLDocument): (number | boolean)[] {
+    const currSCL: ITokenizedString[] = statement.tokens;
+    let token = currSCL[tokenIter];
+
+    if (matchedNode.value === "'where ccid'" || matchedNode.value === "'WHERECOB'") {
+        if (token.value.startsWith("(")) { // multiple ccids/procgrps ... values
+            const startIter = tokenIter;
+
+            while (!token.value.endsWith(")")) {
+                // 1st check length
+                if (!isNullOrUndefined(matchedNode.maxLen)) {
+                    let tokenLen = token.value.length;
+                    if (token.value.match(/(['"])(.*)(['"])/)) {
+                        tokenLen = tokenLen-2; // strip quotes
+                    }
+                    if (tokenLen > matchedNode.maxLen) {
+                        document.pushDiagnostic(
+                            token, statement,
+                            DiagnosticSeverity.Error,
+                            `Length of the value should be within ${matchedNode.maxLen}`);
+                    }
+                }
+
+                // 2nd check completion items
+                token.completionItems = [];
+
+                if (!token.value.endsWith(",")) { // this token is probably a real value
+                    (token.completionItems as CompletionItem[]).push({
+                        label: ", ",
+                        kind: CompletionItemKind.Text,
+                        documentation: "Endevor SCL operator"
+                    });
+                    (token.completionItems as CompletionItem[]).push({
+                        label: ") ",
+                        kind: CompletionItemKind.Text,
+                        documentation: "Endevor SCL operator"
+                    });
+
+                } else { // this token is probably an operator
+                    (token.completionItems as CompletionItem[]).push({
+                        label: matchedNode.value,
+                        kind: CompletionItemKind.Text,
+                        documentation: "Endevor SCL value"
+                    });
+                }
+
+                tokenIter ++;
+                if (token.is_eoStatement) { // err
+                    return [tokenIter, false];
+                }
+                if (tokenIter >= currSCL.length) { // err
+                    return [startIter, false];
+                }
+                token = currSCL[tokenIter];
+            }
+            return [tokenIter, true]; // token that end with ")"
+
+        }
+    }
+
+    // a normal single value, check its length
+    if (!isNullOrUndefined(matchedNode.maxLen)) {
+        let tokenLen = token.value.length;
+        if (token.value.match(/(['"])(.*)(['"])/)) {
+            tokenLen = tokenLen-2; // strip quotes
+        }
+        if (tokenLen > matchedNode.maxLen) {
+            document.pushDiagnostic(
+                token, statement,
+                DiagnosticSeverity.Error,
+                `Length of the value should be within ${matchedNode.maxLen}`);
+        }
+    }
+    return [tokenIter, true];
+}
+
 export function parser(rootNode: ItreeNode, statement: SCLstatement, document: SCLDocument) {
     const currSCL: ITokenizedString[] = statement.tokens;
     setCompletionItemsForToken(currSCL[0], rootNode);
@@ -247,7 +323,6 @@ export function parser(rootNode: ItreeNode, statement: SCLstatement, document: S
         for (const childNode of parentNode.children) {
             switch (true) {
                 case childNode.type === "keyword" && match(token, childNode.value, statement, document):
-                    tokenIter ++;
                     if (childNode.value === 'FROM') {
                         isfrom = true;
                     } else if (childNode.value === 'TO') {
@@ -258,53 +333,24 @@ export function parser(rootNode: ItreeNode, statement: SCLstatement, document: S
                         isfrom = false;
                     }
                     dealWithCompletion(token, childNode, isSET);
+                    tokenIter ++;
                     return matchToken(childNode);
 
                 case !onlyMatchKey && (childNode.type ==="value" && !token.is_eoStatement):
-                    if (childNode.value === "'where ccid'" || childNode.value === "'WHERECOB'") {
-                        if (token.value.startsWith("(")) { // multiple ccids/procgrps
-                            const startIter = tokenIter;
-                            while (!token.value.endsWith(")")) {
-                                token.completionItems = [];
-                                if (!token.value.endsWith(",")) {
-                                    (token.completionItems as CompletionItem[]).push({
-                                        label: ", ",
-                                        kind: CompletionItemKind.Text,
-                                        documentation: "Endevor SCL operator"
-                                    });
-                                    (token.completionItems as CompletionItem[]).push({
-                                        label: ") ",
-                                        kind: CompletionItemKind.Text,
-                                        documentation: "Endevor SCL operator"
-                                    });
-                                } else {
-                                    (token.completionItems as CompletionItem[]).push({
-                                        label: childNode.value,
-                                        kind: CompletionItemKind.Text,
-                                        documentation: "Endevor SCL value"
-                                    });
-                                }
-                                tokenIter ++;
-                                if (token.is_eoStatement) { // err
-                                    return tokenIter;
-                                }
-                                if (tokenIter >= currSCL.length) { // err
-                                    return startIter;
-                                }
-                                token = currSCL[tokenIter];
-                            }
-                        }
-                    }
-                    tokenIter ++;
                     dealWithCompletion(token, childNode, isSET);
-                    dealWithSETMacro(token, childNode,
+                    dealWithSETMacro(childNode,
                         statement, document,
                         isSET, isfrom, isto);
+                    const result = dealWithValue(childNode, tokenIter, statement, document);
+                    if (!result[1]) { // err
+                        return result[0] as number;
+                    }
+                    tokenIter = (result[0] as number) + 1;
                     return matchToken(childNode);
 
                 case !onlyMatchKey && (childNode.type === "eos" && token.is_eoStatement):
-                    tokenIter ++;
                     dealWithCompletion(token, childNode, isSET);
+                    tokenIter ++;
                     return matchToken(childNode);
 
                 default:
@@ -334,9 +380,8 @@ export function diagnose(rootNode: ItreeNode, statement: SCLstatement, document:
 
     const iterator = parser(rootNode, statement, document);
 
-    processSETMacro(statement, document);
-
     if (iterator === VALIDSCL_NUMBER) {
+        processSETMacro(statement, document, false);
         return;
     }
     const currSCL: ITokenizedString[] = statement.tokens;
@@ -353,6 +398,7 @@ export function diagnose(rootNode: ItreeNode, statement: SCLstatement, document:
                     `Invalid value specified`,
                     `Possible valid values: ${possibleValues.join(", ")}`,
                     currSCL[iterator-1]);
+                processSETMacro(statement, document, true);
                 return;
             }
         }
@@ -361,7 +407,8 @@ export function diagnose(rootNode: ItreeNode, statement: SCLstatement, document:
         currSCL[iterator], statement,
         DiagnosticSeverity.Error,
         `Invalid value specified`);
-
+    processSETMacro(statement, document, true);
+    return;
 }
 
 function processEOS(statement: SCLstatement, document: SCLDocument) {
@@ -386,7 +433,7 @@ function processEOS(statement: SCLstatement, document: SCLDocument) {
     return true;
 }
 
-function processSETMacro(statement: SCLstatement, document: SCLDocument) {
+function processSETMacro(statement: SCLstatement, document: SCLDocument, alreadyHasErr: boolean) {
     const currSCL: ITokenizedString[] = statement.tokens;
     if (currSCL.length < 2) {
         return;
@@ -455,7 +502,16 @@ function processSETMacro(statement: SCLstatement, document: SCLDocument) {
         default:
             break;
     }
-    if (missFrom) {
+
+    if (!alreadyHasErr) {
+        if (missFrom || missTo) {
+            const existingErr = countExistingErrDiagnose(statement);
+            if (existingErr > 0) {
+                alreadyHasErr = true;
+            }
+        }
+    }
+    if (missFrom && !alreadyHasErr) { // only push FROM/TO err when there's no exising err, since it covers up existing err
         let diagnostic: Diagnostic = {
             severity: DiagnosticSeverity.Error,
             range: {
@@ -472,7 +528,7 @@ function processSETMacro(statement: SCLstatement, document: SCLDocument) {
             endi: statement.endi,
         });
     }
-    if (missTo) {
+    if (missTo && !alreadyHasErr) {
         let diagnostic: Diagnostic = {
             severity: DiagnosticSeverity.Error,
             range: {
@@ -489,4 +545,14 @@ function processSETMacro(statement: SCLstatement, document: SCLDocument) {
             endi: statement.endi,
         });
     }
+}
+
+function countExistingErrDiagnose(statement: SCLstatement): number {
+    let num = 0;
+    statement.diagnostics.forEach((diag) => {
+        if (diag.diagnostic.severity === DiagnosticSeverity.Error) {
+            num ++;
+        }
+    });
+    return num;
 }

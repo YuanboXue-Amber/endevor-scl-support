@@ -11,6 +11,7 @@
                 {
                     "value": "'element'",
                     "type": "value",
+                    "maxLen": 255,
                     "next": [
                         {
                             "value": "THROUGH",
@@ -20,6 +21,7 @@
                                 {
                                     "value": "'element'",
                                     "type": "value",
+                                    "maxLen": 255,
                                     "next": [
                                         {
                                             "value": ".",
@@ -43,6 +45,7 @@
                                         {
                                             "value": "'DDNAME'",
                                             "type": "value",
+                                            "maxLen": 8,
                                             "next": [
                                                 {
                                                     "value": ".",
@@ -61,6 +64,7 @@
                                         {
                                             "value": "'DDNAME'",
                                             "type": "value",
+                                            "maxLen": 8,
                                             "next": [
                                                 {
                                                     "value": ".",
@@ -79,6 +83,7 @@
                                         {
                                             "value": "'SAMPLE.DATASET.NAME'",
                                             "type": "value",
+                                            "maxLen": 44,
                                             "next": [
                                                 {
                                                     "value": ".",
@@ -93,6 +98,7 @@
                                                         {
                                                             "value": "'MEMBER'",
                                                             "type": "value",
+                                                            "maxLen": 8,
                                                             "next": [
                                                                 {
                                                                     "value": ".",
@@ -115,6 +121,7 @@
                                         {
                                             "value": "'/u/usspath'",
                                             "type": "value",
+                                            "maxLen": 768,
                                             "requireNext": true,
                                             "next": [
                                                 {
@@ -125,6 +132,7 @@
                                                         {
                                                             "value": "'uss-filename'",
                                                             "type": "value",
+                                                            "maxLen": 255,
                                                             "next": [
                                                                 {
                                                                     "value": ".",
@@ -154,6 +162,7 @@
                                         {
                                             "value": "'ENVNAME'",
                                             "type": "value",
+                                            "maxLen": 8,
                                             "next": [
                                                 {
                                                     "value": ".",
@@ -172,6 +181,7 @@
                                         {
                                             "value": "'SYSNAME'",
                                             "type": "value",
+                                            "maxLen": 8,
                                             "next": [
                                                 {
                                                     "value": ".",
@@ -190,6 +200,7 @@
                                         {
                                             "value": "'SUBNAME'",
                                             "type": "value",
+                                            "maxLen": 8,
                                             "next": [
                                                 {
                                                     "value": ".",
@@ -208,6 +219,7 @@
                                         {
                                             "value": "'COBOL'",
                                             "type": "value",
+                                            "maxLen": 8,
                                             "next": [
                                                 {
                                                     "value": ".",
@@ -233,6 +245,7 @@
                                         {
                                             "value": "'sample ccid'",
                                             "type": "value",
+                                            "maxLen": 12,
                                             "next": [
                                                 {
                                                     "value": ".",
@@ -251,6 +264,7 @@
                                         {
                                             "value": "'sample comment'",
                                             "type": "value",
+                                            "maxLen": 40,
                                             "next": [
                                                 {
                                                     "value": ".",
@@ -274,6 +288,7 @@
                                                 {
                                                     "value": "'1'",
                                                     "type": "value",
+                                                    "maxLen": 2,
                                                     "next": [
                                                         {
                                                             "value": ".",
@@ -413,6 +428,7 @@
                                                         {
                                                             "value": "'*NOPROC*'",
                                                             "type": "value",
+                                                            "maxLen": 8,
                                                             "next": [
                                                                 {
                                                                     "value": ".",
@@ -431,6 +447,7 @@
                                                         {
                                                             "value": "'*NOPROC*'",
                                                             "type": "value",
+                                                            "maxLen": 8,
                                                             "next": [
                                                                 {
                                                                     "value": ".",

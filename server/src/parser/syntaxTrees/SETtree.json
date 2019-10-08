@@ -183,6 +183,7 @@
                         {
                             "value": "'DDNAME'",
                             "type": "value",
+                            "maxLen": 8,
                             "next": [
                                 {
                                     "value": ".",
@@ -201,6 +202,7 @@
                         {
                             "value": "'DDNAME'",
                             "type": "value",
+                            "maxLen": 8,
                             "next": [
                                 {
                                     "value": ".",
@@ -219,6 +221,7 @@
                         {
                             "value": "'SAMPLE.DATASET.NAME'",
                             "type": "value",
+                            "maxLen": 44,
                             "next": [
                                 {
                                     "value": ".",
@@ -237,6 +240,7 @@
                         {
                             "value": "'1'",
                             "type": "value",
+                            "maxLen": 8,
                             "requireNext": true,
                             "next": [
                                 {
@@ -247,6 +251,7 @@
                                         {
                                             "value": "'ENVNAME'",
                                             "type": "value",
+                                            "maxLen": 8,
                                             "next": [
                                                 {
                                                     "value": ".",
@@ -265,6 +270,7 @@
                                         {
                                             "value": "'SYSNAME'",
                                             "type": "value",
+                                            "maxLen": 8,
                                             "next": [
                                                 {
                                                     "value": ".",
@@ -283,6 +289,7 @@
                                         {
                                             "value": "'SUBNAME'",
                                             "type": "value",
+                                            "maxLen": 8,
                                             "next": [
                                                 {
                                                     "value": ".",
@@ -301,6 +308,7 @@
                                         {
                                             "value": "'COBOL'",
                                             "type": "value",
+                                            "maxLen": 8,
                                             "next": [
                                                 {
                                                     "value": ".",
@@ -324,6 +332,7 @@
                                                 {
                                                     "value": "'1'",
                                                     "type": "value",
+                                                    "maxLen": 1,
                                                     "next": [
                                                         {
                                                             "value": ".",
@@ -337,6 +346,7 @@
                                         {
                                             "value": "'1'",
                                             "type": "value",
+                                            "maxLen": 1,
                                             "next": [
                                                 {
                                                     "value": ".",
@@ -364,6 +374,7 @@
                         {
                             "value": "'ENVNAME'",
                             "type": "value",
+                            "maxLen": 8,
                             "next": [
                                 {
                                     "value": ".",
@@ -382,6 +393,7 @@
                         {
                             "value": "'SYSNAME'",
                             "type": "value",
+                            "maxLen": 8,
                             "next": [
                                 {
                                     "value": ".",
@@ -400,6 +412,7 @@
                         {
                             "value": "'SUBNAME'",
                             "type": "value",
+                            "maxLen": 8,
                             "next": [
                                 {
                                     "value": ".",
@@ -418,6 +431,7 @@
                         {
                             "value": "'COBOL'",
                             "type": "value",
+                            "maxLen": 8,
                             "next": [
                                 {
                                     "value": ".",
@@ -441,6 +455,7 @@
                                 {
                                     "value": "'1'",
                                     "type": "value",
+                                    "maxLen": 1,
                                     "next": [
                                         {
                                             "value": ".",
@@ -454,6 +469,7 @@
                         {
                             "value": "'1'",
                             "type": "value",
+                            "maxLen": 1,
                             "next": [
                                 {
                                     "value": ".",
@@ -523,6 +539,7 @@
                         {
                             "value": "'DDNAME'",
                             "type": "value",
+                            "maxLen": 8,
                             "next": [
                                 {
                                     "value": ".",
@@ -541,6 +558,7 @@
                         {
                             "value": "'DDNAME'",
                             "type": "value",
+                            "maxLen": 8,
                             "next": [
                                 {
                                     "value": ".",
@@ -559,6 +577,7 @@
                         {
                             "value": "'SAMPLE.DATASET.NAME'",
                             "type": "value",
+                            "maxLen": 44,
                             "next": [
                                 {
                                     "value": ".",
@@ -573,6 +592,7 @@
                                         {
                                             "value": "'MEMBER'",
                                             "type": "value",
+                                            "maxLen": 8,
                                             "next": [
                                                 {
                                                     "value": ".",
@@ -595,6 +615,7 @@
                         {
                             "value": "'ENVNAME'",
                             "type": "value",
+                            "maxLen": 8,
                             "next": [
                                 {
                                     "value": ".",
@@ -613,6 +634,7 @@
                         {
                             "value": "'SYSNAME'",
                             "type": "value",
+                            "maxLen": 8,
                             "next": [
                                 {
                                     "value": ".",
@@ -631,6 +653,7 @@
                         {
                             "value": "'SUBNAME'",
                             "type": "value",
+                            "maxLen": 8,
                             "next": [
                                 {
                                     "value": ".",
@@ -649,6 +672,7 @@
                         {
                             "value": "'COBOL'",
                             "type": "value",
+                            "maxLen": 8,
                             "next": [
                                 {
                                     "value": ".",
@@ -672,6 +696,7 @@
                                 {
                                     "value": "'1'",
                                     "type": "value",
+                                    "maxLen": 1,
                                     "next": [
                                         {
                                             "value": ".",
@@ -685,6 +710,7 @@
                         {
                             "value": "'1'",
                             "type": "value",
+                            "maxLen": 1,
                             "next": [
                                 {
                                     "value": ".",

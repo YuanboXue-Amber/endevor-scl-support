@@ -33,6 +33,7 @@ export function composeTreeFromJSON(jsonRootNode: Inode):ItreeNode {
             let node: ItreeNode = {
                 value: childNode.value,
                 type: childNode.type,
+                maxLen: childNode.maxLen,
                 requireNext: childNode.requireNext,
                 children: [],
                 parent: jsonParentTreeNode

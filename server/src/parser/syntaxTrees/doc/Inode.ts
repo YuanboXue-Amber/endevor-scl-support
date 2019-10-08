@@ -1,6 +1,7 @@
 export interface ItreeNode {
     value: string;
     type: "keyword" | "value" | "eos";
+    maxLen?: number;
     requireNext?: boolean;
     children: ItreeNode[];
     leftSibling?: ItreeNode;
@@ -13,6 +14,7 @@ export interface Inode {
     type: "keyword" | "value" | "eos";
     next: Inode[];
     requireNext?: boolean;
+    maxLen?: number;
 }
 
 export interface IFromTocheck {
