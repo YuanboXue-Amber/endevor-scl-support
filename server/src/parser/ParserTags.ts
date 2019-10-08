@@ -80,7 +80,13 @@ export const ParserTags = {
     WITH: "WITh",
     HISTORY: "HIStory",
     RETAIN: "RETAin",
-    JUMP: "JUMp"
+    JUMP: "JUMp",
+
+    LEVEL: "LEVel",
+    REPLACE: "REPlace",
+    NO: "NO",
+    EXPAND: "EXPand",
+    INCLUDE: "include",
 };
 
 /**

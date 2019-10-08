@@ -109,6 +109,14 @@
                 {
                     "name": "support.class.secondarykeyword.scl",
                     "match": "\\b(THR(U|\\b))\\b"
+                },
+                {
+                    "name": "support.class.secondarykeyword.scl",
+                    "match": "\\b(VER(SION|SIO|SI|S|\\b))\\b"
+                },
+                {
+                    "name": "support.class.secondarykeyword.scl",
+                    "match": "\\b(LEV(EL|E|\\b))\\b"
                 }
             ]
         },

@@ -157,7 +157,10 @@ function dealWithSETMacro(matchedNode: ItreeNode,
                 }
 
             } else if (matchedNode.parent.value === "PATH" && !isSET) {
-                statement.fromtoCheck.from.FILE = true;
+                if (isfrom)
+                    statement.fromtoCheck.from.FILE = true;
+                if (isto)
+                    statement.fromtoCheck.to.FILE = true;
             }
             else if (matchedNode.parent.value === "ENVIRONMENT") {
                 if (isSET) {
