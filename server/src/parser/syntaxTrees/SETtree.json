@@ -7,10 +7,12 @@
             "value": "ACTION",
             "type": "keyword",
             "requireNext": true,
+            "nogoback": true,
             "next": [
                 {
                     "value": "ADD",
                     "type": "keyword",
+                    "requireNext": true,
                     "next": [
                         {
                             "value": ".",
@@ -22,6 +24,7 @@
                 {
                     "value": "ARCHIVE",
                     "type": "keyword",
+                    "requireNext": true,
                     "next": [
                         {
                             "value": ".",
@@ -33,6 +36,7 @@
                 {
                     "value": "COPY",
                     "type": "keyword",
+                    "requireNext": true,
                     "next": [
                         {
                             "value": ".",
@@ -44,6 +48,7 @@
                 {
                     "value": "DELETE",
                     "type": "keyword",
+                    "requireNext": true,
                     "next": [
                         {
                             "value": ".",
@@ -55,6 +60,7 @@
                 {
                     "value": "GENERATE",
                     "type": "keyword",
+                    "requireNext": true,
                     "next": [
                         {
                             "value": ".",
@@ -66,6 +72,7 @@
                 {
                     "value": "LIST",
                     "type": "keyword",
+                    "requireNext": true,
                     "next": [
                         {
                             "value": ".",
@@ -77,6 +84,7 @@
                 {
                     "value": "MOVE",
                     "type": "keyword",
+                    "requireNext": true,
                     "next": [
                         {
                             "value": ".",
@@ -88,6 +96,7 @@
                 {
                     "value": "PRINT",
                     "type": "keyword",
+                    "requireNext": true,
                     "next": [
                         {
                             "value": ".",
@@ -99,6 +108,7 @@
                 {
                     "value": "RESTORE",
                     "type": "keyword",
+                    "requireNext": true,
                     "next": [
                         {
                             "value": ".",
@@ -110,6 +120,7 @@
                 {
                     "value": "RETRIEVE",
                     "type": "keyword",
+                    "requireNext": true,
                     "next": [
                         {
                             "value": ".",
@@ -121,6 +132,7 @@
                 {
                     "value": "SIGNIN",
                     "type": "keyword",
+                    "requireNext": true,
                     "next": [
                         {
                             "value": ".",
@@ -132,6 +144,7 @@
                 {
                     "value": "TRANSFER",
                     "type": "keyword",
+                    "requireNext": true,
                     "next": [
                         {
                             "value": ".",
@@ -143,6 +156,7 @@
                 {
                     "value": "UPDATE",
                     "type": "keyword",
+                    "requireNext": true,
                     "next": [
                         {
                             "value": ".",
@@ -154,6 +168,7 @@
                 {
                     "value": "VALIDATE",
                     "type": "keyword",
+                    "requireNext": true,
                     "next": [
                         {
                             "value": ".",
@@ -168,12 +183,14 @@
             "value": "BUILD",
             "type": "keyword",
             "requireNext": true,
+            "nogoback": true,
             "next": []
         },
         {
             "value": "FROM",
             "type": "keyword",
             "requireNext": true,
+            "nogoback": true,
             "next": [
                 {
                     "value": "FILE",
@@ -184,6 +201,7 @@
                             "value": "'DDNAME'",
                             "type": "value",
                             "maxLen": 8,
+                            "requireNext": true,
                             "next": [
                                 {
                                     "value": ".",
@@ -203,6 +221,7 @@
                             "value": "'DDNAME'",
                             "type": "value",
                             "maxLen": 8,
+                            "requireNext": true,
                             "next": [
                                 {
                                     "value": ".",
@@ -222,6 +241,7 @@
                             "value": "'SAMPLE.DATASET.NAME'",
                             "type": "value",
                             "maxLen": 44,
+                            "requireNext": true,
                             "next": [
                                 {
                                     "value": ".",
@@ -485,22 +505,27 @@
         {
             "value": "OPTION",
             "type": "keyword",
+            "requireNext": true,
+            "nogoback": true,
             "next": []
         },
         {
             "value": "STOPRC",
             "type": "keyword",
             "requireNext": true,
+            "nogoback": true,
             "next": []
         },
         {
             "value": "TO",
             "type": "keyword",
             "requireNext": true,
+            "nogoback": true,
             "next": [
                 {
                     "value": "SYSOUT",
                     "type": "keyword",
+                    "requireNext": true,
                     "next": [
                         {
                             "value": ".",
@@ -512,6 +537,7 @@
                 {
                     "value": "C1PRINT",
                     "type": "keyword",
+                    "requireNext": true,
                     "next": [
                         {
                             "value": ".",
@@ -523,6 +549,7 @@
                 {
                     "value": "C1PRTVB",
                     "type": "keyword",
+                    "requireNext": true,
                     "next": [
                         {
                             "value": ".",
@@ -540,6 +567,7 @@
                             "value": "'DDNAME'",
                             "type": "value",
                             "maxLen": 8,
+                            "requireNext": true,
                             "next": [
                                 {
                                     "value": ".",
@@ -559,6 +587,7 @@
                             "value": "'DDNAME'",
                             "type": "value",
                             "maxLen": 8,
+                            "requireNext": true,
                             "next": [
                                 {
                                     "value": ".",
@@ -578,6 +607,7 @@
                             "value": "'SAMPLE.DATASET.NAME'",
                             "type": "value",
                             "maxLen": 44,
+                            "requireNext": true,
                             "next": [
                                 {
                                     "value": ".",
@@ -593,6 +623,7 @@
                                             "value": "'MEMBER'",
                                             "type": "value",
                                             "maxLen": 8,
+                                            "requireNext": true,
                                             "next": [
                                                 {
                                                     "value": ".",
@@ -727,6 +758,7 @@
             "value": "WHERE",
             "type": "keyword",
             "requireNext": true,
+            "nogoback": true,
             "next": []
         }
     ]

@@ -1,8 +1,10 @@
 export interface ItreeNode {
     value: string;
     type: "keyword" | "value" | "eos";
-    maxLen?: number;
     requireNext?: boolean;
+    maxLen?: number;
+    nogoback?: boolean; // if true, don't query its parent
+
     children: ItreeNode[];
     leftSibling?: ItreeNode;
     rightSibling?: ItreeNode;
@@ -13,8 +15,10 @@ export interface Inode {
     value: string;
     type: "keyword" | "value" | "eos";
     next: Inode[];
+
     requireNext?: boolean;
     maxLen?: number;
+    nogoback?: boolean; // if true, don't query its parent
 }
 
 export interface IFromTocheck {

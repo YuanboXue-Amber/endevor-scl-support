@@ -366,7 +366,7 @@ export function parser(rootNode: ItreeNode, statement: SCLstatement, document: S
             return tokenIter;
         }
 
-        if (!isNullOrUndefined(parentNode.parent)) {
+        if (!isNullOrUndefined(parentNode.parent) && !parentNode.nogoback) {
             return matchToken(parentNode.parent, true);
         }
         return tokenIter;
