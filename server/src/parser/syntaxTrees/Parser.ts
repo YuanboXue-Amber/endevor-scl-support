@@ -684,6 +684,14 @@ function processSETMacro(statement: SCLstatement, document: SCLDocument, already
                   !(statementFT.from.location.STAGE || documentFT.from.location.STAGE) ) ) {
                 missFrom = true;
             }
+            if (( actionObj.startsWith("ELE") ) &&
+                 (!(statementFT.from.location.ENVIRONMENT || documentFT.from.location.ENVIRONMENT) ||
+                  !(statementFT.from.location.STAGE || documentFT.from.location.STAGE) ||
+                  !(statementFT.from.location.SYSTEM || documentFT.from.location.SYSTEM) ||
+                  !(statementFT.from.location.SUBSYSTEM || documentFT.from.location.SUBSYSTEM) ||
+                  !(statementFT.from.location.TYPE || documentFT.from.location.TYPE)) ) {
+                missFrom = true;
+            }
             break;
 
         default:
