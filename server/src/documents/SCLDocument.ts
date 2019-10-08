@@ -4,7 +4,8 @@ import { isNullOrUndefined } from 'util';
 import { SCLDocumentManager } from './SCLDocumentManager';
 import { match } from '../parser/ParserTags';
 import { SETtree, ADDtree, UPDATEtree, DELETEtree, GENERATEtree, MOVEtree, RETRIEVEtree, SIGNINtree, TRANSFERtree,
-    APPROVEtree } from '../parser/syntaxTrees/PrepareTrees';
+    APPROVEtree,
+    DENYtree} from '../parser/syntaxTrees/PrepareTrees';
 import { diagnose } from '../parser/syntaxTrees/Parser';
 import { IFromTocheck } from '../parser/syntaxTrees/doc/Inode';
 
@@ -235,6 +236,8 @@ export class SCLDocument {
 
         if (match(statement.tokens[0], "APPROVE", statement, this))
             diagnose(APPROVEtree, statement, this);
+        if (match(statement.tokens[0], "DENY", statement, this))
+            diagnose(DENYtree, statement, this);
 
     }
 

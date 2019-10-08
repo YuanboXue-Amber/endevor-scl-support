@@ -18,7 +18,8 @@ const level0keywords: string[] = [
     ParserTags.TRANSFER,
     ParserTags.UPDATE,
     ParserTags.VALIDATE,
-    ParserTags.APPROVE
+    ParserTags.APPROVE,
+    ParserTags.DENY
 ];
 
 const level1keywords: string[] = [

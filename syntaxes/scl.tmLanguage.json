@@ -193,6 +193,10 @@
                 {
                     "name": "keyword.control.scl",
                     "match": "\\b(APPR(OVE|OV|O|\\b))\\b"
+                },
+                {
+                    "name": "keyword.control.scl",
+                    "match": "\\b(DENY(\\b))\\b"
                 }
             ]
         },

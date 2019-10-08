@@ -99,7 +99,8 @@ export const ParserTags = {
     NOTES: "NOTEs",
     LEFTP: "(",
     RIGHTP: ")",
-    COMMA: ","
+    COMMA: ",",
+    DENY: "DENY"
 };
 
 /**
