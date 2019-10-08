@@ -221,6 +221,10 @@
                 {
                     "name": "keyword.control.scl",
                     "match": "\\b(DEF(INE|IN|I|\\b))\\b"
+                },
+                {
+                    "name": "keyword.control.scl",
+                    "match": "\\b(EXECUTE(\\b))\\b"
                 }
             ]
         },

@@ -138,7 +138,9 @@ export const ParserTags = {
     INEXECUTION: "INEXecution",
     EXECUTED: "EXECUTED",
     EXECFAILED: "EXECFailed",
-    COMMITTED: "COMMITTEd"
+    COMMITTED: "COMMITTEd",
+
+    EXECUTE: "EXECUTE",
 };
 
 /**

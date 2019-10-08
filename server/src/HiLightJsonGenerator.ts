@@ -23,7 +23,8 @@ const level0keywords: string[] = [
     ParserTags.BACKIN,
     ParserTags.BACKOUT,
     ParserTags.CAST,
-    ParserTags.DEFINE
+    ParserTags.DEFINE,
+    ParserTags.EXECUTE
 ];
 
 const level1keywords: string[] = [
