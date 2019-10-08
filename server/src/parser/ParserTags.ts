@@ -161,7 +161,15 @@ export const ParserTags = {
     LAST: "LASt",
     THRU: "THRu",
     DATE: "DATE",
-    TIME: "TIMe"
+    TIME: "TIMe",
+
+    ENTERPRISE: "ENTerprise",
+    TARGET: "TARget",
+    PACKAGETYPE: "S, E",
+    ENTERPRISETYPE: "A, E, X",
+    PKGACTIONTYPE: "CO, MO, CA, AP, EX, BO, BI, CO",
+    PROMOTIONTYPE: "A, P, X",
+    APPROVER: "APProver"
 };
 
 /**

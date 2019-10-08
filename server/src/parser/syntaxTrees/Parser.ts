@@ -37,7 +37,49 @@ function setCompletionItemsForToken(token: ITokenizedString, matchedNode: ItreeN
                     kind: CompletionItemKind.Constant,
                     documentation: "Endevor SCL keyword"
                 });
-            else
+            else if (child.value.toUpperCase() === "COMMA")
+                token.completionItems.push({
+                    label: ", ",
+                    kind: CompletionItemKind.Constant,
+                    documentation: "Endevor SCL keyword"
+                });
+            else if (child.value.toUpperCase() === "PACKAGETYPE") {
+                const items = ["S", "E"];
+                for (const item of items) {
+                    token.completionItems.push({
+                        label: item.toUpperCase() + " ",
+                        kind: CompletionItemKind.Keyword,
+                        documentation: "Endevor SCL keyword"
+                    });
+                }
+            } else if (child.value.toUpperCase() === "ENTERPRISETYPE") {
+                const items = ["A", "E", "X"];
+                for (const item of items) {
+                    token.completionItems.push({
+                        label: item.toUpperCase() + " ",
+                        kind: CompletionItemKind.Keyword,
+                        documentation: "Endevor SCL keyword"
+                    });
+                }
+            } else if (child.value.toUpperCase() === "PKGACTIONTYPE") {
+                const items = ["CO", "MO", "CA", "AP", "EX", "BO", "BI", "CO"];
+                for (const item of items) {
+                    token.completionItems.push({
+                        label: item.toUpperCase() + " ",
+                        kind: CompletionItemKind.Keyword,
+                        documentation: "Endevor SCL keyword"
+                    });
+                }
+            } else if (child.value.toUpperCase() === "PROMOTIONTYPE") {
+                const items = ["A", "P", "X"];
+                for (const item of items) {
+                    token.completionItems.push({
+                        label: item.toUpperCase() + " ",
+                        kind: CompletionItemKind.Keyword,
+                        documentation: "Endevor SCL keyword"
+                    });
+                }
+            } else
                 token.completionItems.push({
                     label: child.value.toUpperCase() + " ",
                     kind: CompletionItemKind.Keyword,
@@ -111,10 +153,13 @@ function searchCompletionItemsForToken(token: ITokenizedString, matchedNode: Itr
     while(!isNullOrUndefined(matchedNode.parent)) {
         if (matchedNode.parent.type === "keyword") {
             if (isPkg) {
-                if (matchedNode.parent.value === "OPTION") {
+                if (matchedNode.parent.value === "OPTION" ||
+                    matchedNode.parent.value === "WHERE" ||
+                    matchedNode.parent.value === "STATUS") {
                     targetNode = matchedNode.parent;
                     for (const child of targetNode.children) {
-                        if (child.type as string === "keyword") {
+                        if (child.type as string === "keyword" &&
+                            child.value !== "IS" && child.value !== "EQUAL" && child.value !== "EQUALSIGN") {
                             token.completionItems.push({
                                 label: child.value.toUpperCase() + " ",
                                 kind: CompletionItemKind.Keyword,
@@ -123,15 +168,17 @@ function searchCompletionItemsForToken(token: ITokenizedString, matchedNode: Itr
                         }
                     }
                     return;
-                } else if (matchedNode.parent.value === "STATUS") {
-                    targetNode = matchedNode.parent;
+                } else if (matchedNode.parent.value === "TO" && !isNullOrUndefined(matchedNode.parent.parent)) {
+                    targetNode = matchedNode.parent.parent;
                     for (const child of targetNode.children) {
-                        if (child.type as string === "keyword" && child.value !== "IS") {
-                            token.completionItems.push({
-                                label: child.value.toUpperCase() + " ",
-                                kind: CompletionItemKind.Keyword,
-                                documentation: "Endevor SCL keyword"
-                            });
+                        if (child.type as string === "keyword") {
+                            if (child.value !== matchedNode.parent.value) {
+                                token.completionItems.push({
+                                    label: child.value.toUpperCase() + " ",
+                                    kind: CompletionItemKind.Keyword,
+                                    documentation: "Endevor SCL keyword"
+                                });
+                            }
                         }
                     }
                     return;
