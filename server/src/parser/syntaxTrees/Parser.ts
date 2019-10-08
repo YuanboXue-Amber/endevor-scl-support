@@ -462,7 +462,8 @@ function processSETMacro(statement: SCLstatement, document: SCLDocument, already
                 }
             break;
 
-        case action.startsWith("DEL") || action.startsWith("GEN") || action.startsWith("MOV"):
+        case action.startsWith("DEL") || action.startsWith("GEN") || action.startsWith("MOV") ||
+             action.startsWith("SIG"):
             if (!(statementFT.from.location.ENVIRONMENT || documentFT.from.location.ENVIRONMENT) ||
                 !(statementFT.from.location.STAGE || documentFT.from.location.STAGE) ||
                 !(statementFT.from.location.SYSTEM || documentFT.from.location.SYSTEM) ||

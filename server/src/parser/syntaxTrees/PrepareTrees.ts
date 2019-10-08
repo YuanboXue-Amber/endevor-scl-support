@@ -10,6 +10,7 @@ export let DELETEtree: ItreeNode;
 export let GENERATEtree: ItreeNode;
 export let MOVEtree: ItreeNode;
 export let RETRIEVEtree: ItreeNode;
+export let SIGNINtree: ItreeNode;
 
 export function prepareTrees() {
     SETtree = composeTreeFromJSON(prepareJSON("SETtree.json"));
@@ -19,6 +20,7 @@ export function prepareTrees() {
     GENERATEtree = composeTreeFromJSON(prepareJSON("GENERATEtree.json"));
     MOVEtree = composeTreeFromJSON(prepareJSON("MOVEtree.json"));
     RETRIEVEtree = composeTreeFromJSON(prepareJSON("RETRIEVEtree.json"));
+    SIGNINtree = composeTreeFromJSON(prepareJSON("SIGNINtree.json"));
 }
 
 export function composeTreeFromJSON(jsonRootNode: Inode):ItreeNode {
