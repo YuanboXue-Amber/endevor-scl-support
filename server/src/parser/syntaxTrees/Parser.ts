@@ -60,7 +60,7 @@ function searchCompletionItemsForToken(token: ITokenizedString, matchedNode: Itr
 
     // 1st check if this token is envname/sysname...
     // if so, we search for FROM/TO before matchedNode, get its children as compeltion item
-    if (!isNullOrUndefined(matchedNode.parent)) {
+    if (!isNullOrUndefined(matchedNode.parent) && !isPkg) {
         if (matchedNode.parent.type === "keyword") {
             if (matchedNode.parent.value === "ENVIRONMENT" ||
                 matchedNode.parent.value === "SYSTEM" ||
@@ -115,6 +115,18 @@ function searchCompletionItemsForToken(token: ITokenizedString, matchedNode: Itr
                     targetNode = matchedNode.parent;
                     for (const child of targetNode.children) {
                         if (child.type as string === "keyword") {
+                            token.completionItems.push({
+                                label: child.value.toUpperCase() + " ",
+                                kind: CompletionItemKind.Text,
+                                documentation: "Endevor SCL keyword"
+                            });
+                        }
+                    }
+                    return;
+                } else if (matchedNode.parent.value === "STATUS") {
+                    targetNode = matchedNode.parent;
+                    for (const child of targetNode.children) {
+                        if (child.type as string === "keyword" && child.value !== "IS") {
                             token.completionItems.push({
                                 label: child.value.toUpperCase() + " ",
                                 kind: CompletionItemKind.Text,
@@ -382,14 +394,16 @@ export function parser(rootNode: ItreeNode, statement: SCLstatement, document: S
         for (const childNode of parentNode.children) {
             switch (true) {
                 case childNode.type === "keyword" && match(token, childNode.value, statement, document):
-                    if (childNode.value === 'FROM') {
-                        isfrom = true;
-                    } else if (childNode.value === 'TO') {
-                        isto = true;
-                        isfrom = false;
-                    } else if (childNode.value === 'OPTION') {
-                        isto = false;
-                        isfrom = false;
+                    if (!isPkg) {
+                        if (childNode.value === 'FROM') {
+                            isfrom = true;
+                        } else if (childNode.value === 'TO') {
+                            isto = true;
+                            isfrom = false;
+                        } else if (childNode.value === 'OPTION') {
+                            isto = false;
+                            isfrom = false;
+                        }
                     }
                     dealWithCompletion(token, childNode, isSET, isPkg);
                     tokenIter ++;
@@ -397,9 +411,11 @@ export function parser(rootNode: ItreeNode, statement: SCLstatement, document: S
 
                 case !onlyMatchKey && (childNode.type ==="value" && !token.is_eoStatement):
                     dealWithCompletion(token, childNode, isSET, isPkg);
-                    dealWithSETMacro(childNode,
-                        statement, document,
-                        isSET, isfrom, isto);
+                    if (!isPkg) {
+                        dealWithSETMacro(childNode,
+                            statement, document,
+                            isSET, isfrom, isto);
+                    }
                     const result = dealWithValue(childNode, tokenIter, statement, document);
                     if (!result[1]) { // err
                         return result[0] as number;

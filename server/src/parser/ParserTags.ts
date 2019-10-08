@@ -124,7 +124,21 @@ export const ParserTags = {
     NONSHARABLE: "NONsharable",
     SHARABLE: "SHArable",
     NONPROMOTION: "NONPromotion",
-    PROMOTION: "PROMotion"
+    PROMOTION: "PROMotion",
+    OLDER: "OLDer",
+    THAN: "THAn",
+    DAYS: "DAYS",
+    STATUS: "STATus",
+    OR: "OR",
+    ALLSTATE: "ALLstate",
+    INEDIT: "INEdit",
+    INAPPROVAL: "INApproval",
+    DENIED: "DENied",
+    APPROVED: "APPROVED",
+    INEXECUTION: "INEXecution",
+    EXECUTED: "EXECUTED",
+    EXECFAILED: "EXECFailed",
+    COMMITTED: "COMMITTEd"
 };
 
 /**
