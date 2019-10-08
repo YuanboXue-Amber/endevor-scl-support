@@ -1,7 +1,7 @@
 import { TextDocument, Diagnostic, DiagnosticSeverity } from 'vscode-languageserver';
 import { ITokenizedString, Tokenizer } from '../parser/Tokenizer';
 import { isNullOrUndefined } from 'util';
-import { SCLDocumentManager } from './SCLDocumentManager';
+import { SCLDocumentManager, actionCompletion } from './SCLDocumentManager';
 import { match } from '../parser/ParserTags';
 import { SETtree, ADDtree, UPDATEtree, DELETEtree, GENERATEtree, MOVEtree, RETRIEVEtree, SIGNINtree, TRANSFERtree,
     APPROVEtree,
@@ -225,44 +225,53 @@ export class SCLDocument {
     private walkStatement(statement: SCLstatement) {
         if (match(statement.tokens[0], "SET", statement, this))
             diagnose(SETtree, statement, this);
-        if (match(statement.tokens[0], "ADD", statement, this))
+        else if (match(statement.tokens[0], "ADD", statement, this))
             diagnose(ADDtree, statement, this);
-        if (match(statement.tokens[0], "UPDATE", statement, this))
+        else if (match(statement.tokens[0], "UPDATE", statement, this))
             diagnose(UPDATEtree, statement, this);
-        if (match(statement.tokens[0], "DELETE", statement, this))
+        else if (match(statement.tokens[0], "DELETE", statement, this))
             diagnose(DELETEtree, statement, this);
-        if (match(statement.tokens[0], "GENERATE", statement, this))
+        else if (match(statement.tokens[0], "GENERATE", statement, this))
             diagnose(GENERATEtree, statement, this);
-        if (match(statement.tokens[0], "MOVE", statement, this))
+        else if (match(statement.tokens[0], "MOVE", statement, this))
             diagnose(MOVEtree, statement, this);
-        if (match(statement.tokens[0], "RETRIEVE", statement, this))
+        else if (match(statement.tokens[0], "RETRIEVE", statement, this))
             diagnose(RETRIEVEtree, statement, this);
-        if (match(statement.tokens[0], "SIGNIN", statement, this))
+        else if (match(statement.tokens[0], "SIGNIN", statement, this))
             diagnose(SIGNINtree, statement, this);
-        if (match(statement.tokens[0], "TRANSFER", statement, this))
+        else if (match(statement.tokens[0], "TRANSFER", statement, this))
             diagnose(TRANSFERtree, statement, this);
 
-        if (match(statement.tokens[0], "APPROVE", statement, this))
+        else if (match(statement.tokens[0], "APPROVE", statement, this))
             diagnose(APPROVEtree, statement, this);
-        if (match(statement.tokens[0], "DENY", statement, this))
+        else if (match(statement.tokens[0], "DENY", statement, this))
             diagnose(DENYtree, statement, this);
-        if (match(statement.tokens[0], "BACKIN", statement, this))
+        else if (match(statement.tokens[0], "BACKIN", statement, this))
             diagnose(BACKINtree, statement, this);
-        if (match(statement.tokens[0], "BACKOUT", statement, this))
+        else if (match(statement.tokens[0], "BACKOUT", statement, this))
             diagnose(BACKOUTtree, statement, this);
-        if (match(statement.tokens[0], "CAST", statement, this))
+        else if (match(statement.tokens[0], "CAST", statement, this))
             diagnose(CASTtree, statement, this);
-        if (match(statement.tokens[0], "DEFINE", statement, this))
+        else if (match(statement.tokens[0], "DEFINE", statement, this))
             diagnose(DEFINEPACKAGEtree, statement, this);
-        if (match(statement.tokens[0], "EXECUTE", statement, this))
+        else if (match(statement.tokens[0], "EXECUTE", statement, this))
             diagnose(EXECUTEtree, statement, this);
-        if (match(statement.tokens[0], "RESET", statement, this))
+        else if (match(statement.tokens[0], "RESET", statement, this))
             diagnose(RESETtree, statement, this);
-        if (match(statement.tokens[0], "COMMIT", statement, this))
+        else if (match(statement.tokens[0], "COMMIT", statement, this))
             diagnose(COMMITtree, statement, this);
 
-        if (match(statement.tokens[0], "LIST", statement, this))
+        else if (match(statement.tokens[0], "LIST", statement, this))
             diagnose(LISTtree, statement, this);
+
+        else {
+            this.pushDiagnostic(
+                statement.tokens[0], statement,
+                DiagnosticSeverity.Error,
+                `Invalid value specified`,
+                `Possible valid values: ${actionCompletion.join(", ")}`,
+                statement.tokens[0]);
+        }
     }
 
     /**

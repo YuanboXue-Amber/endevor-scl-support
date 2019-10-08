@@ -4,7 +4,10 @@ import {
     VersionedTextDocumentIdentifier,
     TextDocumentContentChangeEvent,
     TextDocumentPositionParams,
-    CompletionItem} from "vscode-languageserver";
+    CompletionItem,
+    TextDocumentIdentifier,
+    TextEdit,
+    CompletionItemKind} from "vscode-languageserver";
 import { SCLDocument } from './SCLDocument';
 import { isNull, isNullOrUndefined } from "util";
 
@@ -15,6 +18,10 @@ interface IDocumentSettings {
 interface ICapabilities {
     hasDiagnosticRelatedInformationCapability: boolean;
 }
+
+export const actionCompletion = [ "SET", "ADD", "UPDATE", "DELETE", "GENERATE",
+"MOVE", "RETRIEVE", "SIGNIN", "TRANSFER", "APPROVE", "DENY", "BACKIN",
+"BACKOUT", "CAST", "DEFINE", "EXECUTE", "RESET", "COMMIT", "LIST"];
 
 /**
  * Manage all the opened documents in the client
@@ -129,7 +136,7 @@ export class SCLDocumentManager {
         for (const statement of document.statements) {
             if (tobeCompelteIndex >= statement.starti && tobeCompelteIndex <= statement.endi) {
                 let i = -1;
-                while (i < statement.tokens.length) {
+                while (i < statement.tokens.length - 1) {
                     i ++;
                     const starti = statement.tokens[i].starti + statement.tokens[i].value.length;
                     const endi = (i+1) < statement.tokens.length ? statement.tokens[i+1].starti : statement.endi;
@@ -138,7 +145,17 @@ export class SCLDocumentManager {
                         // to complete between tokens[i] and tokens[i+1] in scl
                         const values = statement.tokens[i].completionItems;
                         if (!isNullOrUndefined(values)) {
-                            completionItems = completionItems.concat(values);
+                            if (statement.tokens[i].value !== ".") {
+                                completionItems = completionItems.concat(values);
+                            } else {
+                                for (const each of actionCompletion) {
+                                    completionItems.push({
+                                        label: each + " ",
+                                        kind: CompletionItemKind.Function,
+                                        documentation: "Endevor SCL keyword"
+                                    });
+                                }
+                            }
                         }
                         return completionItems;
                     }
@@ -149,9 +166,30 @@ export class SCLDocumentManager {
         // to complete at the end of scl
         const statement = document.statements[document.statements.length-1];
         const values = statement.tokens[statement.tokens.length-1].completionItems;
-        if (!isNullOrUndefined(values)) {
+        if (!isNullOrUndefined(values) && statement.tokens[statement.tokens.length-1].value !== ".") {
             completionItems = completionItems.concat(values);
+        } else {
+            // maybe a new scl is started
+            for (const each of actionCompletion) {
+                completionItems.push({
+                    label: each + " ",
+                    kind: CompletionItemKind.Function,
+                    documentation: "Endevor SCL keyword"
+                });
+            }
         }
         return completionItems;
+    }
+
+    async formatDocument(textDocument: TextDocumentIdentifier): Promise<TextEdit[]> {
+        // const document = this.documents.get(textDocument.uri);
+        // if (!document) {
+        //     throw new Error('Cannot call methods on an unopened document');
+        // }
+
+        // return flatten(
+        //     await this.execute<TextEdit[]>('formatDocument', [document], ExecuteMode.Collect),
+        // );
+        return [];
     }
 }
