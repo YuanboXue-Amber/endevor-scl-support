@@ -16,7 +16,7 @@ export function composeCompletionItemsFromKeywords(): CompletionItem[] {
             for (const v of values) {
                 completionItems.push({
                     label: v.toUpperCase() + " ",
-                    kind: CompletionItemKind.Text,
+                    kind: CompletionItemKind.Keyword,
                     documentation: "Endevor SCL keyword"
                 });
             }
@@ -24,7 +24,7 @@ export function composeCompletionItemsFromKeywords(): CompletionItem[] {
         }
         completionItems.push({
             label: value.toUpperCase() + " ",
-            kind: CompletionItemKind.Text,
+            kind: CompletionItemKind.Keyword,
             documentation: "Endevor SCL keyword"
         });
     });

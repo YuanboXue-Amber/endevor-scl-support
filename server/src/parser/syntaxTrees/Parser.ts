@@ -16,31 +16,31 @@ function setCompletionItemsForToken(token: ITokenizedString, matchedNode: ItreeN
             if (child.value.toUpperCase() === "EQUALSIGN")
                 token.completionItems.push({
                     label: "= ",
-                    kind: CompletionItemKind.Text,
+                    kind: CompletionItemKind.Constant,
                     documentation: "Endevor SCL keyword"
                 });
             else if (child.value.toUpperCase() === "LEFTP")
                 token.completionItems.push({
                     label: "( ",
-                    kind: CompletionItemKind.Text,
+                    kind: CompletionItemKind.Constant,
                     documentation: "Endevor SCL keyword"
                 });
             else if (child.value.toUpperCase() === "RIGHTP")
                 token.completionItems.push({
                     label: ") ",
-                    kind: CompletionItemKind.Text,
+                    kind: CompletionItemKind.Constant,
                     documentation: "Endevor SCL keyword"
                 });
             else if (child.value.toUpperCase() === "COMMA")
                 token.completionItems.push({
                     label: ", ",
-                    kind: CompletionItemKind.Text,
+                    kind: CompletionItemKind.Constant,
                     documentation: "Endevor SCL keyword"
                 });
             else
                 token.completionItems.push({
                     label: child.value.toUpperCase() + " ",
-                    kind: CompletionItemKind.Text,
+                    kind: CompletionItemKind.Keyword,
                     documentation: "Endevor SCL keyword"
                 });
         }
@@ -76,7 +76,7 @@ function searchCompletionItemsForToken(token: ITokenizedString, matchedNode: Itr
                             child.value === "TYPE" || child.value === "STAGE") ) {
                             token.completionItems.push({
                                 label: child.value.toUpperCase() + " ",
-                                kind: CompletionItemKind.Text,
+                                kind: CompletionItemKind.Keyword,
                                 documentation: "Endevor SCL keyword"
                             });
                         }
@@ -94,7 +94,7 @@ function searchCompletionItemsForToken(token: ITokenizedString, matchedNode: Itr
                             child.value === "TYPE" || child.value === "STAGE") ) {
                             token.completionItems.push({
                                 label: child.value.toUpperCase() + " ",
-                                kind: CompletionItemKind.Text,
+                                kind: CompletionItemKind.Keyword,
                                 documentation: "Endevor SCL keyword"
                             });
                         }
@@ -117,7 +117,7 @@ function searchCompletionItemsForToken(token: ITokenizedString, matchedNode: Itr
                         if (child.type as string === "keyword") {
                             token.completionItems.push({
                                 label: child.value.toUpperCase() + " ",
-                                kind: CompletionItemKind.Text,
+                                kind: CompletionItemKind.Keyword,
                                 documentation: "Endevor SCL keyword"
                             });
                         }
@@ -129,7 +129,7 @@ function searchCompletionItemsForToken(token: ITokenizedString, matchedNode: Itr
                         if (child.type as string === "keyword" && child.value !== "IS") {
                             token.completionItems.push({
                                 label: child.value.toUpperCase() + " ",
-                                kind: CompletionItemKind.Text,
+                                kind: CompletionItemKind.Keyword,
                                 documentation: "Endevor SCL keyword"
                             });
                         }
@@ -155,13 +155,13 @@ function searchCompletionItemsForToken(token: ITokenizedString, matchedNode: Itr
                             && child.value !== "THROUGH") {
                             token.completionItems.push({
                                 label: child.value.toUpperCase() + " ",
-                                kind: CompletionItemKind.Text,
+                                kind: CompletionItemKind.Keyword,
                                 documentation: "Endevor SCL keyword"
                             });
                         } else if (child.value === "WHERE") {
                             token.completionItems.push({
                                 label: child.value.toUpperCase() + " ",
-                                kind: CompletionItemKind.Text,
+                                kind: CompletionItemKind.Keyword,
                                 documentation: "Endevor SCL keyword"
                             });
                         }
@@ -180,7 +180,7 @@ function searchCompletionItemsForToken(token: ITokenizedString, matchedNode: Itr
                 if (child.type as string === "keyword") {
                     token.completionItems.push({
                         label: child.value.toUpperCase() + " ",
-                        kind: CompletionItemKind.Text,
+                        kind: CompletionItemKind.Keyword,
                         documentation: "Endevor SCL keyword"
                     });
                 }
@@ -325,12 +325,12 @@ function dealWithValue(matchedNode: ItreeNode, tokenIter: number, statement: SCL
                 if (!token.value.endsWith(",")) { // this token is probably a real value
                     (token.completionItems as CompletionItem[]).push({
                         label: ", ",
-                        kind: CompletionItemKind.Text,
+                        kind: CompletionItemKind.Constant,
                         documentation: "Endevor SCL operator"
                     });
                     (token.completionItems as CompletionItem[]).push({
                         label: ") ",
-                        kind: CompletionItemKind.Text,
+                        kind: CompletionItemKind.Constant,
                         documentation: "Endevor SCL operator"
                     });
 
