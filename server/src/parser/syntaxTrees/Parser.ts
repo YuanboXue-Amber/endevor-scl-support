@@ -54,7 +54,7 @@ function setCompletionItemsForToken(token: ITokenizedString, matchedNode: ItreeN
     }
 }
 
-function searchCompletionItemsForToken(token: ITokenizedString, matchedNode: ItreeNode, isSET?: boolean) {
+function searchCompletionItemsForToken(token: ITokenizedString, matchedNode: ItreeNode, isSET?: boolean, isPkg?: boolean) {
     let targetNode: ItreeNode | undefined;
     token.completionItems = [];
 
@@ -110,6 +110,24 @@ function searchCompletionItemsForToken(token: ITokenizedString, matchedNode: Itr
     // else if we find FROM/TO, take its parent's completion items
     while(!isNullOrUndefined(matchedNode.parent)) {
         if (matchedNode.parent.type === "keyword") {
+            if (isPkg) {
+                if (matchedNode.parent.value === "OPTION") {
+                    targetNode = matchedNode.parent;
+                    for (const child of targetNode.children) {
+                        if (child.type as string === "keyword") {
+                            token.completionItems.push({
+                                label: child.value.toUpperCase() + " ",
+                                kind: CompletionItemKind.Text,
+                                documentation: "Endevor SCL keyword"
+                            });
+                        }
+                    }
+                    return;
+                }
+                matchedNode = matchedNode.parent;
+                continue; // this is a FROM/TO in pkg actions
+            }
+
             if (matchedNode.parent.value === "OPTION") {
                 setCompletionItemsForToken(token, matchedNode.parent);
                 return;
@@ -119,10 +137,6 @@ function searchCompletionItemsForToken(token: ITokenizedString, matchedNode: Itr
                  matchedNode.parent.value === "WHERE" )
                 && !isNullOrUndefined(matchedNode.parent.parent)) {
                 targetNode = matchedNode.parent.parent;
-                if (targetNode.value === "'DDMMMYY HH:MM'" || targetNode.value === "WINDOW") {
-                    matchedNode = targetNode;
-                    continue; // this is a EXECUTION WINDOW FROM/TO in pkg actions
-                }
                 for (const child of targetNode.children) {
                     if (child.type as string === "keyword") {
                         if (child.value !== matchedNode.parent.value
@@ -146,14 +160,30 @@ function searchCompletionItemsForToken(token: ITokenizedString, matchedNode: Itr
         }
         matchedNode = matchedNode.parent;
     }
+
+    if (isPkg) { // special case for define package
+        if (matchedNode.value === "DEFINE" && matchedNode.children[0].value === "PACKAGE") {
+            targetNode = matchedNode.children[0].children[0];
+            for (const child of targetNode.children) {
+                if (child.type as string === "keyword") {
+                    token.completionItems.push({
+                        label: child.value.toUpperCase() + " ",
+                        kind: CompletionItemKind.Text,
+                        documentation: "Endevor SCL keyword"
+                    });
+                }
+            }
+            return;
+        }
+    }
 }
 
-function dealWithCompletion(token: ITokenizedString, matchedNode: ItreeNode, isSET?: boolean) {
+function dealWithCompletion(token: ITokenizedString, matchedNode: ItreeNode, isSET?: boolean, isPkg?: boolean) {
     if (matchedNode.children.length > 0 &&
         !(matchedNode.children.length === 1 && matchedNode.children[0].type === "eos")) {
         setCompletionItemsForToken(token, matchedNode);
     } else {
-        searchCompletionItemsForToken(token, matchedNode, isSET);
+        searchCompletionItemsForToken(token, matchedNode, isSET, isPkg);
     }
 }
 
@@ -338,6 +368,10 @@ export function parser(rootNode: ItreeNode, statement: SCLstatement, document: S
         isSET = true;
     let isfrom = false;
     let isto = false;
+    let isPkg = false;
+    if (currSCL.length > 2 && currSCL[1].value.toUpperCase().startsWith("PAC")) {
+        isPkg = true;
+    }
 
     let tokenIter: number = 1;
     const matchToken = ((parentNode: ItreeNode, onlyMatchKey?: boolean): number => {
@@ -357,12 +391,12 @@ export function parser(rootNode: ItreeNode, statement: SCLstatement, document: S
                         isto = false;
                         isfrom = false;
                     }
-                    dealWithCompletion(token, childNode, isSET);
+                    dealWithCompletion(token, childNode, isSET, isPkg);
                     tokenIter ++;
                     return matchToken(childNode);
 
                 case !onlyMatchKey && (childNode.type ==="value" && !token.is_eoStatement):
-                    dealWithCompletion(token, childNode, isSET);
+                    dealWithCompletion(token, childNode, isSET, isPkg);
                     dealWithSETMacro(childNode,
                         statement, document,
                         isSET, isfrom, isto);
@@ -374,7 +408,7 @@ export function parser(rootNode: ItreeNode, statement: SCLstatement, document: S
                     return matchToken(childNode);
 
                 case !onlyMatchKey && (childNode.type === "eos" && token.is_eoStatement):
-                    dealWithCompletion(token, childNode, isSET);
+                    dealWithCompletion(token, childNode, isSET, isPkg);
                     tokenIter ++;
                     return matchToken(childNode);
 

@@ -73,6 +73,10 @@
                 {
                     "name": "support.variable.tertiarykeyword.scl",
                     "match": "\\b(STATE(MENT|MEN|ME|M|\\b))\\b"
+                },
+                {
+                    "name": "support.variable.tertiarykeyword.scl",
+                    "match": "\\b(DES(CRIPTION|CRIPTIO|CRIPTI|CRIPT|CRIP|CRI|CR|C|\\b))\\b"
                 }
             ]
         },
@@ -213,6 +217,10 @@
                 {
                     "name": "keyword.control.scl",
                     "match": "\\b(CAS(T|\\b))\\b"
+                },
+                {
+                    "name": "keyword.control.scl",
+                    "match": "\\b(DEF(INE|IN|I|\\b))\\b"
                 }
             ]
         },

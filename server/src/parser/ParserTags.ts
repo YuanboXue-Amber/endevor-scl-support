@@ -112,7 +112,19 @@ export const ParserTags = {
     WARNING: "WARning",
     DO: "DO",
     EXECUTION: "EXECUTion",
-    WINDOW: "WINdow"
+    WINDOW: "WINdow",
+
+    DEFINE: "DEFine",
+    IMPORT: "IMPort",
+    SCL: "SCL",
+    APPEND: "APPEnd",
+    DESCRIPTION: "DEScription",
+    STANDARD: "STANdard",
+    EMERGENCY: "EMErgency",
+    NONSHARABLE: "NONsharable",
+    SHARABLE: "SHArable",
+    NONPROMOTION: "NONPromotion",
+    PROMOTION: "PROMotion"
 };
 
 /**
