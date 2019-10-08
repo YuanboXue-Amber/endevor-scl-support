@@ -19,7 +19,9 @@ const level0keywords: string[] = [
     ParserTags.UPDATE,
     ParserTags.VALIDATE,
     ParserTags.APPROVE,
-    ParserTags.DENY
+    ParserTags.DENY,
+    ParserTags.BACKIN,
+    ParserTags.BACKOUT
 ];
 
 const level1keywords: string[] = [
@@ -53,6 +55,7 @@ const level2keywords: string[] = [
     ParserTags.NUMBER,
 
     ParserTags.NOTES,
+    ParserTags.STATEMENT,
 
     // ParserTags.UPDATE + " " + ParserTags.IF + " " + ParserTags.PRESENT,
 

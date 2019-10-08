@@ -100,7 +100,10 @@ export const ParserTags = {
     LEFTP: "(",
     RIGHTP: ")",
     COMMA: ",",
-    DENY: "DENY"
+    DENY: "DENY",
+    BACKIN: "BACKIn",
+    BACKOUT: "BACKOut",
+    STATEMENT: "STATEment",
 };
 
 /**

@@ -1,0 +1,92 @@
+{
+    "value": "BACKIN",
+    "type": "keyword",
+    "requireNext": true,
+    "next": [
+        {
+            "value": "PACKAGE",
+            "type": "keyword",
+            "requireNext": true,
+            "next": [
+                {
+                    "value": "'packageId'",
+                    "type": "value",
+                    "maxLen": 16,
+                    "next": [
+                        {
+                            "value": "STATEMENT",
+                            "type": "keyword",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "value": "NUMBER",
+                                    "type": "keyword",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "value": "'1'",
+                                            "type": "value",
+                                            "requireNext": true,
+                                            "next": [
+                                                {
+                                                    "value": "ELEMENT",
+                                                    "type": "keyword",
+                                                    "requireNext": true,
+                                                    "next": [
+                                                        {
+                                                            "value": "'element'",
+                                                            "type": "value",
+                                                            "maxLen": 255,
+                                                            "next": [
+                                                                {
+                                                                    "value": ".",
+                                                                    "type": "eos",
+                                                                    "next": []
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "'1'",
+                                    "type": "value",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "value": "ELEMENT",
+                                            "type": "keyword",
+                                            "requireNext": true,
+                                            "next": [
+                                                {
+                                                    "value": "'element'",
+                                                    "type": "value",
+                                                    "maxLen": 255,
+                                                    "next": [
+                                                        {
+                                                            "value": ".",
+                                                            "type": "eos",
+                                                            "next": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "value": ".",
+                            "type": "eos",
+                            "next": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

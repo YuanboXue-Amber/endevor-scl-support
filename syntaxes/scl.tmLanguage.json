@@ -69,6 +69,10 @@
                 {
                     "name": "support.variable.tertiarykeyword.scl",
                     "match": "\\b(NOTE(S|\\b))\\b"
+                },
+                {
+                    "name": "support.variable.tertiarykeyword.scl",
+                    "match": "\\b(STATE(MENT|MEN|ME|M|\\b))\\b"
                 }
             ]
         },
@@ -197,6 +201,14 @@
                 {
                     "name": "keyword.control.scl",
                     "match": "\\b(DENY(\\b))\\b"
+                },
+                {
+                    "name": "keyword.control.scl",
+                    "match": "\\b(BACKI(N|\\b))\\b"
+                },
+                {
+                    "name": "keyword.control.scl",
+                    "match": "\\b(BACKO(UT|U|\\b))\\b"
                 }
             ]
         },

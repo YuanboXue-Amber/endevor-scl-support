@@ -5,7 +5,9 @@ import { SCLDocumentManager } from './SCLDocumentManager';
 import { match } from '../parser/ParserTags';
 import { SETtree, ADDtree, UPDATEtree, DELETEtree, GENERATEtree, MOVEtree, RETRIEVEtree, SIGNINtree, TRANSFERtree,
     APPROVEtree,
-    DENYtree} from '../parser/syntaxTrees/PrepareTrees';
+    DENYtree,
+    BACKINtree,
+    BACKOUTtree} from '../parser/syntaxTrees/PrepareTrees';
 import { diagnose } from '../parser/syntaxTrees/Parser';
 import { IFromTocheck } from '../parser/syntaxTrees/doc/Inode';
 
@@ -238,7 +240,10 @@ export class SCLDocument {
             diagnose(APPROVEtree, statement, this);
         if (match(statement.tokens[0], "DENY", statement, this))
             diagnose(DENYtree, statement, this);
-
+        if (match(statement.tokens[0], "BACKIN", statement, this))
+            diagnose(BACKINtree, statement, this);
+        if (match(statement.tokens[0], "BACKOUT", statement, this))
+            diagnose(BACKOUTtree, statement, this);
     }
 
     /**

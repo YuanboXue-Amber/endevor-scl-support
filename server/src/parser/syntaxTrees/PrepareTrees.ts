@@ -14,6 +14,8 @@ export let SIGNINtree: ItreeNode;
 export let TRANSFERtree: ItreeNode;
 export let APPROVEtree: ItreeNode;
 export let DENYtree: ItreeNode;
+export let BACKINtree: ItreeNode;
+export let BACKOUTtree: ItreeNode;
 
 export function prepareTrees() {
     SETtree = composeTreeFromJSON(prepareJSON("SETtree.json"));
@@ -27,6 +29,8 @@ export function prepareTrees() {
     TRANSFERtree = composeTreeFromJSON(prepareJSON("TRANSFERtree.json"));
     APPROVEtree = composeTreeFromJSON(prepareJSON("APPROVEtree.json"));
     DENYtree = composeTreeFromJSON(prepareJSON("DENYtree.json"));
+    BACKINtree = composeTreeFromJSON(prepareJSON("BACKINtree.json"));
+    BACKOUTtree = composeTreeFromJSON(prepareJSON("BACKOUTtree.json"));
 }
 
 export function composeTreeFromJSON(jsonRootNode: Inode):ItreeNode {
