@@ -1,8 +1,8 @@
-import { TextDocument, Diagnostic, DiagnosticSeverity } from 'vscode-languageserver';
+import { TextDocument, Diagnostic, DiagnosticSeverity, TextEdit } from 'vscode-languageserver';
 import { ITokenizedString, Tokenizer } from '../parser/Tokenizer';
 import { isNullOrUndefined } from 'util';
 import { SCLDocumentManager, actionCompletion } from './SCLDocumentManager';
-import { match } from '../parser/ParserTags';
+import { match, matchWithoutDiagnose, ParserTags } from '../parser/ParserTags';
 import { SETtree, ADDtree, UPDATEtree, DELETEtree, GENERATEtree, MOVEtree, RETRIEVEtree, SIGNINtree, TRANSFERtree,
     APPROVEtree,
     DENYtree,
@@ -440,5 +440,128 @@ export class SCLDocument {
             starti: diagnosedToken.starti,
             endi: diagnosedToken.starti + diagnosedToken.value.length,
         });
+    }
+
+    private formatStatement(statement: SCLstatement): TextEdit[] {
+        const tokens: ITokenizedString[] = statement.tokens;
+        const edits: TextEdit[] = [];
+
+        const checkIfKeyword = ((token: ITokenizedString) => {
+            Object.entries(ParserTags).forEach(([key, value]) => {
+                if (matchWithoutDiagnose(token, value)) {
+                    token.is_keyword = true;
+                    return;
+                }
+            });
+        }); // do not rely on parser because scl can be invalid, and parser will quit before it goes to the end
+
+        // Step 1, make line endings after value, make only 1 space between each token
+        for (let i = 0; i < tokens.length-1; ++ i) {
+            checkIfKeyword(tokens[i]);
+            if (tokens[i].value === ")" || tokens[i].value.endsWith(")")) {
+                edits.push({
+                    range: {
+                        start: this.textDocument.positionAt(tokens[i].starti + tokens[i].value.length),
+                        end: this.textDocument.positionAt(tokens[i+1].starti),
+                    },
+                    newText: "\n"
+                });
+                continue;
+            }
+            if (!tokens[i].is_keyword) {
+                if (tokens[i+1].value !== "," &&
+                    tokens[i+1].value !== ")" &&
+                    !matchWithoutDiagnose(tokens[i+1], ParserTags.LEVEL)) {
+                    edits.push({
+                        range: {
+                            start: this.textDocument.positionAt(tokens[i].starti + tokens[i].value.length),
+                            end: this.textDocument.positionAt(tokens[i+1].starti),
+                        },
+                        newText: "\n"
+                    });
+                    continue;
+                }
+            }
+            let starti = tokens[i].starti + tokens[i].value.length;
+            let endi = tokens[i+1].starti;
+            if (endi < starti)
+                starti = endi;
+            edits.push({
+                range: {
+                    start: this.textDocument.positionAt(starti),
+                    end: this.textDocument.positionAt(endi),
+                },
+                newText: " "
+            });
+        }
+
+        // Step2. indent at special keywords
+        const indentKey = [ParserTags.FROM, ParserTags.TO, ParserTags.OPTION,
+            ParserTags.THROUGH, ParserTags.WHERE, ParserTags.VERSION, ParserTags.DATA];
+        const searchIndentKey = ((token: ITokenizedString): string => {
+            for (const key of indentKey) {
+                if (matchWithoutDiagnose(token, key)) {
+                    return key;
+                }
+            }
+            return "";
+        });
+        const indentMap: Map<string, number> = new Map();
+        indentMap.set(ParserTags.FROM, 9);
+        indentMap.set(ParserTags.TO, 7);
+        indentMap.set(ParserTags.OPTION, 12);
+        let indent = 0;
+        for (let i = 1; i < tokens.length-1; ++ i) {
+            if (tokens[i].is_keyword) {
+                const searchKey = searchIndentKey(tokens[i]);
+                if (searchKey.length > 0) {
+                    edits.push({
+                        range: {
+                            start: this.textDocument.positionAt(tokens[i].starti),
+                            end: this.textDocument.positionAt(tokens[i].starti),
+                        },
+                        newText: " ".repeat(4)
+                    });
+                    const newIndent = indentMap.get(searchKey);
+                    if (!isNullOrUndefined(newIndent)) {
+                        indent = newIndent;
+                    }
+                    continue;
+                }
+                if (!tokens[i-1].is_keyword && !tokens[i].value.match(/[,()]/)) {
+                    edits.push({
+                        range: {
+                            start: this.textDocument.positionAt(tokens[i].starti),
+                            end: this.textDocument.positionAt(tokens[i].starti),
+                        },
+                        newText: " ".repeat(indent)
+                    });
+                }
+            }
+        }
+        return edits;
+    }
+
+    formatDocument(): TextEdit[] {
+        let edits: TextEdit[] = [];
+        edits.push({
+            range: {
+                start: this.textDocument.positionAt(0),
+                end: this.textDocument.positionAt(this.statements[0].starti),
+            },
+            newText: ""
+        });
+
+        for (let i = 0; i < this.statements.length; ++ i) {
+            edits = edits.concat(this.formatStatement(this.statements[i]));
+            edits.push({
+                range: {
+                    start: this.textDocument.positionAt(this.statements[i].endi),
+                    end: this.textDocument.positionAt(this.statements[i].endi),
+                },
+                newText: "\n"
+            });
+        }
+        return edits;
     }
 }

@@ -17,6 +17,7 @@ export interface ITokenizedString {
     is_eoInput: boolean;
 
     completionItems?: CompletionItem[];
+    is_keyword?: boolean;
 }
 
 /**
@@ -334,7 +335,7 @@ export class Tokenizer extends TokenizerBase {
             this.tmpStorage.starti = this.tmpStorage.starti+1;
             return {
                 value: opt,
-                starti: this.tmpStorage.starti,
+                starti: this.tmpStorage.starti-1,
                 is_word: false,
                 is_op_char: true,
                 is_eoStatement: this.tmpStorage.value[0] === "." ? true : false,

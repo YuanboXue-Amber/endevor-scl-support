@@ -65,6 +65,7 @@ connection.onInitialize((params: InitializeParams) => {
             completionProvider: {
                 resolveProvider: true
             },
+            documentFormattingProvider: true,
             // hoverProvider: true, // AmberTODO
         }
     };
@@ -148,6 +149,8 @@ connection.onCompletionResolve(
         return item;
     }
 );
+
+connection.onDocumentFormatting(evt => documentManager.formatDocument(evt.textDocument));
 
 // Listen on the connection
 connection.listen();

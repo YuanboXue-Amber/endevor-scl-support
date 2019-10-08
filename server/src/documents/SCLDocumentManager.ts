@@ -182,14 +182,11 @@ export class SCLDocumentManager {
     }
 
     async formatDocument(textDocument: TextDocumentIdentifier): Promise<TextEdit[]> {
-        // const document = this.documents.get(textDocument.uri);
-        // if (!document) {
-        //     throw new Error('Cannot call methods on an unopened document');
-        // }
+        const document = this.documents.get(textDocument.uri);
+        if (!document) {
+            throw new Error(`Cannot provide formatting on unopened document: ${textDocument.uri}`);
+        }
 
-        // return flatten(
-        //     await this.execute<TextEdit[]>('formatDocument', [document], ExecuteMode.Collect),
-        // );
-        return [];
+        return document.formatDocument();
     }
 }

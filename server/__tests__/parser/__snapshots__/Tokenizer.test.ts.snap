@@ -1425,7 +1425,7 @@ Object {
   "is_eoStatement": false,
   "is_op_char": true,
   "is_word": false,
-  "starti": 110,
+  "starti": 109,
   "value": "(",
 }
 `;
@@ -1591,7 +1591,7 @@ Object {
   "is_eoStatement": false,
   "is_op_char": true,
   "is_word": false,
-  "starti": 110,
+  "starti": 109,
   "value": "(",
 }
 `;

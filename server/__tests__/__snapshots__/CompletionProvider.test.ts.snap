@@ -692,5 +692,140 @@ Array [
     "kind": 14,
     "label": "FIRST ",
   },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "DATA ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "BASIC ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "CHANGE ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "SUMMARY ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "LAST ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "THRU ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "DATE ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "TIME ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "ENTERPRISE ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "TARGET ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "S ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "E ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "A ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "E ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "X ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "CO ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "MO ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "CA ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "AP ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "EX ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "BO ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "BI ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "CO ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "A ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "P ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "X ",
+  },
+  Object {
+    "documentation": "Endevor SCL keyword",
+    "kind": 14,
+    "label": "APPROVER ",
+  },
 ]
 `;

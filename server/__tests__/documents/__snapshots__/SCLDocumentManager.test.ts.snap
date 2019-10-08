@@ -906,7 +906,29 @@ exports[`Test test2: update document 11`] = `42`;
 
 exports[`Test test2: update document 12`] = `43`;
 
-exports[`Test test2: update document 13`] = `Array []`;
+exports[`Test test2: update document 13`] = `
+Array [
+  Object {
+    "diagnostic": Object {
+      "message": "Invalid value specified",
+      "range": Object {
+        "end": Object {
+          "character": 22,
+          "line": 1,
+        },
+        "start": Object {
+          "character": 21,
+          "line": 1,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 43,
+    "starti": 42,
+  },
+]
+`;
 
 exports[`Test test2: update document 14`] = `
 Array [
@@ -949,7 +971,29 @@ exports[`Test test2: update document 15`] = `0`;
 
 exports[`Test test2: update document 16`] = `19`;
 
-exports[`Test test2: update document 17`] = `Array []`;
+exports[`Test test2: update document 17`] = `
+Array [
+  Object {
+    "diagnostic": Object {
+      "message": "Invalid value specified",
+      "range": Object {
+        "end": Object {
+          "character": 6,
+          "line": 0,
+        },
+        "start": Object {
+          "character": 0,
+          "line": 0,
+        },
+      },
+      "severity": 1,
+      "source": "Endevor SCL extension",
+    },
+    "endi": 6,
+    "starti": 0,
+  },
+]
+`;
 
 exports[`Test test3: update document 1`] = `
 "SET action DELETE .  SET 
