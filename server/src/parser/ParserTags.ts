@@ -141,6 +141,8 @@ export const ParserTags = {
     COMMITTED: "COMMITTEd",
 
     EXECUTE: "EXECUTE",
+    RESET: "RESet",
+    COMMIT: "COMMit"
 };
 
 /**

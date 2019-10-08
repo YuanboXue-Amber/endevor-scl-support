@@ -24,7 +24,9 @@ const level0keywords: string[] = [
     ParserTags.BACKOUT,
     ParserTags.CAST,
     ParserTags.DEFINE,
-    ParserTags.EXECUTE
+    ParserTags.EXECUTE,
+    ParserTags.RESET,
+    ParserTags.COMMIT
 ];
 
 const level1keywords: string[] = [
@@ -100,7 +102,7 @@ const composeRegex = ((tagValue: string): string | undefined => {
 });
 
 const jsonGenerator = (() => {
-    const textMateJson: string = fs.readFileSync("./syntaxes/scl.tmLanguage.json", "UTF-8")
+    const textMateJson: string = fs.readFileSync("./syntaxes/scl.tmLanguage.json", "UTF-8");
     const textMateObj = JSON.parse(textMateJson);
     textMateObj.repository.keywords2.patterns = [];
     textMateObj.repository.keywords1.patterns = [];

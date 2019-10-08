@@ -225,6 +225,14 @@
                 {
                     "name": "keyword.control.scl",
                     "match": "\\b(EXECUTE(\\b))\\b"
+                },
+                {
+                    "name": "keyword.control.scl",
+                    "match": "\\b(RES(ET|E|\\b))\\b"
+                },
+                {
+                    "name": "keyword.control.scl",
+                    "match": "\\b(COMM(IT|I|\\b))\\b"
                 }
             ]
         },
