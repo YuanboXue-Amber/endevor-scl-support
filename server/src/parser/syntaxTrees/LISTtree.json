@@ -1,0 +1,237 @@
+{
+    "value": "LIST",
+    "type": "keyword",
+    "requireNext": true,
+    "next": [
+        {
+            "value": "ENVIRONMENT",
+            "type": "keyword",
+            "requireNext": true,
+            "nogoback": true,
+            "next": [
+                {
+                    "value": "'ENVNAME'",
+                    "type": "value",
+                    "maxLen": 8,
+                    "next": [
+                        {
+                            "value": "TO",
+                            "type": "keyword",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "value": "FILE",
+                                    "type": "keyword",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "value": "'DDNAME'",
+                                            "type": "value",
+                                            "maxLen": 8,
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "DDNAME",
+                                    "type": "keyword",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "value": "'DDNAME'",
+                                            "type": "value",
+                                            "maxLen": 8,
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "DSNAME",
+                                    "type": "keyword",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "value": "'SAMPLE.DATASET.NAME'",
+                                            "type": "value",
+                                            "maxLen": 44,
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "value": "OPTION",
+                            "type": "keyword",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "value": "DELIMITERS",
+                                    "type": "keyword",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "value": "','",
+                                            "type": "value",
+                                            "maxLen": 1,
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "NOCSV",
+                                    "type": "keyword",
+                                    "next": [
+                                        {
+                                            "value": ".",
+                                            "type": "eos",
+                                            "next": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "NOTITLE",
+                                    "type": "keyword",
+                                    "next": [
+                                        {
+                                            "value": ".",
+                                            "type": "eos",
+                                            "next": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "QUALIFIER",
+                                    "type": "keyword",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "value": "QUOTE",
+                                            "type": "keyword",
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "PATH",
+                                    "type": "keyword",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "value": "LOGICAL",
+                                            "type": "keyword",
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "value": "PHYSICAL",
+                                            "type": "keyword",
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "SEARCH",
+                                    "type": "keyword",
+                                    "next": [
+                                        {
+                                            "value": ".",
+                                            "type": "eos",
+                                            "next": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "NOSEARCH",
+                                    "type": "keyword",
+                                    "next": [
+                                        {
+                                            "value": ".",
+                                            "type": "eos",
+                                            "next": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "RETURN",
+                                    "type": "keyword",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "value": "FIRST",
+                                            "type": "keyword",
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "value": "ALL",
+                                            "type": "keyword",
+                                            "next": [
+                                                {
+                                                    "value": ".",
+                                                    "type": "eos",
+                                                    "next": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "value": ".",
+                            "type": "eos",
+                            "next": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

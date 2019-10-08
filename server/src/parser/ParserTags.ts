@@ -142,7 +142,17 @@ export const ParserTags = {
 
     EXECUTE: "EXECUTE",
     RESET: "RESet",
-    COMMIT: "COMMit"
+    COMMIT: "COMMit",
+
+    DELIMITERS: "DELImiters",
+    NOCSV: "NOCsv",
+    NOTITLE: "NOTitle",
+    QUALIFIER: "QUAlifier",
+    QUOTE: "QUOte",
+    PHYSICAL: "PHYsical",
+    LOGICAL: "LOGical",
+    RETURN: "RETurn",
+    FIRST: "FIRst",
 };
 
 /**

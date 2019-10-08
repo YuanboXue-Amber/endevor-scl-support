@@ -513,10 +513,12 @@ function processSETMacro(statement: SCLstatement, document: SCLDocument, already
     if (currSCL.length < 2) {
         return;
     }
-    if (!currSCL[1].value.toUpperCase().startsWith("EL")) {
+    const action = currSCL[0].value.toUpperCase();
+    const actionObj = currSCL[1].value.toUpperCase();
+    if (actionObj.startsWith("PAC")) {
         return;
     }
-    const action = currSCL[0].value.toUpperCase();
+
     const documentFT: IFromTocheck = document.setCheck;
     const statementFT: IFromTocheck = statement.fromtoCheck;
     let missFrom = false;
@@ -553,9 +555,9 @@ function processSETMacro(statement: SCLstatement, document: SCLDocument, already
                 !(statementFT.from.location.TYPE || documentFT.from.location.TYPE)) {
                     missFrom = true;
                 }
-                if (!statementFT.to.FILE && !documentFT.to.FILE) {
-                    missTo = true;
-                }
+            if (!statementFT.to.FILE && !documentFT.to.FILE) {
+                missTo = true;
+            }
             break;
 
         case action.startsWith("TRA"):
@@ -573,6 +575,12 @@ function processSETMacro(statement: SCLstatement, document: SCLDocument, already
                 !(statementFT.to.location.TYPE || documentFT.to.location.TYPE)) {
                     missTo = true;
                 }
+            break;
+
+        case action.startsWith("LIS"):
+            if (!statementFT.to.FILE && !documentFT.to.FILE) {
+                missTo = true;
+            }
             break;
 
         default:

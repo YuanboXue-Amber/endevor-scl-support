@@ -21,6 +21,7 @@ export let DEFINEPACKAGEtree: ItreeNode;
 export let EXECUTEtree: ItreeNode;
 export let RESETtree: ItreeNode;
 export let COMMITtree: ItreeNode;
+export let LISTtree: ItreeNode;
 
 export function prepareTrees() {
     SETtree = composeTreeFromJSON(prepareJSON("SETtree.json"));
@@ -41,6 +42,7 @@ export function prepareTrees() {
     EXECUTEtree = composeTreeFromJSON(prepareJSON("EXECUTEtree.json"));
     RESETtree = composeTreeFromJSON(prepareJSON("RESETtree.json"));
     COMMITtree = composeTreeFromJSON(prepareJSON("COMMITtree.json"));
+    LISTtree = composeTreeFromJSON(prepareJSON("LISTtree.json"));
 }
 
 export function composeTreeFromJSON(jsonRootNode: Inode):ItreeNode {
