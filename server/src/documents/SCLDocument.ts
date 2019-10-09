@@ -16,6 +16,7 @@ import { SETtree, ADDtree, UPDATEtree, DELETEtree, GENERATEtree, MOVEtree, RETRI
     LISTtree} from '../parser/syntaxTrees/PrepareTrees';
 import { diagnose } from '../parser/syntaxTrees/Parser';
 import { IFromTocheck } from '../parser/syntaxTrees/doc/Inode';
+import { QUICKFIX_CHOICE_MSG } from '../CodeActionProvider';
 
 /**
  * An interface that extends the vscode diagnostic.
@@ -269,7 +270,7 @@ export class SCLDocument {
                 statement.tokens[0], statement,
                 DiagnosticSeverity.Error,
                 `Invalid value specified`,
-                `Possible valid values: ${actionCompletion.join(", ")}`,
+                `${QUICKFIX_CHOICE_MSG}${actionCompletion.join(", ")}`,
                 statement.tokens[0]);
         }
     }

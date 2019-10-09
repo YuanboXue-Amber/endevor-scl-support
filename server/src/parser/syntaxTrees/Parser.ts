@@ -5,7 +5,7 @@ import { SCLstatement, SCLDocument } from '../../documents/SCLDocument';
 import { ItreeNode, IFromTocheck } from './doc/Inode';
 import { match } from '../ParserTags';
 import { isNullOrUndefined } from 'util';
-import { QUICKFIX_NO_EOS_MSG, QUICKFIX_SPACE_BEFORE_EOS_MSG } from '../../CodeActionProvider';
+import { QUICKFIX_NO_EOS_MSG, QUICKFIX_SPACE_BEFORE_EOS_MSG, QUICKFIX_CHOICE_MSG } from '../../CodeActionProvider';
 
 const VALIDSCL_NUMBER: number = Number.MAX_SAFE_INTEGER;
 
@@ -560,7 +560,7 @@ export function diagnose(rootNode: ItreeNode, statement: SCLstatement, document:
                     currSCL[iterator], statement,
                     DiagnosticSeverity.Error,
                     `Invalid value specified`,
-                    `Possible valid values: ${possibleValues.join(", ")}`,
+                    `${QUICKFIX_CHOICE_MSG}${possibleValues.join(", ")}`,
                     currSCL[iterator-1]);
                 processSETMacro(statement, document, true);
                 return;
