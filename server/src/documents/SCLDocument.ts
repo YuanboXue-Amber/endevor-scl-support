@@ -489,7 +489,7 @@ export class SCLDocument {
         // Step 1, make line endings after value, make only 1 space between each token
         for (let i = 0; i < tokens.length-1; ++ i) {
             checkIfKeyword(tokens[i]);
-            if (tokens[i].value === ")" || tokens[i].value.endsWith(")")) {
+            if (tokens[i].value === "," || tokens[i].value === ")" || tokens[i].value.endsWith(")")) {
                 edits.push({
                     range: {
                         start: this.textDocument.positionAt(tokens[i].starti + tokens[i].value.length),
@@ -568,6 +568,15 @@ export class SCLDocument {
                         newText: " ".repeat(indent)
                     });
                 }
+            } else {
+                if (tokens[i-1].value === ",")
+                    edits.push({
+                        range: {
+                            start: this.textDocument.positionAt(tokens[i].starti),
+                            end: this.textDocument.positionAt(tokens[i].starti),
+                        },
+                        newText: " ".repeat(indent)
+                    });
             }
         }
         return edits;
@@ -583,16 +592,25 @@ export class SCLDocument {
             newText: ""
         });
 
-        for (let i = 0; i < this.statements.length; ++ i) {
+        let i = 0;
+        for (i = 0; i < this.statements.length-1; ++ i) {
             edits = edits.concat(this.formatStatement(this.statements[i]));
             edits.push({
                 range: {
                     start: this.textDocument.positionAt(this.statements[i].endi),
-                    end: this.textDocument.positionAt(this.statements[i].endi),
+                    end: this.textDocument.positionAt(this.statements[i+1].starti),
                 },
-                newText: "\n"
+                newText: "\n\n"
             });
         }
+        edits = edits.concat(this.formatStatement(this.statements[i]));
+        edits.push({
+            range: {
+                start: this.textDocument.positionAt(this.statements[i].endi),
+                end: this.textDocument.positionAt(this.statements[i].endi),
+            },
+            newText: "\n"
+        });
         return edits;
     }
 }
