@@ -42,10 +42,26 @@ export class SCLDocumentManager {
         this.documents = new Map();
     }
 
+    // NEVER USED
     openDocument(textDocumentItem: TextDocumentItem): SCLDocument {
         const textDocument: TextDocument = TextDocument.create(
             textDocumentItem.uri, textDocumentItem.languageId, textDocumentItem.version, textDocumentItem.text);
         const document: SCLDocument = new SCLDocument(textDocument);
+        this.documents.set(textDocument.uri, document);
+
+        // no need to refresh the diagnose number, since it is dealt with in SCLDocument.pushDiagnostic
+        return document;
+    }
+
+    openOrChangeDocument(textDocument: TextDocument): SCLDocument {
+        let document = this.documents.get(textDocument.uri);
+        if (!document) {
+            document = new SCLDocument(textDocument);
+            this.documents.set(textDocument.uri, document);
+            return document;
+        }
+        document.textDocument = textDocument;
+        document.fullUpdate();
         this.documents.set(textDocument.uri, document);
 
         // no need to refresh the diagnose number, since it is dealt with in SCLDocument.pushDiagnostic
@@ -71,6 +87,7 @@ export class SCLDocumentManager {
         this.documents.delete(textDocumentUri);
     }
 
+    // NEVER USED
     updateDocument(
         textDocument: VersionedTextDocumentIdentifier,
         contentChanges: TextDocumentContentChangeEvent[]): SCLDocument {

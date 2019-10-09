@@ -28,6 +28,8 @@ import { prepareTrees } from './parser/syntaxTrees/PrepareTrees';
 // Also include all preview / proposed LSP features.
 let connection = createConnection(ProposedFeatures.all);
 
+let documents: TextDocuments = new TextDocuments();
+
 const documentManager = new SCLDocumentManager();
 
 // Does the clients accepts diagnostics with related information?
@@ -60,7 +62,8 @@ connection.onInitialize((params: InitializeParams) => {
 
     const result: InitializeResult = {
         capabilities: {
-            textDocumentSync: TextDocumentSyncKind.Incremental,
+            // textDocumentSync: TextDocumentSyncKind.Incremental,
+            textDocumentSync: documents.syncKind,
             // Tell the client that the server supports code completion
             completionProvider: {
                 resolveProvider: true
@@ -86,8 +89,49 @@ connection.onInitialized(() => {
     completionItems = composeCompletionItemsFromKeywords(); // initialize completion items
 });
 
-connection.onDidOpenTextDocument((parm: DidOpenTextDocumentParams) => {
-    const document: SCLDocument = documentManager.openDocument(parm.textDocument);
+// connection.onDidOpenTextDocument((parm: DidOpenTextDocumentParams) => {
+//     const document: SCLDocument = documentManager.openOrChangeDocument(parm.textDocument);
+
+//     const diagnostics: Diagnostic[] = [];
+//     document.statements.forEach((statement) => {
+//         statement.diagnostics.forEach((diag) => {
+//             diagnostics.push(diag.diagnostic);
+//         });
+//     });
+//     connection.sendDiagnostics({
+//         uri: document.textDocument.uri,
+//         diagnostics
+//     });
+// });
+
+// connection.onDidChangeTextDocument((parm: DidChangeTextDocumentParams) => {
+//     const document: SCLDocument = documentManager.updateDocument(parm.textDocument, parm.contentChanges);
+
+//     const diagnostics: Diagnostic[] = [];
+//     document.statements.forEach((statement) => {
+//         statement.diagnostics.forEach((diag) => {
+//             diagnostics.push(diag.diagnostic);
+//         });
+//     });
+//     connection.sendDiagnostics({
+//         uri: document.textDocument.uri,
+//         diagnostics
+//     });
+// });
+
+// connection.onDidCloseTextDocument((parm: DidCloseTextDocumentParams) => {
+//     documentManager.closeDocument(parm.textDocument.uri);
+// });
+
+// Only keep settings for open documents
+documents.onDidClose(e => {
+    documentManager.closeDocument(e.document.uri);
+});
+
+// The content of a text document has changed. This event is emitted
+// when the text document first opened or when its content has changed.
+documents.onDidChangeContent(change => {
+    const document: SCLDocument = documentManager.openOrChangeDocument(change.document);
 
     const diagnostics: Diagnostic[] = [];
     document.statements.forEach((statement) => {
@@ -101,24 +145,6 @@ connection.onDidOpenTextDocument((parm: DidOpenTextDocumentParams) => {
     });
 });
 
-connection.onDidChangeTextDocument((parm: DidChangeTextDocumentParams) => {
-    const document: SCLDocument = documentManager.updateDocument(parm.textDocument, parm.contentChanges);
-
-    const diagnostics: Diagnostic[] = [];
-    document.statements.forEach((statement) => {
-        statement.diagnostics.forEach((diag) => {
-            diagnostics.push(diag.diagnostic);
-        });
-    });
-    connection.sendDiagnostics({
-        uri: document.textDocument.uri,
-        diagnostics
-    });
-});
-
-connection.onDidCloseTextDocument((parm: DidCloseTextDocumentParams) => {
-    documentManager.closeDocument(parm.textDocument.uri);
-});
 
 connection.onCodeAction(provideCodeActions);
 
@@ -151,6 +177,9 @@ connection.onCompletionResolve(
 );
 
 connection.onDocumentFormatting(evt => documentManager.formatDocument(evt.textDocument));
+
+
+documents.listen(connection);
 
 // Listen on the connection
 connection.listen();

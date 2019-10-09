@@ -274,8 +274,39 @@ export class SCLDocument {
         }
     }
 
+    fullUpdate() {
+        this.setCheck = {
+            from: {
+                FILE: false,
+                location: {
+                    ENVIRONMENT: false,
+                    SYSTEM: false,
+                    SUBSYSTEM: false,
+                    TYPE: false,
+                    STAGE: false,
+                }
+            },
+            to: {
+                FILE: false,
+                location: {
+                    ENVIRONMENT: false,
+                    SYSTEM: false,
+                    SUBSYSTEM: false,
+                    TYPE: false,
+                    STAGE: false,
+                }
+            },
+        };
+        if (isNullOrUndefined(this.textDocument)) {
+            this.statements = [];
+            return;
+        }
+        this.statements = this.parseTextIntoSCLstatementsTokens(this.textDocument.getText());
+        this.walkStatements();
+    }
+
     /**
-     * Called by SCLDocumentManager when an update in the document is received
+     * NEVER USED
      *
      * @param {string} newText The new text replacing the original text
      * @param {number} start The start index of the original text
