@@ -460,7 +460,7 @@ export class SCLDocument {
         relatedToken?: ITokenizedString
         ) {
 
-        if (SCLDocumentManager.numberOfProblems > SCLDocumentManager.config.maxNumberOfProblems) {
+        if (SCLDocumentManager.numberOfProblems >= SCLDocumentManager.config.maxNumberOfProblems) {
             return;
         }
         if (diagnosedToken.starti < statement.starti ||

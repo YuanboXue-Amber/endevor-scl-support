@@ -25,6 +25,12 @@
 					"default": 100,
 					"description": "Controls the maximum number of problems produced by the server."
 				},
+				"endevorSclLanguageServer.isREST": {
+					"scope": "resource",
+					"type": "boolean",
+					"default": false,
+					"description": "If set to true, the SCL will be validated by rules used by Endevor REST API, which is more tolerant than normal SCL syntax rules."
+				},
 				"endevorSclLanguageServer.trace.server": {
 					"scope": "window",
 					"type": "string",

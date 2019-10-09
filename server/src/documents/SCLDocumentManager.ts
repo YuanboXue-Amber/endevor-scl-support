@@ -11,8 +11,9 @@ import {
 import { SCLDocument } from './SCLDocument';
 import { isNull, isNullOrUndefined } from "util";
 
-interface IDocumentSettings {
+export interface IDocumentSettings {
     maxNumberOfProblems: number;
+    isREST: boolean;
 }
 
 interface ICapabilities {
@@ -30,7 +31,7 @@ export const actionCompletion = [ "SET", "ADD", "UPDATE", "DELETE", "GENERATE",
  * @class SCLDocumentManager
  */
 export class SCLDocumentManager {
-    static config: IDocumentSettings = { maxNumberOfProblems: 1000 };
+    static config: IDocumentSettings = { maxNumberOfProblems: 1000, isREST: false };
     static capabilities: ICapabilities = { hasDiagnosticRelatedInformationCapability: false };
 
     static numberOfProblems = 0; // TODO, now I'm accessing it from everywhere, not sure if it is the best
