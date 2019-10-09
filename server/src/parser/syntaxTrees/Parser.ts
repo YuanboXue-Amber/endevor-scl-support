@@ -664,7 +664,7 @@ function processSETMacro(statement: SCLstatement, document: SCLDocument, already
                 !(statementFT.from.location.TYPE || documentFT.from.location.TYPE)) {
                     missFrom = true;
                 }
-            if (!statementFT.to.FILE && !documentFT.to.FILE) {
+            if (!statementFT.to.FILE && !documentFT.to.FILE && !statement.isRest && !SCLDocumentManager.config.isREST) {
                 missTo = true;
             }
             break;
@@ -687,7 +687,7 @@ function processSETMacro(statement: SCLstatement, document: SCLDocument, already
             break;
 
         case action.startsWith("LIS"):
-            if (!statementFT.to.FILE && !documentFT.to.FILE) {
+            if (!statementFT.to.FILE && !documentFT.to.FILE && !statement.isRest && !SCLDocumentManager.config.isREST) {
                 missTo = true;
             }
             if (actionObj.startsWith("STA") && !(statementFT.from.location.ENVIRONMENT || documentFT.from.location.ENVIRONMENT)){
@@ -746,7 +746,7 @@ function processSETMacro(statement: SCLstatement, document: SCLDocument, already
             SCLDocumentManager.numberOfProblems ++;
         }
     }
-    if (missTo && !alreadyHasErr && !statement.isRest) {
+    if (missTo && !alreadyHasErr) {
         if (SCLDocumentManager.numberOfProblems < SCLDocumentManager.config.maxNumberOfProblems) {
             let diagnostic: Diagnostic = {
                 severity: DiagnosticSeverity.Error,
