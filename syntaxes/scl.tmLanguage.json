@@ -3,6 +3,9 @@
     "name": "Endevor SCL",
     "patterns": [
         {
+            "include": "#keywordsREST"
+        },
+        {
             "include": "#keywords2"
         },
         {
@@ -16,6 +19,14 @@
         }
     ],
     "repository": {
+        "keywordsREST": {
+            "patterns": [
+                {
+                    "name": "markup.italic.keywordREST.scl",
+                    "match": "\\b(REST)\\b"
+                }
+            ]
+        },
         "keywords2": {
             "patterns": [
                 {

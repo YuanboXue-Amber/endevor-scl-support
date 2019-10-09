@@ -463,18 +463,28 @@ function dealWithValue(matchedNode: ItreeNode, tokenIter: number, statement: SCL
 
 export function parser(rootNode: ItreeNode, statement: SCLstatement, document: SCLDocument) {
     const currSCL: ITokenizedString[] = statement.tokens;
-    setCompletionItemsForToken(currSCL[0], rootNode);
     let isSET = false;
-    if (currSCL[0].value.toUpperCase() === "SET")
+    if (statement.isRest && currSCL[1].value.toUpperCase() === "SET")
+        isSET = true;
+    else if (!statement.isRest && currSCL[0].value.toUpperCase() === "SET")
         isSET = true;
     let isfrom = false;
     let isto = false;
     let isPkg = false;
-    if (currSCL.length > 2 && currSCL[1].value.toUpperCase().startsWith("PAC")) {
+    if (!statement.isRest && currSCL.length > 1 && currSCL[1].value.toUpperCase().startsWith("PAC")) {
+        isPkg = true;
+    }
+    else if (statement.isRest && currSCL.length > 2 && currSCL[2].value.toUpperCase().startsWith("PAC")) {
         isPkg = true;
     }
 
     let tokenIter: number = 1;
+    if (statement.isRest) {
+        tokenIter ++;
+        setCompletionItemsForToken(currSCL[1], rootNode);
+    } else {
+        setCompletionItemsForToken(currSCL[0], rootNode);
+    }
     const matchToken = ((parentNode: ItreeNode, onlyMatchKey?: boolean): number => {
         if (tokenIter >= currSCL.length) {
             return VALIDSCL_NUMBER;
@@ -602,8 +612,14 @@ function processSETMacro(statement: SCLstatement, document: SCLDocument, already
     if (currSCL.length < 2) {
         return;
     }
-    const action = currSCL[0].value.toUpperCase();
-    const actionObj = currSCL[1].value.toUpperCase();
+    let action = currSCL[0].value.toUpperCase();
+    let actionObj = currSCL[1].value.toUpperCase();
+    if (statement.isRest) {
+        action = currSCL[1].value.toUpperCase();
+        if (currSCL.length < 3)
+            return;
+        actionObj = currSCL[2].value.toUpperCase();
+    }
     if (actionObj.startsWith("PAC")) {
         return;
     }
@@ -723,7 +739,7 @@ function processSETMacro(statement: SCLstatement, document: SCLDocument, already
             endi: statement.endi,
         });
     }
-    if (missTo && !alreadyHasErr) {
+    if (missTo && !alreadyHasErr && !statement.isRest) {
         let diagnostic: Diagnostic = {
             severity: DiagnosticSeverity.Error,
             range: {

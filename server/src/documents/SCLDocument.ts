@@ -1,4 +1,4 @@
-import { TextDocument, Diagnostic, DiagnosticSeverity, TextEdit } from 'vscode-languageserver';
+import { TextDocument, Diagnostic, DiagnosticSeverity, TextEdit, CompletionItemKind } from 'vscode-languageserver';
 import { ITokenizedString, Tokenizer } from '../parser/Tokenizer';
 import { isNullOrUndefined } from 'util';
 import { SCLDocumentManager, actionCompletion } from './SCLDocumentManager';
@@ -44,6 +44,7 @@ export class SCLstatement {
     endi: number;
     tokens: ITokenizedString[] = [];
     diagnostics: ISCLDiagnostic[] = [];
+    isRest: boolean = false;
 
     fromtoCheck: IFromTocheck = {
         from: {
@@ -90,7 +91,6 @@ export class SCLstatement {
                 this.tokens.push(token);
             });
         }
-        this.tokens = tokens;
         this.diagnostics = [];
         this.fromtoCheck = {
             from: {
@@ -114,6 +114,11 @@ export class SCLstatement {
                 }
             },
         };
+        this.isRest = false;
+        if (this.tokens.length > 0 && this.tokens[0].value === "REST") {
+            this.isRest = true;
+            // this.tokens.splice(0, 1);
+        }
     }
 }
 
@@ -224,54 +229,77 @@ export class SCLDocument {
      * @memberof SCLDocument
      */
     private walkStatement(statement: SCLstatement) {
-        if (match(statement.tokens[0], "SET", statement, this))
+        let token = statement.tokens[0];
+        if (token.value === "REST") {
+            if (statement.tokens.length > 1) {
+                token = statement.tokens[1];
+            } else {
+                token.completionItems = [];
+                for (const item of actionCompletion) {
+                    token.completionItems.push({
+                        label: item.toUpperCase() + " ",
+                        kind: CompletionItemKind.Function,
+                        documentation: "Endevor SCL keyword"
+                    });
+                }
+
+                this.pushDiagnostic(
+                    token, statement,
+                    DiagnosticSeverity.Error,
+                    `No SCL following label REST`,
+                    `${QUICKFIX_CHOICE_MSG}${actionCompletion.join(", ")}`,
+                    token);
+                return;
+            }
+        }
+        if (match(token, "SET", statement, this))
             diagnose(SETtree, statement, this);
-        else if (match(statement.tokens[0], "ADD", statement, this))
+        else if (match(token, "ADD", statement, this))
             diagnose(ADDtree, statement, this);
-        else if (match(statement.tokens[0], "UPDATE", statement, this))
+        else if (match(token, "UPDATE", statement, this))
             diagnose(UPDATEtree, statement, this);
-        else if (match(statement.tokens[0], "DELETE", statement, this))
+        else if (match(token, "DELETE", statement, this))
             diagnose(DELETEtree, statement, this);
-        else if (match(statement.tokens[0], "GENERATE", statement, this))
+        else if (match(token, "GENERATE", statement, this))
             diagnose(GENERATEtree, statement, this);
-        else if (match(statement.tokens[0], "MOVE", statement, this))
+        else if (match(token, "MOVE", statement, this))
             diagnose(MOVEtree, statement, this);
-        else if (match(statement.tokens[0], "RETRIEVE", statement, this))
+        else if (match(token, "RETRIEVE", statement, this))
             diagnose(RETRIEVEtree, statement, this);
-        else if (match(statement.tokens[0], "SIGNIN", statement, this))
+        else if (match(token, "SIGNIN", statement, this))
             diagnose(SIGNINtree, statement, this);
-        else if (match(statement.tokens[0], "TRANSFER", statement, this))
+        else if (match(token, "TRANSFER", statement, this))
             diagnose(TRANSFERtree, statement, this);
 
-        else if (match(statement.tokens[0], "APPROVE", statement, this))
+        else if (match(token, "APPROVE", statement, this))
             diagnose(APPROVEtree, statement, this);
-        else if (match(statement.tokens[0], "DENY", statement, this))
+        else if (match(token, "DENY", statement, this))
             diagnose(DENYtree, statement, this);
-        else if (match(statement.tokens[0], "BACKIN", statement, this))
+        else if (match(token, "BACKIN", statement, this))
             diagnose(BACKINtree, statement, this);
-        else if (match(statement.tokens[0], "BACKOUT", statement, this))
+        else if (match(token, "BACKOUT", statement, this))
             diagnose(BACKOUTtree, statement, this);
-        else if (match(statement.tokens[0], "CAST", statement, this))
+        else if (match(token, "CAST", statement, this))
             diagnose(CASTtree, statement, this);
-        else if (match(statement.tokens[0], "DEFINE", statement, this))
+        else if (match(token, "DEFINE", statement, this))
             diagnose(DEFINEPACKAGEtree, statement, this);
-        else if (match(statement.tokens[0], "EXECUTE", statement, this))
+        else if (match(token, "EXECUTE", statement, this))
             diagnose(EXECUTEtree, statement, this);
-        else if (match(statement.tokens[0], "RESET", statement, this))
+        else if (match(token, "RESET", statement, this))
             diagnose(RESETtree, statement, this);
-        else if (match(statement.tokens[0], "COMMIT", statement, this))
+        else if (match(token, "COMMIT", statement, this))
             diagnose(COMMITtree, statement, this);
 
-        else if (match(statement.tokens[0], "LIST", statement, this))
+        else if (match(token, "LIST", statement, this))
             diagnose(LISTtree, statement, this);
 
         else {
             this.pushDiagnostic(
-                statement.tokens[0], statement,
+                token, statement,
                 DiagnosticSeverity.Error,
                 `Invalid value specified`,
                 `${QUICKFIX_CHOICE_MSG}${actionCompletion.join(", ")}`,
-                statement.tokens[0]);
+                token);
         }
     }
 
