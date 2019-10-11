@@ -10,6 +10,7 @@ import {
     CompletionItemKind} from "vscode-languageserver";
 import { SCLDocument } from './SCLDocument';
 import { isNull, isNullOrUndefined } from "util";
+import { isUnaryLike } from "@babel/types";
 
 export interface IDocumentSettings {
     maxNumberOfProblems: number;
@@ -183,7 +184,9 @@ export class SCLDocumentManager {
 
         // to complete at the end of scl
         const statement = document.statements[document.statements.length-1];
-        const values = statement.tokens[statement.tokens.length-1].completionItems;
+        let values;
+        if (!isNullOrUndefined(statement))
+            values = statement.tokens[statement.tokens.length-1].completionItems;
         if (!isNullOrUndefined(values) && statement.tokens[statement.tokens.length-1].value !== ".") {
             completionItems = completionItems.concat(values);
         } else {
