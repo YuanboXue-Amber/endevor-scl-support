@@ -17,7 +17,11 @@ import {
     DidChangeTextDocumentParams,
     Diagnostic,
     DidChangeConfigurationNotification,
-    TextDocument
+    TextDocument,
+    ExecuteCommandParams,
+    CodeLensParams,
+    Command,
+    TextDocumentIdentifier
 } from 'vscode-languageserver';
 import { isNullOrUndefined } from 'util';
 import { quickfix } from './CodeActionProvider';
@@ -25,6 +29,7 @@ import { composeCompletionItemsFromKeywords } from './CompletionProvider';
 import { SCLDocumentManager, IDocumentSettings } from './documents/SCLDocumentManager';
 import { SCLDocument } from './documents/SCLDocument';
 import { prepareTrees } from './parser/syntaxTrees/PrepareTrees';
+import { commands } from './ExecuteCommandProvider';
 
 // Create a connection for the server. The connection uses Node's IPC as a transport.
 // Also include all preview / proposed LSP features.
@@ -73,6 +78,12 @@ connection.onInitialize((params: InitializeParams) => {
                 resolveProvider: true
             },
             documentFormattingProvider: true,
+            executeCommandProvider: {
+                commands: commands.map(command => command.command)
+            },
+            codeLensProvider: {
+                resolveProvider: true
+            }
             // hoverProvider: true, // AmberTODO
         }
     };
@@ -234,8 +245,21 @@ connection.onCompletionResolve(
 
 connection.onDocumentFormatting(evt => documentManager.formatDocument(evt.textDocument));
 
+connection.onCodeLens(evt => documentManager.computeCodeLenses(evt.textDocument));
+
+connection.onCodeLensResolve(codeLens => codeLens);
+connection.onExecuteCommand(async (params: ExecuteCommandParams) => {
+    connection.window.showInformationMessage('Hello World!');
+    const result = await documentManager.executeCodeLens(params);
+    connection.console.log("result is: " + result);
+    connection.window.showInformationMessage("result is: " + result);
+    connection.window.showErrorMessage("TEST AMBER ERROR");
+    connection.window.showWarningMessage("TEST AMBER WARN");
+});
 
 documents.listen(connection);
 
 // Listen on the connection
 connection.listen();
+
+// connection.window.showInformationMessage('Hello hello World!');

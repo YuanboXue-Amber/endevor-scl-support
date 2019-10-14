@@ -7,10 +7,15 @@ import {
     CompletionItem,
     TextDocumentIdentifier,
     TextEdit,
-    CompletionItemKind} from "vscode-languageserver";
+    CompletionItemKind,
+    Position, Range,
+    Command,
+    CodeLens,
+    ExecuteCommandParams} from "vscode-languageserver";
 import { SCLDocument } from './SCLDocument';
 import { isNull, isNullOrUndefined } from "util";
 import { isUnaryLike } from "@babel/types";
+import { commands, executeSubmitSCL } from "../ExecuteCommandProvider";
 
 export interface IDocumentSettings {
     maxNumberOfProblems: number;
@@ -210,4 +215,37 @@ export class SCLDocumentManager {
 
         return document.formatDocument();
     }
+
+    async computeCodeLenses(textDocument: TextDocumentIdentifier): Promise<CodeLens[]> {
+        const document = this.documents.get(textDocument.uri);
+        if (!document) {
+            throw new Error(`Cannot provide codeLens on unopened document: ${textDocument.uri}`);
+        }
+
+        let codeLens: CodeLens[] = [];
+        for (const statement of document.statements) {
+            const range = {
+                start: document.textDocument.positionAt(statement.starti),
+                end: document.textDocument.positionAt(statement.starti+1),
+            };
+            codeLens = codeLens.concat(
+                commands.map(command => ({
+                    range,
+                    command: Command.create(command.title, command.command, textDocument, range)
+                }))
+            );
+        }
+        return codeLens;
+    }
+
+    async executeCodeLens(params: ExecuteCommandParams) {
+        const textDocument: TextDocumentIdentifier = (params.arguments as any[])[0];
+        const range: Range = (params.arguments as any[])[1];
+        const document = this.documents.get(textDocument.uri);
+        if (!document) {
+            throw new Error(`Cannot provide codeLens on unopened document: ${textDocument.uri}`);
+        }
+        return executeSubmitSCL(document, document.textDocument.offsetAt(range.start));
+    }
+
 }
