@@ -249,12 +249,14 @@ connection.onCodeLens(evt => documentManager.computeCodeLenses(evt.textDocument)
 
 connection.onCodeLensResolve(codeLens => codeLens);
 connection.onExecuteCommand(async (params: ExecuteCommandParams) => {
-    connection.window.showInformationMessage('Hello World!');
+    connection.window.showInformationMessage('Submit SCL running...');
     const result = await documentManager.executeCodeLens(params);
+    if (isNullOrUndefined(result)) {
+        connection.window.showErrorMessage("Cannot submit the current SCL: unsupported scl type or invalid scl");
+        return;
+    }
     connection.console.log("result is: " + result);
     connection.window.showInformationMessage("result is: " + result);
-    connection.window.showErrorMessage("TEST AMBER ERROR");
-    connection.window.showWarningMessage("TEST AMBER WARN");
 });
 
 documents.listen(connection);

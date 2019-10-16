@@ -3,6 +3,8 @@ import { SCLDocument, SCLstatement } from './documents/SCLDocument';
 import * as fs from 'fs';
 import * as path from 'path';
 import { exec, execSync } from "child_process";
+import { matchWithoutDiagnose } from './parser/ParserTags';
+import { isNullOrUndefined } from 'util';
 
 const SUBMITSCL_COMMAND = Command.create('Submit scl', "endevorscl.submitscl");
 // const OPENDOC_COMMAND = Command.create('Open link to techDocs', "endevorscl.techdocs");
@@ -14,12 +16,30 @@ export const commands = [
 export const executeSubmitSCL= ((document: SCLDocument, starti: number) => {
     for (const statement of document.statements) {
         if (statement.starti === starti) {
+            const type = getTypeFromSCL(statement);
+            if (isNullOrUndefined(type)) {
+                return null;
+            }
             const sclString = document.textDocument.getText().substring(starti, statement.endi);
             const sclFilePath = path.join(__dirname, "temp.txt");
             fs.writeFileSync(sclFilePath, sclString, "utf-8");
-            const result = execSync(`zowe endevor submit scl --sf ${sclFilePath} --sclt list -i CMEWXYTS`);
+            const result = execSync(`zowe endevor submit scl --sf ${sclFilePath} --sclt ${type} -i CMEWXYTS`);
             return result;
         }
     }
     throw new Error(`Unable to locate codeLens request in the current document`);
 });
+
+function getTypeFromSCL(statement: SCLstatement) {
+
+    if (matchWithoutDiagnose(statement.tokens[0], "LIST"))
+        return "list";
+    if (statement.tokens.length > 1) {
+        if (matchWithoutDiagnose(statement.tokens[1], "PACKAGE"))
+            return "package";
+        if (matchWithoutDiagnose(statement.tokens[1], "ELEMENT")) {
+            return "element";
+        }
+    }
+    return null;
+}
