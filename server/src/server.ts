@@ -203,7 +203,7 @@ async function validateTextDocument(textDocument: TextDocument): Promise<void> {
     const diagnostics: Diagnostic[] = [];
     document.statements.forEach((statement) => {
         statement.diagnostics.forEach((diag) => {
-            diagnostics.push(diag.diagnostic);
+            diagnostics.push(diag);
         });
     });
     connection.sendDiagnostics({

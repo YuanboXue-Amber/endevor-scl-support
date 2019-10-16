@@ -289,7 +289,7 @@ function keywordUppercaseDiagnose(
 
     if (keywordInSource.value.toUpperCase() !== keywordInSource.value) {
         document.pushDiagnostic(
-            keywordInSource,
+            keywordInSource.starti, keywordInSource.value.length,
             statement,
             DiagnosticSeverity.Warning,
             QUICKFIX_UPPERCASE_MSG + '\nLowercased keyword might cause the scl action to fail when submitted',

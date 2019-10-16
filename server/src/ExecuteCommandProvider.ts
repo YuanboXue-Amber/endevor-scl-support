@@ -5,10 +5,10 @@ import * as path from 'path';
 import { exec, execSync } from "child_process";
 
 const SUBMITSCL_COMMAND = Command.create('Submit scl', "endevorscl.submitscl");
-const OPENDOC_COMMAND = Command.create('Open link to techDocs', "endevorscl.techdocs");
+// const OPENDOC_COMMAND = Command.create('Open link to techDocs', "endevorscl.techdocs");
 export const commands = [
     SUBMITSCL_COMMAND,
-    OPENDOC_COMMAND
+    // OPENDOC_COMMAND
 ];
 
 export const executeSubmitSCL= ((document: SCLDocument, starti: number) => {

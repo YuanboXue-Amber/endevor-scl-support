@@ -19,20 +19,6 @@ import { IFromTocheck } from '../parser/syntaxTrees/doc/Inode';
 import { QUICKFIX_CHOICE_MSG } from '../CodeActionProvider';
 
 /**
- * An interface that extends the vscode diagnostic.
- * starti and endi is the range of diagnostic. This is used when updating document.
- * We first calculate the starti and endi, then update the diagnostic.range
- *
- * @export
- * @interface ISCLDiagnostic
- */
-export interface ISCLDiagnostic {
-    diagnostic: Diagnostic;
-    starti: number;
-    endi: number;
-}
-
-/**
  * Informaton about one scl statement.
  * Its tokens. Where it start and end. It's diagnostic information
  *
@@ -43,7 +29,7 @@ export class SCLstatement {
     starti: number;
     endi: number;
     tokens: ITokenizedString[] = [];
-    diagnostics: ISCLDiagnostic[] = [];
+    diagnostics: Diagnostic[] = [];
     isRest: boolean = false;
 
     fromtoCheck: IFromTocheck = {
@@ -244,7 +230,7 @@ export class SCLDocument {
                 }
 
                 this.pushDiagnostic(
-                    token, statement,
+                    token.starti, token.value.length, statement,
                     DiagnosticSeverity.Error,
                     `No SCL following label REST`,
                     `${QUICKFIX_CHOICE_MSG}${actionCompletion.join(", ")}`,
@@ -295,7 +281,7 @@ export class SCLDocument {
 
         else {
             this.pushDiagnostic(
-                token, statement,
+                token.starti, token.value.length, statement,
                 DiagnosticSeverity.Error,
                 `Invalid value specified`,
                 `${QUICKFIX_CHOICE_MSG}${actionCompletion.join(", ")}`,
@@ -332,174 +318,6 @@ export class SCLDocument {
         }
         this.statements = this.parseTextIntoSCLstatementsTokens(this.textDocument.getText());
         this.walkStatements();
-    }
-
-    /**
-     * NEVER USED
-     *
-     * @param {string} newText The new text replacing the original text
-     * @param {number} start The start index of the original text
-     * @param {number} end The end index of the original text
-     * @param {string} origContent The entire original content before change
-     * @memberof SCLDocument
-     */
-    update(newText: string, start: number, end: number, origContent: string) {
-        const newTextUp = newText.toUpperCase();
-        const origContentUp = origContent.toUpperCase();
-        if ((newTextUp.match(/\b(SET)\b/) &&
-             (newTextUp.match(/\b(FRO(M|\b))\b/) ||
-              newTextUp.match(/\b(TO)\b/)) ) ||
-            (origContentUp.match(/(.*)\b(SET)\b(.*)/) &&
-             (origContentUp.match(/\b(FRO(M|\b))\b/) ||
-              origContentUp.match(/\b(TO)\b/)) ) ) {
-            // redo the whole document whenever there's SET FROM/TO involved
-            this.setCheck = {
-                from: {
-                    FILE: false,
-                    location: {
-                        ENVIRONMENT: false,
-                        SYSTEM: false,
-                        SUBSYSTEM: false,
-                        TYPE: false,
-                        STAGE: false,
-                    }
-                },
-                to: {
-                    FILE: false,
-                    location: {
-                        ENVIRONMENT: false,
-                        SYSTEM: false,
-                        SUBSYSTEM: false,
-                        TYPE: false,
-                        STAGE: false,
-                    }
-                },
-            };
-            const newContent = origContent.substring(0, start)
-                                + newText
-                                + origContent.substring(end, origContent.length);
-            this.statements = this.parseTextIntoSCLstatementsTokens(newContent);
-            this.walkStatements();
-            return;
-        }
-
-        // otherwise incremental update
-        const oldLength = end - start;
-        const indexPlus = newText.length - oldLength;
-
-        const updatePositionInStatement = ((indexPlus: number, statement: SCLstatement) => {
-            statement.starti = statement.starti + indexPlus;
-            statement.endi = statement.endi + indexPlus;
-            for (const token of statement.tokens) {
-                token.starti = token.starti + indexPlus;
-            }
-            for (const diag of statement.diagnostics) {
-                diag.starti = diag.starti + indexPlus;
-                diag.endi = diag.endi + indexPlus;
-                // the diag.diagnostic.range will be refreshed after all the updates are processed, and textDocument is updated
-            }
-        });
-
-        let affectedRange = {
-            start,
-            end
-        }; // the start and end index in the textDocument, of where the change affected
-        for (let i = this.statements.length - 1; i >= 0 ; -- i) {
-            if (this.statements[i].starti > affectedRange.end) {
-                // start end statement.starti statement.endi
-                updatePositionInStatement(indexPlus, this.statements[i]);
-                continue;
-            } else if (this.statements[i].endi < affectedRange.start) {
-                // statement.starti statement.endi start end, and statement is a complete statement
-                const lastToken = this.statements[i].tokens[this.statements[i].tokens.length-1];
-                if (lastToken.is_eoStatement) {
-                    continue;
-                }
-            }
-            affectedRange.start = Math.min(
-                affectedRange.start, this.statements[i].starti);
-            affectedRange.end = Math.max(
-                affectedRange.end, this.statements[i].endi);
-
-            // before remove this statement, update SCLDocumentManager.numberOfProblems
-            SCLDocumentManager.numberOfProblems = SCLDocumentManager.numberOfProblems - this.statements[i].diagnostics.length;
-            if (SCLDocumentManager.numberOfProblems < 0) {
-                SCLDocumentManager.numberOfProblems = 0;
-            }
-            this.statements.splice(i, 1);
-        }
-
-        const newTextTobeParse: string = origContent.substring(affectedRange.start, start)
-                                            + newText
-                                            + origContent.substring(end, affectedRange.end);
-
-        const newStatements: SCLstatement[] = this.parseTextIntoSCLstatementsTokens(newTextTobeParse, affectedRange.start);
-        newStatements.forEach((newscl) => {
-            this.walkStatement(newscl);
-            this.statements.push(newscl);
-        });
-    }
-
-    /**
-     * Push diagnostic information into the corresponded SCLstatement
-     *
-     * @param {ITokenizedString} diagnosedToken the token where the error/warning happened
-     * @param {SCLstatement} statement the scl statement where the error/warning happened
-     * @param {DiagnosticSeverity} severity
-     * @param {string} message
-     * @param {string} [relatedMsg]
-     * @returns
-     * @memberof SCLDocument
-     */
-    pushDiagnostic(
-        diagnosedToken: ITokenizedString,
-        statement: SCLstatement,
-        severity: DiagnosticSeverity,
-        message: string,
-        relatedMsg?: string,
-        relatedToken?: ITokenizedString
-        ) {
-
-        if (SCLDocumentManager.numberOfProblems >= SCLDocumentManager.config.maxNumberOfProblems) {
-            return;
-        }
-        if (diagnosedToken.starti < statement.starti ||
-            diagnosedToken.starti + diagnosedToken.value.length > statement.endi) {
-            // The token is not in the scl!!
-            return;
-        }
-
-        SCLDocumentManager.numberOfProblems ++;
-
-        let diagnostic: Diagnostic = {
-            severity: severity,
-            range: {
-                start: this.textDocument.positionAt(diagnosedToken.starti),
-                end: this.textDocument.positionAt(diagnosedToken.starti + diagnosedToken.value.length)
-            },
-            message: message,
-            source: 'Endevor SCL extension'
-        };
-        if (SCLDocumentManager.capabilities.hasDiagnosticRelatedInformationCapability &&
-            !isNullOrUndefined(relatedMsg) && !isNullOrUndefined(relatedToken)) {
-            diagnostic.relatedInformation = [
-                {
-                    location: {
-                        uri: this.textDocument.uri,
-                        range: {
-                            start: this.textDocument.positionAt(relatedToken.starti),
-                            end: this.textDocument.positionAt(relatedToken.starti + relatedToken.value.length),
-                        }
-                    },
-                    message: relatedMsg,
-                }
-            ];
-        }
-        statement.diagnostics.push({
-            diagnostic,
-            starti: diagnosedToken.starti,
-            endi: diagnosedToken.starti + diagnosedToken.value.length,
-        });
     }
 
     private formatStatement(statement: SCLstatement): TextEdit[] {
@@ -641,5 +459,67 @@ export class SCLDocument {
             newText: "\n"
         });
         return edits;
+    }
+
+    /**
+     * Push diagnostic information into the corresponded SCLstatement
+     *
+     *
+     * @param {number} startIndex
+     * @param {number} length
+     * @param {SCLstatement} statement
+     * @param {DiagnosticSeverity} severity
+     * @param {string} message
+     * @param {string} [relatedMsg]
+     * @param {ITokenizedString} [relatedToken]
+     * @returns
+     * @memberof SCLDocument
+     */
+    pushDiagnostic(
+        startIndex: number,
+        length: number,
+        statement: SCLstatement,
+        severity: DiagnosticSeverity,
+        message: string,
+        relatedMsg?: string,
+        relatedToken?: ITokenizedString
+        ) {
+
+        if (SCLDocumentManager.numberOfProblems >= SCLDocumentManager.config.maxNumberOfProblems) {
+            return;
+        }
+        if (startIndex < statement.starti ||
+            startIndex + length > statement.endi) {
+            // The token is not in the scl!!
+            return;
+        }
+
+        SCLDocumentManager.numberOfProblems ++;
+
+        let diagnostic: Diagnostic = {
+            severity: severity,
+            range: {
+                start: this.textDocument.positionAt(startIndex),
+                end: this.textDocument.positionAt(startIndex + length)
+            },
+            message: message,
+            source: 'Endevor SCL extension'
+        };
+        if (SCLDocumentManager.capabilities.hasDiagnosticRelatedInformationCapability &&
+            !isNullOrUndefined(relatedMsg) && !isNullOrUndefined(relatedToken)) {
+            diagnostic.relatedInformation = [
+                {
+                    location: {
+                        uri: this.textDocument.uri,
+                        range: {
+                            start: this.textDocument.positionAt(relatedToken.starti),
+                            end: this.textDocument.positionAt(relatedToken.starti + relatedToken.value.length),
+                        }
+                    },
+                    message: relatedMsg,
+                }
+            ];
+        }
+        statement.diagnostics.push(diagnostic);
     }
 }

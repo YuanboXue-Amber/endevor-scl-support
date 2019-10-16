@@ -362,7 +362,7 @@ function dealWithValue(matchedNode: ItreeNode, tokenIter: number, statement: SCL
                     }
                     if (tokenLen > matchedNode.maxLen) {
                         document.pushDiagnostic(
-                            token, statement,
+                            token.starti, token.value.length, statement,
                             DiagnosticSeverity.Error,
                             `Length of the value should be within ${matchedNode.maxLen}`);
                     }
@@ -427,23 +427,10 @@ function dealWithValue(matchedNode: ItreeNode, tokenIter: number, statement: SCL
             token.completionItems = [];
             const endi = currSCL[tokenIter].starti + currSCL[tokenIter].value.length;
             if (!isNullOrUndefined(matchedNode.maxLen) && finalvalue.length > matchedNode.maxLen) {
-                if (SCLDocumentManager.numberOfProblems < SCLDocumentManager.config.maxNumberOfProblems) {
-                    let diagnostic: Diagnostic = {
-                        severity: DiagnosticSeverity.Error,
-                        range: {
-                            start: document.textDocument.positionAt(starti),
-                            end: document.textDocument.positionAt(endi)
-                        },
-                        message: `Length of the value should be within ${matchedNode.maxLen}`,
-                        source: 'Endevor SCL extension'
-                    };
-                    statement.diagnostics.push({
-                        diagnostic,
-                        starti,
-                        endi
-                    });
-                    SCLDocumentManager.numberOfProblems ++;
-                }
+                document.pushDiagnostic(
+                    starti, endi-starti, statement,
+                    DiagnosticSeverity.Error,
+                    `Length of the value should be within ${matchedNode.maxLen}`);
             }
             return [tokenIter, true]; // token that is the last piece of value
         }
@@ -457,7 +444,7 @@ function dealWithValue(matchedNode: ItreeNode, tokenIter: number, statement: SCL
         }
         if (tokenLen > matchedNode.maxLen) {
             document.pushDiagnostic(
-                token, statement,
+                token.starti, token.value.length, statement,
                 DiagnosticSeverity.Error,
                 `Length of the value should be within ${matchedNode.maxLen}`);
         }
@@ -538,7 +525,7 @@ export function parser(rootNode: ItreeNode, statement: SCLstatement, document: S
         if (!onlyMatchKey &&
             !isNullOrUndefined(parentNode.requireNext) && parentNode.requireNext) {
             document.pushDiagnostic(
-                token, statement,
+                token.starti, token.value.length, statement,
                 DiagnosticSeverity.Error,
                 `Require a valid value to be specified`);
             return tokenIter;
@@ -571,7 +558,7 @@ export function diagnose(rootNode: ItreeNode, statement: SCLstatement, document:
             });
             if (possibleValues.length > 0) {
                 document.pushDiagnostic(
-                    currSCL[iterator], statement,
+                    currSCL[iterator].starti, currSCL[iterator].value.length, statement,
                     DiagnosticSeverity.Error,
                     `Invalid value specified`,
                     `${QUICKFIX_CHOICE_MSG}${possibleValues.join(", ")}`,
@@ -582,7 +569,7 @@ export function diagnose(rootNode: ItreeNode, statement: SCLstatement, document:
         }
     }
     document.pushDiagnostic(
-        currSCL[iterator], statement,
+        currSCL[iterator].starti, currSCL[iterator].value.length, statement,
         DiagnosticSeverity.Error,
         `Invalid value specified`);
     processSETMacro(statement, document, true);
@@ -596,14 +583,14 @@ function processEOS(statement: SCLstatement, document: SCLDocument) {
 
     if (!lastToken.is_eoStatement) {
         document.pushDiagnostic(
-            lastToken, statement,
+            lastToken.starti, lastToken.value.length, statement,
             DiagnosticSeverity.Error,
             QUICKFIX_NO_EOS_MSG);
         return false;
     }
     if (lastToken.starti === secondLastToken.starti + secondLastToken.value.length) {
         document.pushDiagnostic(
-            lastToken, statement,
+            lastToken.starti, lastToken.value.length, statement,
             DiagnosticSeverity.Error,
             QUICKFIX_SPACE_BEFORE_EOS_MSG);
         return false;
@@ -727,51 +714,24 @@ function processSETMacro(statement: SCLstatement, document: SCLDocument, already
         }
     }
     if (missFrom && !alreadyHasErr) { // only push FROM/TO err when there's no exising err, since it covers up existing err
-        if (SCLDocumentManager.numberOfProblems < SCLDocumentManager.config.maxNumberOfProblems) {
-            let diagnostic: Diagnostic = {
-                severity: DiagnosticSeverity.Error,
-                range: {
-                    start: document.textDocument.positionAt(statement.starti),
-                    end: document.textDocument.positionAt(statement.endi)
-                },
-                message: "FROM clause incomplete in the current SCL",
-                source: 'Endevor SCL extension'
-            };
+        document.pushDiagnostic(
+            statement.starti, statement.endi-statement.starti, statement,
+            DiagnosticSeverity.Error,
+            "FROM clause incomplete in the current SCL");
 
-            statement.diagnostics.push({
-                diagnostic,
-                starti: statement.starti,
-                endi: statement.endi,
-            });
-            SCLDocumentManager.numberOfProblems ++;
-        }
     }
     if (missTo && !alreadyHasErr) {
-        if (SCLDocumentManager.numberOfProblems < SCLDocumentManager.config.maxNumberOfProblems) {
-            let diagnostic: Diagnostic = {
-                severity: DiagnosticSeverity.Error,
-                range: {
-                    start: document.textDocument.positionAt(statement.starti),
-                    end: document.textDocument.positionAt(statement.endi)
-                },
-                message: "TO clause incomplete in the current SCL",
-                source: 'Endevor SCL extension'
-            };
-
-            statement.diagnostics.push({
-                diagnostic,
-                starti: statement.starti,
-                endi: statement.endi,
-            });
-            SCLDocumentManager.numberOfProblems ++;
-        }
+        document.pushDiagnostic(
+            statement.starti, statement.endi-statement.starti, statement,
+            DiagnosticSeverity.Error,
+            "TO clause incomplete in the current SCL");
     }
 }
 
 function countExistingErrDiagnose(statement: SCLstatement): number {
     let num = 0;
     statement.diagnostics.forEach((diag) => {
-        if (diag.diagnostic.severity === DiagnosticSeverity.Error) {
+        if (diag.severity === DiagnosticSeverity.Error) {
             num ++;
         }
     });
