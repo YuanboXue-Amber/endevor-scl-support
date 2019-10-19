@@ -3,7 +3,7 @@ import { SCLDocument, SCLstatement } from './documents/SCLDocument';
 import * as fs from 'fs';
 import * as path from 'path';
 import { exec, execSync } from "child_process";
-import { matchWithoutDiagnose } from './parser/ParserTags';
+import { matchWithoutDiagnose } from './oldParser/ParserTags';
 import { isNullOrUndefined } from 'util';
 
 const SUBMITSCL_COMMAND = Command.create('Submit scl', "endevorscl.submitscl");

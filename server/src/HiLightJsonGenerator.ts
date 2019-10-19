@@ -1,5 +1,5 @@
 import { isNullOrUndefined } from "util";
-import { ParserTags } from './parser/parserTags';
+import { ParserTags } from './oldParser/parserTags';
 import * as fs from 'fs';
 
 const level0keywords: string[] = [

@@ -1,5 +1,5 @@
 import { CompletionItem, CompletionItemKind } from "vscode-languageserver";
-import { ParserTags } from './parser/ParserTags';
+import { ParserTags } from './oldParser/ParserTags';
 import { isNullOrUndefined } from "util";
 
 export function composeCompletionItemsFromKeywords(): CompletionItem[] {

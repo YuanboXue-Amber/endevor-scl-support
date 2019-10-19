@@ -1,8 +1,8 @@
 import { TextDocument, Diagnostic, DiagnosticSeverity, TextEdit, CompletionItemKind } from 'vscode-languageserver';
-import { ITokenizedString, Tokenizer } from '../parser/Tokenizer';
+import { ITokenizedString, Tokenizer } from '../oldParser/Tokenizer';
 import { isNullOrUndefined } from 'util';
 import { SCLDocumentManager, actionCompletion } from './SCLDocumentManager';
-import { match, matchWithoutDiagnose, ParserTags } from '../parser/ParserTags';
+import { match, matchWithoutDiagnose, ParserTags } from '../oldParser/ParserTags';
 import { SETtree, ADDtree, UPDATEtree, DELETEtree, GENERATEtree, MOVEtree, RETRIEVEtree, SIGNINtree, TRANSFERtree,
     APPROVEtree,
     DENYtree,
@@ -13,9 +13,9 @@ import { SETtree, ADDtree, UPDATEtree, DELETEtree, GENERATEtree, MOVEtree, RETRI
     EXECUTEtree,
     RESETtree,
     COMMITtree,
-    LISTtree} from '../parser/syntaxTrees/PrepareTrees';
-import { diagnose } from '../parser/syntaxTrees/Parser';
-import { IFromTocheck } from '../parser/syntaxTrees/doc/Inode';
+    LISTtree} from '../oldParser/syntaxTrees/PrepareTrees';
+import { diagnose } from '../oldParser/syntaxTrees/Parser';
+import { IFromTocheck } from '../oldParser/syntaxTrees/doc/Inode';
 import { QUICKFIX_CHOICE_MSG } from '../CodeActionProvider';
 
 /**
