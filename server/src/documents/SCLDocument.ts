@@ -225,6 +225,9 @@ export class SCLDocument {
                     case "STAGE":
                         obj.from.location.STAGE = true;
                         break;
+                    case "STAGE NUMBER":
+                        obj.from.location.STAGE = true;
+                        break;
                     case "SYSTEM":
                         obj.from.location.SYSTEM = true;
                         break;

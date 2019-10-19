@@ -44,6 +44,22 @@ export function prepareTrees() {
     ADDtree = composeTreeFromJSON(prepareJSON("ADDtree.json"));
     GENERATEtree = composeTreeFromJSON(prepareJSON("GENERATEtree.json"));
     DEFINEPACKAGEtree = composeTreeFromJSON(prepareJSON("DEFINEPACKAGEtree.json"));
+    APPROVEtree = composeTreeFromJSON(prepareJSON("APPROVEtree.json"));
+    DENYtree = composeTreeFromJSON(prepareJSON("DENYtree.json"));
+    BACKINtree = composeTreeFromJSON(prepareJSON("BACKINtree.json"));
+    BACKOUTtree = composeTreeFromJSON(prepareJSON("BACKOUTtree.json"));
+    CASTtree = composeTreeFromJSON(prepareJSON("CASTtree.json"));
+    DEFINEPACKAGEtree = composeTreeFromJSON(prepareJSON("DEFINEPACKAGEtree.json"));
+    EXECUTEtree = composeTreeFromJSON(prepareJSON("EXECUTEtree.json"));
+    RESETtree = composeTreeFromJSON(prepareJSON("RESETtree.json"));
+    COMMITtree = composeTreeFromJSON(prepareJSON("COMMITtree.json"));
+    // UPDATEtree = composeTreeFromJSON(prepareJSON("UPDATEtree.json"));
+    DELETEtree = composeTreeFromJSON(prepareJSON("DELETEtree.json"));
+    // MOVEtree = composeTreeFromJSON(prepareJSON("MOVEtree.json"));
+    // RETRIEVEtree = composeTreeFromJSON(prepareJSON("RETRIEVEtree.json"));
+    // SIGNINtree = composeTreeFromJSON(prepareJSON("SIGNINtree.json"));
+    // TRANSFERtree = composeTreeFromJSON(prepareJSON("TRANSFERtree.json"));
+    LISTtree = composeTreeFromJSON(prepareJSON("LISTtree.json"));
 }
 
 function prepareJSON(jsonFileName: string): Inode {
@@ -78,6 +94,26 @@ export function dispatcher(scl: ITokenizedString[]): Inode | undefined {
                 return DEFINEPACKAGEtree;
             case match(scl[0].value, "SET"):
                 return SETtree;
+            case match(scl[0].value, "APPRove"):
+                return APPROVEtree;
+            case match(scl[0].value, "BACKIn"):
+                return BACKINtree;
+            case match(scl[0].value, "BACKOut"):
+                return BACKOUTtree;
+            case match(scl[0].value, "CASt"):
+                return CASTtree;
+            case match(scl[0].value, "COMMit"):
+                return COMMITtree;
+            case match(scl[0].value, "DENY"):
+                return DENYtree;
+            case match(scl[0].value, "EXECUTE"):
+                return EXECUTEtree;
+            case match(scl[0].value, "RESet"):
+                return RESETtree;
+            case match(scl[0].value, "DELete"):
+                return DELETEtree;
+            case match(scl[0].value, "LISt"):
+                return LISTtree;
             default:
                 break;
         }
