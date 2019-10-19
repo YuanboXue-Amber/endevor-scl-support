@@ -1,4 +1,4 @@
-import { Tokenizer, ITokenizedString } from '../../src/newParser/Tokenizer';
+import { Tokenizer, ITokenizedString } from '../../src/parser/Tokenizer';
 import {
     emptySCL,
     emptySCLwithNewLines,

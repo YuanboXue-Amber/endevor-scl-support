@@ -29,7 +29,7 @@ export function prepareTrees() {
 }
 
 function prepareJSON(jsonFileName: string): Inode {
-    const jsonPath = path.resolve(__dirname, "../newParser/syntaxTrees/"+ jsonFileName);
+    const jsonPath = path.resolve(__dirname, "../parser/syntaxTrees/"+ jsonFileName);
     const jsonStr = fs.readFileSync(jsonPath, "UTF-8");
     return JSON.parse(jsonStr);
 }

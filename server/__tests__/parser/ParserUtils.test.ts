@@ -1,4 +1,4 @@
-import { match } from '../../src/newParser/PreParserUtils';
+import { match } from '../../src/parser/PreParserUtils';
 
 describe("Test match", () => {
     it("", async () => {

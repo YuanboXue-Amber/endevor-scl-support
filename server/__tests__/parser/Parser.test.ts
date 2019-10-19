@@ -1,7 +1,7 @@
-import { prepareTrees, ADDtree, SETtree } from '../../src/newParser/PreParserUtils';
-import { Parser } from '../../src/newParser/Parser';
+import { prepareTrees, ADDtree, SETtree } from '../../src/parser/PreParserUtils';
+import { Parser } from '../../src/parser/Parser';
 import { Position } from 'vscode-languageserver';
-import { Tokenizer, ITokenizedString } from '../../src/newParser/Tokenizer';
+import { Tokenizer, ITokenizedString } from '../../src/parser/Tokenizer';
 
 prepareTrees();
 
