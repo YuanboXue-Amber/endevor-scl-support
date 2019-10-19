@@ -1,0 +1,146 @@
+{
+    "keyword": "ADD",
+    "required": true,
+    "next": [
+        {
+            "keyword": "ELEment",
+            "required": true,
+            "next": [
+                {
+                    "maxLen": 255,
+                    "required": true,
+                    "nogoback": true,
+                    "next": [
+                        {
+                            "keyword": "THRough, THRu",
+                            "next": [
+                                {
+                                    "maxLen": 255,
+                                    "required": true
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "FROm",
+                            "isFROM": true,
+                            "next": [
+                                {
+                                    "keyword": "FILe, DDName",
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "DSName",
+                                    "next": [
+                                        {
+                                            "maxLen": 44,
+                                            "required": true,
+                                            "next": [
+                                                {
+                                                    "keyword": "MEMber",
+                                                    "next": [
+                                                        {
+                                                            "maxLen": 8,
+                                                            "required": true
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "PATH",
+                                    "next": [
+                                        {
+                                            "maxLen": 768,
+                                            "required": true,
+                                            "next": [
+                                                {
+                                                    "keyword": "USSFILE",
+                                                    "required": true,
+                                                    "next": [
+                                                        {
+                                                            "maxLen": 255,
+                                                            "required": true
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "TO",
+                            "isTO": true,
+                            "next": [
+                                {
+                                    "keyword": "ENVironment, SYStem, SUBSystem, TYPe",
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "OPTion",
+                            "next": [
+                                {
+                                    "keyword": "CCId",
+                                    "next": [
+                                        {
+                                            "maxLen": 12,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "COMment",
+                                    "next": [
+                                        {
+                                            "maxLen": 44,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "NEW VERsion",
+                                    "next": [
+                                        {
+                                            "maxLen": 2,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "UPDate if present, DELete input source, OVErride SIGNOut, BYPass GENerate PROcessor, AUTogen, AUTogen SPAN NONe, AUTogen SPAN ALL, AUTogen SPAN SYStems, AUTogen SPAN Subsystems"
+                                },
+                                {
+                                    "keyword": "PROcessor GROup EQual, PROcessor GROup =",
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

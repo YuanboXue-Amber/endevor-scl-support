@@ -1,0 +1,118 @@
+{
+    "keyword": "DEFine",
+    "required": true,
+    "next": [
+        {
+            "keyword": "PACkage",
+            "required": true,
+            "next": [
+                {
+                    "maxLen": 16,
+                    "required": true,
+                    "nogoback": true,
+                    "next": [
+                        {
+                            "keyword": "COPy PACkage, COPy FROm PACkage",
+                            "next": [
+                                {
+                                    "maxLen": 16,
+                                    "required": true
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "IMPort SCL FROm DDName",
+                            "next": [
+                                {
+                                    "maxLen": 8,
+                                    "required": true
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "IMPort SCL FROm DSName",
+                            "next": [
+                                {
+                                    "maxLen": 44,
+                                    "required": true,
+                                    "next": [
+                                        {
+                                            "keyword": "MEMber",
+                                            "next": [
+                                                {
+                                                    "maxLen": 8,
+                                                    "required": true
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "DO NOT APPEnd, APPEnd"
+                        },
+                        {
+                            "keyword": "DEScription",
+                            "next": [
+                                {
+                                    "maxLen": 60,
+                                    "required": true
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "OPTion",
+                            "next": [
+                                {
+                                    "keyword": "STANdard, EMErgency, NONsharable, SHArable, NONPromotion, PROMotion",
+                                    "next": [
+                                        {
+                                            "keyword": "PACkage"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "BACKOut ENAbled, BACKOut IS ENAbled, BACKOut NOT ENAbled, BACKOut IS NOT ENAbled, DO NOT VALIDATE SCL"
+                                },
+                                {
+                                    "keyword": "NOTEs =",
+                                    "next": [
+                                        {
+                                            "maxLen": 60,
+                                            "required": true,
+                                            "specialValue": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "EXECUTion WINdow FROm",
+                                    "next": [
+                                        {
+                                            "dateTimeValue": true,
+                                            "required": true,
+                                            "next": [
+                                                {
+                                                    "keyword": "TO",
+                                                    "next": [
+                                                        {
+                                                            "dateTimeValue": true,
+                                                            "required": true
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,1412 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test  ADD with no TYPE in TO, and too long SUB 1`] = `136`;
+
+exports[`Test  ADD with no TYPE in TO, and too long SUB 2`] = `152`;
+
+exports[`Test  ADD with no TYPE in TO, and too long SUB 3`] = `155`;
+
+exports[`Test  ADD with no TYPE in TO, and too long SUB 4`] = `161`;
+
+exports[`Test  ADD with no TYPE in TO, and too long SUB 5`] = `195`;
+
+exports[`Test  ADD with no TYPE in TO, and too long SUB 6`] = `202`;
+
+exports[`Test  ADD with no TYPE in TO, and too long SUB 7`] = `257`;
+
+exports[`Test  ADD with no TYPE in TO, and too long SUB 8`] = `259`;
+
+exports[`Test  ADD with no TYPE in TO, and too long SUB 9`] = `"Diagnoses: "`;
+
+exports[`Test  ADD with no TYPE in TO, and too long SUB 10`] = `
+Array [
+  Object {
+    "message": "Expecting a value of length between 1 to 8. Current value has length 14",
+    "range": Object {
+      "end": Object {
+        "character": 2,
+        "line": 1,
+      },
+      "start": Object {
+        "character": 2,
+        "line": 1,
+      },
+    },
+    "severity": 1,
+    "source": "Endevor SCL extension",
+  },
+  Object {
+    "message": "Keyword should be uppercased.
+Lowercased keyword might cause the scl action to fail when submitted",
+    "range": Object {
+      "end": Object {
+        "character": 2,
+        "line": 1,
+      },
+      "start": Object {
+        "character": 2,
+        "line": 1,
+      },
+    },
+    "severity": 2,
+    "source": "Endevor SCL extension",
+  },
+  Object {
+    "message": "Keyword should be uppercased.
+Lowercased keyword might cause the scl action to fail when submitted",
+    "range": Object {
+      "end": Object {
+        "character": 2,
+        "line": 1,
+      },
+      "start": Object {
+        "character": 2,
+        "line": 1,
+      },
+    },
+    "severity": 2,
+    "source": "Endevor SCL extension",
+  },
+  Object {
+    "message": "Keyword should be uppercased.
+Lowercased keyword might cause the scl action to fail when submitted",
+    "range": Object {
+      "end": Object {
+        "character": 2,
+        "line": 1,
+      },
+      "start": Object {
+        "character": 2,
+        "line": 1,
+      },
+    },
+    "severity": 2,
+    "source": "Endevor SCL extension",
+  },
+]
+`;
+
+exports[`Test  ADD with no TYPE in TO, and too long SUB 11`] = `"All tokens: "`;
+
+exports[`Test  ADD with no TYPE in TO, and too long SUB 12`] = `
+Array [
+  Object {
+    "CompletionItem": Array [
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "ELEMENT ",
+      },
+    ],
+    "is_eoStatement": false,
+    "starti": 4,
+    "value": "ADD",
+  },
+  Object {
+    "CompletionItem": Array [],
+    "is_eoStatement": false,
+    "starti": 8,
+    "value": "ELEMENT",
+  },
+  Object {
+    "CompletionItem": Array [
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THROUGH ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THRU ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "FROM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "TO ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "OPTION ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": ". ",
+      },
+    ],
+    "is_eoStatement": false,
+    "rightDistance": "
+      ",
+    "starti": 16,
+    "value": "'PMOVE'",
+  },
+  Object {
+    "CompletionItem": Array [
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "FILE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "DDNAME ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "DSNAME ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "PATH ",
+      },
+    ],
+    "is_eoStatement": false,
+    "starti": 24,
+    "value": "FROM",
+  },
+  Object {
+    "CompletionItem": Array [],
+    "is_eoStatement": false,
+    "starti": 29,
+    "value": "DSNAME",
+  },
+  Object {
+    "CompletionItem": Array [
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "MEMBER ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "FILE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "DDNAME ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "PATH ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THROUGH ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THRU ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "TO ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "OPTION ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": ". ",
+      },
+    ],
+    "is_eoStatement": false,
+    "rightDistance": "
+           ",
+    "starti": 36,
+    "value": "'BST.P7718.SOURCE'",
+  },
+  Object {
+    "CompletionItem": Array [],
+    "is_eoStatement": false,
+    "starti": 66,
+    "value": "MEMBER",
+  },
+  Object {
+    "CompletionItem": Array [
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "FILE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "DDNAME ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "PATH ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THROUGH ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THRU ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "TO ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "OPTION ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": ". ",
+      },
+    ],
+    "is_eoStatement": false,
+    "rightDistance": "
+        ",
+    "starti": 73,
+    "value": "'PMOVE'",
+  },
+  Object {
+    "CompletionItem": Array [
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "ENVIRONMENT ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "SYSTEM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "SUBSYSTEM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "TYPE ",
+      },
+    ],
+    "is_eoStatement": false,
+    "starti": 83,
+    "value": "TO",
+  },
+  Object {
+    "CompletionItem": Array [],
+    "is_eoStatement": false,
+    "starti": 86,
+    "value": "ENVIRONMENT",
+  },
+  Object {
+    "CompletionItem": Array [
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "ENVIRONMENT ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "SYSTEM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "SUBSYSTEM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "TYPE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THROUGH ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THRU ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "FROM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "OPTION ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": ". ",
+      },
+    ],
+    "is_eoStatement": false,
+    "rightDistance": "
+           ",
+    "starti": 98,
+    "value": "'QA1'",
+  },
+  Object {
+    "CompletionItem": Array [],
+    "is_eoStatement": false,
+    "starti": 107,
+    "value": "SYSTEM",
+  },
+  Object {
+    "CompletionItem": Array [
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "ENVIRONMENT ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "SYSTEM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "SUBSYSTEM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "TYPE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THROUGH ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THRU ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "FROM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "OPTION ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": ". ",
+      },
+    ],
+    "is_eoStatement": false,
+    "rightDistance": "
+           ",
+    "starti": 114,
+    "value": "'ECPLSYS'",
+  },
+  Object {
+    "CompletionItem": Array [],
+    "is_eoStatement": false,
+    "starti": 126,
+    "value": "SUBSYSTEM",
+  },
+  Object {
+    "CompletionItem": Array [
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "ENVIRONMENT ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "SYSTEM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "SUBSYSTEM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "TYPE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THROUGH ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THRU ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "FROM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "OPTION ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": ". ",
+      },
+    ],
+    "is_eoStatement": false,
+    "rightDistance": "
+    ",
+    "starti": 136,
+    "value": "'ECPLSUBtoolong'",
+  },
+  Object {
+    "CompletionItem": Array [
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "CCID ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "COMMENT ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "NEW VERSION ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "UPDATE IF PRESENT ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "DELETE INPUT SOURCE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "OVERRIDE SIGNOUT ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "BYPASS GENERATE PROCESSOR ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "AUTOGEN ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "AUTOGEN SPAN NONE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "AUTOGEN SPAN ALL ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "AUTOGEN SPAN SYSTEMS ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "AUTOGEN SPAN SUBSYSTEMS ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "PROCESSOR GROUP EQUAL ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "PROCESSOR GROUP = ",
+      },
+    ],
+    "is_eoStatement": false,
+    "starti": 155,
+    "value": "OPtION",
+  },
+  Object {
+    "CompletionItem": Array [],
+    "is_eoStatement": false,
+    "starti": 163,
+    "value": "CCID",
+  },
+  Object {
+    "CompletionItem": Array [
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "COMMENT ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "NEW VERSION ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "UPDATE IF PRESENT ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "DELETE INPUT SOURCE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "OVERRIDE SIGNOUT ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "BYPASS GENERATE PROCESSOR ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "AUTOGEN ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "AUTOGEN SPAN NONE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "AUTOGEN SPAN ALL ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "AUTOGEN SPAN SYSTEMS ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "AUTOGEN SPAN SUBSYSTEMS ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "PROCESSOR GROUP EQUAL ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "PROCESSOR GROUP = ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THROUGH ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THRU ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "FROM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "TO ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": ". ",
+      },
+    ],
+    "is_eoStatement": false,
+    "rightDistance": "
+           ",
+    "starti": 168,
+    "value": "'CCID'",
+  },
+  Object {
+    "CompletionItem": Array [],
+    "is_eoStatement": false,
+    "starti": 195,
+    "value": "comment",
+  },
+  Object {
+    "CompletionItem": Array [
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "CCID ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "NEW VERSION ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "UPDATE IF PRESENT ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "DELETE INPUT SOURCE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "OVERRIDE SIGNOUT ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "BYPASS GENERATE PROCESSOR ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "AUTOGEN ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "AUTOGEN SPAN NONE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "AUTOGEN SPAN ALL ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "AUTOGEN SPAN SYSTEMS ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "AUTOGEN SPAN SUBSYSTEMS ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "PROCESSOR GROUP EQUAL ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "PROCESSOR GROUP = ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THROUGH ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THRU ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "FROM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "TO ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": ". ",
+      },
+    ],
+    "is_eoStatement": false,
+    "rightDistance": "
+           ",
+    "starti": 203,
+    "value": "\\"Processor for testcase PROMOTION\\"",
+  },
+  Object {
+    "CompletionItem": Array [
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "CCID ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "COMMENT ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "NEW VERSION ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "UPDATE IF PRESENT ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "DELETE INPUT SOURCE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "OVERRIDE SIGNOUT ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "BYPASS GENERATE PROCESSOR ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "AUTOGEN ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "AUTOGEN SPAN NONE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "AUTOGEN SPAN ALL ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "AUTOGEN SPAN SYSTEMS ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "AUTOGEN SPAN SUBSYSTEMS ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "PROCESSOR GROUP EQUAL ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "PROCESSOR GROUP = ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THROUGH ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THRU ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "FROM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "TO ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": ". ",
+      },
+    ],
+    "is_eoStatement": false,
+    "rightDistance": "
+           ",
+    "starti": 243,
+    "value": "UPDATE",
+  },
+  Object {
+    "is_eoStatement": false,
+    "starti": 250,
+    "value": "UPDATE",
+  },
+  Object {
+    "CompletionItem": Array [
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "CCID ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "COMMENT ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "NEW VERSION ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "UPDATE IF PRESENT ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "DELETE INPUT SOURCE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "OVERRIDE SIGNOUT ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "BYPASS GENERATE PROCESSOR ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "AUTOGEN ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "AUTOGEN SPAN NONE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "AUTOGEN SPAN ALL ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "AUTOGEN SPAN SYSTEMS ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "AUTOGEN SPAN SUBSYSTEMS ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "PROCESSOR GROUP EQUAL ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "PROCESSOR GROUP = ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THROUGH ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THRU ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "FROM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "TO ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": ". ",
+      },
+    ],
+    "is_eoStatement": false,
+    "rightDistance": "
+           ",
+    "starti": 257,
+    "value": "iF",
+  },
+  Object {
+    "CompletionItem": Array [],
+    "is_eoStatement": true,
+    "starti": 286,
+    "value": ".",
+  },
+  Object {
+    "is_eoStatement": false,
+    "starti": 287,
+    "value": "",
+  },
+]
+`;
+
+exports[`Test  ADD with no TYPE in TO, and too long SUB 13`] = `"From memo: "`;
+
+exports[`Test  ADD with no TYPE in TO, and too long SUB 14`] = `
+Array [
+  "DSName",
+]
+`;
+
+exports[`Test  ADD with no TYPE in TO, and too long SUB 15`] = `"To memo: "`;
+
+exports[`Test  ADD with no TYPE in TO, and too long SUB 16`] = `
+Array [
+  "ENVironment",
+  "SYStem",
+  "SUBSystem",
+]
+`;
+
+exports[`Test  An invalid set from 1`] = `4`;
+
+exports[`Test  An invalid set from 2`] = `7`;
+
+exports[`Test  An invalid set from 3`] = `51`;
+
+exports[`Test  An invalid set from 4`] = `58`;
+
+exports[`Test  An invalid set from 5`] = `"Diagnoses: "`;
+
+exports[`Test  An invalid set from 6`] = `
+Array [
+  Object {
+    "message": "Keyword should be uppercased.
+Lowercased keyword might cause the scl action to fail when submitted",
+    "range": Object {
+      "end": Object {
+        "character": 2,
+        "line": 1,
+      },
+      "start": Object {
+        "character": 2,
+        "line": 1,
+      },
+    },
+    "severity": 2,
+    "source": "Endevor SCL extension",
+  },
+  Object {
+    "message": "Invalid word",
+    "range": Object {
+      "end": Object {
+        "character": 2,
+        "line": 1,
+      },
+      "start": Object {
+        "character": 2,
+        "line": 1,
+      },
+    },
+    "severity": 1,
+    "source": "Endevor SCL extension",
+  },
+]
+`;
+
+exports[`Test  An invalid set from 7`] = `"All tokens: "`;
+
+exports[`Test  An invalid set from 8`] = `
+Array [
+  Object {
+    "CompletionItem": Array [
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "FROM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "TO ",
+      },
+    ],
+    "is_eoStatement": false,
+    "rightDistance": "
+      ",
+    "starti": 4,
+    "value": "SeT",
+  },
+  Object {
+    "CompletionItem": Array [
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "FILE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "DDNAME ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "DSNAME ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "SITE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "ENVIRONMENT ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "SYSTEM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "SUBSYSTEM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "TYPE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "STAGE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "STAGE NUMBER ",
+      },
+    ],
+    "is_eoStatement": false,
+    "starti": 8,
+    "value": "FROM",
+  },
+  Object {
+    "CompletionItem": Array [],
+    "is_eoStatement": false,
+    "starti": 13,
+    "value": "STAGE",
+  },
+  Object {
+    "CompletionItem": Array [
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": ". ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "FILE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "DDNAME ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "DSNAME ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "SITE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "ENVIRONMENT ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "SYSTEM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "SUBSYSTEM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "TYPE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "STAGE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "STAGE NUMBER ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "TO ",
+      },
+    ],
+    "is_eoStatement": false,
+    "rightDistance": "
+           ",
+    "starti": 19,
+    "value": "1",
+  },
+  Object {
+    "CompletionItem": Array [],
+    "is_eoStatement": false,
+    "starti": 21,
+    "value": "SYSTEM",
+  },
+  Object {
+    "CompletionItem": Array [
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": ". ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "FILE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "DDNAME ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "DSNAME ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "SITE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "ENVIRONMENT ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "SYSTEM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "SUBSYSTEM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "TYPE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "STAGE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "STAGE NUMBER ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "TO ",
+      },
+    ],
+    "is_eoStatement": false,
+    "rightDistance": "
+           ",
+    "starti": 28,
+    "value": "bla",
+  },
+  Object {
+    "CompletionItem": Array [],
+    "is_eoStatement": false,
+    "starti": 32,
+    "value": "ENVIRONMENT",
+  },
+  Object {
+    "CompletionItem": Array [
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": ". ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "FILE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "DDNAME ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "DSNAME ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "SITE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "ENVIRONMENT ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "SYSTEM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "SUBSYSTEM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "TYPE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "STAGE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "STAGE NUMBER ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "TO ",
+      },
+    ],
+    "is_eoStatement": false,
+    "rightDistance": "
+           ",
+    "starti": 44,
+    "value": "blabla",
+  },
+  Object {
+    "is_eoStatement": false,
+    "starti": 51,
+    "value": "INVALID",
+  },
+  Object {
+    "is_eoStatement": true,
+    "starti": 83,
+    "value": ".",
+  },
+  Object {
+    "is_eoStatement": false,
+    "starti": 84,
+    "value": "",
+  },
+]
+`;
+
+exports[`Test  An invalid set from 9`] = `"From memo: "`;
+
+exports[`Test  An invalid set from 10`] = `
+Array [
+  "STAge",
+  "SYStem",
+  "ENVironment",
+]
+`;
+
+exports[`Test  An invalid set from 11`] = `"To memo: "`;
+
+exports[`Test  An invalid set from 12`] = `Array []`;

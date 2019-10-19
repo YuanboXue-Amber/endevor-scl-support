@@ -1,0 +1,181 @@
+{
+    "keyword": "SET",
+    "required": true,
+    "next": [
+        {
+            "keyword": "FROM",
+            "isFROM": true,
+            "nogoback": true,
+            "next": [
+                {
+                    "keyword": "FILe, DDName",
+                    "next": [
+                        {
+                            "maxLen": 8,
+                            "required": true,
+                            "next": [
+                                {
+                                    "keyword": "."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "keyword": "DSName",
+                    "next": [
+                        {
+                            "maxLen": 44,
+                            "required": true,
+                            "next": [
+                                {
+                                    "keyword": "."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "keyword": "SITE",
+                    "next": [
+                        {
+                            "maxLen": 8,
+                            "required": true,
+                            "next": [
+                                {
+                                    "keyword": "ENVironment, SYStem, SUBSystem, TYPe",
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "STAge, STAge NUMber",
+                                    "next": [
+                                        {
+                                            "maxLen": 1,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "keyword": "ENVironment, SYStem, SUBSystem, TYPe",
+                    "next": [
+                        {
+                            "maxLen": 8,
+                            "required": true,
+                            "next": [
+                                {
+                                    "keyword": "."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "keyword": "STAge, STAge NUMber",
+                    "next": [
+                        {
+                            "maxLen": 1,
+                            "required": true,
+                            "next": [
+                                {
+                                    "keyword": "."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "keyword": "TO",
+            "isTO": true,
+            "nogoback": true,
+            "next": [
+                {
+                    "keyword": "SYSOut, C1PRINT, C1PRTVB",
+                    "next": [
+                        {
+                            "keyword": "."
+                        }
+                    ]
+                },
+                {
+                    "keyword": "FILe, DDName",
+                    "next": [
+                        {
+                            "maxLen": 8,
+                            "required": true,
+                            "next": [
+                                {
+                                    "keyword": "."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "keyword": "DSName",
+                    "next": [
+                        {
+                            "maxLen": 44,
+                            "required": true,
+                            "next": [
+                                {
+                                    "keyword": "MEMber",
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "keyword": "ENVironment, SYStem, SUBSystem, TYPe",
+                    "next": [
+                        {
+                            "maxLen": 8,
+                            "required": true,
+                            "next": [
+                                {
+                                    "keyword": "."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "keyword": "STAge, STAge NUMber",
+                    "next": [
+                        {
+                            "maxLen": 1,
+                            "required": true,
+                            "next": [
+                                {
+                                    "keyword": "."
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

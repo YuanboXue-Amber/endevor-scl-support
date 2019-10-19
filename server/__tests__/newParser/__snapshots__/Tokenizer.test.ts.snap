@@ -1,0 +1,1451 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test a complex scl with 2 statements from resources  1`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 2,
+  "value": "DEFINE",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  2`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 9,
+  "value": "TYPE",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  3`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 14,
+  "value": "'COPYEXT'",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  4`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 29,
+  "value": "TO",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  5`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 32,
+  "value": "ENVIRONMENT",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  6`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 44,
+  "value": "'QA3'",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  7`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 55,
+  "value": "SYSTEM",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  8`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 62,
+  "value": "'ECPLSYS'",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  9`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 81,
+  "value": "STAGE",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  10`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 87,
+  "value": "NUMBER",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  11`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 94,
+  "value": "1",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  12`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 101,
+  "value": "DESCRIPTION",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  13`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 113,
+  "value": "'Type for environment QA1 stage 1'",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  14`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 154,
+  "value": "BASE",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  15`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 162,
+  "value": "LIBRARY",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  16`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 171,
+  "value": "'BST.P7718.EMER.BASE'",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  17`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 199,
+  "value": "DELTA",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  18`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 207,
+  "value": "LIBRARY",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  19`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 216,
+  "value": "'BST.P7718.EMER.DELTA'",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  20`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 245,
+  "value": "SOURCE",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  21`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 252,
+  "value": "OUTPUT",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  22`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 259,
+  "value": "LIBRARY",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  23`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 267,
+  "value": "'BST.P7718.EMER.OUTPUT'",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  24`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 296,
+  "value": "DO",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  25`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 299,
+  "value": "NOT",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  26`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 303,
+  "value": "EXPAND",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  27`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 310,
+  "value": "INCLUDES",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  28`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 324,
+  "value": "DEFAULT",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  29`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 332,
+  "value": "PROCESSOR",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  30`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 342,
+  "value": "GROUP",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  31`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 348,
+  "value": "'COPYEXT'",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  32`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 364,
+  "value": "ELEMENT",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  33`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 372,
+  "value": "DELTA",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  34`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 378,
+  "value": "FORMAT",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  35`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 385,
+  "value": "REVERSE",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  36`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 398,
+  "value": "DO",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  37`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 401,
+  "value": "NOT",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  38`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 405,
+  "value": "COMPRESS",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  39`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 414,
+  "value": "BASE",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  40`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 424,
+  "value": "REGRESSION",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  41`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 435,
+  "value": "PERCENTAGE",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  42`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 446,
+  "value": "50",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  43`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 455,
+  "value": "COMPONENT",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  44`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 465,
+  "value": "DELTA",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  45`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 471,
+  "value": "FORMAT",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  46`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 478,
+  "value": "REVERSE",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  47`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 491,
+  "value": "REGRESSION",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  48`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 502,
+  "value": "SEVERITY",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  49`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 511,
+  "value": "INFORMATION",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  50`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 528,
+  "value": "FILE",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  51`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 533,
+  "value": "EXTENSION",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  52`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 543,
+  "value": "'txt'",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  53`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 554,
+  "value": "SOURCE",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  54`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 561,
+  "value": "ELEMENT",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  55`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 569,
+  "value": "LENGTH",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  56`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 576,
+  "value": "80",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  57`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 584,
+  "value": "COMPARE",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  58`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 592,
+  "value": "FROM",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  59`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 597,
+  "value": "COLUMN",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  60`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 604,
+  "value": "1",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  61`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 606,
+  "value": "TO",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  62`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 609,
+  "value": "72",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  63`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 617,
+  "value": "CONSOLIDATE",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  64`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 629,
+  "value": "ELEMENT",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  65`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 637,
+  "value": "LEVELS",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  66`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 652,
+  "value": "CONSOLIDATE",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  67`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 664,
+  "value": "ELEMENT",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  68`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 672,
+  "value": "AT",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  69`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 675,
+  "value": "LEV",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  70`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 680,
+  "value": "96",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  71`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 688,
+  "value": "NUMBER",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  72`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 695,
+  "value": "OF",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  73`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 698,
+  "value": "ELEMENT",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  74`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 706,
+  "value": "LEVELS",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  75`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 713,
+  "value": "TO",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  76`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 716,
+  "value": "CONSOLIDATE",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  77`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 729,
+  "value": "50",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  78`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 737,
+  "value": "LANGUAGE",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  79`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 746,
+  "value": "'DATA'",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  80`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 758,
+  "value": "LIBRARIAN",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  81`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 768,
+  "value": "LANG",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  82`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 778,
+  "value": "CONSOLIDATE",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  83`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 790,
+  "value": "COMPONENT",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  84`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 800,
+  "value": "LEVELS",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  85`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 807,
+  "value": "tes",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  86`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 819,
+  "value": "CONSOLIDATE",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  87`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 831,
+  "value": "COMPONENT",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  88`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 841,
+  "value": "AT",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  89`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 844,
+  "value": "LEV",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  90`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 849,
+  "value": "96",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  91`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 857,
+  "value": "NUMBER",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  92`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 864,
+  "value": "OF",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  93`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 867,
+  "value": "COMPONENT",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  94`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 877,
+  "value": "LEVELS",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  95`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 884,
+  "value": "TO",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  96`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 887,
+  "value": "CONSOLIDATE",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  97`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 900,
+  "value": "50",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  98`] = `
+Object {
+  "is_eoStatement": true,
+  "starti": 903,
+  "value": ".",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  99`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 916,
+  "value": "ADD",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  100`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 920,
+  "value": "ELEMENTS",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  101`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 929,
+  "value": "'PMOVE'",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  102`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 943,
+  "value": "FROM",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  103`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 948,
+  "value": "DSNAME",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  104`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 955,
+  "value": "'BST.P7718.SOURCE'",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  105`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 985,
+  "value": "MEMBER",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  106`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 992,
+  "value": "'PMOVE'",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  107`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 1006,
+  "value": "TO",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  108`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 1009,
+  "value": "ENVIRONMENT",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  109`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 1021,
+  "value": "'QA1'",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  110`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 1041,
+  "value": "SYSTEM",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  111`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 1048,
+  "value": "'ECPLSYS'",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  112`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 1069,
+  "value": "SUBSYSTEM",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  113`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 1079,
+  "value": "'ECPLSUB'",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  114`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 1105,
+  "value": "TYPE",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  115`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 1110,
+  "value": "'PROCESS'",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  116`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 1125,
+  "value": "OPTIONS",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  117`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 1146,
+  "value": "CCID",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  118`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 1151,
+  "value": "'CCID'",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  119`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 1171,
+  "value": "COMMENTS",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  120`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 1180,
+  "value": "\\"Processor for testcase PROMOTION\\"",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  121`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 1228,
+  "value": "UPDATE",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  122`] = `
+Object {
+  "is_eoStatement": true,
+  "starti": 1237,
+  "value": ".",
+}
+`;
+
+exports[`Test a complex scl with 2 statements from resources  123`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 1238,
+  "value": "",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  1`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 1,
+  "value": "APPROVE",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  2`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 9,
+  "value": "PACKAGE",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  3`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 17,
+  "value": "'XUEYU01REFACTOR'",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  4`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 93,
+  "value": "OPTIONS",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  5`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 101,
+  "value": "NOTES",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  6`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 107,
+  "value": "=",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  7`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 109,
+  "value": "('this is package note 1',",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  8`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 162,
+  "value": "'this is \\"package 
+note 2',",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  9`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 216,
+  "value": "\\"this is' package note 3\\"",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  10`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 268,
+  "value": ")",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  11`] = `
+Object {
+  "is_eoStatement": true,
+  "starti": 275,
+  "value": ".",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  12`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 305,
+  "value": "",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  13`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 1,
+  "value": "APPROVE",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  14`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 9,
+  "value": "PACKAGE",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  15`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 17,
+  "value": "'XUEYU01REFACTOR'",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  16`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 93,
+  "value": "OPTIONS",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  17`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 101,
+  "value": "NOTES",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  18`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 107,
+  "value": "=",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  19`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 109,
+  "value": "('this is package note 1',",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  20`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 162,
+  "value": "'this is \\"package 
+note 2',",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  21`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 216,
+  "value": "\\"this is' package note 3\\"",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  22`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 268,
+  "value": ")",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  23`] = `
+Object {
+  "is_eoStatement": true,
+  "starti": 275,
+  "value": ".",
+}
+`;
+
+exports[`Test a complex scl with pkg notes from resources  24`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 305,
+  "value": "",
+}
+`;
+
+exports[`Test a simple scl from resources  1`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 0,
+  "value": "LIST",
+}
+`;
+
+exports[`Test a simple scl from resources  2`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 5,
+  "value": "ENV",
+}
+`;
+
+exports[`Test a simple scl from resources  3`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 9,
+  "value": "\\"*\\"",
+}
+`;
+
+exports[`Test a simple scl from resources  4`] = `
+Object {
+  "is_eoStatement": true,
+  "starti": 13,
+  "value": ".",
+}
+`;
+
+exports[`Test a simple scl from resources  5`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 14,
+  "value": "",
+}
+`;
+
+exports[`Test a simple scl from resources  6`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 0,
+  "value": "LIST",
+}
+`;
+
+exports[`Test a simple scl from resources  7`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 5,
+  "value": "ENV",
+}
+`;
+
+exports[`Test a simple scl from resources  8`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 9,
+  "value": "\\"*\\"",
+}
+`;
+
+exports[`Test a simple scl from resources  9`] = `
+Object {
+  "is_eoStatement": true,
+  "starti": 13,
+  "value": ".",
+}
+`;
+
+exports[`Test a simple scl from resources  10`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 14,
+  "value": "",
+}
+`;
+
+exports[`Test a simple string  1`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 0,
+  "value": "test",
+}
+`;
+
+exports[`Test a simple string  2`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 4,
+  "value": "",
+}
+`;
+
+exports[`Test a simple string  3`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 0,
+  "value": "test",
+}
+`;
+
+exports[`Test a simple string  4`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 4,
+  "value": "",
+}
+`;
+
+exports[`Test a simple string with unbalanced quotes  1`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 0,
+  "value": "test",
+}
+`;
+
+exports[`Test a simple string with unbalanced quotes  2`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 5,
+  "value": "'\\"'\\"test",
+}
+`;
+
+exports[`Test a simple string with unbalanced quotes  3`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 13,
+  "value": "",
+}
+`;
+
+exports[`Test a simple string with unbalanced quotes  4`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 0,
+  "value": "test",
+}
+`;
+
+exports[`Test a simple string with unbalanced quotes  5`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 5,
+  "value": "'\\"'\\"test",
+}
+`;
+
+exports[`Test a simple string with unbalanced quotes  6`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 13,
+  "value": "",
+}
+`;
+
+exports[`Test an empty string  1`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 0,
+  "value": "",
+}
+`;
+
+exports[`Test an empty string  2`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 0,
+  "value": "",
+}
+`;
+
+exports[`Test an empty string with new lines  1`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 4,
+  "value": "",
+}
+`;
+
+exports[`Test an empty string with new lines  2`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 4,
+  "value": "",
+}
+`;
+
+exports[`Test an invalid SCL that has invalid statement ending from resources  1`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 2,
+  "value": "LIST",
+}
+`;
+
+exports[`Test an invalid SCL that has invalid statement ending from resources  2`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 7,
+  "value": "ENV",
+}
+`;
+
+exports[`Test an invalid SCL that has invalid statement ending from resources  3`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 11,
+  "value": "\\"*\\"",
+}
+`;
+
+exports[`Test an invalid SCL that has invalid statement ending from resources  4`] = `
+Object {
+  "is_eoStatement": true,
+  "starti": 14,
+  "value": ".",
+}
+`;
+
+exports[`Test an invalid SCL that has invalid statement ending from resources  5`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 15,
+  "value": "",
+}
+`;
+
+exports[`Test an invalid SCL that has invalid statement ending from resources  6`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 2,
+  "value": "LIST",
+}
+`;
+
+exports[`Test an invalid SCL that has invalid statement ending from resources  7`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 7,
+  "value": "ENV",
+}
+`;
+
+exports[`Test an invalid SCL that has invalid statement ending from resources  8`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 11,
+  "value": "\\"*\\"",
+}
+`;
+
+exports[`Test an invalid SCL that has invalid statement ending from resources  9`] = `
+Object {
+  "is_eoStatement": true,
+  "starti": 14,
+  "value": ".",
+}
+`;
+
+exports[`Test an invalid SCL that has invalid statement ending from resources  10`] = `
+Object {
+  "is_eoStatement": false,
+  "starti": 15,
+  "value": "",
+}
+`;

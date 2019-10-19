@@ -1,0 +1,116 @@
+{
+    "keyword": "GENerate",
+    "required": true,
+    "next": [
+        {
+            "keyword": "ELEment",
+            "required": true,
+            "next": [
+                {
+                    "maxLen": 255,
+                    "required": true,
+                    "nogoback": true,
+                    "next": [
+                        {
+                            "keyword": "THRough, THRu",
+                            "next": [
+                                {
+                                    "maxLen": 255,
+                                    "required": true
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "FROm",
+                            "isFROM": true,
+                            "next": [
+                                {
+                                    "keyword": "ENVironment, SYStem, SUBSystem, TYPe",
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "STAge, STAge NUMber",
+                                    "next": [
+                                        {
+                                            "maxLen": 1,
+                                            "required": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "WHEre",
+                            "next": [
+                                {
+                                    "keyword": "CCId, CCId OF CURrent, CCId OF ALL, CCId OF RETrieve",
+                                    "required": true,
+                                    "next": [
+                                        {
+                                            "keyword": "EQual, =",
+                                            "next": [
+                                                {
+                                                    "maxLen": 12,
+                                                    "required": true,
+                                                    "specialValue": true
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "maxLen": 12,
+                                            "required": true,
+                                            "specialValue": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "OPTion",
+                            "next": [
+                                {
+                                    "keyword": "CCId",
+                                    "next": [
+                                        {
+                                            "maxLen": 12,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "COMment",
+                                    "next": [
+                                        {
+                                            "maxLen": 44,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "OVErride SIGNOut, COPyback SEArch, COPyback NOSearch, NOSOurce, AUTogen, AUTogen SPAN NONe, AUTogen SPAN ALL, AUTogen SPAN SYStems, AUTogen SPAN Subsystems"
+                                },
+                                {
+                                    "keyword": "PROcessor GROup EQual, PROcessor GROup =",
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
