@@ -53,12 +53,12 @@ export function prepareTrees() {
     EXECUTEtree = composeTreeFromJSON(prepareJSON("EXECUTEtree.json"));
     RESETtree = composeTreeFromJSON(prepareJSON("RESETtree.json"));
     COMMITtree = composeTreeFromJSON(prepareJSON("COMMITtree.json"));
-    // UPDATEtree = composeTreeFromJSON(prepareJSON("UPDATEtree.json"));
+    UPDATEtree = composeTreeFromJSON(prepareJSON("UPDATEtree.json"));
     DELETEtree = composeTreeFromJSON(prepareJSON("DELETEtree.json"));
-    // MOVEtree = composeTreeFromJSON(prepareJSON("MOVEtree.json"));
-    // RETRIEVEtree = composeTreeFromJSON(prepareJSON("RETRIEVEtree.json"));
-    // SIGNINtree = composeTreeFromJSON(prepareJSON("SIGNINtree.json"));
-    // TRANSFERtree = composeTreeFromJSON(prepareJSON("TRANSFERtree.json"));
+    MOVEtree = composeTreeFromJSON(prepareJSON("MOVEtree.json"));
+    RETRIEVEtree = composeTreeFromJSON(prepareJSON("RETRIEVEtree.json"));
+    SIGNINtree = composeTreeFromJSON(prepareJSON("SIGNINtree.json"));
+    TRANSFERtree = composeTreeFromJSON(prepareJSON("TRANSFERtree.json"));
     LISTtree = composeTreeFromJSON(prepareJSON("LISTtree.json"));
 }
 
@@ -114,6 +114,16 @@ export function dispatcher(scl: ITokenizedString[]): Inode | undefined {
                 return DELETEtree;
             case match(scl[0].value, "LISt"):
                 return LISTtree;
+            case match(scl[0].value, "UPDate"):
+                return UPDATEtree;
+            case match(scl[0].value, "MOVe"):
+                return MOVEtree;
+            case match(scl[0].value, "RETrieve"):
+                return RETRIEVEtree;
+            case match(scl[0].value, "SIGnin"):
+                return SIGNINtree;
+            case match(scl[0].value, "TRAnsfer"):
+                return TRANSFERtree;
             default:
                 break;
         }
