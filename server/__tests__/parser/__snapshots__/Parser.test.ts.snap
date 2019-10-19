@@ -2222,9 +2222,151 @@ Array [
     "value": ")",
   },
   Object {
+    "is_eoStatement": false,
+    "starti": 185,
+    "value": "EXECUTION",
+  },
+  Object {
+    "is_eoStatement": false,
+    "starti": 195,
+    "value": "WINDOW",
+  },
+  Object {
+    "completionItems": Array [],
+    "is_eoStatement": false,
+    "rightDistance": "
+           ",
+    "starti": 202,
+    "value": "FROM",
+  },
+  Object {
+    "is_eoStatement": false,
+    "starti": 207,
+    "value": "11DEC17",
+  },
+  Object {
+    "completionItems": Array [
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "TO ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "STANDARD PACKAGE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "EMERGENCY PACKAGE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "NONSHARABLE PACKAGE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "SHARABLE PACKAGE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "NONPROMOTION PACKAGE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "PROMOTION PACKAGE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "BACKOUT ENABLED ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "BACKOUT IS ENABLED ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "BACKOUT NOT ENABLED ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "BACKOUT IS NOT ENABLED ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "DO NOT VALIDATE SCL ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "NOTES = ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "NOTES ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "COPY PACKAGE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "COPY FROM PACKAGE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "IMPORT SCL FROM DDNAME ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "IMPORT SCL FROM DSNAME ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "DO NOT APPEND ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "APPEND ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "DESCRIPTION ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": ". ",
+      },
+    ],
+    "is_eoStatement": false,
+    "rightDistance": "
+           ",
+    "starti": 215,
+    "value": "12:12",
+  },
+  Object {
     "completionItems": Array [],
     "is_eoStatement": true,
-    "starti": 186,
+    "starti": 223,
     "value": ".",
   },
 ]

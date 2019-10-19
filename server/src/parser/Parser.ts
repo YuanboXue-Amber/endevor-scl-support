@@ -54,7 +54,8 @@ export class Parser {
      */
     private setDiagnosticForInvalidValues(indexOfErr: number) {
         // set diagnostic
-        if (indexOfErr-1 >= 0 && !isNullOrUndefined(this.scl[indexOfErr-1].completionItems)) {
+        if (indexOfErr-1 >= 0 && !isNullOrUndefined(this.scl[indexOfErr-1].completionItems) &&
+            (this.scl[indexOfErr-1].completionItems as CompletionItem[]).length > 0) {
             const possibleValues: string[] = [];
             for (const item of this.scl[indexOfErr-1].completionItems as CompletionItem[]) {
                 possibleValues.push(item.label);
@@ -331,9 +332,9 @@ export class Parser {
             result.errorFound = true;
             return result; // error/not match: no need to increase index
         }
-        // format has to be DDMMYY HH:MM
-        const dateStr = this.scl[this.index] + " " + this.scl[this.index+1];
-        if (dateStr.match(/^([1-9]|([012][0-9])|(3[01]))([0]{0,1}[1-9]|1[012])\d\d (20|21|22|23|[0-1]?\d):[0-5]?\d$/)) {
+        // format has to be DDMMMYY HH:MM
+        const dateStr: string = this.scl[this.index].value + " " + this.scl[this.index+1].value;
+        if (dateStr.match(/^(([0-9])|([0-2][0-9])|([3][0-1]))([A-Za-z]{3})\d{2}(\s+)((0[0-9]|1[0-9]|2[0-3]|[0-9]):[0-5][0-9])$/)) {
             result.isMatch = true;
             this.index = this.index + 2;
             this.eventEmitter.emit(VALUEMATCHEVENT, this.index-1, node);
@@ -343,7 +344,7 @@ export class Parser {
         this.eventEmitter.emit(DIAGNOSTICEVENT,
             this.scl[this.index].starti, this.scl[this.index].starti + this.scl[this.index].value.length,
             DiagnosticSeverity.Error,
-            `Expecting a value in DDMMYY HH:MM format`);
+            `Expecting a value in DDMMMYY HH:MM format, for example 01JAN93 00:01`);
         result.errorFound = true;
         return result; // error/not match: no need to increase index
     }

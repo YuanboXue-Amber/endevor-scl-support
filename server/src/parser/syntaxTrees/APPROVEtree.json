@@ -1,0 +1,37 @@
+{
+    "keyword": "APPRove",
+    "required": true,
+    "next": [
+        {
+            "keyword": "PACkage",
+            "required": true,
+            "next": [
+                {
+                    "maxLen": 16,
+                    "required": true,
+                    "nogoback": true,
+                    "next": [
+                        {
+                            "keyword": "OPTion",
+                            "next": [
+                                {
+                                    "keyword": "NOTEs =, NOTEs",
+                                    "next": [
+                                        {
+                                            "maxLen": 60,
+                                            "required": true,
+                                            "specialValue": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

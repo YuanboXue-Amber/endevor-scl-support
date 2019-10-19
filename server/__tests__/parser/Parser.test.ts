@@ -84,7 +84,7 @@ describe("Test ", () => {
         const sclString = "    DEFINE PACKAGE 'packageId'\r\n" +
         "DESCRIPTION 'package description'\r\n" +
         "    OPTION PROMOTION PACKAGE BACKOUT ENABLED SHARABLE PACKAGE NOTES ( 'sample note1' ,\r\n" +
-        "            'sample n\"ote2' )\r\n" +
+        "            'sample n\"ote2' ) EXECUTION WINDOW FROM 11DEC17 12:12 \r\n" +
         ".";
         const parse = new Parser(mockDocument, sclToToken(sclString), DEFINEPACKAGEtree);
         parse.parser();
