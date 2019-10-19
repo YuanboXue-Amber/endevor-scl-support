@@ -52,7 +52,7 @@
                                     ]
                                 },
                                 {
-                                    "keyword": "STAge, STAge NUMber",
+                                    "keyword": "STAge NUMber, STAge",
                                     "next": [
                                         {
                                             "maxLen": 1,
@@ -82,7 +82,7 @@
                     ]
                 },
                 {
-                    "keyword": "STAge, STAge NUMber",
+                    "keyword": "STAge NUMber, STAge",
                     "next": [
                         {
                             "maxLen": 1,
@@ -162,7 +162,7 @@
                     ]
                 },
                 {
-                    "keyword": "STAge, STAge NUMber",
+                    "keyword": "STAge NUMber, STAge",
                     "next": [
                         {
                             "maxLen": 1,

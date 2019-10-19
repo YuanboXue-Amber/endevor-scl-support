@@ -21,6 +21,22 @@ export let ADDtree: Inode;
 export let GENERATEtree: Inode;
 export let DEFINEPACKAGEtree: Inode;
 
+export let UPDATEtree: Inode;
+export let DELETEtree: Inode;
+export let MOVEtree: Inode;
+export let RETRIEVEtree: Inode;
+export let SIGNINtree: Inode;
+export let TRANSFERtree: Inode;
+export let APPROVEtree: Inode;
+export let DENYtree: Inode;
+export let BACKINtree: Inode;
+export let BACKOUTtree: Inode;
+export let CASTtree: Inode;
+export let EXECUTEtree: Inode;
+export let RESETtree: Inode;
+export let COMMITtree: Inode;
+export let LISTtree: Inode;
+
 export function prepareTrees() {
     SETtree = composeTreeFromJSON(prepareJSON("SETtree.json"));
     ADDtree = composeTreeFromJSON(prepareJSON("ADDtree.json"));
@@ -49,8 +65,8 @@ function composeTreeFromJSON(jsonRootNode: Inode): Inode {
     return jsonRootNode;
 }
 
-function dispatcher(scl: ITokenizedString[]): Inode | undefined {
-    if (scl.length >= 2) {
+export function dispatcher(scl: ITokenizedString[]): Inode | undefined {
+    if (scl.length >= 1) {
         switch (true) {
             case match(scl[0].value, "ADD"):
                 return ADDtree;

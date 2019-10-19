@@ -2,13 +2,14 @@ import { isNullOrUndefined } from 'util';
 import { ITokenizedString } from './Tokenizer';
 import { Diagnostic, TextDocument, DiagnosticSeverity, CompletionItem, CompletionItemKind } from 'vscode-languageserver';
 import { Inode, match } from './PreParserUtils';
-import { QUICKFIX_UPPERCASE_MSG, QUICKFIX_CHOICE_MSG } from '../CodeActionProvider';
+import { QUICKFIX_UPPERCASE_MSG, QUICKFIX_CHOICE_MSG, QUICKFIX_NO_EOS_MSG, QUICKFIX_SPACE_BEFORE_EOS_MSG } from '../CodeActionProvider';
 import { SCLDocumentManager } from '../documents/SCLDocumentManager';
 import { EventEmitter } from 'events';
 
 const DIAGNOSTICEVENT = "new diagnostic";
 const KEYWORDMATCHEVENT = "check case and completion items";
 const VALUEMATCHEVENT = "check completion items";
+const POSTPROCESSEVENT = "set diagnose for eos";
 
 export class Parser {
     document: TextDocument; // used for convering index with position
@@ -40,6 +41,7 @@ export class Parser {
         this.eventEmitter.on(DIAGNOSTICEVENT, this.eventEmitter.addDiagnostic);
         this.eventEmitter.on(KEYWORDMATCHEVENT, this.eventEmitter.postKeywordMatch);
         this.eventEmitter.on(VALUEMATCHEVENT, this.eventEmitter.postValueMatch);
+        this.eventEmitter.on(POSTPROCESSEVENT, this.eventEmitter.processEOS);
     }
 
     /**
@@ -52,9 +54,9 @@ export class Parser {
      */
     private setDiagnosticForInvalidValues(indexOfErr: number) {
         // set diagnostic
-        if (indexOfErr-1 >= 0 && !isNullOrUndefined(this.scl[indexOfErr-1].CompletionItem)) {
+        if (indexOfErr-1 >= 0 && !isNullOrUndefined(this.scl[indexOfErr-1].completionItems)) {
             const possibleValues: string[] = [];
-            for (const item of this.scl[indexOfErr-1].CompletionItem as CompletionItem[]) {
+            for (const item of this.scl[indexOfErr-1].completionItems as CompletionItem[]) {
                 possibleValues.push(item.label);
             }
             this.eventEmitter.emit(DIAGNOSTICEVENT,
@@ -120,16 +122,20 @@ export class Parser {
                 // try to go up in parents, to find a parent that has keyword child node, and call matchNext with that parent
                 let ancestor = parentNode.parent;
                 while (!isNullOrUndefined(ancestor)) {
-                    let ancestorHasKeywordChild = false;
+                    let ancestorHasKeywordChild = 0;
+                    // ancestor has child and more than 1
                     if (!isNullOrUndefined(ancestor.next)) {
                         for (const potentialMatch of ancestor.next) {
                             if (potentialMatch.keyword) {
-                                ancestorHasKeywordChild = true;
-                                break;
+                                ancestorHasKeywordChild ++;
+                                if (potentialMatch.keyword.indexOf(", ") > 0)
+                                    ancestorHasKeywordChild ++;
                             }
+                            if (ancestorHasKeywordChild > 1)
+                                break;
                         }
                     }
-                    if (ancestorHasKeywordChild) {
+                    if (ancestorHasKeywordChild > 1) {
                         matchNext(ancestor);
                         break;
                     }
@@ -148,6 +154,7 @@ export class Parser {
         if (this.index < this.scl.length-1 && this.scl[this.index].value !== "") { // end before the whole scl is processed
             this.setDiagnosticForInvalidValues(this.index);
         }
+        this.eventEmitter.emit(POSTPROCESSEVENT);
     }
 
     private dealWithKeyword(node: Inode): ParseResult {
@@ -164,7 +171,7 @@ export class Parser {
                     }
                 }
                 if (!match(this.scl[this.index+i].value, keywords[i])) {
-                    if (keywords[i] === "." || keywords[i].toLowerCase() !== keywords[i]) {
+                    if (keywords[i] === "." || keywords[i] === "=" || keywords[i].toLowerCase() !== keywords[i]) {
                         return false; // there's a compulsory doesn't get matched
                     } else {
                         break; // matched i-1 keywords
@@ -210,6 +217,8 @@ export class Parser {
                 rawStr = rawStr.substring(1, rawStr.length);
             if (rawStr.endsWith(")"))
                 rawStr = rawStr.substring(0, rawStr.length-1);
+            else if (rawStr.endsWith(","))
+                rawStr = rawStr.substring(0, rawStr.length-1);
             if (rawStr.startsWith("\"") && rawStr.endsWith("\""))
                 rawStr = rawStr.substring(1, rawStr.length-1);
             else if (rawStr.startsWith("'") && rawStr.endsWith("'"))
@@ -241,7 +250,7 @@ export class Parser {
                 // set diagnostic
                 this.eventEmitter.emit(DIAGNOSTICEVENT,
                     this.scl[this.index].starti, this.scl[this.index+plus].starti + this.scl[this.index+plus].value.length,
-                    DiagnosticSeverity.Error, `Expecting a value no longer than ${node.maxLen}. Current value has length ${this.scl[this.index].value.length}`);
+                    DiagnosticSeverity.Error, `Expecting a value no longer than ${node.maxLen}. Current value has length ${finalvalue.length}`);
                 // it is an error but it probably don't affect the other part of the scl. So we don't set result as error here.
             }
             result.isMatch = true;
@@ -252,7 +261,9 @@ export class Parser {
 
         // case 1.2 special value that is a special value
         else if (node.specialValue && // special value expected
-            (this.scl[this.index].value.endsWith(",") || (this.index+1 < this.scl.length && this.scl[this.index].value === ",") ) ) { // value is special
+            (this.scl[this.index].value.startsWith("(") ||
+             this.scl[this.index].value.endsWith(",") ||
+             (this.index+1 < this.scl.length && this.scl[this.index].value === ",") ) ) { // value is special
 
             let finalvalue = "";
             while(true) {
@@ -264,19 +275,20 @@ export class Parser {
                     return result; // error/not match: no need to increase index
                 }
                 const token = this.scl[this.index+plus];
-                finalvalue = finalvalue + strip(token.value);
+                finalvalue = strip(token.value);
+                if (token.value.length > 1 &&
+                    (finalvalue.length <= 0 || finalvalue.length > (node.maxLen as number))) {
+                    // set diagnostic
+                    this.eventEmitter.emit(DIAGNOSTICEVENT,
+                        token.starti, token.starti + token.value.length,
+                        DiagnosticSeverity.Error,
+                        `Expecting a value no longer than ${node.maxLen}. Current value has length ${finalvalue.length}`);
+                    // it is an error but it probably don't affect the other part of the scl. So we don't set result as error here.
+                }
                 if (token.value.endsWith(")")) {
                     break; // current token is the last part of the special value
                 }
                 plus ++;
-            }
-            if (finalvalue.length <= 0 || finalvalue.length > (node.maxLen as number)) {
-                // set diagnostic
-                this.eventEmitter.emit(DIAGNOSTICEVENT,
-                    this.scl[this.index].starti, this.scl[this.index+plus].starti + this.scl[this.index+plus].value.length,
-                    DiagnosticSeverity.Error,
-                    `Expecting a value no longer than ${node.maxLen}. Current value has length ${this.scl[this.index].value.length}`);
-                // it is an error but it probably don't affect the other part of the scl. So we don't set result as error here.
             }
             result.isMatch = true;
             this.index = this.index+plus+1;
@@ -418,9 +430,11 @@ class ParserEvent extends EventEmitter {
                 this.parser.toMemo.push(keyphrase);
         }
         // set indention
-        if (matchingNode.isFROM || matchingNode.isTO || matchingNode.keyword === "OPTion") {
+        const keyword = matchingNode.keyword as string;
+        if (matchingNode.isFROM || matchingNode.isTO ||
+            keyword === "OPTion" || keyword.startsWith("WHEre ") || keyword === "THRough, THRu") {
             // reset the indention of the value before from/to/option
-            this.parser.scl[startindex + numberOfkeywords - 2].rightDistance = "\n" + " ".repeat(10 - this.parser.scl[startindex + numberOfkeywords - 1].value.length);
+            this.parser.scl[startindex - 1].rightDistance = "\n" + " ".repeat(10 - this.parser.scl[startindex].value.length);
             this.parser.baseIndention = 11; // set new indention for other values
         } else if (keyphrase.indexOf(" ") > 0) { // a multi keywords phrase, line break afterwards
             this.parser.scl[startindex + numberOfkeywords - 1].rightDistance = "\n" + (" ".repeat(this.parser.baseIndention));
@@ -457,7 +471,7 @@ class ParserEvent extends EventEmitter {
     private async setCompletionItemForKeyword(lastIndex: number, matchingNode: Inode) {
         // 1st check child
         const result: [CompletionItem[], boolean] = this.setCompletionItemFromChild(matchingNode);
-        this.parser.scl[lastIndex].CompletionItem = result[0];
+        this.parser.scl[lastIndex].completionItems = result[0];
         if (result[1])
             return;
 
@@ -467,7 +481,7 @@ class ParserEvent extends EventEmitter {
         matchingNode.parent.keyword.toUpperCase() === "OPTION") {
             const resultFromParent = this.setCompletionItemFromParent(matchingNode);
             resultFromParent.forEach((item) => {
-                (this.parser.scl[lastIndex].CompletionItem as CompletionItem[]).push(item);
+                (this.parser.scl[lastIndex].completionItems as CompletionItem[]).push(item);
             });
         }
     }
@@ -484,14 +498,14 @@ class ParserEvent extends EventEmitter {
     private async setCompletionItemForValue(lastIndex: number, matchingNode: Inode) {
         // 1st check child
         const result: [CompletionItem[], boolean] = this.setCompletionItemFromChild(matchingNode);
-        this.parser.scl[lastIndex].CompletionItem = result[0];
+        this.parser.scl[lastIndex].completionItems = result[0];
         if (result[1])
             return;
 
         // 2nd check all parents
         const resultFromParent = this.setCompletionItemFromParent(matchingNode);
         resultFromParent.forEach((item) => {
-            (this.parser.scl[lastIndex].CompletionItem as CompletionItem[]).push(item);
+            (this.parser.scl[lastIndex].completionItems as CompletionItem[]).push(item);
         });
     }
 
@@ -510,12 +524,16 @@ class ParserEvent extends EventEmitter {
             if (matchingNode.next.length === 1 && matchingNode.next[0].required) {
                 // only child and required
                 if (matchingNode.next[0].keyword) {
-                    const item: CompletionItem = {
-                        label: matchingNode.next[0].keyword.toUpperCase() + " ",
-                        kind: CompletionItemKind.Keyword,
-                        documentation: "Endevor SCL keyword"
-                    };
-                    return [[item], true];
+                    const phrases = matchingNode.next[0].keyword.split(", ");
+                    for (const phrase of phrases) {
+                        const item: CompletionItem = {
+                            label: phrase.toUpperCase() + " ",
+                            kind: CompletionItemKind.Keyword,
+                            documentation: "Endevor SCL keyword"
+                        };
+                        result.push(item);
+                    }
+                    return [result, true];
                 }
                 return [[], true];
             } else {
@@ -567,6 +585,27 @@ class ParserEvent extends EventEmitter {
             node = node.parent;
         }
         return result;
+    }
+
+    processEOS() {
+        const lastToken = this.parser.scl[this.parser.scl.length-1];
+        const secondLastToken = this.parser.scl[this.parser.scl.length-2];
+
+        if (!lastToken.is_eoStatement) {
+            this.emit(DIAGNOSTICEVENT,
+                lastToken.starti, lastToken.starti + lastToken.value.length,
+                DiagnosticSeverity.Error,
+                QUICKFIX_NO_EOS_MSG);
+            return false;
+        }
+        if (lastToken.starti === secondLastToken.starti + secondLastToken.value.length) {
+            this.emit(DIAGNOSTICEVENT,
+                lastToken.starti, lastToken.starti + lastToken.value.length,
+                DiagnosticSeverity.Error,
+                QUICKFIX_SPACE_BEFORE_EOS_MSG);
+            return false;
+        }
+        return true;
     }
 }
 

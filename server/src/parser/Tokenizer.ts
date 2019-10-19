@@ -10,7 +10,7 @@ export interface ITokenizedString {
     // true if value symbolize the end of one scl statement "."
     is_eoStatement: boolean;
 
-    CompletionItem?: CompletionItem[];
+    completionItems?: CompletionItem[];
     rightDistance?: string; // distance between this token and the token after, used for formating
 }
 

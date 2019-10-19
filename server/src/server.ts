@@ -28,8 +28,8 @@ import { quickfix } from './CodeActionProvider';
 import { composeCompletionItemsFromKeywords } from './CompletionProvider';
 import { SCLDocumentManager, IDocumentSettings } from './documents/SCLDocumentManager';
 import { SCLDocument } from './documents/SCLDocument';
-import { prepareTrees } from './oldParser/syntaxTrees/PrepareTrees';
 import { commands } from './ExecuteCommandProvider';
+import { prepareTrees } from './parser/PreParserUtils';
 
 // Create a connection for the server. The connection uses Node's IPC as a transport.
 // Also include all preview / proposed LSP features.

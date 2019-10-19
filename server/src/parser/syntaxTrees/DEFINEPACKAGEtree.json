@@ -65,18 +65,13 @@
                             "keyword": "OPTion",
                             "next": [
                                 {
-                                    "keyword": "STANdard, EMErgency, NONsharable, SHArable, NONPromotion, PROMotion",
-                                    "next": [
-                                        {
-                                            "keyword": "PACkage"
-                                        }
-                                    ]
+                                    "keyword": "STANdard package, EMErgency package, NONsharable package, SHArable package, NONPromotion package, PROMotion package"
                                 },
                                 {
                                     "keyword": "BACKOut ENAbled, BACKOut IS ENAbled, BACKOut NOT ENAbled, BACKOut IS NOT ENAbled, DO NOT VALIDATE SCL"
                                 },
                                 {
-                                    "keyword": "NOTEs =",
+                                    "keyword": "NOTEs =, NOTEs",
                                     "next": [
                                         {
                                             "maxLen": 60,

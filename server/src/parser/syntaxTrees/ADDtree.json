@@ -122,7 +122,7 @@
                                     ]
                                 },
                                 {
-                                    "keyword": "UPDate if present, DELete input source, OVErride SIGNOut, BYPass GENerate PROcessor, AUTogen, AUTogen SPAN NONe, AUTogen SPAN ALL, AUTogen SPAN SYStems, AUTogen SPAN Subsystems"
+                                    "keyword": "UPDate if present, DELete input source, OVErride SIGNOut, BYPass GENerate PROcessor, AUTogen SPAN NONe, AUTogen SPAN ALL, AUTogen SPAN SYStems, AUTogen SPAN Subsystems, AUTogen"
                                 },
                                 {
                                     "keyword": "PROcessor GROup EQual, PROcessor GROup =",

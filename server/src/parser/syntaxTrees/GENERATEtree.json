@@ -34,7 +34,7 @@
                                     ]
                                 },
                                 {
-                                    "keyword": "STAge, STAge NUMber",
+                                    "keyword": "STAge NUMber, STAge",
                                     "next": [
                                         {
                                             "maxLen": 1,
@@ -45,28 +45,12 @@
                             ]
                         },
                         {
-                            "keyword": "WHEre",
+                            "keyword": "WHEre CCId OF CURrent EQual, WHEre CCId OF CURrent =, WHEre CCId OF CURrent, WHEre CCId OF ALL EQual, WHEre CCId OF ALL =, WHEre CCId OF ALL, WHEre CCId OF RETrieve EQual, WHEre CCId OF RETrieve =, WHEre CCId OF RETrieve, WHEre CCId EQual, WHEre CCId =, WHEre CCId",
                             "next": [
                                 {
-                                    "keyword": "CCId, CCId OF CURrent, CCId OF ALL, CCId OF RETrieve",
+                                    "maxLen": 12,
                                     "required": true,
-                                    "next": [
-                                        {
-                                            "keyword": "EQual, =",
-                                            "next": [
-                                                {
-                                                    "maxLen": 12,
-                                                    "required": true,
-                                                    "specialValue": true
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "maxLen": 12,
-                                            "required": true,
-                                            "specialValue": true
-                                        }
-                                    ]
+                                    "specialValue": true
                                 }
                             ]
                         },
@@ -92,7 +76,7 @@
                                     ]
                                 },
                                 {
-                                    "keyword": "OVErride SIGNOut, COPyback SEArch, COPyback NOSearch, NOSOurce, AUTogen, AUTogen SPAN NONe, AUTogen SPAN ALL, AUTogen SPAN SYStems, AUTogen SPAN Subsystems"
+                                    "keyword": "OVErride SIGNOut, COPyback SEArch, COPyback NOSearch, NOSOurce, AUTogen SPAN NONe, AUTogen SPAN ALL, AUTogen SPAN SYStems, AUTogen SPAN Subsystems, AUTogen"
                                 },
                                 {
                                     "keyword": "PROcessor GROup EQual, PROcessor GROup =",

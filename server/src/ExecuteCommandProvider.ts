@@ -1,9 +1,9 @@
-import { ExecuteCommandParams, Command, TextDocumentIdentifier } from "vscode-languageserver";
+import { Command } from "vscode-languageserver";
 import { SCLDocument, SCLstatement } from './documents/SCLDocument';
 import * as fs from 'fs';
 import * as path from 'path';
-import { exec, execSync } from "child_process";
-import { matchWithoutDiagnose } from './oldParser/ParserTags';
+import { execSync } from "child_process";
+import { match } from './parser/PreParserUtils';
 import { isNullOrUndefined } from 'util';
 
 const SUBMITSCL_COMMAND = Command.create('Submit scl', "endevorscl.submitscl");
@@ -32,12 +32,12 @@ export const executeSubmitSCL= ((document: SCLDocument, starti: number) => {
 
 function getTypeFromSCL(statement: SCLstatement) {
 
-    if (matchWithoutDiagnose(statement.tokens[0], "LIST"))
+    if (match(statement.tokens[0].value, "LISt"))
         return "list";
     if (statement.tokens.length > 1) {
-        if (matchWithoutDiagnose(statement.tokens[1], "PACKAGE"))
+        if (match(statement.tokens[1].value, "PACkage"))
             return "package";
-        if (matchWithoutDiagnose(statement.tokens[1], "ELEMENT")) {
+        if (match(statement.tokens[1].value, "ELEment")) {
             return "element";
         }
     }
