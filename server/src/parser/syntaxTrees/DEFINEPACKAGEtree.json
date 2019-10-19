@@ -1,18 +1,22 @@
 {
     "keyword": "DEFine",
     "required": true,
+    "requireNext": true,
     "next": [
         {
             "keyword": "PACkage",
             "required": true,
+            "requireNext": true,
             "next": [
                 {
                     "maxLen": 16,
                     "required": true,
                     "nogoback": true,
+                    "requireNext": true,
                     "next": [
                         {
                             "keyword": "COPy PACkage, COPy FROm PACkage",
+                            "requireNext": true,
                             "next": [
                                 {
                                     "maxLen": 16,
@@ -22,6 +26,7 @@
                         },
                         {
                             "keyword": "IMPort SCL FROm DDName",
+                            "requireNext": true,
                             "next": [
                                 {
                                     "maxLen": 8,
@@ -31,6 +36,7 @@
                         },
                         {
                             "keyword": "IMPort SCL FROm DSName",
+                            "requireNext": true,
                             "next": [
                                 {
                                     "maxLen": 44,
@@ -38,6 +44,7 @@
                                     "next": [
                                         {
                                             "keyword": "MEMber",
+                                            "requireNext": true,
                                             "next": [
                                                 {
                                                     "maxLen": 8,
@@ -54,6 +61,7 @@
                         },
                         {
                             "keyword": "DEScription",
+                            "requireNext": true,
                             "next": [
                                 {
                                     "maxLen": 60,
@@ -63,6 +71,7 @@
                         },
                         {
                             "keyword": "OPTion",
+                            "requireNext": true,
                             "next": [
                                 {
                                     "keyword": "STANdard package, EMErgency package, NONsharable package, SHArable package, NONPromotion package, PROMotion package"
@@ -72,6 +81,7 @@
                                 },
                                 {
                                     "keyword": "NOTEs =, NOTEs",
+                                    "requireNext": true,
                                     "next": [
                                         {
                                             "maxLen": 60,
@@ -82,6 +92,7 @@
                                 },
                                 {
                                     "keyword": "EXECUTion WINdow FROm",
+                                    "requireNext": true,
                                     "next": [
                                         {
                                             "dateTimeValue": true,
@@ -89,6 +100,7 @@
                                             "next": [
                                                 {
                                                     "keyword": "TO",
+                                                    "requireNext": true,
                                                     "next": [
                                                         {
                                                             "dateTimeValue": true,

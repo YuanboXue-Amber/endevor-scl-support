@@ -14,6 +14,8 @@ export interface Inode {
     specialValue?: boolean; // values in (,). Note all maxLen 255 and 768 are automaticaly special values,
     dateTimeValue?: boolean; // value with date time format
     parent?: Inode;
+
+    requireNext?: boolean; // require child to be specified
 }
 
 export let SETtree: Inode;

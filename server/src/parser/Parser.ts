@@ -74,7 +74,7 @@ export class Parser {
     }
 
     parser() {
-        const matchNext = (parentNode: Inode) => {
+        const matchNext = (parentNode: Inode, matchInAncestor?: boolean) => {
             if (this.index >= this.scl.length || this.scl[this.index].value === "") {
                 if (!isNullOrUndefined(parentNode.next) &&
                     parentNode.next.length >= 1 && parentNode.next[0].required) { // incomplete scl
@@ -120,30 +120,35 @@ export class Parser {
             }
             // no match found, must be a keyword
             if (!matchFound) {
-                // try to go up in parents, to find a parent that has keyword child node, and call matchNext with that parent
-                let ancestor = parentNode.parent;
-                while (!isNullOrUndefined(ancestor)) {
-                    let ancestorHasKeywordChild = 0;
-                    // ancestor has child and more than 1
-                    if (!isNullOrUndefined(ancestor.next)) {
-                        for (const potentialMatch of ancestor.next) {
-                            if (potentialMatch.keyword) {
-                                ancestorHasKeywordChild ++;
-                                if (potentialMatch.keyword.indexOf(", ") > 0)
+                if (!matchInAncestor && parentNode.requireNext) { // error
+                    this.setDiagnosticForInvalidValues(this.index);
+                    return;
+                } else {
+                    // try to go up in parents, to find a parent that has keyword child node, and call matchNext with that parent
+                    let ancestor = parentNode.parent;
+                    while (!isNullOrUndefined(ancestor)) {
+                        let ancestorHasKeywordChild = 0;
+                        // ancestor has child and more than 1
+                        if (!isNullOrUndefined(ancestor.next)) {
+                            for (const potentialMatch of ancestor.next) {
+                                if (potentialMatch.keyword) {
                                     ancestorHasKeywordChild ++;
+                                    if (potentialMatch.keyword.indexOf(", ") > 0)
+                                        ancestorHasKeywordChild ++;
+                                }
+                                if (ancestorHasKeywordChild > 1)
+                                    break;
                             }
-                            if (ancestorHasKeywordChild > 1)
-                                break;
                         }
+                        if (ancestorHasKeywordChild > 1) {
+                            matchNext(ancestor, true);
+                            break;
+                        }
+                        if (ancestor.nogoback) { // no need to check up for more parents
+                            break;
+                        }
+                        ancestor = ancestor.parent;
                     }
-                    if (ancestorHasKeywordChild > 1) {
-                        matchNext(ancestor);
-                        break;
-                    }
-                    if (ancestor.nogoback) { // no need to check up for more parents
-                        break;
-                    }
-                    ancestor = ancestor.parent;
                 }
             }
         };

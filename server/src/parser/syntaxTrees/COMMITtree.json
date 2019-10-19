@@ -1,5 +1,5 @@
 {
-    "keyword": "APPRove",
+    "keyword": "COMMit",
     "required": true,
     "requireNext": true,
     "next": [
@@ -19,13 +19,22 @@
                             "requireNext": true,
                             "next": [
                                 {
-                                    "keyword": "NOTEs =, NOTEs",
+                                    "keyword": "DELete PROMotion HIStory"
+                                },
+                                {
+                                    "keyword": "WHEre OLDer THAn",
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "maxLen": 60,
+                                            "maxLen": 3,
                                             "required": true,
-                                            "specialValue": true
+                                            "requireNext": true,
+                                            "next": [
+                                                {
+                                                    "keyword": "DAYs",
+                                                    "required": true
+                                                }
+                                            ]
                                         }
                                     ]
                                 }

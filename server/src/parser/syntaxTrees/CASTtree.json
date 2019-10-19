@@ -1,0 +1,67 @@
+{
+    "keyword": "CASt",
+    "required": true,
+    "requireNext": true,
+    "next": [
+        {
+            "keyword": "PACkage",
+            "required": true,
+            "requireNext": true,
+            "next": [
+                {
+                    "maxLen": 16,
+                    "required": true,
+                    "nogoback": true,
+                    "requireNext": true,
+                    "next": [
+                        {
+                            "keyword": "OPTion",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "keyword": "BACKOut ENAbled, BACKOut IS ENAbled, BACKOut NOT ENAbled, BACKOut IS NOT ENAbled, VALidate COMPonent WITh WARning, VALidate COMPonent, DO NOT VALidate COMPonent"
+                                },
+                                {
+                                    "keyword": "NOTEs =, NOTEs",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 60,
+                                            "required": true,
+                                            "specialValue": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "EXECUTion WINdow FROm",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "dateTimeValue": true,
+                                            "required": true,
+                                            "next": [
+                                                {
+                                                    "keyword": "TO",
+                                                    "requireNext": true,
+                                                    "next": [
+                                                        {
+                                                            "dateTimeValue": true,
+                                                            "required": true
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

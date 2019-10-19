@@ -1,5 +1,5 @@
 {
-    "keyword": "APPRove",
+    "keyword": "RESet",
     "required": true,
     "requireNext": true,
     "next": [
@@ -19,15 +19,7 @@
                             "requireNext": true,
                             "next": [
                                 {
-                                    "keyword": "NOTEs =, NOTEs",
-                                    "requireNext": true,
-                                    "next": [
-                                        {
-                                            "maxLen": 60,
-                                            "required": true,
-                                            "specialValue": true
-                                        }
-                                    ]
+                                    "keyword": "RETain PROMotion HIStory"
                                 }
                             ]
                         },

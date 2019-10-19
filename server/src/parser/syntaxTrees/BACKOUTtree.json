@@ -1,5 +1,5 @@
 {
-    "keyword": "APPRove",
+    "keyword": "BACKOut",
     "required": true,
     "requireNext": true,
     "next": [
@@ -15,17 +15,22 @@
                     "requireNext": true,
                     "next": [
                         {
-                            "keyword": "OPTion",
+                            "keyword": "STATEment NUMber, STATEment",
                             "requireNext": true,
                             "next": [
                                 {
-                                    "keyword": "NOTEs =, NOTEs",
-                                    "requireNext": true,
+                                    "maxLen": 5,
+                                    "required": true,
                                     "next": [
                                         {
-                                            "maxLen": 60,
-                                            "required": true,
-                                            "specialValue": true
+                                            "keyword": "ELEment",
+                                            "requireNext": true,
+                                            "next": [
+                                                {
+                                                    "maxLen": 255,
+                                                    "required": true
+                                                }
+                                            ]
                                         }
                                     ]
                                 }

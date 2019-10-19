@@ -1,14 +1,17 @@
 {
     "keyword": "SET",
     "required": true,
+    "requireNext": true,
     "next": [
         {
             "keyword": "FROM",
             "isFROM": true,
             "nogoback": true,
+            "requireNext": true,
             "next": [
                 {
                     "keyword": "FILe, DDName",
+                    "requireNext": true,
                     "next": [
                         {
                             "maxLen": 8,
@@ -23,6 +26,7 @@
                 },
                 {
                     "keyword": "DSName",
+                    "requireNext": true,
                     "next": [
                         {
                             "maxLen": 44,
@@ -37,6 +41,7 @@
                 },
                 {
                     "keyword": "SITE",
+                    "requireNext": true,
                     "next": [
                         {
                             "maxLen": 8,
@@ -44,6 +49,7 @@
                             "next": [
                                 {
                                     "keyword": "ENVironment, SYStem, SUBSystem, TYPe",
+                                    "requireNext": true,
                                     "next": [
                                         {
                                             "maxLen": 8,
@@ -53,6 +59,7 @@
                                 },
                                 {
                                     "keyword": "STAge NUMber, STAge",
+                                    "requireNext": true,
                                     "next": [
                                         {
                                             "maxLen": 1,
@@ -69,6 +76,7 @@
                 },
                 {
                     "keyword": "ENVironment, SYStem, SUBSystem, TYPe",
+                    "requireNext": true,
                     "next": [
                         {
                             "maxLen": 8,
@@ -83,6 +91,7 @@
                 },
                 {
                     "keyword": "STAge NUMber, STAge",
+                    "requireNext": true,
                     "next": [
                         {
                             "maxLen": 1,
@@ -101,6 +110,7 @@
             "keyword": "TO",
             "isTO": true,
             "nogoback": true,
+            "requireNext": true,
             "next": [
                 {
                     "keyword": "SYSOut, C1PRINT, C1PRTVB",
@@ -112,6 +122,7 @@
                 },
                 {
                     "keyword": "FILe, DDName",
+                    "requireNext": true,
                     "next": [
                         {
                             "maxLen": 8,
@@ -126,6 +137,7 @@
                 },
                 {
                     "keyword": "DSName",
+                    "requireNext": true,
                     "next": [
                         {
                             "maxLen": 44,
@@ -133,6 +145,7 @@
                             "next": [
                                 {
                                     "keyword": "MEMber",
+                                    "requireNext": true,
                                     "next": [
                                         {
                                             "maxLen": 8,
@@ -149,6 +162,7 @@
                 },
                 {
                     "keyword": "ENVironment, SYStem, SUBSystem, TYPe",
+                    "requireNext": true,
                     "next": [
                         {
                             "maxLen": 8,
@@ -163,6 +177,7 @@
                 },
                 {
                     "keyword": "STAge NUMber, STAge",
+                    "requireNext": true,
                     "next": [
                         {
                             "maxLen": 1,

@@ -1,18 +1,22 @@
 {
     "keyword": "GENerate",
     "required": true,
+    "requireNext": true,
     "next": [
         {
             "keyword": "ELEment",
             "required": true,
+            "requireNext": true,
             "next": [
                 {
                     "maxLen": 255,
                     "required": true,
                     "nogoback": true,
+                    "requireNext": true,
                     "next": [
                         {
                             "keyword": "THRough, THRu",
+                            "requireNext": true,
                             "next": [
                                 {
                                     "maxLen": 255,
@@ -23,9 +27,11 @@
                         {
                             "keyword": "FROm",
                             "isFROM": true,
+                            "requireNext": true,
                             "next": [
                                 {
                                     "keyword": "ENVironment, SYStem, SUBSystem, TYPe",
+                                    "requireNext": true,
                                     "next": [
                                         {
                                             "maxLen": 8,
@@ -35,6 +41,7 @@
                                 },
                                 {
                                     "keyword": "STAge NUMber, STAge",
+                                    "requireNext": true,
                                     "next": [
                                         {
                                             "maxLen": 1,
@@ -46,6 +53,7 @@
                         },
                         {
                             "keyword": "WHEre CCId OF CURrent EQual, WHEre CCId OF CURrent =, WHEre CCId OF CURrent, WHEre CCId OF ALL EQual, WHEre CCId OF ALL =, WHEre CCId OF ALL, WHEre CCId OF RETrieve EQual, WHEre CCId OF RETrieve =, WHEre CCId OF RETrieve, WHEre CCId EQual, WHEre CCId =, WHEre CCId",
+                            "requireNext": true,
                             "next": [
                                 {
                                     "maxLen": 12,
@@ -56,9 +64,11 @@
                         },
                         {
                             "keyword": "OPTion",
+                            "requireNext": true,
                             "next": [
                                 {
                                     "keyword": "CCId",
+                                    "requireNext": true,
                                     "next": [
                                         {
                                             "maxLen": 12,
@@ -68,6 +78,7 @@
                                 },
                                 {
                                     "keyword": "COMment",
+                                    "requireNext": true,
                                     "next": [
                                         {
                                             "maxLen": 44,
@@ -80,6 +91,7 @@
                                 },
                                 {
                                     "keyword": "PROcessor GROup EQual, PROcessor GROup =",
+                                    "requireNext": true,
                                     "next": [
                                         {
                                             "maxLen": 8,
