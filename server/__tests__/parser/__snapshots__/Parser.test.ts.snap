@@ -188,6 +188,31 @@ Array [
         "kind": 14,
         "label": "PATH ",
       },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THROUGH ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THRU ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "TO ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "OPTION ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": ". ",
+      },
     ],
     "is_eoStatement": false,
     "starti": 24,
@@ -329,6 +354,31 @@ Array [
         "documentation": "Endevor SCL keyword",
         "kind": 14,
         "label": "TYPE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THROUGH ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THRU ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "FROM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "OPTION ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": ". ",
       },
     ],
     "is_eoStatement": false,
@@ -586,6 +636,31 @@ Array [
         "documentation": "Endevor SCL keyword",
         "kind": 14,
         "label": "PROCESSOR GROUP = ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THROUGH ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THRU ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "FROM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "TO ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": ". ",
       },
     ],
     "is_eoStatement": false,
@@ -1016,7 +1091,33 @@ Array [
     "value": "iF",
   },
   Object {
-    "completionItems": Array [],
+    "completionItems": Array [
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THROUGH ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THRU ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "FROM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "TO ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "OPTION ",
+      },
+    ],
     "is_eoStatement": true,
     "starti": 259,
     "value": ".",
@@ -1162,6 +1263,11 @@ Array [
         "documentation": "Endevor SCL keyword",
         "kind": 14,
         "label": "STAGE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "TO ",
       },
     ],
     "is_eoStatement": false,
@@ -1698,6 +1804,46 @@ Array [
         "documentation": "Endevor SCL keyword",
         "kind": 14,
         "label": "EXECUTION WINDOW FROM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "COPY PACKAGE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "COPY FROM PACKAGE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "IMPORT SCL FROM DDNAME ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "IMPORT SCL FROM DSNAME ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "DO NOT APPEND ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "APPEND ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "DESCRIPTION ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": ". ",
       },
     ],
     "is_eoStatement": false,
@@ -2364,7 +2510,48 @@ Array [
     "value": "12:12",
   },
   Object {
-    "completionItems": Array [],
+    "completionItems": Array [
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "COPY PACKAGE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "COPY FROM PACKAGE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "IMPORT SCL FROM DDNAME ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "IMPORT SCL FROM DSNAME ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "DO NOT APPEND ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "APPEND ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "DESCRIPTION ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "OPTION ",
+      },
+    ],
     "is_eoStatement": true,
     "starti": 223,
     "value": ".",
@@ -2824,6 +3011,86 @@ Array [
         "kind": 14,
         "label": "PROCESSOR GROUP = ",
       },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THROUGH ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THRU ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "FROM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "WHERE CCID OF CURRENT EQUAL ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "WHERE CCID OF CURRENT = ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "WHERE CCID OF CURRENT ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "WHERE CCID OF ALL EQUAL ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "WHERE CCID OF ALL = ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "WHERE CCID OF ALL ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "WHERE CCID OF RETRIEVE EQUAL ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "WHERE CCID OF RETRIEVE = ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "WHERE CCID OF RETRIEVE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "WHERE CCID EQUAL ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "WHERE CCID = ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "WHERE CCID ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": ". ",
+      },
     ],
     "is_eoStatement": false,
     "starti": 99,
@@ -2985,7 +3252,88 @@ Array [
     "value": "Test",
   },
   Object {
-    "completionItems": Array [],
+    "completionItems": Array [
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THROUGH ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "THRU ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "FROM ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "WHERE CCID OF CURRENT EQUAL ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "WHERE CCID OF CURRENT = ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "WHERE CCID OF CURRENT ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "WHERE CCID OF ALL EQUAL ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "WHERE CCID OF ALL = ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "WHERE CCID OF ALL ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "WHERE CCID OF RETRIEVE EQUAL ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "WHERE CCID OF RETRIEVE = ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "WHERE CCID OF RETRIEVE ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "WHERE CCID EQUAL ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "WHERE CCID = ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "WHERE CCID ",
+      },
+      Object {
+        "documentation": "Endevor SCL keyword",
+        "kind": 14,
+        "label": "OPTION ",
+      },
+    ],
     "is_eoStatement": true,
     "starti": 116,
     "value": ".",
