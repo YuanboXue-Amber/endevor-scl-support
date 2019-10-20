@@ -76,7 +76,7 @@
                         },
                         {
                             "keyword": "TO",
-                            "isFROM": true,
+                            "isTO": true,
                             "requireNext": true,
                             "next": [
                                 {

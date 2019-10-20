@@ -481,15 +481,11 @@ class ParserEvent extends EventEmitter {
         if (result[1])
             return;
 
-        // 2nd check all parents only for OPTIONS
-        if (!isNullOrUndefined(matchingNode.parent) &&
-        !isNullOrUndefined(matchingNode.parent.keyword) &&
-        matchingNode.parent.keyword.toUpperCase() === "OPTION") {
-            const resultFromParent = this.setCompletionItemFromParent(matchingNode);
-            resultFromParent.forEach((item) => {
-                (this.parser.scl[lastIndex].completionItems as CompletionItem[]).push(item);
-            });
-        }
+        // 2nd check all parents
+        const resultFromParent = this.setCompletionItemFromParent(matchingNode);
+        resultFromParent.forEach((item) => {
+            (this.parser.scl[lastIndex].completionItems as CompletionItem[]).push(item);
+        });
     }
 
     /**

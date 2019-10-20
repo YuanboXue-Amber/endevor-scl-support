@@ -19,12 +19,17 @@
                             "requireNext": true,
                             "next": [
                                 {
-                                    "keyword": "WHEre PACkage STATus, WHEre PACkage STATus IS",
+                                    "keyword": "WHEre PACkage STATus IS, WHEre PACkage STATus",
                                     "requireNext": true,
                                     "next": [
                                         {
                                             "keyword": "APPROVED OR EXECFailed, EXECFailed OR APPROVED, APPROVED, EXECFailed",
-                                            "required": true
+                                            "required": true,
+                                            "next": [
+                                                {
+                                                    "keyword": "."
+                                                }
+                                            ]
                                         }
                                     ]
                                 },

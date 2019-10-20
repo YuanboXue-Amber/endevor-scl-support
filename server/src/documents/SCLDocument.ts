@@ -250,6 +250,9 @@ export class SCLDocument {
                     case "STAGE":
                         obj.to.location.STAGE = true;
                         break;
+                    case "STAGE NUMBER":
+                        obj.to.location.STAGE = true;
+                        break;
                     case "SYSTEM":
                         obj.to.location.SYSTEM = true;
                         break;

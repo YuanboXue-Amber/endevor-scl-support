@@ -6,11 +6,11 @@
         {
             "keyword": "ENVironment",
             "requireNext": true,
-            "nogoback": true,
             "next": [
                 {
                     "maxLen": 8,
                     "required": true,
+                    "nogoback": true,
                     "next": [
                         {
                             "keyword": "TO",
@@ -68,11 +68,11 @@
         {
             "keyword": "STAge NUMber, STAge",
             "requireNext": true,
-            "nogoback": true,
             "next": [
                 {
                     "maxLen": 1,
                     "required": true,
+                    "nogoback": true,
                     "next": [
                         {
                             "keyword": "TO",
@@ -147,11 +147,11 @@
         {
             "keyword": "SUBsystem",
             "requireNext": true,
-            "nogoback": true,
             "next": [
                 {
                     "maxLen": 8,
                     "required": true,
+                    "nogoback": true,
                     "next": [
                         {
                             "keyword": "TO",
@@ -236,11 +236,11 @@
         {
             "keyword": "SYStem",
             "requireNext": true,
-            "nogoback": true,
             "next": [
                 {
                     "maxLen": 8,
                     "required": true,
+                    "nogoback": true,
                     "next": [
                         {
                             "keyword": "TO",
@@ -325,11 +325,11 @@
         {
             "keyword": "TYPe",
             "requireNext": true,
-            "nogoback": true,
             "next": [
                 {
                     "maxLen": 8,
                     "required": true,
+                    "nogoback": true,
                     "next": [
                         {
                             "keyword": "TO",
@@ -414,11 +414,11 @@
         {
             "keyword": "ELEment",
             "requireNext": true,
-            "nogoback": true,
             "next": [
                 {
                     "maxLen": 8,
                     "required": true,
+                    "nogoback": true,
                     "next": [
                         {
                             "keyword": "TO",
@@ -559,11 +559,11 @@
         {
             "keyword": "PACkage ID",
             "requireNext": true,
-            "nogoback": true,
             "next": [
                 {
                     "maxLen": 16,
                     "required": true,
+                    "nogoback": true,
                     "next": [
                         {
                             "keyword": "TO",

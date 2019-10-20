@@ -6,11 +6,11 @@
         {
             "keyword": "ELEment",
             "requireNext": true,
-            "nogoback": true,
             "next": [
                 {
                     "maxLen": 255,
                     "required": true,
+                    "nogoback": true,
                     "next": [
                         {
                             "keyword": "THRough, THRu",
@@ -116,12 +116,12 @@
         {
             "keyword": "PACkage",
             "requireNext": true,
-            "nogoback": true,
             "next": [
                 {
                     "maxLen": 16,
                     "required": true,
                     "requireNext": true,
+                    "nogoback": true,
                     "next": [
                         {
                             "keyword": "OPTion",
@@ -145,35 +145,323 @@
                                     ]
                                 },
                                 {
-                                    "keyword": "WHEre PACkage STATus, WHEre PACkage STATus IS",
+                                    "keyword": "WHEre PACkage STATus IS, WHEre PACkage STATus",
                                     "requireNext": true,
                                     "next": [
                                         {
-                                            "keyword": "APPROVED OR, APPROVED"
+                                            "keyword": "APPROVED",
+                                            "next": [
+                                                {
+                                                    "keyword": "OR",
+                                                    "requireNext": true,
+                                                    "next": [
+                                                        {
+                                                            "keyword": "ALLstate"
+                                                        },
+                                                        {
+                                                            "keyword": "INEdit"
+                                                        },
+                                                        {
+                                                            "keyword": "INApproval"
+                                                        },
+                                                        {
+                                                            "keyword": "DENied"
+                                                        },
+                                                        {
+                                                            "keyword": "INEXecution"
+                                                        },
+                                                        {
+                                                            "keyword": "EXECUTED"
+                                                        },
+                                                        {
+                                                            "keyword": "EXECFailed"
+                                                        },
+                                                        {
+                                                            "keyword": "COMMITTEd"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         },
                                         {
-                                            "keyword": "ALLstate OR, ALLstate"
+                                            "keyword": "ALLstate",
+                                            "next": [
+                                                {
+                                                    "keyword": "OR",
+                                                    "requireNext": true,
+                                                    "next": [
+                                                        {
+                                                            "keyword": "APPROVED"
+                                                        },
+                                                        {
+                                                            "keyword": "INEdit"
+                                                        },
+                                                        {
+                                                            "keyword": "INApproval"
+                                                        },
+                                                        {
+                                                            "keyword": "DENied"
+                                                        },
+                                                        {
+                                                            "keyword": "INEXecution"
+                                                        },
+                                                        {
+                                                            "keyword": "EXECUTED"
+                                                        },
+                                                        {
+                                                            "keyword": "EXECFailed"
+                                                        },
+                                                        {
+                                                            "keyword": "COMMITTEd"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         },
                                         {
-                                            "keyword": "INEdit OR, INEdit"
+                                            "keyword": "INEdit",
+                                            "next": [
+                                                {
+                                                    "keyword": "OR",
+                                                    "requireNext": true,
+                                                    "next": [
+                                                        {
+                                                            "keyword": "APPROVED"
+                                                        },
+                                                        {
+                                                            "keyword": "ALLstate"
+                                                        },
+                                                        {
+                                                            "keyword": "INApproval"
+                                                        },
+                                                        {
+                                                            "keyword": "DENied"
+                                                        },
+                                                        {
+                                                            "keyword": "INEXecution"
+                                                        },
+                                                        {
+                                                            "keyword": "EXECUTED"
+                                                        },
+                                                        {
+                                                            "keyword": "EXECFailed"
+                                                        },
+                                                        {
+                                                            "keyword": "COMMITTEd"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         },
                                         {
-                                            "keyword": "INApproval OR, INApproval"
+                                            "keyword": "INApproval",
+                                            "next": [
+                                                {
+                                                    "keyword": "OR",
+                                                    "requireNext": true,
+                                                    "next": [
+                                                        {
+                                                            "keyword": "APPROVED"
+                                                        },
+                                                        {
+                                                            "keyword": "ALLstate"
+                                                        },
+                                                        {
+                                                            "keyword": "INEdit"
+                                                        },
+                                                        {
+                                                            "keyword": "DENied"
+                                                        },
+                                                        {
+                                                            "keyword": "INEXecution"
+                                                        },
+                                                        {
+                                                            "keyword": "EXECUTED"
+                                                        },
+                                                        {
+                                                            "keyword": "EXECFailed"
+                                                        },
+                                                        {
+                                                            "keyword": "COMMITTEd"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         },
                                         {
-                                            "keyword": "DENied OR, DENied"
+                                            "keyword": "DENied",
+                                            "next": [
+                                                {
+                                                    "keyword": "OR",
+                                                    "requireNext": true,
+                                                    "next": [
+                                                        {
+                                                            "keyword": "APPROVED"
+                                                        },
+                                                        {
+                                                            "keyword": "ALLstate"
+                                                        },
+                                                        {
+                                                            "keyword": "INEdit"
+                                                        },
+                                                        {
+                                                            "keyword": "INApproval"
+                                                        },
+                                                        {
+                                                            "keyword": "INEXecution"
+                                                        },
+                                                        {
+                                                            "keyword": "EXECUTED"
+                                                        },
+                                                        {
+                                                            "keyword": "EXECFailed"
+                                                        },
+                                                        {
+                                                            "keyword": "COMMITTEd"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         },
                                         {
-                                            "keyword": "INEXecution OR, INEXecution"
+                                            "keyword": "INEXecution",
+                                            "next": [
+                                                {
+                                                    "keyword": "OR",
+                                                    "requireNext": true,
+                                                    "next": [
+                                                        {
+                                                            "keyword": "APPROVED"
+                                                        },
+                                                        {
+                                                            "keyword": "ALLstate"
+                                                        },
+                                                        {
+                                                            "keyword": "INEdit"
+                                                        },
+                                                        {
+                                                            "keyword": "INApproval"
+                                                        },
+                                                        {
+                                                            "keyword": "DENied"
+                                                        },
+                                                        {
+                                                            "keyword": "EXECUTED"
+                                                        },
+                                                        {
+                                                            "keyword": "EXECFailed"
+                                                        },
+                                                        {
+                                                            "keyword": "COMMITTEd"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         },
                                         {
-                                            "keyword": "EXECUTED OR, EXECUTED"
+                                            "keyword": "EXECUTED",
+                                            "next": [
+                                                {
+                                                    "keyword": "OR",
+                                                    "requireNext": true,
+                                                    "next": [
+                                                        {
+                                                            "keyword": "APPROVED"
+                                                        },
+                                                        {
+                                                            "keyword": "ALLstate"
+                                                        },
+                                                        {
+                                                            "keyword": "INEdit"
+                                                        },
+                                                        {
+                                                            "keyword": "INApproval"
+                                                        },
+                                                        {
+                                                            "keyword": "DENied"
+                                                        },
+                                                        {
+                                                            "keyword": "INEXecution"
+                                                        },
+                                                        {
+                                                            "keyword": "EXECFailed"
+                                                        },
+                                                        {
+                                                            "keyword": "COMMITTEd"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         },
                                         {
-                                            "keyword": "EXECFailed OR, EXECFailed"
+                                            "keyword": "EXECFailed",
+                                            "next": [
+                                                {
+                                                    "keyword": "OR",
+                                                    "requireNext": true,
+                                                    "next": [
+                                                        {
+                                                            "keyword": "APPROVED"
+                                                        },
+                                                        {
+                                                            "keyword": "ALLstate"
+                                                        },
+                                                        {
+                                                            "keyword": "INEdit"
+                                                        },
+                                                        {
+                                                            "keyword": "INApproval"
+                                                        },
+                                                        {
+                                                            "keyword": "DENied"
+                                                        },
+                                                        {
+                                                            "keyword": "INEXecution"
+                                                        },
+                                                        {
+                                                            "keyword": "EXECUTED"
+                                                        },
+                                                        {
+                                                            "keyword": "COMMITTEd"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         },
                                         {
-                                            "keyword": "COMMITTEd OR, COMMITTEd"
+                                            "keyword": "COMMITTEd",
+                                            "next": [
+                                                {
+                                                    "keyword": "OR",
+                                                    "requireNext": true,
+                                                    "next": [
+                                                        {
+                                                            "keyword": "APPROVED"
+                                                        },
+                                                        {
+                                                            "keyword": "ALLstate"
+                                                        },
+                                                        {
+                                                            "keyword": "INEdit"
+                                                        },
+                                                        {
+                                                            "keyword": "INApproval"
+                                                        },
+                                                        {
+                                                            "keyword": "DENied"
+                                                        },
+                                                        {
+                                                            "keyword": "INEXecution"
+                                                        },
+                                                        {
+                                                            "keyword": "EXECUTED"
+                                                        },
+                                                        {
+                                                            "keyword": "EXECFailed"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
