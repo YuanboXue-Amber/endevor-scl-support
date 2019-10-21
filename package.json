@@ -13,6 +13,10 @@
 	"activationEvents": [
 		"onLanguage:endevorscl"
 	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/YuanboXue-Amber/endevor-scl-support.git"
+	},
 	"main": "./client/out/extension",
 	"contributes": {
 		"configuration": {
