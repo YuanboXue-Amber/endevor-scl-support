@@ -1,0 +1,125 @@
+{
+    "keyword": "DEFine",
+    "required": true,
+    "requireNext": true,
+    "next": [
+        {
+            "keyword": "PACkage",
+            "required": true,
+            "requireNext": true,
+            "next": [
+                {
+                    "maxLen": 16,
+                    "required": true,
+                    "nogoback": true,
+                    "requireNext": true,
+                    "next": [
+                        {
+                            "keyword": "COPy PACkage, COPy FROm PACkage",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "maxLen": 16,
+                                    "required": true
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "IMPort SCL FROm DDName",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "maxLen": 8,
+                                    "required": true
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "IMPort SCL FROm DSName",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "maxLen": 44,
+                                    "required": true,
+                                    "next": [
+                                        {
+                                            "keyword": "MEMber",
+                                            "requireNext": true,
+                                            "next": [
+                                                {
+                                                    "maxLen": 8,
+                                                    "required": true
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "DO NOT APPEnd, APPEnd"
+                        },
+                        {
+                            "keyword": "DEScription",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "maxLen": 60,
+                                    "required": true
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "OPTion",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "keyword": "STANdard package, EMErgency package, NONsharable package, SHArable package, NONPromotion package, PROMotion package"
+                                },
+                                {
+                                    "keyword": "BACKOut ENAbled, BACKOut IS ENAbled, BACKOut NOT ENAbled, BACKOut IS NOT ENAbled, DO NOT VALIDATE SCL"
+                                },
+                                {
+                                    "keyword": "NOTEs =, NOTEs",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 60,
+                                            "required": true,
+                                            "specialValue": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "EXECUTion WINdow FROm",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "dateTimeValue": true,
+                                            "required": true,
+                                            "next": [
+                                                {
+                                                    "keyword": "TO",
+                                                    "requireNext": true,
+                                                    "next": [
+                                                        {
+                                                            "dateTimeValue": true,
+                                                            "required": true
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

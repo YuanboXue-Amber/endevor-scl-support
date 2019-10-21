@@ -80,7 +80,96 @@ export const ParserTags = {
     WITH: "WITh",
     HISTORY: "HIStory",
     RETAIN: "RETAin",
-    JUMP: "JUMp"
+    JUMP: "JUMp",
+
+    LEVEL: "LEVel",
+    REPLACE: "REPlace",
+    NO: "NO",
+    EXPAND: "EXPand",
+    INCLUDE: "include",
+
+    IGNORE: "IGNore",
+    FAILED: "failed",
+    DUPLICATE: "DUPLICATE",
+    OUTPUT: "output",
+    CHECK: "check",
+
+    APPROVE: "APPRove",
+    PACKAGE: "PACkage",
+    NOTES: "NOTEs",
+    LEFTP: "(",
+    RIGHTP: ")",
+    COMMA: ",",
+    DENY: "DENY",
+    BACKIN: "BACKIn",
+    BACKOUT: "BACKOut",
+    STATEMENT: "STATEment",
+
+    CAST: "CASt",
+    IS: "IS",
+    NOT: "NOT",
+    ENABLED: "ENAbled",
+    WARNING: "WARning",
+    DO: "DO",
+    EXECUTION: "EXECUTion",
+    WINDOW: "WINdow",
+
+    DEFINE: "DEFine",
+    IMPORT: "IMPort",
+    SCL: "SCL",
+    APPEND: "APPEnd",
+    DESCRIPTION: "DEScription",
+    STANDARD: "STANdard",
+    EMERGENCY: "EMErgency",
+    NONSHARABLE: "NONsharable",
+    SHARABLE: "SHArable",
+    NONPROMOTION: "NONPromotion",
+    PROMOTION: "PROMotion",
+    OLDER: "OLDer",
+    THAN: "THAn",
+    DAYS: "DAYS",
+    STATUS: "STATus",
+    OR: "OR",
+    ALLSTATE: "ALLstate",
+    INEDIT: "INEdit",
+    INAPPROVAL: "INApproval",
+    DENIED: "DENied",
+    APPROVED: "APPROVED",
+    INEXECUTION: "INEXecution",
+    EXECUTED: "EXECUTED",
+    EXECFAILED: "EXECFailed",
+    COMMITTED: "COMMITTEd",
+
+    EXECUTE: "EXECUTE",
+    RESET: "RESet",
+    COMMIT: "COMMit",
+
+    DELIMITERS: "DELImiters",
+    NOCSV: "NOCsv",
+    NOTITLE: "NOTitle",
+    QUALIFIER: "QUAlifier",
+    QUOTE: "QUOte",
+    PHYSICAL: "PHYsical",
+    LOGICAL: "LOGical",
+    RETURN: "RETurn",
+    FIRST: "FIRst",
+
+    DATA: "DATa",
+    BASIC: "BASic",
+    CHANGE: "CHAnge",
+    SUMMARY: "SUMmary",
+    LAST: "LASt",
+    THRU: "THRu",
+    DATE: "DATE",
+    TIME: "TIMe",
+
+    ENTERPRISE: "ENTerprise",
+    TARGET: "TARget",
+    PACKAGETYPE: "S, E",
+    ENTERPRISETYPE: "A, E, X",
+    PKGACTIONTYPE: "CO, MO, CA, AP, EX, BO, BI, CO",
+    PROMOTIONTYPE: "A, P, X",
+    APPROVER: "APProver"
 };
 
 /**
@@ -168,6 +257,13 @@ export function match(
     if (isNullOrUndefined(keywords)) {
         return false;
     }
+
+    // might be operator
+    if (keywords === inputSCLtoken.value) {
+        keywordUppercaseDiagnose(inputSCLtoken, statement, document);
+        return true;
+    }
+
     let keywordsArray: string[] = keywords.split(", ");
     for (const keyword of keywordsArray) {
         const ismatch = matchWithoutDiagnose(inputSCLtoken, keyword);
@@ -193,7 +289,7 @@ function keywordUppercaseDiagnose(
 
     if (keywordInSource.value.toUpperCase() !== keywordInSource.value) {
         document.pushDiagnostic(
-            keywordInSource,
+            keywordInSource.starti, keywordInSource.value.length,
             statement,
             DiagnosticSeverity.Warning,
             QUICKFIX_UPPERCASE_MSG + '\nLowercased keyword might cause the scl action to fail when submitted',

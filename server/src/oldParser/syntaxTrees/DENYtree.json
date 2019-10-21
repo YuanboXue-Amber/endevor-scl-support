@@ -1,0 +1,249 @@
+{
+    "value": "DENY",
+    "type": "keyword",
+    "requireNext": true,
+    "next": [
+        {
+            "value": "PACKAGE",
+            "type": "keyword",
+            "requireNext": true,
+            "next": [
+                {
+                    "value": "'packageId'",
+                    "type": "value",
+                    "maxLen": 16,
+                    "next": [
+                        {
+                            "value": "OPTION",
+                            "type": "keyword",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "value": "NOTES",
+                                    "type": "keyword",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "value": "LEFTP",
+                                            "type": "keyword",
+                                            "requireNext": true,
+                                            "next": [
+                                                {
+                                                    "value": "'sample note1'",
+                                                    "type": "value",
+                                                    "maxLen": 60,
+                                                    "requireNext": true,
+                                                    "next": [
+                                                        {
+                                                            "value": "RIGHTP",
+                                                            "type": "keyword",
+                                                            "next": [
+                                                                {
+                                                                    "value": ".",
+                                                                    "type": "eos",
+                                                                    "next": []
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "value": "COMMA",
+                                                            "type": "keyword",
+                                                            "requireNext": true,
+                                                            "next": [
+                                                                {
+                                                                    "value": "'sample note2'",
+                                                                    "type": "value",
+                                                                    "maxLen": 60,
+                                                                    "requireNext": true,
+                                                                    "next": [
+                                                                        {
+                                                                            "value": "RIGHTP",
+                                                                            "type": "keyword",
+                                                                            "next": [
+                                                                                {
+                                                                                    "value": ".",
+                                                                                    "type": "eos",
+                                                                                    "next": []
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "value": "COMMA",
+                                                                            "type": "keyword",
+                                                                            "requireNext": true,
+                                                                            "next": [
+                                                                                {
+                                                                                    "value": "'sample note3'",
+                                                                                    "type": "value",
+                                                                                    "maxLen": 60,
+                                                                                    "requireNext": true,
+                                                                                    "next": [
+                                                                                        {
+                                                                                            "value": "RIGHTP",
+                                                                                            "type": "keyword",
+                                                                                            "next": [
+                                                                                                {
+                                                                                                    "value": ".",
+                                                                                                    "type": "eos",
+                                                                                                    "next": []
+                                                                                                }
+                                                                                            ]
+                                                                                        },
+                                                                                        {
+                                                                                            "value": "COMMA",
+                                                                                            "type": "keyword",
+                                                                                            "requireNext": true,
+                                                                                            "next": [
+                                                                                                {
+                                                                                                    "value": "'sample note4'",
+                                                                                                    "type": "value",
+                                                                                                    "maxLen": 60,
+                                                                                                    "requireNext": true,
+                                                                                                    "next": [
+                                                                                                        {
+                                                                                                            "value": "RIGHTP",
+                                                                                                            "type": "keyword",
+                                                                                                            "next": [
+                                                                                                                {
+                                                                                                                    "value": ".",
+                                                                                                                    "type": "eos",
+                                                                                                                    "next": []
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "value": "COMMA",
+                                                                                                            "type": "keyword",
+                                                                                                            "requireNext": true,
+                                                                                                            "next": [
+                                                                                                                {
+                                                                                                                    "value": "'sample note5'",
+                                                                                                                    "type": "value",
+                                                                                                                    "maxLen": 60,
+                                                                                                                    "requireNext": true,
+                                                                                                                    "next": [
+                                                                                                                        {
+                                                                                                                            "value": "RIGHTP",
+                                                                                                                            "type": "keyword",
+                                                                                                                            "next": [
+                                                                                                                                {
+                                                                                                                                    "value": ".",
+                                                                                                                                    "type": "eos",
+                                                                                                                                    "next": []
+                                                                                                                                }
+                                                                                                                            ]
+                                                                                                                        },
+                                                                                                                        {
+                                                                                                                            "value": "COMMA",
+                                                                                                                            "type": "keyword",
+                                                                                                                            "requireNext": true,
+                                                                                                                            "next": [
+                                                                                                                                {
+                                                                                                                                    "value": "'sample note6'",
+                                                                                                                                    "type": "value",
+                                                                                                                                    "maxLen": 60,
+                                                                                                                                    "requireNext": true,
+                                                                                                                                    "next": [
+                                                                                                                                        {
+                                                                                                                                            "value": "RIGHTP",
+                                                                                                                                            "type": "keyword",
+                                                                                                                                            "next": [
+                                                                                                                                                {
+                                                                                                                                                    "value": ".",
+                                                                                                                                                    "type": "eos",
+                                                                                                                                                    "next": []
+                                                                                                                                                }
+                                                                                                                                            ]
+                                                                                                                                        },
+                                                                                                                                        {
+                                                                                                                                            "value": "COMMA",
+                                                                                                                                            "type": "keyword",
+                                                                                                                                            "requireNext": true,
+                                                                                                                                            "next": [
+                                                                                                                                                {
+                                                                                                                                                    "value": "'sample note7'",
+                                                                                                                                                    "type": "value",
+                                                                                                                                                    "maxLen": 60,
+                                                                                                                                                    "requireNext": true,
+                                                                                                                                                    "next": [
+                                                                                                                                                        {
+                                                                                                                                                            "value": "RIGHTP",
+                                                                                                                                                            "type": "keyword",
+                                                                                                                                                            "next": [
+                                                                                                                                                                {
+                                                                                                                                                                    "value": ".",
+                                                                                                                                                                    "type": "eos",
+                                                                                                                                                                    "next": []
+                                                                                                                                                                }
+                                                                                                                                                            ]
+                                                                                                                                                        },
+                                                                                                                                                        {
+                                                                                                                                                            "value": "COMMA",
+                                                                                                                                                            "type": "keyword",
+                                                                                                                                                            "requireNext": true,
+                                                                                                                                                            "next": [
+                                                                                                                                                                {
+                                                                                                                                                                    "value": "'sample note8'",
+                                                                                                                                                                    "type": "value",
+                                                                                                                                                                    "maxLen": 60,
+                                                                                                                                                                    "requireNext": true,
+                                                                                                                                                                    "next": [
+                                                                                                                                                                        {
+                                                                                                                                                                            "value": "RIGHTP",
+                                                                                                                                                                            "type": "keyword",
+                                                                                                                                                                            "next": [
+                                                                                                                                                                                {
+                                                                                                                                                                                    "value": ".",
+                                                                                                                                                                                    "type": "eos",
+                                                                                                                                                                                    "next": []
+                                                                                                                                                                                }
+                                                                                                                                                                            ]
+                                                                                                                                                                        }
+                                                                                                                                                                    ]
+                                                                                                                                                                }
+                                                                                                                                                            ]
+                                                                                                                                                        }
+                                                                                                                                                    ]
+                                                                                                                                                }
+                                                                                                                                            ]
+                                                                                                                                        }
+                                                                                                                                    ]
+                                                                                                                                }
+                                                                                                                            ]
+                                                                                                                        }
+                                                                                                                    ]
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        }
+                                                                                                    ]
+                                                                                                }
+                                                                                            ]
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "value": ".",
+                            "type": "eos",
+                            "next": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,51 @@
+{
+    "keyword": "COMMit",
+    "required": true,
+    "requireNext": true,
+    "next": [
+        {
+            "keyword": "PACkage",
+            "required": true,
+            "requireNext": true,
+            "next": [
+                {
+                    "maxLen": 16,
+                    "required": true,
+                    "nogoback": true,
+                    "requireNext": true,
+                    "next": [
+                        {
+                            "keyword": "OPTion",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "keyword": "DELete PROMotion HIStory"
+                                },
+                                {
+                                    "keyword": "WHEre OLDer THAn",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 3,
+                                            "required": true,
+                                            "requireNext": true,
+                                            "next": [
+                                                {
+                                                    "keyword": "DAYs",
+                                                    "required": true
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

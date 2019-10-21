@@ -3,6 +3,9 @@
     "name": "Endevor SCL",
     "patterns": [
         {
+            "include": "#keywordsREST"
+        },
+        {
             "include": "#keywords2"
         },
         {
@@ -16,6 +19,14 @@
         }
     ],
     "repository": {
+        "keywordsREST": {
+            "patterns": [
+                {
+                    "name": "markup.italic.keywordREST.scl",
+                    "match": "\\b(REST)\\b"
+                }
+            ]
+        },
         "keywords2": {
             "patterns": [
                 {
@@ -65,6 +76,18 @@
                 {
                     "name": "support.variable.tertiarykeyword.scl",
                     "match": "\\b(NUM(BER|BE|B|\\b))\\b"
+                },
+                {
+                    "name": "support.variable.tertiarykeyword.scl",
+                    "match": "\\b(NOTE(S|\\b))\\b"
+                },
+                {
+                    "name": "support.variable.tertiarykeyword.scl",
+                    "match": "\\b(STATE(MENT|MEN|ME|M|\\b))\\b"
+                },
+                {
+                    "name": "support.variable.tertiarykeyword.scl",
+                    "match": "\\b(DES(CRIPTION|CRIPTIO|CRIPTI|CRIPT|CRIP|CRI|CR|C|\\b))\\b"
                 }
             ]
         },
@@ -109,6 +132,22 @@
                 {
                     "name": "support.class.secondarykeyword.scl",
                     "match": "\\b(THR(U|\\b))\\b"
+                },
+                {
+                    "name": "support.class.secondarykeyword.scl",
+                    "match": "\\b(VER(SION|SIO|SI|S|\\b))\\b"
+                },
+                {
+                    "name": "support.class.secondarykeyword.scl",
+                    "match": "\\b(LEV(EL|E|\\b))\\b"
+                },
+                {
+                    "name": "support.class.secondarykeyword.scl",
+                    "match": "\\b(PAC(KAGE|KAG|KA|K|\\b))\\b"
+                },
+                {
+                    "name": "support.class.secondarykeyword.scl",
+                    "match": "\\b(DAT(A|\\b))\\b"
                 }
             ]
         },
@@ -173,6 +212,42 @@
                 {
                     "name": "keyword.control.scl",
                     "match": "\\b(VAL(IDATE|IDAT|IDA|ID|I|\\b))\\b"
+                },
+                {
+                    "name": "keyword.control.scl",
+                    "match": "\\b(APPR(OVE|OV|O|\\b))\\b"
+                },
+                {
+                    "name": "keyword.control.scl",
+                    "match": "\\b(DENY(\\b))\\b"
+                },
+                {
+                    "name": "keyword.control.scl",
+                    "match": "\\b(BACKI(N|\\b))\\b"
+                },
+                {
+                    "name": "keyword.control.scl",
+                    "match": "\\b(BACKO(UT|U|\\b))\\b"
+                },
+                {
+                    "name": "keyword.control.scl",
+                    "match": "\\b(CAS(T|\\b))\\b"
+                },
+                {
+                    "name": "keyword.control.scl",
+                    "match": "\\b(DEF(INE|IN|I|\\b))\\b"
+                },
+                {
+                    "name": "keyword.control.scl",
+                    "match": "\\b(EXECUTE(\\b))\\b"
+                },
+                {
+                    "name": "keyword.control.scl",
+                    "match": "\\b(RES(ET|E|\\b))\\b"
+                },
+                {
+                    "name": "keyword.control.scl",
+                    "match": "\\b(COMM(IT|I|\\b))\\b"
                 }
             ]
         },

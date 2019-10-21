@@ -1,5 +1,5 @@
 import { isNullOrUndefined } from "util";
-import { CompletionItem } from "vscode-languageserver";
+import { CompletionItem } from 'vscode-languageserver';
 
 export interface ITokenizedString {
     // value of the scl part
@@ -7,16 +7,11 @@ export interface ITokenizedString {
     // starting position of this value in the whole docuemnt content
     // can use TextDocument.positionAt to convert it into a Position type
     starti: number;
-    // true if value is a word
-    is_word: boolean;
-    // true if value is a single operator character (excluding ".", eoStatement character)
-    is_op_char: boolean;
     // true if value symbolize the end of one scl statement "."
     is_eoStatement: boolean;
-    // true if value symbolize the end of the input
-    is_eoInput: boolean;
 
     completionItems?: CompletionItem[];
+    rightDistance?: string; // distance between this token and the token after, used for formating
 }
 
 /**
@@ -25,21 +20,21 @@ export interface ITokenizedString {
  * Unless it is spaces in quotes, in that case, return the whole quoted piece.
  *
  * @export
- * @class TokenizerBase
+ * @class Tokenizer
  */
-class TokenizerBase {
+export class Tokenizer {
     // content of the document
-    content: string;
+    private content: string;
     // length of the document content
-    contentLen: number;
+    private contentLen: number;
 
     // next piece of scl. It is the result from peekNext; store to be reused by readNext
-    current: ITokenizedString;
+    private current: ITokenizedString;
     // the position of the next character to be processed after "current".
-    nextstarti: number = 0;
+    private nextstarti: number = 0;
 
     // true if a peekNext was called and this.current is filled in
-    peeked: boolean = false;
+    private peeked: boolean = false;
 
     constructor(input: string) {
         this.content = input;
@@ -53,10 +48,9 @@ class TokenizerBase {
     /**
      * Peek the next piece of scl (doesn't move the reading cursor)
      *
-     * @protected
-     * @memberof TokenizerBase
+     * @memberof Tokenizer
      */
-    protected basePeekNext = (() => {
+    peekNext = (() => {
         if (this.peeked) {
             return this.current;
         } else {
@@ -70,10 +64,9 @@ class TokenizerBase {
     /**
      * Read the next piece of scl (moves the reading cursor)
      *
-     * @protected
-     * @memberof TokenizerBase
+     * @memberof Tokenizer
      */
-    protected baseReadNext = (() => {
+    readNext = (() => {
         if (this.peeked) {
             this.peeked = false;
             return this.current;
@@ -84,6 +77,8 @@ class TokenizerBase {
         }
     });
 
+
+    private tmpStorage: number | undefined = undefined; // in case any string end with ".", we return first the string before ".", then ".". We use this to store the position of "."
     /**
      * Read content from currentPos, and get a piece of SCL.
      * Return information of this piece as ITokenizedString.
@@ -91,58 +86,60 @@ class TokenizerBase {
      *
      * @private
      * @returns {ITokenizedString}
-     * @memberof TokenizerBase
+     * @memberof Tokenizer
      */
     private checkNext(): ITokenizedString {
+        let nextStrInfo: ITokenizedString;
+
+        if (!isNullOrUndefined(this.tmpStorage)) {
+            nextStrInfo = {
+                value: ".",
+                starti: this.tmpStorage,
+                is_eoStatement: true
+            };
+            this.tmpStorage = undefined;
+            return nextStrInfo;
+        }
+
         let currIndex = this.nextstarti;
         while (this.content.charAt(currIndex).match(/\s/) && currIndex < this.contentLen) {
-            currIndex ++;
+            currIndex ++; // skip spaces
         }
-        if (currIndex >= this.contentLen) {
+
+        if (currIndex >= this.contentLen) { // finish the whole document
             const eof: ITokenizedString = {
                 value: "",
                 starti: currIndex,
-                is_word: false,
-                is_op_char: false,
-                is_eoStatement: false,
-                is_eoInput: true
+                is_eoStatement: false
             };
             return eof;
         }
+
         const starti = currIndex;
         const next: string = this.getAPieceOfSCL("", currIndex);
-        let nextStrInfo: ITokenizedString;
-        if (next.length === 1) {
-            if (next === ".") {
-                nextStrInfo = {
-                    value: next,
-                    starti,
-                    is_word: false,
-                    is_op_char: false,
-                    is_eoStatement: true,
-                    is_eoInput: false
-                };
-                return nextStrInfo;
-            } else if (next.match(/[,=()]/)) {
-                nextStrInfo = {
-                    value: next,
-                    starti,
-                    is_word: false,
-                    is_op_char: true,
-                    is_eoStatement: false,
-                    is_eoInput: false
-                };
-                return nextStrInfo;
-            }
+        if (next.length === 1 && next === ".") {
+            nextStrInfo = {
+                value: next,
+                starti,
+                is_eoStatement: true
+            };
+            return nextStrInfo;
+        }
+        if (next.length > 1 && next.charAt(next.length-1) === ".") {
+            this.tmpStorage = starti + next.length-1;
+
+            nextStrInfo = {
+                value: next.substring(0, next.length-1),
+                starti,
+                is_eoStatement: false
+            };
+            return nextStrInfo;
         }
 
         nextStrInfo = {
             value: next,
             starti,
-            is_word: true,
-            is_op_char: false,
-            is_eoStatement: false,
-            is_eoInput: false
+            is_eoStatement: false
         };
         return nextStrInfo;
     }
@@ -151,7 +148,7 @@ class TokenizerBase {
      * Get a piece of SCL. When there's quoted string, get the whole quoted part as 1 piece
      *
      * @private
-     * @memberof TokenizerBase
+     * @memberof Tokenizer
      */
     private getAPieceOfSCL = ((currStr: string, currIndex: number): string => {
         while (!this.content.charAt(currIndex).match(/\s/) && currIndex < this.contentLen) {
@@ -180,7 +177,7 @@ class TokenizerBase {
      * @private
      * @param {string} str
      * @returns {boolean}
-     * @memberof TokenizerBase
+     * @memberof Tokenizer
      */
     private isQuoteBalanced(str: string): boolean {
         if (!str.includes("'") && !str.includes("\"")) {
@@ -254,116 +251,5 @@ class TokenizerBase {
 
         return false;
     }
-
-}
-
-/**
- * Tokenize a string into pieces of type ITokenizedString.
- * Get a string based on TokenizerBase class, then check this string:
- * if it starts or end with operators ",=().",
- * return the beginning and end operator, and the value in the middle separately
- *
- * @export
- * @class Tokenizer
- * @extends {TokenizerBase}
- */
-export class Tokenizer extends TokenizerBase {
-
-    constructor(input: string) {
-        super(input);
-        this.tmpStorage = undefined;
-        this.storePeek = this.current;
-        this.peeked = true;
-    }
-
-    // When a scl piece has operators at the beginning or the end, use this to temporarily store the part that is unprocessed
-    tmpStorage: ITokenizedString | undefined;
-    // store the peeked value, to be reused
-    storePeek: ITokenizedString;
-
-    peeked: boolean = false;
-
-    public peekNext = (() => {
-        if (this.peeked) {
-            return this.storePeek;
-        }
-        else {
-            this.storePeek = this.getNext();
-            this.peeked = true;
-            return this.storePeek;
-        }
-    });
-
-    public readNext = (() => {
-        if (this.peeked) {
-            this.peeked = false;
-            return this.storePeek;
-        }
-        else {
-            return this.getNext();
-        }
-    });
-
-    /**
-     * If there's no temporarily stored value (undefined this.tmpStorage), get a new piece from base.
-     * Otherwise process this.tmpStorage.
-     *
-     * First check if it starts with an operator, if so return first operators then process the rest of the string.
-     * Then check if it ends with an operator, if so return everything before the last position,
-     * then return the last position (the operator).
-     *
-     * Note, if a string ends with multiple operators, for example "test((", it will be returned as "test(" and "(".
-     * We don't care about processing it recursively because it doesn't affect the syntax diagnose.
-     * Meaning, we will give the same diagnose to "test(" or "test(("
-     *
-     * @private
-     * @memberof Tokenizer
-     */
-    private getNext = (() => {
-        if (isNullOrUndefined(this.tmpStorage)) {
-            this.tmpStorage = this.baseReadNext();
-        }
-        if (this.tmpStorage.value.length <= 1) {
-            let tobeReturn = this.tmpStorage;
-            this.tmpStorage = undefined;
-            return tobeReturn;
-        }
-        if (this.tmpStorage.value[0].match(/[,=().]/)) {
-            const opt = this.tmpStorage.value[0];
-            this.tmpStorage.value = this.tmpStorage.value.substring(1, this.tmpStorage.value.length);
-            this.tmpStorage.starti = this.tmpStorage.starti+1;
-            return {
-                value: opt,
-                starti: this.tmpStorage.starti,
-                is_word: false,
-                is_op_char: true,
-                is_eoStatement: this.tmpStorage.value[0] === "." ? true : false,
-                is_eoInput: false
-            };
-        } else if (this.tmpStorage.value[this.tmpStorage.value.length-1].match(/[,=().]/)) {
-            const toBeReturn = {
-                value: this.tmpStorage.value.substring(0, this.tmpStorage.value.length - 1),
-                starti: this.tmpStorage.starti,
-                is_word: true,
-                is_op_char: false,
-                is_eoStatement: false,
-                is_eoInput: false
-            };
-            const opt = this.tmpStorage.value[this.tmpStorage.value.length-1];
-            this.tmpStorage = {
-                value: opt,
-                starti: this.tmpStorage.starti + toBeReturn.value.length,
-                is_word: false,
-                is_op_char: true,
-                is_eoStatement: opt === "." ? true : false,
-                is_eoInput: false
-            };
-            return toBeReturn;
-        } else {
-            let tobeReturn = this.tmpStorage;
-            this.tmpStorage = undefined;
-            return tobeReturn;
-        }
-    });
 
 }

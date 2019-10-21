@@ -1,25 +1,10 @@
-import { TextDocument, Diagnostic, DiagnosticSeverity } from 'vscode-languageserver';
+import { TextDocument, Diagnostic, DiagnosticSeverity, TextEdit, CompletionItemKind } from 'vscode-languageserver';
 import { ITokenizedString, Tokenizer } from '../parser/Tokenizer';
 import { isNullOrUndefined } from 'util';
-import { SCLDocumentManager } from './SCLDocumentManager';
-import { match } from '../parser/ParserTags';
-import { SETtree, ADDtree, UPDATEtree, DELETEtree, GENERATEtree, MOVEtree } from '../parser/syntaxTrees/PrepareTrees';
-import { diagnose } from '../parser/syntaxTrees/Parser';
-import { IFromTocheck } from '../parser/syntaxTrees/doc/Inode';
-
-/**
- * An interface that extends the vscode diagnostic.
- * starti and endi is the range of diagnostic. This is used when updating document.
- * We first calculate the starti and endi, then update the diagnostic.range
- *
- * @export
- * @interface ISCLDiagnostic
- */
-export interface ISCLDiagnostic {
-    diagnostic: Diagnostic;
-    starti: number;
-    endi: number;
-}
+import { SCLDocumentManager, actionCompletion } from './SCLDocumentManager';
+import { dispatcher} from '../parser/PreParserUtils';
+import { QUICKFIX_CHOICE_MSG } from '../CodeActionProvider';
+import { Parser } from '../parser/Parser';
 
 /**
  * Informaton about one scl statement.
@@ -32,30 +17,7 @@ export class SCLstatement {
     starti: number;
     endi: number;
     tokens: ITokenizedString[] = [];
-    diagnostics: ISCLDiagnostic[] = [];
-
-    fromtoCheck: IFromTocheck = {
-        from: {
-            FILE: false,
-            location: {
-                ENVIRONMENT: false,
-                SYSTEM: false,
-                SUBSYSTEM: false,
-                TYPE: false,
-                STAGE: false,
-            }
-        },
-        to: {
-            FILE: false,
-            location: {
-                ENVIRONMENT: false,
-                SYSTEM: false,
-                SUBSYSTEM: false,
-                TYPE: false,
-                STAGE: false,
-            }
-        },
-    };
+    diagnostics: Diagnostic[] = [];
 
     /**
      * Creates an instance of SCLstatement from tokens.
@@ -79,30 +41,7 @@ export class SCLstatement {
                 this.tokens.push(token);
             });
         }
-        this.tokens = tokens;
         this.diagnostics = [];
-        this.fromtoCheck = {
-            from: {
-                FILE: false,
-                location: {
-                    ENVIRONMENT: false,
-                    SYSTEM: false,
-                    SUBSYSTEM: false,
-                    TYPE: false,
-                    STAGE: false,
-                }
-            },
-            to: {
-                FILE: false,
-                location: {
-                    ENVIRONMENT: false,
-                    SYSTEM: false,
-                    SUBSYSTEM: false,
-                    TYPE: false,
-                    STAGE: false,
-                }
-            },
-        };
     }
 }
 
@@ -116,7 +55,7 @@ export class SCLstatement {
 export class SCLDocument {
     textDocument: TextDocument;
     statements: SCLstatement[] = [];
-    setCheck: IFromTocheck = {
+    setFromToMemo = {
         from: {
             FILE: false,
             location: {
@@ -141,41 +80,29 @@ export class SCLDocument {
 
     constructor(textDocument: TextDocument) {
         this.textDocument = textDocument;
-        this.initStatements(); // read the whole content of the document and do synatx diagnose
-    }
-
-    /**
-     * Tokenize the input string into an array of SCLstatement
-     *
-     * @private
-     * @param {string} text
-     * @param {number} [startiOffset] The offset for the current text in the whole document
-     * @returns {SCLstatement[]}
-     * @memberof SCLDocument
-     */
-    private parseTextIntoSCLstatementsTokens(text: string, startiOffset?: number): SCLstatement[] {
-        const statements: SCLstatement[] = [];
-        const tokenizeTextContent: Tokenizer = new Tokenizer(text);
-        let token: ITokenizedString = tokenizeTextContent.peekNext();
-        let statement: ITokenizedString[] = [];
-        while (!isNullOrUndefined(token) && !token.is_eoInput) {
-            token = tokenizeTextContent.readNext();
-
-            if (token.is_eoInput) {
-                if (statement.length > 0) {
-                    statements.push(new SCLstatement(statement, startiOffset));
+        this.setFromToMemo = {
+            from: {
+                FILE: false,
+                location: {
+                    ENVIRONMENT: false,
+                    SYSTEM: false,
+                    SUBSYSTEM: false,
+                    TYPE: false,
+                    STAGE: false,
                 }
-                break;
-            }
-
-            statement.push(token);
-
-            if (token.is_eoStatement) {
-                statements.push(new SCLstatement(statement, startiOffset));
-                statement = [];
-            }
-        }
-        return statements;
+            },
+            to: {
+                FILE: false,
+                location: {
+                    ENVIRONMENT: false,
+                    SYSTEM: false,
+                    SUBSYSTEM: false,
+                    TYPE: false,
+                    STAGE: false,
+                }
+            },
+        };
+        this.initStatements(); // read the whole content of the document and do synatx diagnose
     }
 
     /**
@@ -192,6 +119,40 @@ export class SCLDocument {
         }
         this.statements = this.parseTextIntoSCLstatementsTokens(this.textDocument.getText());
         this.walkStatements();
+    }
+
+    /**
+     * Tokenize the input string into an array of SCLstatement
+     *
+     * @private
+     * @param {string} text
+     * @param {number} [startiOffset] The offset for the current text in the whole document
+     * @returns {SCLstatement[]}
+     * @memberof SCLDocument
+     */
+    private parseTextIntoSCLstatementsTokens(text: string, startiOffset?: number): SCLstatement[] {
+        const statements: SCLstatement[] = [];
+        const tokenizeTextContent: Tokenizer = new Tokenizer(text);
+        let token: ITokenizedString = tokenizeTextContent.peekNext();
+        let statement: ITokenizedString[] = [];
+        while (!isNullOrUndefined(token) && token.value.length > 0) {
+            token = tokenizeTextContent.readNext();
+
+            if (token.value.length <= 0) {
+                if (statement.length > 0) {
+                    statements.push(new SCLstatement(statement, startiOffset));
+                }
+                break;
+            }
+
+            statement.push(token);
+
+            if (token.is_eoStatement) {
+                statements.push(new SCLstatement(statement, startiOffset));
+                statement = [];
+            }
+        }
+        return statements;
     }
 
     /**
@@ -213,140 +174,337 @@ export class SCLDocument {
      * @memberof SCLDocument
      */
     private walkStatement(statement: SCLstatement) {
-        if (match(statement.tokens[0], "SET", statement, this))
-            diagnose(SETtree, statement, this);
-        if (match(statement.tokens[0], "ADD", statement, this))
-            diagnose(ADDtree, statement, this);
-        if (match(statement.tokens[0], "UPDATE", statement, this))
-            diagnose(UPDATEtree, statement, this);
-        if (match(statement.tokens[0], "DELETE", statement, this))
-            diagnose(DELETEtree, statement, this);
-        if (match(statement.tokens[0], "GENERATE", statement, this))
-            diagnose(GENERATEtree, statement, this);
-        if (match(statement.tokens[0], "MOVE", statement, this))
-            diagnose(MOVEtree, statement, this);
-
+        let rootNode = dispatcher(statement.tokens);
+        if (!isNullOrUndefined(rootNode)) {
+            const parse = new Parser(this.textDocument, statement.tokens, rootNode);
+            parse.parser();
+            statement.diagnostics = parse.diagnoses;
+            this.processFromTo(statement, parse.fromMemo, parse.toMemo);
+        } else {
+            if (statement.tokens.length > 0)
+                this.pushDiagnostic(
+                    statement.tokens[0].starti, statement.tokens[0].starti + statement.tokens[0].value.length, statement,
+                    DiagnosticSeverity.Error,
+                    `Invalid value specified`,
+                    `${QUICKFIX_CHOICE_MSG}${actionCompletion.join(", ")}`,
+                    statement.tokens[0]);
+        }
     }
 
-    /**
-     * Called by SCLDocumentManager when an update in the document is received
-     *
-     * @param {string} newText The new text replacing the original text
-     * @param {number} start The start index of the original text
-     * @param {number} end The end index of the original text
-     * @param {string} origContent The entire original content before change
-     * @memberof SCLDocument
-     */
-    update(newText: string, start: number, end: number, origContent: string) {
-        const newTextUp = newText.toUpperCase();
-        const origContentUp = origContent.toUpperCase();
-        if ((newTextUp.match(/\b(SET)\b/) &&
-             (newTextUp.match(/\b(FRO(M|\b))\b/) ||
-              newTextUp.match(/\b(TO)\b/)) ) ||
-            (origContentUp.match(/(.*)\b(SET)\b(.*)/) &&
-             (origContentUp.match(/\b(FRO(M|\b))\b/) ||
-              origContentUp.match(/\b(TO)\b/)) ) ) {
-            // redo the whole document whenever there's SET FROM/TO involved
-            this.setCheck = {
-                from: {
-                    FILE: false,
-                    location: {
-                        ENVIRONMENT: false,
-                        SYSTEM: false,
-                        SUBSYSTEM: false,
-                        TYPE: false,
-                        STAGE: false,
-                    }
-                },
-                to: {
-                    FILE: false,
-                    location: {
-                        ENVIRONMENT: false,
-                        SYSTEM: false,
-                        SUBSYSTEM: false,
-                        TYPE: false,
-                        STAGE: false,
-                    }
-                },
-            };
-            const newContent = origContent.substring(0, start)
-                                + newText
-                                + origContent.substring(end, origContent.length);
-            this.statements = this.parseTextIntoSCLstatementsTokens(newContent);
-            this.walkStatements();
+    private processFromTo(statement: SCLstatement, fromInStatement: string[], toInStatement: string[]) {
+        if (SCLDocumentManager.numberOfProblems >= SCLDocumentManager.config.maxNumberOfProblems ||
+            statement.tokens.length < 2)
+            return;
+
+        // don't check for this error if there's already error
+        let existingErrDiagnoseCount = 0;
+        statement.diagnostics.forEach((diag) => {
+            if (diag.severity === DiagnosticSeverity.Error)
+                existingErrDiagnoseCount ++;
+        });
+        if (existingErrDiagnoseCount > 0)
+            return;
+
+        let action = statement.tokens[0].value.toUpperCase();
+        let actionObj = statement.tokens[1].value.toUpperCase();
+        if (actionObj.startsWith("PAC"))
+            return;
+
+        const convert = (obj:
+            { from:
+                { location: { ENVIRONMENT: boolean; STAGE: boolean; SYSTEM: boolean; SUBSYSTEM: boolean; TYPE: boolean; };
+                FILE: boolean; };
+            to:
+                { location: { ENVIRONMENT: boolean; STAGE: boolean; SYSTEM: boolean; SUBSYSTEM: boolean; TYPE: boolean; };
+                FILE: boolean; }; }) => {
+            fromInStatement.forEach((key) => {
+                switch (key.toUpperCase()) {
+                    case "ENVIRONMENT":
+                        obj.from.location.ENVIRONMENT = true;
+                        break;
+                    case "STAGE":
+                        obj.from.location.STAGE = true;
+                        break;
+                    case "STAGE NUMBER":
+                        obj.from.location.STAGE = true;
+                        break;
+                    case "SYSTEM":
+                        obj.from.location.SYSTEM = true;
+                        break;
+                    case "SUBSYSTEM":
+                        obj.from.location.SUBSYSTEM = true;
+                        break;
+                    case "TYPE":
+                        obj.from.location.TYPE = true;
+                        break;
+                    default:
+                        obj.from.FILE = true;
+                        break;
+                }
+            });
+            toInStatement.forEach((key) => {
+                switch (key.toUpperCase()) {
+                    case "ENVIRONMENT":
+                        obj.to.location.ENVIRONMENT = true;
+                        break;
+                    case "STAGE":
+                        obj.to.location.STAGE = true;
+                        break;
+                    case "STAGE NUMBER":
+                        obj.to.location.STAGE = true;
+                        break;
+                    case "SYSTEM":
+                        obj.to.location.SYSTEM = true;
+                        break;
+                    case "SUBSYSTEM":
+                        obj.to.location.SUBSYSTEM = true;
+                        break;
+                    case "TYPE":
+                        obj.to.location.TYPE = true;
+                        break;
+                    default:
+                        obj.to.FILE = true;
+                        break;
+                }
+            });
+        };
+
+        if (action === "SET") {
+            convert(this.setFromToMemo);
             return;
         }
 
-        // otherwise incremental update
-        const oldLength = end - start;
-        const indexPlus = newText.length - oldLength;
-
-        const updatePositionInStatement = ((indexPlus: number, statement: SCLstatement) => {
-            statement.starti = statement.starti + indexPlus;
-            statement.endi = statement.endi + indexPlus;
-            for (const token of statement.tokens) {
-                token.starti = token.starti + indexPlus;
-            }
-            for (const diag of statement.diagnostics) {
-                diag.starti = diag.starti + indexPlus;
-                diag.endi = diag.endi + indexPlus;
-                // the diag.diagnostic.range will be refreshed after all the updates are processed, and textDocument is updated
-            }
-        });
-
-        let affectedRange = {
-            start,
-            end
-        }; // the start and end index in the textDocument, of where the change affected
-        for (let i = this.statements.length - 1; i >= 0 ; -- i) {
-            if (this.statements[i].starti > affectedRange.end) {
-                // start end statement.starti statement.endi
-                updatePositionInStatement(indexPlus, this.statements[i]);
-                continue;
-            } else if (this.statements[i].endi < affectedRange.start) {
-                // statement.starti statement.endi start end, and statement is a complete statement
-                const lastToken = this.statements[i].tokens[this.statements[i].tokens.length-1];
-                if (lastToken.is_eoStatement) {
-                    continue;
+        let statementFT = {
+            from: {
+                FILE: false,
+                location: {
+                    ENVIRONMENT: false,
+                    SYSTEM: false,
+                    SUBSYSTEM: false,
+                    TYPE: false,
+                    STAGE: false,
                 }
-            }
-            affectedRange.start = Math.min(
-                affectedRange.start, this.statements[i].starti);
-            affectedRange.end = Math.max(
-                affectedRange.end, this.statements[i].endi);
+            },
+            to: {
+                FILE: false,
+                location: {
+                    ENVIRONMENT: false,
+                    SYSTEM: false,
+                    SUBSYSTEM: false,
+                    TYPE: false,
+                    STAGE: false,
+                }
+            },
+        };
+        convert(statementFT);
 
-            // before remove this statement, update SCLDocumentManager.numberOfProblems
-            SCLDocumentManager.numberOfProblems = SCLDocumentManager.numberOfProblems - this.statements[i].diagnostics.length;
-            if (SCLDocumentManager.numberOfProblems < 0) {
-                SCLDocumentManager.numberOfProblems = 0;
-            }
-            this.statements.splice(i, 1);
+        let missFrom = false;
+        let missTo = false;
+        switch (true) {
+            case action.startsWith("ADD") || action.startsWith("UPD"):
+                if (!statementFT.from.FILE && !this.setFromToMemo.from.FILE) {
+                    missFrom = true;
+                }
+                if (!(statementFT.to.location.ENVIRONMENT || this.setFromToMemo.to.location.ENVIRONMENT) ||
+                    !(statementFT.to.location.SYSTEM || this.setFromToMemo.to.location.SYSTEM) ||
+                    !(statementFT.to.location.SUBSYSTEM || this.setFromToMemo.to.location.SUBSYSTEM) ||
+                    !(statementFT.to.location.TYPE || this.setFromToMemo.to.location.TYPE)) {
+                        missTo = true;
+                    }
+                break;
+
+            case action.startsWith("DEL") || action.startsWith("GEN") || action.startsWith("MOV") ||
+                 action.startsWith("SIG"):
+                if (!(statementFT.from.location.ENVIRONMENT || this.setFromToMemo.from.location.ENVIRONMENT) ||
+                    !(statementFT.from.location.STAGE || this.setFromToMemo.from.location.STAGE) ||
+                    !(statementFT.from.location.SYSTEM || this.setFromToMemo.from.location.SYSTEM) ||
+                    !(statementFT.from.location.SUBSYSTEM || this.setFromToMemo.from.location.SUBSYSTEM) ||
+                    !(statementFT.from.location.TYPE || this.setFromToMemo.from.location.TYPE)) {
+                        missFrom = true;
+                    }
+                break;
+
+            case action.startsWith("RET"):
+                if (!(statementFT.from.location.ENVIRONMENT || this.setFromToMemo.from.location.ENVIRONMENT) ||
+                    !(statementFT.from.location.STAGE || this.setFromToMemo.from.location.STAGE) ||
+                    !(statementFT.from.location.SYSTEM || this.setFromToMemo.from.location.SYSTEM) ||
+                    !(statementFT.from.location.SUBSYSTEM || this.setFromToMemo.from.location.SUBSYSTEM) ||
+                    !(statementFT.from.location.TYPE || this.setFromToMemo.from.location.TYPE)) {
+                        missFrom = true;
+                    }
+                if (!statementFT.to.FILE && !this.setFromToMemo.to.FILE && !SCLDocumentManager.config.isREST) {
+                    missTo = true;
+                }
+                break;
+
+            case action.startsWith("TRA"):
+                if (!(statementFT.from.location.ENVIRONMENT || this.setFromToMemo.from.location.ENVIRONMENT) ||
+                    !(statementFT.from.location.STAGE || this.setFromToMemo.from.location.STAGE) ||
+                    !(statementFT.from.location.SYSTEM || this.setFromToMemo.from.location.SYSTEM) ||
+                    !(statementFT.from.location.SUBSYSTEM || this.setFromToMemo.from.location.SUBSYSTEM) ||
+                    !(statementFT.from.location.TYPE || this.setFromToMemo.from.location.TYPE)) {
+                        missFrom = true;
+                    }
+                if (!(statementFT.to.location.ENVIRONMENT || this.setFromToMemo.to.location.ENVIRONMENT) ||
+                    !(statementFT.to.location.STAGE || this.setFromToMemo.to.location.STAGE) ||
+                    !(statementFT.to.location.SYSTEM || this.setFromToMemo.to.location.SYSTEM) ||
+                    !(statementFT.to.location.SUBSYSTEM || this.setFromToMemo.to.location.SUBSYSTEM) ||
+                    !(statementFT.to.location.TYPE || this.setFromToMemo.to.location.TYPE)) {
+                        missTo = true;
+                    }
+                break;
+
+            case action.startsWith("LIS"):
+                if (!statementFT.to.FILE && !this.setFromToMemo.to.FILE && !SCLDocumentManager.config.isREST) {
+                    missTo = true;
+                }
+                if (actionObj.startsWith("STA") && !(statementFT.from.location.ENVIRONMENT || this.setFromToMemo.from.location.ENVIRONMENT)){
+                    missFrom = true;
+                }
+                if (( actionObj.startsWith("SUB") || actionObj.startsWith("TYP") ) &&
+                    ( !(statementFT.from.location.ENVIRONMENT || this.setFromToMemo.from.location.ENVIRONMENT) ||
+                      !(statementFT.from.location.STAGE || this.setFromToMemo.from.location.STAGE) ||
+                      !(statementFT.from.location.SYSTEM || this.setFromToMemo.from.location.SYSTEM) ) ) {
+                    missFrom = true;
+                }
+                if (actionObj.startsWith("SYS") &&
+                    ( !(statementFT.from.location.ENVIRONMENT || this.setFromToMemo.from.location.ENVIRONMENT) ||
+                      !(statementFT.from.location.STAGE || this.setFromToMemo.from.location.STAGE) ) ) {
+                    missFrom = true;
+                }
+                if (( actionObj.startsWith("ELE") ) &&
+                     (!(statementFT.from.location.ENVIRONMENT || this.setFromToMemo.from.location.ENVIRONMENT) ||
+                      !(statementFT.from.location.STAGE || this.setFromToMemo.from.location.STAGE) ||
+                      !(statementFT.from.location.SYSTEM || this.setFromToMemo.from.location.SYSTEM) ||
+                      !(statementFT.from.location.SUBSYSTEM || this.setFromToMemo.from.location.SUBSYSTEM) ||
+                      !(statementFT.from.location.TYPE || this.setFromToMemo.from.location.TYPE)) ) {
+                    missFrom = true;
+                }
+                break;
+
+            default:
+                break;
         }
 
-        const newTextTobeParse: string = origContent.substring(affectedRange.start, start)
-                                            + newText
-                                            + origContent.substring(end, affectedRange.end);
+        if (missFrom) { // only push FROM/TO err when there's no exising err, since it covers up existing err
+            this.pushDiagnostic(
+                statement.starti, statement.endi, statement,
+                DiagnosticSeverity.Error,
+                "FROM clause incomplete in the current SCL");
 
-        const newStatements: SCLstatement[] = this.parseTextIntoSCLstatementsTokens(newTextTobeParse, affectedRange.start);
-        newStatements.forEach((newscl) => {
-            this.walkStatement(newscl);
-            this.statements.push(newscl);
+        }
+        if (missTo) {
+            this.pushDiagnostic(
+                statement.starti, statement.endi, statement,
+                DiagnosticSeverity.Error,
+                "TO clause incomplete in the current SCL");
+        }
+    }
+
+    fullUpdate() {
+        this.setFromToMemo = {
+            from: {
+                FILE: false,
+                location: {
+                    ENVIRONMENT: false,
+                    SYSTEM: false,
+                    SUBSYSTEM: false,
+                    TYPE: false,
+                    STAGE: false,
+                }
+            },
+            to: {
+                FILE: false,
+                location: {
+                    ENVIRONMENT: false,
+                    SYSTEM: false,
+                    SUBSYSTEM: false,
+                    TYPE: false,
+                    STAGE: false,
+                }
+            },
+        };
+        this.statements = [];
+        if (isNullOrUndefined(this.textDocument)) {
+            return;
+        }
+        this.initStatements();
+    }
+
+    private formatStatement(statement: SCLstatement): TextEdit[] {
+        const tokens: ITokenizedString[] = statement.tokens;
+        const edits: TextEdit[] = [];
+
+        for (let i = 0; i < tokens.length-1; ++ i) {
+            let starti = tokens[i].starti + tokens[i].value.length;
+            let endi = tokens[i+1].starti;
+            if (endi < starti)
+                starti = endi;
+            let newText = " "; // by default make only 1 space between each token
+            if (!isNullOrUndefined(tokens[i].rightDistance)) {
+                newText = tokens[i].rightDistance as string;
+            }
+            edits.push({
+                range: {
+                    start: this.textDocument.positionAt(starti),
+                    end: this.textDocument.positionAt(endi),
+                },
+                newText
+            });
+        }
+
+        return edits;
+    }
+
+    formatDocument(): TextEdit[] {
+        let edits: TextEdit[] = [];
+        edits.push({
+            range: {
+                start: this.textDocument.positionAt(0),
+                end: this.textDocument.positionAt(this.statements[0].starti),
+            },
+            newText: ""
         });
+
+        let i = 0;
+        for (i = 0; i < this.statements.length-1; ++ i) {
+            edits = edits.concat(this.formatStatement(this.statements[i]));
+            edits.push({
+                range: {
+                    start: this.textDocument.positionAt(this.statements[i].endi),
+                    end: this.textDocument.positionAt(this.statements[i+1].starti),
+                },
+                newText: "\n\n"
+            });
+        }
+        edits = edits.concat(this.formatStatement(this.statements[i]));
+        edits.push({
+            range: {
+                start: this.textDocument.positionAt(this.statements[i].endi),
+                end: this.textDocument.positionAt(this.statements[i].endi),
+            },
+            newText: "\n"
+        });
+        return edits;
     }
 
     /**
      * Push diagnostic information into the corresponded SCLstatement
      *
-     * @param {ITokenizedString} diagnosedToken the token where the error/warning happened
-     * @param {SCLstatement} statement the scl statement where the error/warning happened
+     *
+     * @param {number} startIndex
+     * @param {number} endIndex
+     * @param {SCLstatement} statement
      * @param {DiagnosticSeverity} severity
      * @param {string} message
      * @param {string} [relatedMsg]
+     * @param {ITokenizedString} [relatedToken]
      * @returns
      * @memberof SCLDocument
      */
     pushDiagnostic(
-        diagnosedToken: ITokenizedString,
+        startIndex: number,
+        endIndex: number,
         statement: SCLstatement,
         severity: DiagnosticSeverity,
         message: string,
@@ -354,11 +512,11 @@ export class SCLDocument {
         relatedToken?: ITokenizedString
         ) {
 
-        if (SCLDocumentManager.numberOfProblems > SCLDocumentManager.config.maxNumberOfProblems) {
+        if (SCLDocumentManager.numberOfProblems >= SCLDocumentManager.config.maxNumberOfProblems) {
             return;
         }
-        if (diagnosedToken.starti < statement.starti ||
-            diagnosedToken.starti + diagnosedToken.value.length > statement.endi) {
+        if (startIndex < statement.starti ||
+            endIndex > statement.endi) {
             // The token is not in the scl!!
             return;
         }
@@ -368,8 +526,8 @@ export class SCLDocument {
         let diagnostic: Diagnostic = {
             severity: severity,
             range: {
-                start: this.textDocument.positionAt(diagnosedToken.starti),
-                end: this.textDocument.positionAt(diagnosedToken.starti + diagnosedToken.value.length)
+                start: this.textDocument.positionAt(startIndex),
+                end: this.textDocument.positionAt(endIndex)
             },
             message: message,
             source: 'Endevor SCL extension'
@@ -389,10 +547,6 @@ export class SCLDocument {
                 }
             ];
         }
-        statement.diagnostics.push({
-            diagnostic,
-            starti: diagnosedToken.starti,
-            endi: diagnosedToken.starti + diagnosedToken.value.length,
-        });
+        statement.diagnostics.push(diagnostic);
     }
 }

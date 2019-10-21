@@ -1,0 +1,109 @@
+{
+    "keyword": "SIGnin",
+    "required": true,
+    "requireNext": true,
+    "next": [
+        {
+            "keyword": "ELEment",
+            "required": true,
+            "requireNext": true,
+            "next": [
+                {
+                    "maxLen": 255,
+                    "required": true,
+                    "nogoback": true,
+                    "requireNext": true,
+                    "next": [
+                        {
+                            "keyword": "THRough, THRu",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "maxLen": 255,
+                                    "required": true
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "FROm",
+                            "isFROM": true,
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "keyword": "ENVironment, SYStem, SUBSystem, TYPe",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "STAge NUMber, STAge",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 1,
+                                            "required": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "WHEre",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "keyword": "PROcessor GROup EQ, PROcessor GROup =",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true,
+                                            "specialValue": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "CCId OF CURrent EQual, CCId OF CURrent =, CCId OF CURrent, CCId OF ALL EQual, CCId OF ALL =, CCId OF ALL, CCId OF RETrieve EQual, CCId OF RETrieve =, CCId OF RETrieve, CCId EQual, CCId =, CCId",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 12,
+                                            "required": true,
+                                            "specialValue": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "OPTion",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "keyword": "SIGNOut TO",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "OVErride SIGNOut, NOSearch, SEArch"
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

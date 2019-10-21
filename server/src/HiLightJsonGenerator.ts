@@ -1,5 +1,5 @@
 import { isNullOrUndefined } from "util";
-import { ParserTags } from './parser/parserTags';
+import { ParserTags } from './oldParser/parserTags';
 import * as fs from 'fs';
 
 const level0keywords: string[] = [
@@ -17,7 +17,16 @@ const level0keywords: string[] = [
     ParserTags.SIGNIN,
     ParserTags.TRANSFER,
     ParserTags.UPDATE,
-    ParserTags.VALIDATE
+    ParserTags.VALIDATE,
+    ParserTags.APPROVE,
+    ParserTags.DENY,
+    ParserTags.BACKIN,
+    ParserTags.BACKOUT,
+    ParserTags.CAST,
+    ParserTags.DEFINE,
+    ParserTags.EXECUTE,
+    ParserTags.RESET,
+    ParserTags.COMMIT
 ];
 
 const level1keywords: string[] = [
@@ -29,7 +38,11 @@ const level1keywords: string[] = [
     ParserTags.WHERE,
     ParserTags.STOPRC,
     ParserTags.ELEMENT,
-    "THRough", "THRu"
+    "THRough", "THRu",
+    ParserTags.VERSION,
+    ParserTags.LEVEL,
+    ParserTags.PACKAGE,
+    ParserTags.DATA,
 ];
 
 const level2keywords: string[] = [
@@ -46,6 +59,10 @@ const level2keywords: string[] = [
     ParserTags.TYPE,
     ParserTags.STAGE,
     ParserTags.NUMBER,
+
+    ParserTags.NOTES,
+    ParserTags.STATEMENT,
+    ParserTags.DESCRIPTION
 
     // ParserTags.UPDATE + " " + ParserTags.IF + " " + ParserTags.PRESENT,
 
@@ -86,7 +103,7 @@ const composeRegex = ((tagValue: string): string | undefined => {
 });
 
 const jsonGenerator = (() => {
-    const textMateJson: string = fs.readFileSync("./syntaxes/scl.tmLanguage.json", "UTF-8")
+    const textMateJson: string = fs.readFileSync("./syntaxes/scl.tmLanguage.json", "UTF-8");
     const textMateObj = JSON.parse(textMateJson);
     textMateObj.repository.keywords2.patterns = [];
     textMateObj.repository.keywords1.patterns = [];

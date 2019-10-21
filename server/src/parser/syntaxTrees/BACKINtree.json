@@ -1,0 +1,47 @@
+{
+    "keyword": "BACKIn",
+    "required": true,
+    "requireNext": true,
+    "next": [
+        {
+            "keyword": "PACkage",
+            "required": true,
+            "requireNext": true,
+            "next": [
+                {
+                    "maxLen": 16,
+                    "required": true,
+                    "nogoback": true,
+                    "requireNext": true,
+                    "next": [
+                        {
+                            "keyword": "STATEment NUMber, STATEment",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "maxLen": 5,
+                                    "required": true,
+                                    "next": [
+                                        {
+                                            "keyword": "ELEment",
+                                            "requireNext": true,
+                                            "next": [
+                                                {
+                                                    "maxLen": 255,
+                                                    "required": true
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

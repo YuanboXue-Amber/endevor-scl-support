@@ -4,6 +4,7 @@ import { isNullOrUndefined } from "util";
 export const QUICKFIX_UPPERCASE_MSG = "Keyword should be uppercased.";
 export const QUICKFIX_SPACE_BEFORE_EOS_MSG = "Invalid scl. Expecting a space before end of statement operator \".\".";
 export const QUICKFIX_NO_EOS_MSG = "Invalid scl. No end of statement operator \".\" specified.";
+export const QUICKFIX_CHOICE_MSG = "Possible valid values: ";
 
 /**
  * Provide quickfix only for:
@@ -63,6 +64,25 @@ export function quickfix(textDocument: TextDocument, parms: CodeActionParams): C
                     changes: {
                         [parms.textDocument.uri]: [{
                             range: diag.range, newText: textDocument.getText(diag.range) + " . "
+                        }]
+                    }
+                }
+            });
+            return;
+        }
+
+        if (diag.severity === DiagnosticSeverity.Error && !isNullOrUndefined(diag.relatedInformation) &&
+            diag.relatedInformation[0].message.includes(QUICKFIX_CHOICE_MSG)) {
+
+            const actions = diag.relatedInformation[0].message.substring(QUICKFIX_CHOICE_MSG.length).split(",");
+            codeActions.push({
+                title: `Change to a possible valid value: ${actions[0].trim()}`,
+                kind: CodeActionKind.QuickFix,
+                diagnostics: [diag],
+                edit: {
+                    changes: {
+                        [parms.textDocument.uri]: [{
+                            range: diag.range, newText: actions[0].trim()
                         }]
                     }
                 }

@@ -1,0 +1,622 @@
+{
+    "keyword": "LISt",
+    "required": true,
+    "requireNext": true,
+    "next": [
+        {
+            "keyword": "ENVironment",
+            "requireNext": true,
+            "next": [
+                {
+                    "maxLen": 8,
+                    "required": true,
+                    "nogoback": true,
+                    "next": [
+                        {
+                            "keyword": "TO",
+                            "requireNext": true,
+                            "isTO": true,
+                            "next": [
+                                {
+                                    "keyword": "FILe, DDName",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "DSName",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 44,
+                                            "required": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "OPTion",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "keyword": "DELImiters",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 1,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "NOCsv, NOTitle, QUAlifier QUOte, PATh LOGical, PATh PHYsical, PATh, NOSearch, SEArch, RETurn FIRst, RETurn ALL, RETurn"
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "keyword": "STAge NUMber, STAge",
+            "requireNext": true,
+            "next": [
+                {
+                    "maxLen": 1,
+                    "required": true,
+                    "nogoback": true,
+                    "next": [
+                        {
+                            "keyword": "TO",
+                            "requireNext": true,
+                            "isTO": true,
+                            "next": [
+                                {
+                                    "keyword": "FILe, DDName",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "DSName",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 44,
+                                            "required": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "FROm",
+                            "isFROM": true,
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "keyword": "ENVironment",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "OPTion",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "keyword": "DELImiters",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 1,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "NOCsv, NOTitle, QUAlifier QUOte, PATh LOGical, PATh PHYsical, PATh, NOSearch, SEArch, RETurn FIRst, RETurn ALL, RETurn"
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "keyword": "SUBsystem",
+            "requireNext": true,
+            "next": [
+                {
+                    "maxLen": 8,
+                    "required": true,
+                    "nogoback": true,
+                    "next": [
+                        {
+                            "keyword": "TO",
+                            "requireNext": true,
+                            "isTO": true,
+                            "next": [
+                                {
+                                    "keyword": "FILe, DDName",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "DSName",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 44,
+                                            "required": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "FROm",
+                            "isFROM": true,
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "keyword": "ENVironment, SYStem",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "STAge NUMber, STAge",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 1,
+                                            "required": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "OPTion",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "keyword": "DELImiters",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 1,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "NOCsv, NOTitle, QUAlifier QUOte, PATh LOGical, PATh PHYsical, PATh, NOSearch, SEArch, RETurn FIRst, RETurn ALL, RETurn"
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "keyword": "SYStem",
+            "requireNext": true,
+            "next": [
+                {
+                    "maxLen": 8,
+                    "required": true,
+                    "nogoback": true,
+                    "next": [
+                        {
+                            "keyword": "TO",
+                            "requireNext": true,
+                            "isTO": true,
+                            "next": [
+                                {
+                                    "keyword": "FILe, DDName",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "DSName",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 44,
+                                            "required": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "FROm",
+                            "isFROM": true,
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "keyword": "ENVironment",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "STAge NUMber, STAge",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 1,
+                                            "required": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "OPTion",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "keyword": "DELImiters",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 1,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "NOCsv, NOTitle, QUAlifier QUOte, PATh LOGical, PATh PHYsical, PATh, NOSearch, SEArch, RETurn FIRst, RETurn ALL, RETurn"
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "keyword": "TYPe",
+            "requireNext": true,
+            "next": [
+                {
+                    "maxLen": 8,
+                    "required": true,
+                    "nogoback": true,
+                    "next": [
+                        {
+                            "keyword": "TO",
+                            "requireNext": true,
+                            "isTO": true,
+                            "next": [
+                                {
+                                    "keyword": "FILe, DDName",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "DSName",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 44,
+                                            "required": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "FROm",
+                            "isFROM": true,
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "keyword": "ENVironment, SYStem",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "STAge NUMber, STAge",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 1,
+                                            "required": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "OPTion",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "keyword": "DELImiters",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 1,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "NOCsv, NOTitle, QUAlifier QUOte, PATh LOGical, PATh PHYsical, PATh, NOSearch, SEArch, RETurn FIRst, RETurn ALL, RETurn"
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "keyword": "ELEment",
+            "requireNext": true,
+            "next": [
+                {
+                    "maxLen": 8,
+                    "required": true,
+                    "nogoback": true,
+                    "next": [
+                        {
+                            "keyword": "TO",
+                            "requireNext": true,
+                            "isTO": true,
+                            "next": [
+                                {
+                                    "keyword": "FILe, DDName",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "DSName",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 44,
+                                            "required": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "FROm",
+                            "isFROM": true,
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "keyword": "ENVironment, SYStem, SUBSystem, TYPe",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "STAge NUMber, STAge",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 1,
+                                            "required": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "DATa All, DATa BASic, DATa ELEment CHAnge LEVel SUMmary, DATa COMPonent CHAnge LEVel SUMmary, DATa CHAnge LEVel SUMmary, DATa SUMmary, DATa"
+                        },
+                        {
+                            "keyword": "OPTion",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "keyword": "DELImiters",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 1,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "NOCsv, NOTitle, QUAlifier QUOte, PATh LOGical, PATh PHYsical, PATh, NOSearch, SEArch, RETurn FIRst, RETurn ALL, RETurn"
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "WHEre",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "keyword": "PROcessor FAIled, PROcessor TYPe GENerate, PROcessor TYPe MOVe, PROcessor TYPe DELete"
+                                },
+                                {
+                                    "keyword": "GENerate FROm DATE, GENerate THRu DATE",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true,
+                                            "next": [
+                                                {
+                                                    "keyword": "TIMe",
+                                                    "requireNext": true,
+                                                    "next": [
+                                                        {
+                                                            "maxLen": 5,
+                                                            "required": true
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "PROcessor GROup EQ, PROcessor GROup =",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true,
+                                            "specialValue": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "CCId OF CURrent EQual, CCId OF CURrent =, CCId OF CURrent, CCId OF GENerate EQual, CCId OF GENerate =, CCId OF GENerate, CCId OF RETrieve EQual, CCId OF RETrieve =, CCId OF RETrieve, CCId OF CHAnge EQual, CCId OF CHAnge =, CCId OF CHAnge, CCId OF LASt LEVel EQual, CCId OF LASt LEVel =, CCId OF LASt LEVel, CCId OF LASt ACTion EQual, CCId OF LASt ACTion =, CCId OF LASt ACTion, CCId EQual, CCId =, CCId",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 12,
+                                            "required": true,
+                                            "specialValue": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "keyword": "PACkage ID",
+            "requireNext": true,
+            "next": [
+                {
+                    "maxLen": 16,
+                    "required": true,
+                    "nogoback": true,
+                    "next": [
+                        {
+                            "keyword": "TO",
+                            "requireNext": true,
+                            "isTO": true,
+                            "next": [
+                                {
+                                    "keyword": "FILe, DDName",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "DSName",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 44,
+                                            "required": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "OPTion",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "keyword": "DELImiters",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 1,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "NOCsv, NOTitle, QUAlifier QUOte, PROMotion HIStory"
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

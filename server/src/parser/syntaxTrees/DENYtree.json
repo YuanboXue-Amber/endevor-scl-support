@@ -1,0 +1,42 @@
+{
+    "keyword": "DENY",
+    "required": true,
+    "requireNext": true,
+    "next": [
+        {
+            "keyword": "PACkage",
+            "required": true,
+            "requireNext": true,
+            "next": [
+                {
+                    "maxLen": 16,
+                    "required": true,
+                    "nogoback": true,
+                    "requireNext": true,
+                    "next": [
+                        {
+                            "keyword": "OPTion",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "keyword": "NOTEs =, NOTEs",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 60,
+                                            "required": true,
+                                            "specialValue": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,68 @@
+{
+    "keyword": "EXECUTE",
+    "required": true,
+    "requireNext": true,
+    "next": [
+        {
+            "keyword": "PACkage",
+            "required": true,
+            "requireNext": true,
+            "next": [
+                {
+                    "maxLen": 16,
+                    "required": true,
+                    "nogoback": true,
+                    "requireNext": true,
+                    "next": [
+                        {
+                            "keyword": "OPTion",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "keyword": "WHEre PACkage STATus IS, WHEre PACkage STATus",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "keyword": "APPROVED OR EXECFailed, EXECFailed OR APPROVED, APPROVED, EXECFailed",
+                                            "required": true,
+                                            "next": [
+                                                {
+                                                    "keyword": "."
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "EXECUTion WINdow FROm",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "dateTimeValue": true,
+                                            "required": true,
+                                            "next": [
+                                                {
+                                                    "keyword": "TO",
+                                                    "requireNext": true,
+                                                    "next": [
+                                                        {
+                                                            "dateTimeValue": true,
+                                                            "required": true
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -9,6 +9,19 @@ export let UPDATEtree: ItreeNode;
 export let DELETEtree: ItreeNode;
 export let GENERATEtree: ItreeNode;
 export let MOVEtree: ItreeNode;
+export let RETRIEVEtree: ItreeNode;
+export let SIGNINtree: ItreeNode;
+export let TRANSFERtree: ItreeNode;
+export let APPROVEtree: ItreeNode;
+export let DENYtree: ItreeNode;
+export let BACKINtree: ItreeNode;
+export let BACKOUTtree: ItreeNode;
+export let CASTtree: ItreeNode;
+export let DEFINEPACKAGEtree: ItreeNode;
+export let EXECUTEtree: ItreeNode;
+export let RESETtree: ItreeNode;
+export let COMMITtree: ItreeNode;
+export let LISTtree: ItreeNode;
 
 export function prepareTrees() {
     SETtree = composeTreeFromJSON(prepareJSON("SETtree.json"));
@@ -17,6 +30,19 @@ export function prepareTrees() {
     DELETEtree = composeTreeFromJSON(prepareJSON("DELETEtree.json"));
     GENERATEtree = composeTreeFromJSON(prepareJSON("GENERATEtree.json"));
     MOVEtree = composeTreeFromJSON(prepareJSON("MOVEtree.json"));
+    RETRIEVEtree = composeTreeFromJSON(prepareJSON("RETRIEVEtree.json"));
+    SIGNINtree = composeTreeFromJSON(prepareJSON("SIGNINtree.json"));
+    TRANSFERtree = composeTreeFromJSON(prepareJSON("TRANSFERtree.json"));
+    APPROVEtree = composeTreeFromJSON(prepareJSON("APPROVEtree.json"));
+    DENYtree = composeTreeFromJSON(prepareJSON("DENYtree.json"));
+    BACKINtree = composeTreeFromJSON(prepareJSON("BACKINtree.json"));
+    BACKOUTtree = composeTreeFromJSON(prepareJSON("BACKOUTtree.json"));
+    CASTtree = composeTreeFromJSON(prepareJSON("CASTtree.json"));
+    DEFINEPACKAGEtree = composeTreeFromJSON(prepareJSON("DEFINEPACKAGEtree.json"));
+    EXECUTEtree = composeTreeFromJSON(prepareJSON("EXECUTEtree.json"));
+    RESETtree = composeTreeFromJSON(prepareJSON("RESETtree.json"));
+    COMMITtree = composeTreeFromJSON(prepareJSON("COMMITtree.json"));
+    LISTtree = composeTreeFromJSON(prepareJSON("LISTtree.json"));
 }
 
 export function composeTreeFromJSON(jsonRootNode: Inode):ItreeNode {

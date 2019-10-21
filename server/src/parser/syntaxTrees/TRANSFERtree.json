@@ -1,0 +1,199 @@
+{
+    "keyword": "TRAnsfer",
+    "required": true,
+    "requireNext": true,
+    "next": [
+        {
+            "keyword": "ELEment",
+            "required": true,
+            "requireNext": true,
+            "next": [
+                {
+                    "maxLen": 255,
+                    "required": true,
+                    "nogoback": true,
+                    "requireNext": true,
+                    "next": [
+                        {
+                            "keyword": "THRough, THRu",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "maxLen": 255,
+                                    "required": true
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "VERsion",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "maxLen": 2,
+                                    "required": true,
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "keyword": "LEVel",
+                                            "requireNext": true,
+                                            "next": [
+                                                {
+                                                    "maxLen": 44,
+                                                    "required": true
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "FROm",
+                            "isFROM": true,
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "keyword": "ENVironment, SYStem, SUBSystem, TYPe",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "STAge NUMber, STAge",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 1,
+                                            "required": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "TO",
+                            "isTO": true,
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "keyword": "ENVironment, SYStem, SUBSystem, TYPe",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "STAge NUMber, STAge",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 1,
+                                            "required": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "WHEre",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "keyword": "PROcessor GROup EQ, PROcessor GROup =",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true,
+                                            "specialValue": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "CCId OF CURrent EQual, CCId OF CURrent =, CCId OF CURrent, CCId OF ALL EQual, CCId OF ALL =, CCId OF ALL, CCId OF RETrieve EQual, CCId OF RETrieve =, CCId OF RETrieve, CCId EQual, CCId =, CCId",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 12,
+                                            "required": true,
+                                            "specialValue": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "OPTion",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "keyword": "CCId",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 12,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "COMment",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 44,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "SIGNOut TO",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "NEW VERsion",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 2,
+                                            "required": true
+                                        }
+                                    ]
+                                },
+                                {
+                                    "keyword": "IGNore generate failed, OVErride SIGNOut, SYNchronize, WITh HIStory, BYPass GENerate PROcessor, BYPass ELEment DELete, BYPass DELete PROcessor, BYPass DUPLICATE output check, SIGnin, RETAin SIGNOut, JUMp"
+                                },
+                                {
+                                    "keyword": "PROcessor GROup EQual, PROcessor GROup =",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "maxLen": 8,
+                                            "required": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "keyword": "."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

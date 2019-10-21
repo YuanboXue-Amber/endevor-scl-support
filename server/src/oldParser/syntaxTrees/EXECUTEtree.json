@@ -1,0 +1,218 @@
+{
+    "value": "EXECUTE",
+    "type": "keyword",
+    "requireNext": true,
+    "next": [
+        {
+            "value": "PACKAGE",
+            "type": "keyword",
+            "requireNext": true,
+            "nogoback": true,
+            "next": [
+                {
+                    "value": "'packageId'",
+                    "type": "value",
+                    "maxLen": 16,
+                    "next": [
+                        {
+                            "value": "OPTION",
+                            "type": "keyword",
+                            "requireNext": true,
+                            "next": [
+                                {
+                                    "value": "WHERE",
+                                    "type": "keyword",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "value": "PACKAGE",
+                                            "type": "keyword",
+                                            "requireNext": true,
+                                            "next": [
+                                                {
+                                                    "value": "STATUS",
+                                                    "type": "keyword",
+                                                    "requireNext": true,
+                                                    "next": [
+                                                        {
+                                                            "value": "IS",
+                                                            "type": "keyword",
+                                                            "requireNext": true,
+                                                            "next": [
+                                                                {
+                                                                    "value": "APPROVED",
+                                                                    "type": "keyword",
+                                                                    "next": [
+                                                                        {
+                                                                            "value": "OR",
+                                                                            "type": "keyword",
+                                                                            "next": [
+                                                                                {
+                                                                                    "value": ".",
+                                                                                    "type": "eos",
+                                                                                    "next": []
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "value": ".",
+                                                                            "type": "eos",
+                                                                            "next": []
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "value": "EXECFAILED",
+                                                                    "type": "keyword",
+                                                                    "next": [
+                                                                        {
+                                                                            "value": "OR",
+                                                                            "type": "keyword",
+                                                                            "next": [
+                                                                                {
+                                                                                    "value": ".",
+                                                                                    "type": "eos",
+                                                                                    "next": []
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "value": ".",
+                                                                            "type": "eos",
+                                                                            "next": []
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "value": "APPROVED",
+                                                            "type": "keyword",
+                                                            "next": [
+                                                                {
+                                                                    "value": "OR",
+                                                                    "type": "keyword",
+                                                                    "next": [
+                                                                        {
+                                                                            "value": ".",
+                                                                            "type": "eos",
+                                                                            "next": []
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "value": ".",
+                                                                    "type": "eos",
+                                                                    "next": []
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "value": "EXECFAILED",
+                                                            "type": "keyword",
+                                                            "next": [
+                                                                {
+                                                                    "value": "OR",
+                                                                    "type": "keyword",
+                                                                    "next": [
+                                                                        {
+                                                                            "value": ".",
+                                                                            "type": "eos",
+                                                                            "next": []
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "value": ".",
+                                                                    "type": "eos",
+                                                                    "next": []
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "value": "EXECUTION",
+                                    "type": "keyword",
+                                    "requireNext": true,
+                                    "next": [
+                                        {
+                                            "value": "WINDOW",
+                                            "type": "keyword",
+                                            "requireNext": true,
+                                            "next": [
+                                                {
+                                                    "value": "FROM",
+                                                    "type": "keyword",
+                                                    "requireNext": true,
+                                                    "next": [
+                                                        {
+                                                            "value": "'DDMMMYY HH:MM'",
+                                                            "type": "value",
+                                                            "next": [
+                                                                {
+                                                                    "value": "TO",
+                                                                    "type": "keyword",
+                                                                    "requireNext": true,
+                                                                    "next": [
+                                                                        {
+                                                                            "value": "'DDMMMYY HH:MM'",
+                                                                            "type": "value",
+                                                                            "next": [
+                                                                                {
+                                                                                    "value": ".",
+                                                                                    "type": "eos",
+                                                                                    "next": []
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "value": ".",
+                                                                    "type": "eos",
+                                                                    "next": []
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "value": "TO",
+                                                    "type": "keyword",
+                                                    "requireNext": true,
+                                                    "next": [
+                                                        {
+                                                            "value": "'DDMMMYY HH:MM'",
+                                                            "type": "value",
+                                                            "next": [
+                                                                {
+                                                                    "value": ".",
+                                                                    "type": "eos",
+                                                                    "next": []
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "value": ".",
+                            "type": "eos",
+                            "next": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
