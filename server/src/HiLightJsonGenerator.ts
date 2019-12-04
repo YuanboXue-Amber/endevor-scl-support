@@ -1,6 +1,7 @@
 import { isNullOrUndefined } from "util";
-import { ParserTags } from './oldParser/parserTags';
 import * as fs from 'fs';
+import { ParserTags } from "./CompletionProvider";
+
 
 const level0keywords: string[] = [
     ParserTags.SET,
